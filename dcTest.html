@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.3/dc.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.3/dc.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.3/dc.min.js.map"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/dc/2.0.0/dc.min.css">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <style>
+
+    </style>
+
+    <script>
+        'use strict';
+        //var yearlyBubbleChart = dc.bubbleChart('#yearly-bubble-chart');
+
+        d3.json('data/GDX.json', function (data) {
+            var dateFormat = d3.timeFormat('%m/%d/%Y');
+            var numberFormat = d3.format('.2f');
+
+            var features = data.features;
+
+            features.forEach(function (d) {
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6 col-md-4" id="yearly-bubble-chart">chart1</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-4">chart1</div>
+            <div class="col-xs-6 col-md-4">chart2</div>
+            <div class="col-xs-6 col-md-4">chart3</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6">chart4</div>
+            <div class="col-xs-6 col-md-6">chart5</div>
+        </div>
+    </div>
+
+</body>
+</html>
