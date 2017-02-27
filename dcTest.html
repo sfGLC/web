@@ -7,14 +7,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.3/dc.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.3/dc.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.3/dc.min.js.map"></script>
-    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/dc/2.0.0/dc.min.css">
-    
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -23,7 +25,7 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    
+
     <style>
 
     </style>
@@ -37,10 +39,62 @@
             var numberFormat = d3.format('.2f');
 
             var features = data.features;
+            var avg_x = 0,
+                avg_y = 0,
+                avg_attr = "";
 
             features.forEach(function (d) {
-
+                avg_x += d.geometry.x;
+                avg_y += d.geometry.y;
+                avg_attr += d.attributes.COMMON;
             });
+
+
+            var gdx = crossfilter(data);
+            var all = gdx.groupAll();
+
+            var attriDimension = gdx.dimension(function (d) {
+                return d.attributes.COMMON;
+            });
+
+            
+
+            var xDimension = gdx.dimension(function (d) {
+                return d.newX = Math.round(d.geometry.x);
+            });
+
+            var yDimension = gdx.dimension(function (d) {
+                return d.newY = Math.round(d.geometry.y);
+            })
+            var fields = ["newX", "newY"];
+            function reduceFieldsAdd(fields) {
+                return function (p, v) {
+                    fields.forEach(function (f) {
+                        p[f] += 1;
+                    });
+                    return p;
+                };
+            };
+            function reduceFieldsRemove(fields) {
+                return function (p, v) {
+                    fields.forEach(function (f) {
+                        p[f] -= 1;
+                    });
+                    return p;
+                };
+            };
+            function reduceFieldsInitial(fields) {
+                return function (p, v) {
+                    var ret = {};
+                    fields.forEach(function (f) {
+                        p[f] = 0;
+                    });
+                    return ret;
+                };
+            };
+            var attriDimensionGroup = attriDimension.group().reduce();
+
+
 
         });
     </script>
