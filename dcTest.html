@@ -7,8 +7,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.3/dc.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.3/dc.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.3/dc.min.js.map"></script>
+    <script src="http://colorbrewer2.org/export/colorbrewer.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -33,6 +34,7 @@
     <script>
         'use strict';
         //var yearlyBubbleChart = dc.bubbleChart('#yearly-bubble-chart');
+        var locationBubbleChart = dc.bubbleChart("#location-bubble-chart");
 
         d3.json('data/GDX.json', function (data) {
             var dateFormat = d3.timeFormat('%m/%d/%Y');
@@ -57,7 +59,7 @@
                 return d.attributes.COMMON;
             });
 
-            
+
 
             var xDimension = gdx.dimension(function (d) {
                 return d.newX = Math.round(d.geometry.x);
@@ -92,17 +94,69 @@
                     return ret;
                 };
             };
-            var attriDimensionGroup = attriDimension.group().reduce();
+            var attriDimensionGroup = attriDimension.group().reduce(
+                reduceFieldsAdd,
+                reduceFieldsRemove,
+                reduceFieldsInitial);
 
-
+            locationBubbleChart
+            .width(1000)
+            .height(250)
+            .transitionDuration(1500)
+            .dimension()
+            .group(attriDimensionGroup)
+            .colors(colorbrewer.RdYlGn[9])
+            .colorDomain([-500, 500])
+            .colorAccessor(function (d) {
+                return d.value.absGain;
+            })
+            .keyAccessor(function (p){
+                return p.value.absGain;
+            })
+            .valueAccessor(function (p) {
+                return p.value.percentageGain;
+            })
+            .radiusValueAccessor(function (p) {
+                return p.value.fluctuationPercentage;
+            })
+        .maxBubbleRelativeSize(0.3)
+        .x(d3.scale.linear().domain([-2500, 2500]))
+        .y(d3.scale.linear().domain([-100, 100]))
+        .r(d3.scale.linear().domain([0, 4000]))
+            .elasticY(true)
+        .elasticX(true)
+            .yAxisPadding(100)
+        .xAxisPadding(500)
+            .renderHorizontalGridLines(true)
+            .renderVerticalGridLines(true)
+            .xAxisLabel('Index Gain')
+            .yAxisLabel('Index Gain %')
+            .renderLabel(true)
+        .label(function (p) {
+            return p.key;
+        })
+            .renderTitle(true)
+        .title(function (p) {
+            return [
+                p.key,
+                'Index Gain: ' + numberFormat(p.value.absGain),
+                'Index Gain in Percentage: ' + numberFormat(p.value.percentageGain) + '%',
+                'Fluctuation / Index Ratio: ' + numberFormat(p.value.fluctuationPercentage) + '%'
+            ].join('\n');
+        })
+            .yAxis().tickFormat(function (v) {
+                return v + '%';
+            });
 
         });
+
+
     </script>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-6 col-md-4" id="yearly-bubble-chart">chart1</div>
+            <div class="col-xs-6 col-md-4" id="location-bubble-chart">chart1</div>
         </div>
         <div class="row">
             <div class="col-xs-6 col-md-4">chart1</div>
