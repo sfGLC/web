@@ -4,17 +4,17 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.3/dc.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.3/dc.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.3/dc.min.js.map"></script>
     <script src="http://colorbrewer2.org/export/colorbrewer.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-            crossorigin="anonymous"></script>
+    
+    
 
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/dc/2.0.0/dc.min.css">
 
@@ -68,36 +68,22 @@
             var yDimension = gdx.dimension(function (d) {
                 return d.newY = Math.round(d.geometry.y);
             })
-            var fields = ["newX", "newY"];
-            function reduceFieldsAdd(fields) {
-                return function (p, v) {
-                    fields.forEach(function (f) {
-                        p[f] += 1;
-                    });
+
+            var yDimensionGroup = yDimension.group().reduce(
+                function (p, v) {
+                    ++p.count;
                     return p;
-                };
-            };
-            function reduceFieldsRemove(fields) {
-                return function (p, v) {
-                    fields.forEach(function (f) {
-                        p[f] -= 1;
-                    });
+                },
+                function (p, v) {
+                    --p.count;
                     return p;
-                };
-            };
-            function reduceFieldsInitial(fields) {
-                return function (p, v) {
-                    var ret = {};
-                    fields.forEach(function (f) {
-                        p[f] = 0;
-                    });
-                    return ret;
-                };
-            };
-            var attriDimensionGroup = attriDimension.group().reduce(
-                reduceFieldsAdd,
-                reduceFieldsRemove,
-                reduceFieldsInitial);
+                },
+                function (p, v) {
+                    return {
+                        count: 0
+                    };
+                }
+                );
 
             locationBubbleChart
             .width(1000)
@@ -108,45 +94,134 @@
             .colors(colorbrewer.RdYlGn[9])
             .colorDomain([-500, 500])
             .colorAccessor(function (d) {
-                return d.value.absGain;
+                return d.newX;
             })
             .keyAccessor(function (p){
-                return p.value.absGain;
+                return p.newX;
             })
             .valueAccessor(function (p) {
-                return p.value.percentageGain;
+                return p.newY;
             })
             .radiusValueAccessor(function (p) {
-                return p.value.fluctuationPercentage;
+                return p.count;
             })
-        .maxBubbleRelativeSize(0.3)
-        .x(d3.scale.linear().domain([-2500, 2500]))
-        .y(d3.scale.linear().domain([-100, 100]))
-        .r(d3.scale.linear().domain([0, 4000]))
+            .maxBubbleRelativeSize(0.3)
+            .x(d3.scale.linear().domain([-2500, 2500]))
+            .y(d3.scale.linear().domain([-100, 100]))
+            .r(d3.scale.linear().domain([0, 4000]))
             .elasticY(true)
-        .elasticX(true)
+            .elasticX(true)
             .yAxisPadding(100)
-        .xAxisPadding(500)
+            .xAxisPadding(500)
             .renderHorizontalGridLines(true)
             .renderVerticalGridLines(true)
-            .xAxisLabel('Index Gain')
-            .yAxisLabel('Index Gain %')
+            .xAxisLabel('New X')
+            .yAxisLabel('New Y')
             .renderLabel(true)
-        .label(function (p) {
-            return p.key;
-        })
+            .label(function (p) {
+             return p.key;
+            })
             .renderTitle(true)
-        .title(function (p) {
-            return [
-                p.key,
-                'Index Gain: ' + numberFormat(p.value.absGain),
-                'Index Gain in Percentage: ' + numberFormat(p.value.percentageGain) + '%',
-                'Fluctuation / Index Ratio: ' + numberFormat(p.value.fluctuationPercentage) + '%'
-            ].join('\n');
-        })
+            .title(function (p) {
+                return [
+                    p.key,
+                    'Index Gain: ' + numberFormat(p.newX),
+                    'Index Gain in Percentage: ' + numberFormat(p.newY) + '%',
+                    'Fluctuation / Index Ratio: ' + numberFormat(p.count) + '%'
+                ].join('\n');
+            })
             .yAxis().tickFormat(function (v) {
                 return v + '%';
             });
+
+            //fields = [];
+            //function yReduceFieldsAdd(fields) {
+            //    return function (p, v) {
+            //        fields.forEach(function (f) {
+            //            p[f] += 1;
+            //        });
+            //    };
+            //};
+
+            //var fields = ["newX", "newY"];
+            //function reduceFieldsAdd(fields) {
+            //    return function (p, v) {
+            //        fields.forEach(function (f) {
+            //            p[f] += 1;
+            //        });
+            //        return p;
+            //    };
+            //};
+            //function reduceFieldsRemove(fields) {
+            //    return function (p, v) {
+            //        fields.forEach(function (f) {
+            //            p[f] -= 1;
+            //        });
+            //        return p;
+            //    };
+            //};
+            //function reduceFieldsInitial(fields) {
+            //    return function (p, v) {
+            //        var ret = {};
+            //        fields.forEach(function (f) {
+            //            p[f] = 0;
+            //        });
+            //        return ret;
+            //    };
+            //};
+            //var attriDimensionGroup = attriDimension.group().reduce(
+            //    reduceFieldsAdd,
+            //    reduceFieldsRemove,
+            //    reduceFieldsInitial);
+
+            //locationBubbleChart
+            //.width(1000)
+            //.height(250)
+            //.transitionDuration(1500)
+            //.dimension()
+            //.group(attriDimensionGroup)
+            //.colors(colorbrewer.RdYlGn[9])
+            //.colorDomain([-500, 500])
+            //.colorAccessor(function (d) {
+            //    return d.value.absGain;
+            //})
+            //.keyAccessor(function (p){
+            //    return p.value.absGain;
+            //})
+            //.valueAccessor(function (p) {
+            //    return p.value.percentageGain;
+            //})
+            //.radiusValueAccessor(function (p) {
+            //    return p.value.fluctuationPercentage;
+            //})
+            //.maxBubbleRelativeSize(0.3)
+            //.x(d3.scale.linear().domain([-2500, 2500]))
+            //.y(d3.scale.linear().domain([-100, 100]))
+            //.r(d3.scale.linear().domain([0, 4000]))
+            //.elasticY(true)
+            //.elasticX(true)
+            //.yAxisPadding(100)
+            //.xAxisPadding(500)
+            //.renderHorizontalGridLines(true)
+            //.renderVerticalGridLines(true)
+            //.xAxisLabel('Index Gain')
+            //.yAxisLabel('Index Gain %')
+            //.renderLabel(true)
+            //.label(function (p) {
+            // return p.key;
+            //})
+            //.renderTitle(true)
+            //.title(function (p) {
+            //    return [
+            //        p.key,
+            //        'Index Gain: ' + numberFormat(p.value.absGain),
+            //        'Index Gain in Percentage: ' + numberFormat(p.value.percentageGain) + '%',
+            //        'Fluctuation / Index Ratio: ' + numberFormat(p.value.fluctuationPercentage) + '%'
+            //    ].join('\n');
+            //})
+            //.yAxis().tickFormat(function (v) {
+            //    return v + '%';
+            //});
 
         });
 

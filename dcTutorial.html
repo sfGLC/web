@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF8" />
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+    <!--<script src="https://dc-js.github.io/dc.js/js/dc.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.1/dc.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.1/dc.min.css">
+    <!--<script src="/js/dc.min.js"></script>
+    <link rel="stylesheet" href="/js/dc.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.1/dc.min.css">-->
+
+    <script>
+        var data = [
+  { date: "2011-11-14T16:17:54Z", quantity: 2, total: 190, tip: 100, type: "tab" },
+  { date: "2011-11-14T16:20:19Z", quantity: 2, total: 190, tip: 100, type: "tab" },
+  { date: "2011-11-14T16:28:54Z", quantity: 1, total: 300, tip: 200, type: "visa" },
+  { date: "2011-11-14T16:30:43Z", quantity: 2, total: 90, tip: 0, type: "tab" },
+  { date: "2011-11-14T16:48:46Z", quantity: 2, total: 90, tip: 0, type: "tab" },
+  { date: "2011-11-14T16:53:41Z", quantity: 2, total: 90, tip: 0, type: "tab" },
+  { date: "2011-11-14T16:54:06Z", quantity: 1, total: 100, tip: 0, type: "cash" },
+  { date: "2011-11-14T16:58:03Z", quantity: 2, total: 90, tip: 0, type: "tab" },
+  { date: "2011-11-14T17:07:21Z", quantity: 2, total: 90, tip: 0, type: "tab" },
+  { date: "2011-11-14T17:22:59Z", quantity: 2, total: 90, tip: 0, type: "tab" },
+  { date: "2011-11-14T17:25:45Z", quantity: 2, total: 200, tip: 0, type: "cash" },
+  { date: "2011-11-14T17:29:52Z", quantity: 1, total: 200, tip: 100, type: "visa" }
+        ];
+
+        var data2 = [
+		{ date: "12/27/2012", http_404: 2, http_200: 190, http_302: 100 },
+		{ date: "12/28/2012", http_404: 2, http_200: 10, http_302: 100 },
+		{ date: "12/29/2012", http_404: 1, http_200: 300, http_302: 200 },
+		{ date: "12/30/2012", http_404: 2, http_200: 90, http_302: 0 },
+		{ date: "12/31/2012", http_404: 2, http_200: 90, http_302: 0 },
+		{ date: "01/01/2013", http_404: 2, http_200: 90, http_302: 0 },
+		{ date: "01/02/2013", http_404: 1, http_200: 10, http_302: 1 },
+		{ date: "01/03/2013", http_404: 2, http_200: 90, http_302: 0 },
+		{ date: "01/04/2013", http_404: 2, http_200: 90, http_302: 0 },
+		{ date: "01/05/2013", http_404: 2, http_200: 90, http_302: 0 },
+		{ date: "01/06/2013", http_404: 2, http_200: 200, http_302: 1 },
+		{ date: "01/07/2013", http_404: 1, http_200: 200, http_302: 100 }
+        ];
+
+        function print_filter(filter) {
+            var f = eval(filter);
+            if (typeof (f.length) != "undefined") { } else { }
+            if (typeof (f.top) != "undefined") { f = f.top(Infinity); } else { }
+            if (typeof (f.dimension) != "undefined") { f = f.dimension(function (d) { return ""; }).top(Infinity); } else { }
+            console.log(filter + "(" + f.length + ") = " + JSON.stringify(f).replace("[", "[\n\t").replace(/}\,/g, "},\n\t").replace("]", "\n]"));
+        };
+
+        //var ndx = crossfilter(data);
+        //var totalDim = ndx.dimension(function (d) {
+        //    return d.total;
+        //});
+
+        //var total_90 = totalDim.filter(90);
+        //print_filter("total_90");
+        //totalDim.filterAll();
+
+        //var total_3 = totalDim.filter(function (d) {
+        //    if (d % 3 == 0) {
+        //        return d;
+        //    };
+        //})
+        //print_filter("total_3");
+        //totalDim.filterAll();
+
+        //var total_200 = totalDim.filterExact(200);
+        //print_filter("total_200");
+        //totalDim.filterAll();
+
+        //var typeDim = ndx.dimension(function (d) {
+        //    return d.type;
+        //});
+        //var visa_filter = typeDim.filter("visa");
+        //print_filter("visa_filter");
+
+        //// group() on filter will return grouped results of the entire dataset
+        //var total_all = typeDim.group().reduceSum(function (d) {
+        //    return d.total;
+        //});
+        //print_filter("total_all");
+        //typeDim.filterAll();
+
+        //var cash_filter = typeDim.filterExact("cash");
+
+        //// groupAll() using the original dataset will create result for current filter
+        //var total_cash = ndx.groupAll().reduceSum(function (d) {
+        //    return d.total;
+        //}).value();
+        //console.log(total_cash);
+
+        var ndx2 = crossfilter(data2);
+        var parseDate = d3.time.format("%m/%d/%Y").parse;
+        data2.forEach(function (d) {
+            d.date = parseDate(d.date);
+            d.total = d.http_404 + d.http_200 + d.http_302;
+        });
+        print_filter("data2");
+
+        var dateDim = ndx2.dimension(function (d) {
+            return d.date;
+        });
+        var hits = dateDim.group().reduceSum(function (d) {
+            return d.total;
+        });
+
+        var minDate = dateDim.bottom(1)[0].date;
+        var maxDate = dateDim.top(1)[0].date;
+
+        var hitslinechart = dc.lineChart("#chart-line-hitsperday");
+
+        hitslinechart
+            .width(500)
+            .height(200)
+            .dimension(dateDim)
+            .group(hits)
+            .x(d3.time.scale().domain([minDate, maxDate]));
+
+        dc.renderAll();
+    </script>
+</head>
+<body>
+    <div id="chart-line-hitsperday"></div>
+
+</body>
+</html>
