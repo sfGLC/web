@@ -1,0 +1,9263 @@
+{
+ "displayFieldName": "COMMON",
+ "fieldAliases": {
+  "OBSERVER": "OBSERVER",
+  "ADD_DATE": "ADD_DATE",
+  "OBJECTID": "OBJECTID"
+ },
+ "geometryType": "esriGeometryPoint",
+ "spatialReference": {
+  "wkid": 4326,
+  "latestWkid": 4326
+ },
+ "fields": [
+  {
+   "name": "OBSERVER",
+   "type": "esriFieldTypeString",
+   "alias": "OBSERVER",
+   "length": 254
+  },
+  {
+   "name": "ADD_DATE",
+   "type": "esriFieldTypeString",
+   "alias": "ADD_DATE",
+   "length": 254
+  },
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "OBJECTID"
+  }
+ ],
+ "features": [
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "7/31/2012 10:40:14 AM",
+    "OBJECTID": 311161
+   },
+   "geometry": {
+    "x": -85.461154000000022,
+    "y": 44.668515000000014
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "7/31/2012 10:40:14 AM",
+    "OBJECTID": 311162
+   },
+   "geometry": {
+    "x": -85.462107000000003,
+    "y": 44.668293000000006
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "7/31/2012 10:40:14 AM",
+    "OBJECTID": 311163
+   },
+   "geometry": {
+    "x": -85.459633999999994,
+    "y": 44.66426100000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "7/31/2012 10:40:14 AM",
+    "OBJECTID": 311164
+   },
+   "geometry": {
+    "x": -85.463812000000019,
+    "y": 44.664059000000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "7/31/2012 10:40:14 AM",
+    "OBJECTID": 311165
+   },
+   "geometry": {
+    "x": -85.465350000000001,
+    "y": 44.664639000000022
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "7/31/2012 10:40:14 AM",
+    "OBJECTID": 311166
+   },
+   "geometry": {
+    "x": -85.468567000000007,
+    "y": 44.666267000000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "7/31/2012 10:40:14 AM",
+    "OBJECTID": 311167
+   },
+   "geometry": {
+    "x": -85.460482000000013,
+    "y": 44.663927000000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "7/31/2012 10:40:14 AM",
+    "OBJECTID": 311168
+   },
+   "geometry": {
+    "x": -85.454575999999975,
+    "y": 44.671163999999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "7/31/2012 10:40:14 AM",
+    "OBJECTID": 311169
+   },
+   "geometry": {
+    "x": -85.455016999999998,
+    "y": 44.670781999999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "7/31/2012 10:40:14 AM",
+    "OBJECTID": 311170
+   },
+   "geometry": {
+    "x": -85.456303999999989,
+    "y": 44.670957999999985
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "7/31/2012 10:40:14 AM",
+    "OBJECTID": 311171
+   },
+   "geometry": {
+    "x": -85.456830000000025,
+    "y": 44.671241000000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "7/31/2012 10:40:14 AM",
+    "OBJECTID": 311172
+   },
+   "geometry": {
+    "x": -85.459423000000015,
+    "y": 44.671060000000011
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "7/31/2012 10:40:14 AM",
+    "OBJECTID": 311173
+   },
+   "geometry": {
+    "x": -85.45928600000002,
+    "y": 44.670726999999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311174
+   },
+   "geometry": {
+    "x": -85.772317910000027,
+    "y": 45.971798190000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311175
+   },
+   "geometry": {
+    "x": -85.576236279999989,
+    "y": 45.187573410000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Katherine Schmidt",
+    "ADD_DATE": "1/1/0001 12:00:00 AM",
+    "OBJECTID": 311176
+   },
+   "geometry": {
+    "x": -85.512828000000013,
+    "y": 42.919907000000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Katherine Schmidt",
+    "ADD_DATE": "9/6/2009 12:00:00 AM",
+    "OBJECTID": 311177
+   },
+   "geometry": {
+    "x": -85.512180999999998,
+    "y": 42.921512000000007
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Robert Williams",
+    "ADD_DATE": "1/1/2010 12:00:00 AM",
+    "OBJECTID": 311178
+   },
+   "geometry": {
+    "x": -82.571933269999988,
+    "y": 42.609832550000021
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Alexandra Wrobel",
+    "ADD_DATE": "7/13/2010 12:00:00 AM",
+    "OBJECTID": 311179
+   },
+   "geometry": {
+    "x": -87.707934000000023,
+    "y": 45.751763600000004
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Micah Appel",
+    "ADD_DATE": "7/7/2010 12:00:00 AM",
+    "OBJECTID": 311180
+   },
+   "geometry": {
+    "x": -85.460897680000016,
+    "y": 44.668431600000019
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Micah Appel",
+    "ADD_DATE": "7/16/2010 12:00:00 AM",
+    "OBJECTID": 311181
+   },
+   "geometry": {
+    "x": -85.487596300000007,
+    "y": 44.692757900000004
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Micah Appel",
+    "ADD_DATE": "7/12/2010 12:00:00 AM",
+    "OBJECTID": 311182
+   },
+   "geometry": {
+    "x": -85.576287900000011,
+    "y": 44.650326399999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Micah Appel",
+    "ADD_DATE": "7/21/2010 12:00:00 AM",
+    "OBJECTID": 311183
+   },
+   "geometry": {
+    "x": -85.473246570000015,
+    "y": 44.667889849999995
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Micah Appel",
+    "ADD_DATE": "7/5/2010 12:00:00 AM",
+    "OBJECTID": 311184
+   },
+   "geometry": {
+    "x": -85.575031000000024,
+    "y": 44.72824989999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Micah Appel",
+    "ADD_DATE": "7/7/2010 12:00:00 AM",
+    "OBJECTID": 311185
+   },
+   "geometry": {
+    "x": -85.45414925,
+    "y": 44.672269459999995
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Michigan Dune Alliance",
+    "ADD_DATE": "9/17/2010 12:00:00 AM",
+    "OBJECTID": 311186
+   },
+   "geometry": {
+    "x": -84.230933189999973,
+    "y": 42.838244529999997
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "David Magno",
+    "ADD_DATE": "10/2/2010 12:00:00 AM",
+    "OBJECTID": 311187
+   },
+   "geometry": {
+    "x": -86.567523479999977,
+    "y": 45.900372329999982
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Dakota Angileri",
+    "ADD_DATE": "5/23/2013 10:30:31 AM",
+    "OBJECTID": 311188
+   },
+   "geometry": {
+    "x": -83.180859999999996,
+    "y": 42.294228999999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311189
+   },
+   "geometry": {
+    "x": -85.533900790000018,
+    "y": 44.927017850000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311190
+   },
+   "geometry": {
+    "x": -85.538442859999975,
+    "y": 44.919592819999991
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311191
+   },
+   "geometry": {
+    "x": -85.540128040000013,
+    "y": 44.917231389999984
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311192
+   },
+   "geometry": {
+    "x": -85.541578529999981,
+    "y": 44.916178119999984
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311193
+   },
+   "geometry": {
+    "x": -85.541617089999988,
+    "y": 44.915445620000014
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311194
+   },
+   "geometry": {
+    "x": -85.574475660000019,
+    "y": 44.860997950000012
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311195
+   },
+   "geometry": {
+    "x": -85.575528930000019,
+    "y": 44.860395550000021
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311196
+   },
+   "geometry": {
+    "x": -85.578521350000017,
+    "y": 44.859222670000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311197
+   },
+   "geometry": {
+    "x": -85.478267420000009,
+    "y": 44.992335340000011
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311198
+   },
+   "geometry": {
+    "x": -85.492035110000018,
+    "y": 44.990351589999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311199
+   },
+   "geometry": {
+    "x": -85.493423740000026,
+    "y": 44.989169909999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311200
+   },
+   "geometry": {
+    "x": -85.496161610000001,
+    "y": 44.984046219999982
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311201
+   },
+   "geometry": {
+    "x": -85.500293220000003,
+    "y": 44.981135349999988
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311202
+   },
+   "geometry": {
+    "x": -85.504485260000024,
+    "y": 44.979459889999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311203
+   },
+   "geometry": {
+    "x": -85.513351890000024,
+    "y": 44.976591439999993
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311204
+   },
+   "geometry": {
+    "x": -85.520464179999976,
+    "y": 44.973662049999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311205
+   },
+   "geometry": {
+    "x": -85.520770459999994,
+    "y": 44.971355519999975
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311206
+   },
+   "geometry": {
+    "x": -85.542419569999993,
+    "y": 44.914918399999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311207
+   },
+   "geometry": {
+    "x": -85.542648729999996,
+    "y": 44.914713800000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311208
+   },
+   "geometry": {
+    "x": -85.549221400000022,
+    "y": 44.90975942
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311209
+   },
+   "geometry": {
+    "x": -85.554002360000027,
+    "y": 44.903841049999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311210
+   },
+   "geometry": {
+    "x": -85.555646469999999,
+    "y": 44.902788279999982
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311211
+   },
+   "geometry": {
+    "x": -85.558839550000016,
+    "y": 44.900875699999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311212
+   },
+   "geometry": {
+    "x": -85.556871569999998,
+    "y": 44.886915219999992
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311213
+   },
+   "geometry": {
+    "x": -85.534020899999973,
+    "y": 44.928231970000013
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Ian Shackleford",
+    "ADD_DATE": "1/18/2011 12:00:00 AM",
+    "OBJECTID": 311214
+   },
+   "geometry": {
+    "x": -89.316963030000011,
+    "y": 46.870882639999991
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "7/31/2012 10:40:14 AM",
+    "OBJECTID": 311215
+   },
+   "geometry": {
+    "x": -85.460367000000019,
+    "y": 44.67659500000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311216
+   },
+   "geometry": {
+    "x": -85.47460577999999,
+    "y": 44.815221109999982
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311217
+   },
+   "geometry": {
+    "x": -85.473375990000022,
+    "y": 44.815916979999997
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Michigan Dune Alliance",
+    "ADD_DATE": "4/3/2012 12:00:00 AM",
+    "OBJECTID": 311218
+   },
+   "geometry": {
+    "x": -85.542111369999986,
+    "y": 45.21125145000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311219
+   },
+   "geometry": {
+    "x": -85.613144560000023,
+    "y": 45.183421689999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311220
+   },
+   "geometry": {
+    "x": -85.612129760000016,
+    "y": 45.182043369999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311221
+   },
+   "geometry": {
+    "x": -85.61104413999999,
+    "y": 45.181016080000006
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311222
+   },
+   "geometry": {
+    "x": -85.67650261,
+    "y": 45.110279279999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311223
+   },
+   "geometry": {
+    "x": -85.575224330000026,
+    "y": 45.187946909999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311224
+   },
+   "geometry": {
+    "x": -85.562302950000003,
+    "y": 45.200883209999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311225
+   },
+   "geometry": {
+    "x": -85.563330319999977,
+    "y": 45.201326110000025
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311226
+   },
+   "geometry": {
+    "x": -85.562281079999991,
+    "y": 45.199719459999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311227
+   },
+   "geometry": {
+    "x": -85.562410750000026,
+    "y": 45.199305820000006
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311228
+   },
+   "geometry": {
+    "x": -85.563092530000006,
+    "y": 45.198858050000013
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311229
+   },
+   "geometry": {
+    "x": -85.57300656000001,
+    "y": 45.188147319999985
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311230
+   },
+   "geometry": {
+    "x": -85.574067459999981,
+    "y": 45.187983210000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Janet Marr",
+    "ADD_DATE": "11/16/2011 12:00:00 AM",
+    "OBJECTID": 311231
+   },
+   "geometry": {
+    "x": -88.810794349999981,
+    "y": 46.923816590000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311232
+   },
+   "geometry": {
+    "x": -85.493560000000002,
+    "y": 44.884029999999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311233
+   },
+   "geometry": {
+    "x": -85.493479999999977,
+    "y": 44.884050000000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311234
+   },
+   "geometry": {
+    "x": -85.493429999999989,
+    "y": 44.884029999999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311235
+   },
+   "geometry": {
+    "x": -85.469840340000019,
+    "y": 44.817808689999993
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311236
+   },
+   "geometry": {
+    "x": -85.469522659999996,
+    "y": 44.818080769999995
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311237
+   },
+   "geometry": {
+    "x": -85.469350669999983,
+    "y": 44.818188889999988
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311238
+   },
+   "geometry": {
+    "x": -85.465192150000007,
+    "y": 44.822685279999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311239
+   },
+   "geometry": {
+    "x": -85.452776710000023,
+    "y": 44.848062920000018
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311240
+   },
+   "geometry": {
+    "x": -85.575425909999979,
+    "y": 44.758733959999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311241
+   },
+   "geometry": {
+    "x": -85.576602569999977,
+    "y": 44.760802609999985
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311242
+   },
+   "geometry": {
+    "x": -85.572807490000002,
+    "y": 44.765138569999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311243
+   },
+   "geometry": {
+    "x": -85.478059630000018,
+    "y": 44.992154540000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311244
+   },
+   "geometry": {
+    "x": -85.478017220000027,
+    "y": 44.992282610000018
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311245
+   },
+   "geometry": {
+    "x": -85.478151920000016,
+    "y": 44.991976169999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311246
+   },
+   "geometry": {
+    "x": -85.478458530000012,
+    "y": 44.991797799999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311247
+   },
+   "geometry": {
+    "x": -85.477965419999975,
+    "y": 44.99202286000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311248
+   },
+   "geometry": {
+    "x": -85.47793273000002,
+    "y": 44.992102569999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311249
+   },
+   "geometry": {
+    "x": -85.477870699999983,
+    "y": 44.992085299999985
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311250
+   },
+   "geometry": {
+    "x": -85.477919489999977,
+    "y": 44.992219159999991
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311251
+   },
+   "geometry": {
+    "x": -85.477746570000022,
+    "y": 44.992780830000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311252
+   },
+   "geometry": {
+    "x": -85.477787050000018,
+    "y": 44.992669439999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311253
+   },
+   "geometry": {
+    "x": -85.477797699999996,
+    "y": 44.992568269999992
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311254
+   },
+   "geometry": {
+    "x": -85.477535509999996,
+    "y": 44.992107770000018
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311255
+   },
+   "geometry": {
+    "x": -85.477877739999997,
+    "y": 44.991845920000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311256
+   },
+   "geometry": {
+    "x": -85.477621590000012,
+    "y": 44.991749359999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311257
+   },
+   "geometry": {
+    "x": -85.477459739999972,
+    "y": 44.991792190000012
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311258
+   },
+   "geometry": {
+    "x": -85.533239999999978,
+    "y": 44.747360000000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311259
+   },
+   "geometry": {
+    "x": -85.490079999999978,
+    "y": 44.807839999999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311260
+   },
+   "geometry": {
+    "x": -85.526180000000011,
+    "y": 44.748199999999997
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311261
+   },
+   "geometry": {
+    "x": -85.530939999999987,
+    "y": 44.747392999999988
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311262
+   },
+   "geometry": {
+    "x": -85.473770000000002,
+    "y": 44.815150000000017
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311263
+   },
+   "geometry": {
+    "x": -85.511320000000012,
+    "y": 44.763199999999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "1/1/0001 12:00:00 AM",
+    "OBJECTID": 311264
+   },
+   "geometry": {
+    "x": -85.654566999999986,
+    "y": 44.759124999999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311265
+   },
+   "geometry": {
+    "x": -85.493170000000021,
+    "y": 44.884259999999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311266
+   },
+   "geometry": {
+    "x": -85.493290000000002,
+    "y": 44.886059999999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311267
+   },
+   "geometry": {
+    "x": -85.493339999999989,
+    "y": 44.887720000000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311268
+   },
+   "geometry": {
+    "x": -85.493319999999983,
+    "y": 44.887810000000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311269
+   },
+   "geometry": {
+    "x": -85.493150000000014,
+    "y": 44.888070000000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311270
+   },
+   "geometry": {
+    "x": -85.493429999999989,
+    "y": 44.888480000000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311271
+   },
+   "geometry": {
+    "x": -85.493319999999983,
+    "y": 44.889299999999992
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311272
+   },
+   "geometry": {
+    "x": -85.493330000000014,
+    "y": 44.889310000000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311273
+   },
+   "geometry": {
+    "x": -85.493299999999977,
+    "y": 44.889380000000017
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311274
+   },
+   "geometry": {
+    "x": -85.491949999999974,
+    "y": 44.891930000000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311275
+   },
+   "geometry": {
+    "x": -85.491229999999973,
+    "y": 44.893550000000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311276
+   },
+   "geometry": {
+    "x": -85.489520000000027,
+    "y": 44.899940000000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311277
+   },
+   "geometry": {
+    "x": -85.492270000000019,
+    "y": 44.907069999999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311278
+   },
+   "geometry": {
+    "x": -85.492290000000025,
+    "y": 44.90712000000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Douglas Landis",
+    "ADD_DATE": "10/28/2011 12:00:00 AM",
+    "OBJECTID": 311279
+   },
+   "geometry": {
+    "x": -84.433005449999996,
+    "y": 42.692167199999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "1/1/0001 12:00:00 AM",
+    "OBJECTID": 311280
+   },
+   "geometry": {
+    "x": -85.650999000000013,
+    "y": 44.758729000000017
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "3/21/2012 12:00:00 AM",
+    "OBJECTID": 311281
+   },
+   "geometry": {
+    "x": -85.576180000000022,
+    "y": 44.650260000000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Robin Christensen",
+    "ADD_DATE": "9/26/2011 12:00:00 AM",
+    "OBJECTID": 311282
+   },
+   "geometry": {
+    "x": -85.493733290000023,
+    "y": 44.037858659999984
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311283
+   },
+   "geometry": {
+    "x": -85.571136140000021,
+    "y": 44.866900740000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311284
+   },
+   "geometry": {
+    "x": -85.520724610000002,
+    "y": 44.970487989999981
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311285
+   },
+   "geometry": {
+    "x": -85.521029460000022,
+    "y": 44.969774439999981
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311286
+   },
+   "geometry": {
+    "x": -85.522579269999994,
+    "y": 44.964617139999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311287
+   },
+   "geometry": {
+    "x": -85.524568719999991,
+    "y": 44.950469740000017
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311288
+   },
+   "geometry": {
+    "x": -85.527414959999987,
+    "y": 44.94838716999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311289
+   },
+   "geometry": {
+    "x": -85.528491529999997,
+    "y": 44.947464749999995
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311290
+   },
+   "geometry": {
+    "x": -85.529343970000014,
+    "y": 44.945474709999985
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311291
+   },
+   "geometry": {
+    "x": -85.529447399999981,
+    "y": 44.943891370000017
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311292
+   },
+   "geometry": {
+    "x": -85.529376990000003,
+    "y": 44.94029445000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311293
+   },
+   "geometry": {
+    "x": -85.529374729999972,
+    "y": 44.93924813000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311294
+   },
+   "geometry": {
+    "x": -85.529321670000002,
+    "y": 44.938757710000004
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311295
+   },
+   "geometry": {
+    "x": -85.468462520000003,
+    "y": 44.971360039999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311296
+   },
+   "geometry": {
+    "x": -85.55901154999998,
+    "y": 44.811641450000025
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311297
+   },
+   "geometry": {
+    "x": -85.520974389999992,
+    "y": 44.971038599999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311298
+   },
+   "geometry": {
+    "x": -85.530848269999979,
+    "y": 44.747496090000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311299
+   },
+   "geometry": {
+    "x": -85.480144289999998,
+    "y": 44.991930830000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311300
+   },
+   "geometry": {
+    "x": -85.504293229999973,
+    "y": 44.773293490000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311301
+   },
+   "geometry": {
+    "x": -85.526381000000015,
+    "y": 44.747996000000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311302
+   },
+   "geometry": {
+    "x": -85.527931000000024,
+    "y": 44.748161999999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311303
+   },
+   "geometry": {
+    "x": -85.540997749999974,
+    "y": 44.866801500000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311304
+   },
+   "geometry": {
+    "x": -85.504739819999998,
+    "y": 44.768857700000012
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311305
+   },
+   "geometry": {
+    "x": -85.523600439999996,
+    "y": 44.750650790000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311306
+   },
+   "geometry": {
+    "x": -85.639929689999974,
+    "y": 44.778394719999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311307
+   },
+   "geometry": {
+    "x": -85.479688230000022,
+    "y": 44.991716250000025
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311308
+   },
+   "geometry": {
+    "x": -85.478543100000024,
+    "y": 44.992547230000014
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311309
+   },
+   "geometry": {
+    "x": -85.576364940000019,
+    "y": 44.871476589999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311310
+   },
+   "geometry": {
+    "x": -85.571877019999988,
+    "y": 44.870792289999997
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311311
+   },
+   "geometry": {
+    "x": -85.570968839999978,
+    "y": 44.868579889999978
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311312
+   },
+   "geometry": {
+    "x": -85.525551829999984,
+    "y": 44.94945494000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311313
+   },
+   "geometry": {
+    "x": -85.529889210000022,
+    "y": 44.941720120000014
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Ian Shackleford",
+    "ADD_DATE": "1/18/2011 12:00:00 AM",
+    "OBJECTID": 311314
+   },
+   "geometry": {
+    "x": -89.575995149999983,
+    "y": 46.626580390000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311315
+   },
+   "geometry": {
+    "x": -85.511950000000013,
+    "y": 44.762099999999975
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311316
+   },
+   "geometry": {
+    "x": -85.512350000000026,
+    "y": 44.761750000000006
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311317
+   },
+   "geometry": {
+    "x": -85.477205930000025,
+    "y": 44.991897209999991
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311318
+   },
+   "geometry": {
+    "x": -85.477115910000009,
+    "y": 44.991747680000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311319
+   },
+   "geometry": {
+    "x": -85.477028319999988,
+    "y": 44.991616000000022
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311320
+   },
+   "geometry": {
+    "x": -85.476941739999972,
+    "y": 44.991720100000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311321
+   },
+   "geometry": {
+    "x": -85.474248460000013,
+    "y": 44.990233240000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311322
+   },
+   "geometry": {
+    "x": -85.474278719999973,
+    "y": 44.990167610000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311323
+   },
+   "geometry": {
+    "x": -85.473342209999998,
+    "y": 44.988889540000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Donald Shook",
+    "ADD_DATE": "2/13/2012 12:00:00 AM",
+    "OBJECTID": 311324
+   },
+   "geometry": {
+    "x": -85.446896550000019,
+    "y": 44.26751409000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311325
+   },
+   "geometry": {
+    "x": -85.492320000000007,
+    "y": 44.907140000000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311326
+   },
+   "geometry": {
+    "x": -85.490619999999979,
+    "y": 44.921379999999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311327
+   },
+   "geometry": {
+    "x": -85.491069999999979,
+    "y": 44.922439999999995
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311328
+   },
+   "geometry": {
+    "x": -85.491309999999999,
+    "y": 44.925360000000012
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311329
+   },
+   "geometry": {
+    "x": -85.491159999999979,
+    "y": 44.928459999999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311330
+   },
+   "geometry": {
+    "x": -85.491150000000005,
+    "y": 44.928670000000011
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311331
+   },
+   "geometry": {
+    "x": -85.491150000000005,
+    "y": 44.928729999999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311332
+   },
+   "geometry": {
+    "x": -85.48590999999999,
+    "y": 44.946660000000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311333
+   },
+   "geometry": {
+    "x": -85.485529999999983,
+    "y": 44.948309999999992
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311334
+   },
+   "geometry": {
+    "x": -85.485279999999989,
+    "y": 44.948789999999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311335
+   },
+   "geometry": {
+    "x": -85.485580000000027,
+    "y": 44.948879999999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311336
+   },
+   "geometry": {
+    "x": -85.485310000000027,
+    "y": 44.951889999999992
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311337
+   },
+   "geometry": {
+    "x": -85.474218459999975,
+    "y": 44.990105749999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311338
+   },
+   "geometry": {
+    "x": -85.474070260000019,
+    "y": 44.989838200000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311339
+   },
+   "geometry": {
+    "x": -85.474032879999982,
+    "y": 44.98976553
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311340
+   },
+   "geometry": {
+    "x": -85.473955009999997,
+    "y": 44.989681879999978
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311341
+   },
+   "geometry": {
+    "x": -85.473245899999995,
+    "y": 44.988735640000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311342
+   },
+   "geometry": {
+    "x": -85.472913730000016,
+    "y": 44.988861040000018
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311343
+   },
+   "geometry": {
+    "x": -85.472720949999996,
+    "y": 44.988703540000017
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311344
+   },
+   "geometry": {
+    "x": -85.472449709999978,
+    "y": 44.988641929999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311345
+   },
+   "geometry": {
+    "x": -85.472505950000027,
+    "y": 44.988110689999985
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311346
+   },
+   "geometry": {
+    "x": -85.471076670000002,
+    "y": 44.982808050000017
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311347
+   },
+   "geometry": {
+    "x": -85.471069039999975,
+    "y": 44.982679220000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311348
+   },
+   "geometry": {
+    "x": -85.470380630000022,
+    "y": 44.981633320000014
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311349
+   },
+   "geometry": {
+    "x": -85.468475510000019,
+    "y": 44.97088008999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311350
+   },
+   "geometry": {
+    "x": -85.468680529999972,
+    "y": 44.970927449999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311351
+   },
+   "geometry": {
+    "x": -85.467541519999997,
+    "y": 44.969758599999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311352
+   },
+   "geometry": {
+    "x": -85.467723820000003,
+    "y": 44.969672010000011
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311353
+   },
+   "geometry": {
+    "x": -85.467666829999985,
+    "y": 44.968574320000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311354
+   },
+   "geometry": {
+    "x": -85.467628939999997,
+    "y": 44.968561070000021
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311355
+   },
+   "geometry": {
+    "x": -85.467593399999998,
+    "y": 44.968485129999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311356
+   },
+   "geometry": {
+    "x": -85.584585489999995,
+    "y": 44.798667439999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Robert Surprenant",
+    "ADD_DATE": "10/13/2011 12:00:00 AM",
+    "OBJECTID": 311357
+   },
+   "geometry": {
+    "x": -85.212074519999987,
+    "y": 42.320121019999988
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Douglas Landis",
+    "ADD_DATE": "10/28/2011 12:00:00 AM",
+    "OBJECTID": 311358
+   },
+   "geometry": {
+    "x": -84.416957799999977,
+    "y": 42.571259429999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311359
+   },
+   "geometry": {
+    "x": -85.484789999999975,
+    "y": 44.952609999999993
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311360
+   },
+   "geometry": {
+    "x": -85.484800000000007,
+    "y": 44.952859999999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311361
+   },
+   "geometry": {
+    "x": -85.484890000000007,
+    "y": 44.953280000000007
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311362
+   },
+   "geometry": {
+    "x": -85.487729999999999,
+    "y": 44.957040000000006
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311363
+   },
+   "geometry": {
+    "x": -85.487720000000024,
+    "y": 44.95711
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311364
+   },
+   "geometry": {
+    "x": -85.487750000000005,
+    "y": 44.957209999999975
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311365
+   },
+   "geometry": {
+    "x": -85.503971110000009,
+    "y": 44.773111859999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311366
+   },
+   "geometry": {
+    "x": -85.504040509999982,
+    "y": 44.773092910000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311367
+   },
+   "geometry": {
+    "x": -85.504477459999976,
+    "y": 44.773946860000024
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311368
+   },
+   "geometry": {
+    "x": -85.531372560000023,
+    "y": 44.933031280000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311369
+   },
+   "geometry": {
+    "x": -85.556475439999986,
+    "y": 44.888018859999988
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311370
+   },
+   "geometry": {
+    "x": -85.548187750000011,
+    "y": 44.900050580000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311371
+   },
+   "geometry": {
+    "x": -85.547991439999976,
+    "y": 44.900184360000026
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311372
+   },
+   "geometry": {
+    "x": -85.546062010000014,
+    "y": 44.900896400000022
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311373
+   },
+   "geometry": {
+    "x": -85.54485502,
+    "y": 44.901246010000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311374
+   },
+   "geometry": {
+    "x": -85.543854300000021,
+    "y": 44.901259840000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311375
+   },
+   "geometry": {
+    "x": -85.54318139999998,
+    "y": 44.901218939999978
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311376
+   },
+   "geometry": {
+    "x": -85.542521239999985,
+    "y": 44.90086229000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311377
+   },
+   "geometry": {
+    "x": -85.538151669999991,
+    "y": 44.900527679999982
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311378
+   },
+   "geometry": {
+    "x": -85.590801010000007,
+    "y": 44.781273899999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311379
+   },
+   "geometry": {
+    "x": -85.590591539999991,
+    "y": 44.781751670000006
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311380
+   },
+   "geometry": {
+    "x": -85.578865259999986,
+    "y": 44.815088339999988
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311381
+   },
+   "geometry": {
+    "x": -85.578905829999997,
+    "y": 44.815835760000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311382
+   },
+   "geometry": {
+    "x": -85.517479999999978,
+    "y": 44.758030000000019
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311383
+   },
+   "geometry": {
+    "x": -85.521450000000016,
+    "y": 44.754369999999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311384
+   },
+   "geometry": {
+    "x": -85.521950000000004,
+    "y": 44.753719999999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311385
+   },
+   "geometry": {
+    "x": -85.523120000000006,
+    "y": 44.751950000000022
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311386
+   },
+   "geometry": {
+    "x": -85.525719999999978,
+    "y": 44.748699999999985
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311387
+   },
+   "geometry": {
+    "x": -85.527069999999981,
+    "y": 44.748299999999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311388
+   },
+   "geometry": {
+    "x": -85.462670000000003,
+    "y": 44.825670000000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311389
+   },
+   "geometry": {
+    "x": -85.470050000000015,
+    "y": 44.817650000000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311390
+   },
+   "geometry": {
+    "x": -85.507450000000006,
+    "y": 44.790050000000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311391
+   },
+   "geometry": {
+    "x": -85.505170000000021,
+    "y": 44.777390000000025
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311392
+   },
+   "geometry": {
+    "x": -85.50551999999999,
+    "y": 44.77643999999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311393
+   },
+   "geometry": {
+    "x": -85.506050000000016,
+    "y": 44.776099999999985
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311394
+   },
+   "geometry": {
+    "x": -85.526380000000017,
+    "y": 44.74799999999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311395
+   },
+   "geometry": {
+    "x": -85.528099999999995,
+    "y": 44.748030000000028
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311396
+   },
+   "geometry": {
+    "x": -85.53125,
+    "y": 44.747329999999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311397
+   },
+   "geometry": {
+    "x": -85.543113170000026,
+    "y": 44.865884180000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311398
+   },
+   "geometry": {
+    "x": -85.53454511000001,
+    "y": 44.871708850000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311399
+   },
+   "geometry": {
+    "x": -85.529785779999997,
+    "y": 44.885500270000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311400
+   },
+   "geometry": {
+    "x": -85.49933231,
+    "y": 44.863986860000011
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311401
+   },
+   "geometry": {
+    "x": -85.562663120000025,
+    "y": 44.783110959999988
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311402
+   },
+   "geometry": {
+    "x": -85.49390403000001,
+    "y": 44.988809240000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311403
+   },
+   "geometry": {
+    "x": -85.549082849999991,
+    "y": 44.910102240000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311404
+   },
+   "geometry": {
+    "x": -85.544670110000027,
+    "y": 44.901387329999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311405
+   },
+   "geometry": {
+    "x": -85.579068099999972,
+    "y": 44.816085540000017
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jacqueline Pilette",
+    "ADD_DATE": "5/9/2011 12:00:00 AM",
+    "OBJECTID": 311406
+   },
+   "geometry": {
+    "x": -84.880639309999992,
+    "y": 45.401647850000018
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311407
+   },
+   "geometry": {
+    "x": -85.579028540000024,
+    "y": 44.815933910000012
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311408
+   },
+   "geometry": {
+    "x": -85.557854089999978,
+    "y": 44.844897829999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311409
+   },
+   "geometry": {
+    "x": -85.558012510000026,
+    "y": 44.846724830000028
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311410
+   },
+   "geometry": {
+    "x": -85.557156799999973,
+    "y": 44.847724879999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311411
+   },
+   "geometry": {
+    "x": -85.556522459999996,
+    "y": 44.848909320000018
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311412
+   },
+   "geometry": {
+    "x": -85.555973110000025,
+    "y": 44.849754720000021
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311413
+   },
+   "geometry": {
+    "x": -85.555557029999989,
+    "y": 44.850323179999975
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311414
+   },
+   "geometry": {
+    "x": -85.542742439999984,
+    "y": 44.865862730000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311415
+   },
+   "geometry": {
+    "x": -85.539902229999996,
+    "y": 44.867476160000024
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311416
+   },
+   "geometry": {
+    "x": -85.537922009999988,
+    "y": 44.868816849999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311417
+   },
+   "geometry": {
+    "x": -85.537811449999992,
+    "y": 44.868877279999992
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311418
+   },
+   "geometry": {
+    "x": -85.537233440000023,
+    "y": 44.869255640000006
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311419
+   },
+   "geometry": {
+    "x": -85.500980029999994,
+    "y": 44.861049589999993
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311420
+   },
+   "geometry": {
+    "x": -85.493389999999977,
+    "y": 44.888080000000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311421
+   },
+   "geometry": {
+    "x": -85.581720220000022,
+    "y": 44.806028179999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311422
+   },
+   "geometry": {
+    "x": -85.581553340000028,
+    "y": 44.807247070000017
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311423
+   },
+   "geometry": {
+    "x": -85.581541850000008,
+    "y": 44.807465499999978
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311424
+   },
+   "geometry": {
+    "x": -85.581536070000027,
+    "y": 44.808754469999997
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311425
+   },
+   "geometry": {
+    "x": -85.56577784000001,
+    "y": 44.829132979999997
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311426
+   },
+   "geometry": {
+    "x": -85.565789320000022,
+    "y": 44.829181259999984
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311427
+   },
+   "geometry": {
+    "x": -85.565705920000028,
+    "y": 44.829425169999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311428
+   },
+   "geometry": {
+    "x": -85.563965590000009,
+    "y": 44.832164120000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311429
+   },
+   "geometry": {
+    "x": -85.563907589999985,
+    "y": 44.832230260000017
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311430
+   },
+   "geometry": {
+    "x": -85.505456050000021,
+    "y": 44.77500968999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311431
+   },
+   "geometry": {
+    "x": -85.505988220000006,
+    "y": 44.775145810000026
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311432
+   },
+   "geometry": {
+    "x": -85.50609516999998,
+    "y": 44.775230050000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311433
+   },
+   "geometry": {
+    "x": -85.50627664000001,
+    "y": 44.775371619999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311434
+   },
+   "geometry": {
+    "x": -85.506328020000012,
+    "y": 44.77570596999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311435
+   },
+   "geometry": {
+    "x": -85.505160750000016,
+    "y": 44.777131310000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311436
+   },
+   "geometry": {
+    "x": -85.505175839999993,
+    "y": 44.777269530000012
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311437
+   },
+   "geometry": {
+    "x": -85.505069559999981,
+    "y": 44.777575640000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311438
+   },
+   "geometry": {
+    "x": -85.505032850000021,
+    "y": 44.777607569999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311439
+   },
+   "geometry": {
+    "x": -85.505027400000017,
+    "y": 44.777653419999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311440
+   },
+   "geometry": {
+    "x": -85.504941400000007,
+    "y": 44.77784016999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311441
+   },
+   "geometry": {
+    "x": -85.50037519,
+    "y": 44.802604079999981
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311442
+   },
+   "geometry": {
+    "x": -85.500830409999992,
+    "y": 44.802292860000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311443
+   },
+   "geometry": {
+    "x": -85.503152870000008,
+    "y": 44.798970189999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311444
+   },
+   "geometry": {
+    "x": -85.503533740000023,
+    "y": 44.798803480000004
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311445
+   },
+   "geometry": {
+    "x": -85.507469300000025,
+    "y": 44.794803969999975
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311446
+   },
+   "geometry": {
+    "x": -85.507657719999997,
+    "y": 44.79479735000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311447
+   },
+   "geometry": {
+    "x": -85.507512550000001,
+    "y": 44.794549580000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311448
+   },
+   "geometry": {
+    "x": -85.507456730000001,
+    "y": 44.794417650000014
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311449
+   },
+   "geometry": {
+    "x": -85.509353550000014,
+    "y": 44.786454760000026
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311450
+   },
+   "geometry": {
+    "x": -85.483710459999998,
+    "y": 44.811185060000014
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311451
+   },
+   "geometry": {
+    "x": -85.564003889999981,
+    "y": 44.832366630000024
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311452
+   },
+   "geometry": {
+    "x": -85.564102629999979,
+    "y": 44.832356319999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311453
+   },
+   "geometry": {
+    "x": -85.563128399999982,
+    "y": 44.834478620000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311454
+   },
+   "geometry": {
+    "x": -85.563039720000006,
+    "y": 44.834736190000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311455
+   },
+   "geometry": {
+    "x": -85.563101249999988,
+    "y": 44.834753799999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311456
+   },
+   "geometry": {
+    "x": -85.562400350000019,
+    "y": 44.838216699999975
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311457
+   },
+   "geometry": {
+    "x": -85.559514460000003,
+    "y": 44.841359319999981
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311458
+   },
+   "geometry": {
+    "x": -85.558435040000006,
+    "y": 44.843056830000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311459
+   },
+   "geometry": {
+    "x": -85.553728100000001,
+    "y": 44.857157789999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311460
+   },
+   "geometry": {
+    "x": -85.55341494999999,
+    "y": 44.857411249999984
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311461
+   },
+   "geometry": {
+    "x": -85.550351620000015,
+    "y": 44.860366209999995
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311462
+   },
+   "geometry": {
+    "x": -85.550046269999996,
+    "y": 44.861211109999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311463
+   },
+   "geometry": {
+    "x": -85.549565649999977,
+    "y": 44.862399910000022
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311464
+   },
+   "geometry": {
+    "x": -85.549468419999982,
+    "y": 44.862525979999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311465
+   },
+   "geometry": {
+    "x": -85.545457339999984,
+    "y": 44.864288269999975
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311466
+   },
+   "geometry": {
+    "x": -85.544276410000009,
+    "y": 44.864936440000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311467
+   },
+   "geometry": {
+    "x": -85.54401021000001,
+    "y": 44.865261410000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311468
+   },
+   "geometry": {
+    "x": -85.535701809999978,
+    "y": 44.870434470000021
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311469
+   },
+   "geometry": {
+    "x": -85.479194790000008,
+    "y": 44.994170639999993
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311470
+   },
+   "geometry": {
+    "x": -85.478274290000002,
+    "y": 44.992873620000012
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311471
+   },
+   "geometry": {
+    "x": -85.478433800000005,
+    "y": 44.992800869999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311472
+   },
+   "geometry": {
+    "x": -85.478262560000019,
+    "y": 44.992724090000024
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311473
+   },
+   "geometry": {
+    "x": -85.483967029999974,
+    "y": 44.811142899999993
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311474
+   },
+   "geometry": {
+    "x": -85.484042380000005,
+    "y": 44.811108699999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311475
+   },
+   "geometry": {
+    "x": -85.484457449999979,
+    "y": 44.810806360000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311476
+   },
+   "geometry": {
+    "x": -85.484634809999989,
+    "y": 44.810587510000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Michigan Dune Alliance",
+    "ADD_DATE": "4/3/2012 12:00:00 AM",
+    "OBJECTID": 311477
+   },
+   "geometry": {
+    "x": -85.531623760000002,
+    "y": 45.197706799999992
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Ian Shackleford",
+    "ADD_DATE": "1/18/2011 12:00:00 AM",
+    "OBJECTID": 311478
+   },
+   "geometry": {
+    "x": -88.516306509999993,
+    "y": 46.105303549999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311479
+   },
+   "geometry": {
+    "x": -85.500825469999995,
+    "y": 44.862148450000007
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311480
+   },
+   "geometry": {
+    "x": -85.507182969999974,
+    "y": 44.851389530000006
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311481
+   },
+   "geometry": {
+    "x": -85.508182509999983,
+    "y": 44.848707569999988
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311482
+   },
+   "geometry": {
+    "x": -85.507785130000002,
+    "y": 44.850246149999975
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311483
+   },
+   "geometry": {
+    "x": -85.551732119999997,
+    "y": 44.822552340000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311484
+   },
+   "geometry": {
+    "x": -85.551934959999983,
+    "y": 44.822387639999988
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311485
+   },
+   "geometry": {
+    "x": -85.554167399999983,
+    "y": 44.820184879999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311486
+   },
+   "geometry": {
+    "x": -85.564364150000017,
+    "y": 44.778936939999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311487
+   },
+   "geometry": {
+    "x": -85.534464389999982,
+    "y": 44.746968869999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311488
+   },
+   "geometry": {
+    "x": -85.533937340000023,
+    "y": 44.747350499999982
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311489
+   },
+   "geometry": {
+    "x": -85.532583240000008,
+    "y": 44.747375139999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311490
+   },
+   "geometry": {
+    "x": -85.532553899999982,
+    "y": 44.747360389999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311491
+   },
+   "geometry": {
+    "x": -85.532336480000026,
+    "y": 44.747380169999985
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311492
+   },
+   "geometry": {
+    "x": -85.532237399999985,
+    "y": 44.747366670000019
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311493
+   },
+   "geometry": {
+    "x": -85.531249259999981,
+    "y": 44.74762727000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311494
+   },
+   "geometry": {
+    "x": -85.531775059999973,
+    "y": 44.747621059999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311495
+   },
+   "geometry": {
+    "x": -85.478338580000013,
+    "y": 44.992574970000021
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311496
+   },
+   "geometry": {
+    "x": -85.478490959999988,
+    "y": 44.992487129999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311497
+   },
+   "geometry": {
+    "x": -85.478462799999988,
+    "y": 44.992384959999981
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311498
+   },
+   "geometry": {
+    "x": -85.478636890000018,
+    "y": 44.992292759999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311499
+   },
+   "geometry": {
+    "x": -85.582870220000018,
+    "y": 44.865066529999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311500
+   },
+   "geometry": {
+    "x": -85.582617749999997,
+    "y": 44.865572550000024
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311501
+   },
+   "geometry": {
+    "x": -85.581330960000003,
+    "y": 44.869251609999992
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311502
+   },
+   "geometry": {
+    "x": -85.58006991000002,
+    "y": 44.869807250000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311503
+   },
+   "geometry": {
+    "x": -85.579280499999982,
+    "y": 44.870165740000004
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311504
+   },
+   "geometry": {
+    "x": -85.579224759999988,
+    "y": 44.870120310000004
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311505
+   },
+   "geometry": {
+    "x": -85.579151749999994,
+    "y": 44.870142439999995
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311506
+   },
+   "geometry": {
+    "x": -85.576989140000023,
+    "y": 44.870967469999982
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311507
+   },
+   "geometry": {
+    "x": -85.576955109999972,
+    "y": 44.871038220000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311508
+   },
+   "geometry": {
+    "x": -85.576784700000019,
+    "y": 44.871480360000021
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311509
+   },
+   "geometry": {
+    "x": -85.576740110000003,
+    "y": 44.871502659999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311510
+   },
+   "geometry": {
+    "x": -85.576232000000005,
+    "y": 44.871397300000012
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311511
+   },
+   "geometry": {
+    "x": -85.575870909999992,
+    "y": 44.871733660000018
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311512
+   },
+   "geometry": {
+    "x": -85.571483399999977,
+    "y": 44.872718369999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311513
+   },
+   "geometry": {
+    "x": -85.571123899999975,
+    "y": 44.87296262000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311514
+   },
+   "geometry": {
+    "x": -85.570236589999979,
+    "y": 44.873345340000014
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311515
+   },
+   "geometry": {
+    "x": -85.570444049999992,
+    "y": 44.871926869999982
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311516
+   },
+   "geometry": {
+    "x": -85.570644539999989,
+    "y": 44.872001049999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Michigan Dune Alliance",
+    "ADD_DATE": "4/3/2012 12:00:00 AM",
+    "OBJECTID": 311517
+   },
+   "geometry": {
+    "x": -85.600070889999984,
+    "y": 44.990908820000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311518
+   },
+   "geometry": {
+    "x": -85.530792609999992,
+    "y": 44.747364160000018
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311519
+   },
+   "geometry": {
+    "x": -85.530182079999975,
+    "y": 44.747359300000028
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311520
+   },
+   "geometry": {
+    "x": -85.530258600000025,
+    "y": 44.747814349999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311521
+   },
+   "geometry": {
+    "x": -85.528177040000003,
+    "y": 44.747918790000028
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311522
+   },
+   "geometry": {
+    "x": -85.527643280000007,
+    "y": 44.748016189999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311523
+   },
+   "geometry": {
+    "x": -85.504219970000008,
+    "y": 44.769418120000012
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311524
+   },
+   "geometry": {
+    "x": -85.504344779999997,
+    "y": 44.769399589999978
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311525
+   },
+   "geometry": {
+    "x": -85.504273529999978,
+    "y": 44.76935727
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311526
+   },
+   "geometry": {
+    "x": -85.504826739999999,
+    "y": 44.76920118999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311527
+   },
+   "geometry": {
+    "x": -85.534718189999978,
+    "y": 44.871529310000028
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311528
+   },
+   "geometry": {
+    "x": -85.533634829999983,
+    "y": 44.872473790000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311529
+   },
+   "geometry": {
+    "x": -85.533589240000026,
+    "y": 44.872461880000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311530
+   },
+   "geometry": {
+    "x": -85.533447579999972,
+    "y": 44.872615440000004
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311531
+   },
+   "geometry": {
+    "x": -85.531821579999985,
+    "y": 44.876268359999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311532
+   },
+   "geometry": {
+    "x": -85.531705569999986,
+    "y": 44.876516209999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311533
+   },
+   "geometry": {
+    "x": -85.531656290000001,
+    "y": 44.876789289999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311534
+   },
+   "geometry": {
+    "x": -85.530960170000014,
+    "y": 44.882557720000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311535
+   },
+   "geometry": {
+    "x": -85.529528620000008,
+    "y": 44.88432001000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311536
+   },
+   "geometry": {
+    "x": -85.530279640000003,
+    "y": 44.886046099999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Leslie Newman",
+    "ADD_DATE": "1/1/0001 12:00:00 AM",
+    "OBJECTID": 311537
+   },
+   "geometry": {
+    "x": -86.231775280000022,
+    "y": 43.070110450000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311538
+   },
+   "geometry": {
+    "x": -85.485065809999981,
+    "y": 44.81024309999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311539
+   },
+   "geometry": {
+    "x": -85.486008019999986,
+    "y": 44.809618820000026
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311540
+   },
+   "geometry": {
+    "x": -85.486054790000026,
+    "y": 44.80956894000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311541
+   },
+   "geometry": {
+    "x": -85.486068960000011,
+    "y": 44.809575400000028
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311542
+   },
+   "geometry": {
+    "x": -85.487000609999996,
+    "y": 44.809134429999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311543
+   },
+   "geometry": {
+    "x": -85.487512910000021,
+    "y": 44.808972400000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311544
+   },
+   "geometry": {
+    "x": -85.487828400000012,
+    "y": 44.808879779999984
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311545
+   },
+   "geometry": {
+    "x": -85.488449749999972,
+    "y": 44.808780290000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311546
+   },
+   "geometry": {
+    "x": -85.488772289999986,
+    "y": 44.808598150000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311547
+   },
+   "geometry": {
+    "x": -85.488808249999977,
+    "y": 44.80860518999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311548
+   },
+   "geometry": {
+    "x": -85.489683150000019,
+    "y": 44.808182489999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311549
+   },
+   "geometry": {
+    "x": -85.490260330000012,
+    "y": 44.807817960000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311550
+   },
+   "geometry": {
+    "x": -85.491329269999994,
+    "y": 44.807044150000024
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311551
+   },
+   "geometry": {
+    "x": -85.493672100000026,
+    "y": 44.806136639999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311552
+   },
+   "geometry": {
+    "x": -85.493728260000012,
+    "y": 44.80617503000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311553
+   },
+   "geometry": {
+    "x": -85.494755540000028,
+    "y": 44.805842770000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311554
+   },
+   "geometry": {
+    "x": -85.494766019999986,
+    "y": 44.805830280000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311555
+   },
+   "geometry": {
+    "x": -85.495584679999979,
+    "y": 44.805639419999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311556
+   },
+   "geometry": {
+    "x": -85.49682537000001,
+    "y": 44.805228370000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311557
+   },
+   "geometry": {
+    "x": -85.477799119999986,
+    "y": 44.813819490000014
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311558
+   },
+   "geometry": {
+    "x": -85.476355510000019,
+    "y": 44.814531950000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311559
+   },
+   "geometry": {
+    "x": -85.475619740000013,
+    "y": 44.814682240000025
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311560
+   },
+   "geometry": {
+    "x": -85.475486550000028,
+    "y": 44.814944679999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311561
+   },
+   "geometry": {
+    "x": -85.475368370000012,
+    "y": 44.814978370000006
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311562
+   },
+   "geometry": {
+    "x": -85.474681639999972,
+    "y": 44.815184820000013
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311563
+   },
+   "geometry": {
+    "x": -85.53037654000002,
+    "y": 44.886731320000024
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311564
+   },
+   "geometry": {
+    "x": -85.499527450000016,
+    "y": 44.863589810000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311565
+   },
+   "geometry": {
+    "x": -85.499152019999997,
+    "y": 44.863592069999982
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311566
+   },
+   "geometry": {
+    "x": -85.498545669999999,
+    "y": 44.864675180000006
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311567
+   },
+   "geometry": {
+    "x": -85.497370190000026,
+    "y": 44.869122279999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311568
+   },
+   "geometry": {
+    "x": -85.533978740000009,
+    "y": 44.836237310000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311569
+   },
+   "geometry": {
+    "x": -85.556292120000023,
+    "y": 44.817900810000026
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311570
+   },
+   "geometry": {
+    "x": -85.556817079999973,
+    "y": 44.817224720000013
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311571
+   },
+   "geometry": {
+    "x": -85.557868340000027,
+    "y": 44.81478709999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311572
+   },
+   "geometry": {
+    "x": -85.559916789999988,
+    "y": 44.809388819999981
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311573
+   },
+   "geometry": {
+    "x": -85.559723169999984,
+    "y": 44.798877409999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311574
+   },
+   "geometry": {
+    "x": -85.559285639999985,
+    "y": 44.786395330000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311575
+   },
+   "geometry": {
+    "x": -85.56144482000002,
+    "y": 44.784917769999993
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311576
+   },
+   "geometry": {
+    "x": -85.562091899999984,
+    "y": 44.783965249999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311577
+   },
+   "geometry": {
+    "x": -85.561873209999987,
+    "y": 44.783975220000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311578
+   },
+   "geometry": {
+    "x": -85.561887800000022,
+    "y": 44.783753939999997
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Ian Shackleford",
+    "ADD_DATE": "1/18/2011 12:00:00 AM",
+    "OBJECTID": 311579
+   },
+   "geometry": {
+    "x": -88.507372610000004,
+    "y": 46.11214622
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311580
+   },
+   "geometry": {
+    "x": -85.531420000000026,
+    "y": 44.888340000000028
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311581
+   },
+   "geometry": {
+    "x": -85.531740000000013,
+    "y": 44.88882000000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311582
+   },
+   "geometry": {
+    "x": -85.530599999999993,
+    "y": 44.889900000000011
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311583
+   },
+   "geometry": {
+    "x": -85.527859999999976,
+    "y": 44.892589999999984
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311584
+   },
+   "geometry": {
+    "x": -85.464980000000025,
+    "y": 44.960919999999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311585
+   },
+   "geometry": {
+    "x": -85.465070000000026,
+    "y": 44.963019999999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311586
+   },
+   "geometry": {
+    "x": -85.46508,
+    "y": 44.964110000000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311587
+   },
+   "geometry": {
+    "x": -85.465829999999983,
+    "y": 44.965449999999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311588
+   },
+   "geometry": {
+    "x": -85.506211169999972,
+    "y": 44.775018489999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311589
+   },
+   "geometry": {
+    "x": -85.485665120000021,
+    "y": 44.810098089999997
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311590
+   },
+   "geometry": {
+    "x": -85.476995460000012,
+    "y": 44.992095699999993
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311591
+   },
+   "geometry": {
+    "x": -85.556015769999988,
+    "y": 44.888351709999995
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311592
+   },
+   "geometry": {
+    "x": -85.517277799999988,
+    "y": 44.757966090000025
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311593
+   },
+   "geometry": {
+    "x": -85.478356430000019,
+    "y": 44.993122060000019
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311594
+   },
+   "geometry": {
+    "x": -85.522201750000022,
+    "y": 44.966896510000026
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311595
+   },
+   "geometry": {
+    "x": -85.509745740000028,
+    "y": 44.764053369999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311596
+   },
+   "geometry": {
+    "x": -85.510523239999998,
+    "y": 44.762680999999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311597
+   },
+   "geometry": {
+    "x": -85.515230770000016,
+    "y": 44.759636940000007
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311598
+   },
+   "geometry": {
+    "x": -85.522786810000014,
+    "y": 44.751959279999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311599
+   },
+   "geometry": {
+    "x": -85.52299936999998,
+    "y": 44.751612439999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311600
+   },
+   "geometry": {
+    "x": -85.523308999999983,
+    "y": 44.751122269999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311601
+   },
+   "geometry": {
+    "x": -85.525821220000012,
+    "y": 44.748023390000014
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311602
+   },
+   "geometry": {
+    "x": -85.638625709999985,
+    "y": 44.772560409999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311603
+   },
+   "geometry": {
+    "x": -85.640614819999996,
+    "y": 44.777353010000013
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311604
+   },
+   "geometry": {
+    "x": -85.483024650000004,
+    "y": 44.991291709999985
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311605
+   },
+   "geometry": {
+    "x": -85.482942089999995,
+    "y": 44.991306710000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311606
+   },
+   "geometry": {
+    "x": -85.482897920000028,
+    "y": 44.991339229999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311607
+   },
+   "geometry": {
+    "x": -85.482797749999975,
+    "y": 44.991327239999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311608
+   },
+   "geometry": {
+    "x": -85.482420149999996,
+    "y": 44.991408630000024
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311609
+   },
+   "geometry": {
+    "x": -85.482080929999995,
+    "y": 44.991466720000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311610
+   },
+   "geometry": {
+    "x": -85.481967940000004,
+    "y": 44.991580380000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311611
+   },
+   "geometry": {
+    "x": -85.481195800000023,
+    "y": 44.991841220000026
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311612
+   },
+   "geometry": {
+    "x": -85.481242829999985,
+    "y": 44.991668140000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311613
+   },
+   "geometry": {
+    "x": -85.480994549999991,
+    "y": 44.991817330000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311614
+   },
+   "geometry": {
+    "x": -85.479787639999984,
+    "y": 44.991873999999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311615
+   },
+   "geometry": {
+    "x": -85.53107,
+    "y": 44.888239999999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311616
+   },
+   "geometry": {
+    "x": -85.528079999999989,
+    "y": 44.89251999999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311617
+   },
+   "geometry": {
+    "x": -85.490670000000023,
+    "y": 44.896059999999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311618
+   },
+   "geometry": {
+    "x": -85.491359999999986,
+    "y": 44.925229999999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311619
+   },
+   "geometry": {
+    "x": -85.485369999999989,
+    "y": 44.950339999999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311620
+   },
+   "geometry": {
+    "x": -85.506097679999982,
+    "y": 44.775150419999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311621
+   },
+   "geometry": {
+    "x": -85.48308492000001,
+    "y": 44.811451099999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311622
+   },
+   "geometry": {
+    "x": -85.486971939999989,
+    "y": 44.809143059999997
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311623
+   },
+   "geometry": {
+    "x": -85.491546110000002,
+    "y": 44.806859069999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311624
+   },
+   "geometry": {
+    "x": -85.494823769999982,
+    "y": 44.80585056000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311625
+   },
+   "geometry": {
+    "x": -85.474948439999991,
+    "y": 44.815262099999984
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311626
+   },
+   "geometry": {
+    "x": -85.473677819999978,
+    "y": 44.815832909999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311627
+   },
+   "geometry": {
+    "x": -85.576268210000023,
+    "y": 44.762099120000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311628
+   },
+   "geometry": {
+    "x": -85.47744775000001,
+    "y": 44.991770480000014
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311629
+   },
+   "geometry": {
+    "x": -85.46789849999999,
+    "y": 44.969815589999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311630
+   },
+   "geometry": {
+    "x": -85.564067009999974,
+    "y": 44.832585059999985
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Holly Wendrick",
+    "ADD_DATE": "4/21/2011 12:00:00 AM",
+    "OBJECTID": 311631
+   },
+   "geometry": {
+    "x": -87.045670149999978,
+    "y": 45.826851750000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311632
+   },
+   "geometry": {
+    "x": -85.67810959000002,
+    "y": 45.11298604000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311633
+   },
+   "geometry": {
+    "x": -85.677705500000002,
+    "y": 45.112899540000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311634
+   },
+   "geometry": {
+    "x": -85.676385600000003,
+    "y": 45.111119480000013
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311635
+   },
+   "geometry": {
+    "x": -85.676717269999983,
+    "y": 45.11052847000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311636
+   },
+   "geometry": {
+    "x": -85.676669749999974,
+    "y": 45.11029603999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311637
+   },
+   "geometry": {
+    "x": -85.614516849999973,
+    "y": 45.185575079999978
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311638
+   },
+   "geometry": {
+    "x": -85.615164100000015,
+    "y": 45.185692850000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311639
+   },
+   "geometry": {
+    "x": -85.615585539999984,
+    "y": 45.185772390000011
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311640
+   },
+   "geometry": {
+    "x": -85.615960959999995,
+    "y": 45.185834250000028
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311641
+   },
+   "geometry": {
+    "x": -85.616709130000004,
+    "y": 45.18654939999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311642
+   },
+   "geometry": {
+    "x": -85.617859129999999,
+    "y": 45.187376099999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311643
+   },
+   "geometry": {
+    "x": -85.614237899999978,
+    "y": 45.185201419999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311644
+   },
+   "geometry": {
+    "x": -85.479628049999974,
+    "y": 44.991779450000024
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311645
+   },
+   "geometry": {
+    "x": -85.479289839999979,
+    "y": 44.992080359999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311646
+   },
+   "geometry": {
+    "x": -85.479092530000003,
+    "y": 44.992138450000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311647
+   },
+   "geometry": {
+    "x": -85.479047770000022,
+    "y": 44.992486040000017
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Ian Shackleford",
+    "ADD_DATE": "1/18/2011 12:00:00 AM",
+    "OBJECTID": 311648
+   },
+   "geometry": {
+    "x": -89.502598209999974,
+    "y": 46.58578528999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311649
+   },
+   "geometry": {
+    "x": -85.485490000000027,
+    "y": 44.949329999999975
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311650
+   },
+   "geometry": {
+    "x": -85.47633866000001,
+    "y": 44.814521809999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311651
+   },
+   "geometry": {
+    "x": -85.468367720000003,
+    "y": 44.971260799999982
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311652
+   },
+   "geometry": {
+    "x": -85.581461639999986,
+    "y": 44.807551590000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311653
+   },
+   "geometry": {
+    "x": -85.47776325000001,
+    "y": 44.813858379999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311654
+   },
+   "geometry": {
+    "x": -85.569569979999983,
+    "y": 44.773902190000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311655
+   },
+   "geometry": {
+    "x": -85.477144409999994,
+    "y": 44.992070720000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311656
+   },
+   "geometry": {
+    "x": -85.468178120000005,
+    "y": 44.969307990000004
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311657
+   },
+   "geometry": {
+    "x": -85.551132310000014,
+    "y": 44.907743579999988
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311658
+   },
+   "geometry": {
+    "x": -85.576956199999984,
+    "y": 44.870867060000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311659
+   },
+   "geometry": {
+    "x": -85.576914869999996,
+    "y": 44.871171150000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311660
+   },
+   "geometry": {
+    "x": -85.913268410000001,
+    "y": 45.922232389999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311661
+   },
+   "geometry": {
+    "x": -85.925603560000013,
+    "y": 45.932229150000012
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311662
+   },
+   "geometry": {
+    "x": -85.925691480000012,
+    "y": 45.932329729999992
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311663
+   },
+   "geometry": {
+    "x": -85.925997759999973,
+    "y": 45.934437199999991
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311664
+   },
+   "geometry": {
+    "x": -85.925912429999983,
+    "y": 45.934842380000021
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311665
+   },
+   "geometry": {
+    "x": -85.925500790000001,
+    "y": 45.936275179999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "1/1/0001 12:00:00 AM",
+    "OBJECTID": 311666
+   },
+   "geometry": {
+    "x": -85.913653309999972,
+    "y": 45.922192160000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311667
+   },
+   "geometry": {
+    "x": -85.914918469999975,
+    "y": 45.922621900000024
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311668
+   },
+   "geometry": {
+    "x": -85.915170009999997,
+    "y": 45.922834379999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311669
+   },
+   "geometry": {
+    "x": -85.921231550000016,
+    "y": 45.930093279999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311670
+   },
+   "geometry": {
+    "x": -85.922925290000023,
+    "y": 45.930375830000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311671
+   },
+   "geometry": {
+    "x": -85.924371500000007,
+    "y": 45.930957200000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311672
+   },
+   "geometry": {
+    "x": -85.926072019999992,
+    "y": 45.938012080000021
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311673
+   },
+   "geometry": {
+    "x": -85.924995200000012,
+    "y": 45.940796709999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311674
+   },
+   "geometry": {
+    "x": -85.923116390000018,
+    "y": 45.943440029999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311675
+   },
+   "geometry": {
+    "x": -85.92379901999999,
+    "y": 45.929959329999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311676
+   },
+   "geometry": {
+    "x": -86.132878129999995,
+    "y": 45.96249143
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311677
+   },
+   "geometry": {
+    "x": -86.075771219999979,
+    "y": 45.965535310000007
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311678
+   },
+   "geometry": {
+    "x": -85.528097000000002,
+    "y": 44.748028999999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311679
+   },
+   "geometry": {
+    "x": -85.513919999999985,
+    "y": 44.760800000000017
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311680
+   },
+   "geometry": {
+    "x": -85.493400000000008,
+    "y": 44.888370000000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311681
+   },
+   "geometry": {
+    "x": -85.487520000000018,
+    "y": 44.940690000000018
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311682
+   },
+   "geometry": {
+    "x": -85.485799999999983,
+    "y": 44.946700000000021
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311683
+   },
+   "geometry": {
+    "x": -85.485439999999983,
+    "y": 44.951829999999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311684
+   },
+   "geometry": {
+    "x": -85.505232589999991,
+    "y": 44.777301299999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311685
+   },
+   "geometry": {
+    "x": -85.507417750000002,
+    "y": 44.794902369999988
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311686
+   },
+   "geometry": {
+    "x": -85.482965470000011,
+    "y": 44.811565599999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311687
+   },
+   "geometry": {
+    "x": -85.475362749999988,
+    "y": 44.81496396
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311688
+   },
+   "geometry": {
+    "x": -85.470386420000011,
+    "y": 44.817523199999982
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311689
+   },
+   "geometry": {
+    "x": -85.575492129999986,
+    "y": 44.762495339999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311690
+   },
+   "geometry": {
+    "x": -85.477859809999984,
+    "y": 44.99285887000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311691
+   },
+   "geometry": {
+    "x": -85.472575269999993,
+    "y": 44.988332389999982
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311692
+   },
+   "geometry": {
+    "x": -85.46834776999998,
+    "y": 44.970938180000019
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311693
+   },
+   "geometry": {
+    "x": -85.564091570000016,
+    "y": 44.832658149999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311694
+   },
+   "geometry": {
+    "x": -85.532021320000013,
+    "y": 44.874977460000025
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311695
+   },
+   "geometry": {
+    "x": -85.529619729999979,
+    "y": 44.885371099999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311696
+   },
+   "geometry": {
+    "x": -85.497273969999981,
+    "y": 44.868871239999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311697
+   },
+   "geometry": {
+    "x": -85.79648745999998,
+    "y": 44.960980150000012
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311698
+   },
+   "geometry": {
+    "x": -85.796719310000015,
+    "y": 44.960585190000018
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311699
+   },
+   "geometry": {
+    "x": -85.797691939999993,
+    "y": 44.959447350000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311700
+   },
+   "geometry": {
+    "x": -85.796823490000008,
+    "y": 44.960387040000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311701
+   },
+   "geometry": {
+    "x": -85.797083919999977,
+    "y": 44.960082279999995
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311702
+   },
+   "geometry": {
+    "x": -85.778661750000026,
+    "y": 44.981522180000013
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311703
+   },
+   "geometry": {
+    "x": -85.599921859999995,
+    "y": 45.174242499999991
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311704
+   },
+   "geometry": {
+    "x": -85.601308560000007,
+    "y": 45.174094640000021
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311705
+   },
+   "geometry": {
+    "x": -85.998966329999973,
+    "y": 45.950748299999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311706
+   },
+   "geometry": {
+    "x": -86.001075889999981,
+    "y": 45.951373590000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311707
+   },
+   "geometry": {
+    "x": -85.756929239999977,
+    "y": 45.968155920000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311708
+   },
+   "geometry": {
+    "x": -85.758043020000002,
+    "y": 45.968400840000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311709
+   },
+   "geometry": {
+    "x": -85.758647020000012,
+    "y": 45.968580210000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311710
+   },
+   "geometry": {
+    "x": -85.760648539999977,
+    "y": 45.968782379999993
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311711
+   },
+   "geometry": {
+    "x": -85.760741750000022,
+    "y": 45.968778859999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311712
+   },
+   "geometry": {
+    "x": -85.562748790000001,
+    "y": 44.782754309999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311713
+   },
+   "geometry": {
+    "x": -85.496695869999996,
+    "y": 44.983396959999993
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311714
+   },
+   "geometry": {
+    "x": -85.561807160000001,
+    "y": 44.897980080000025
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311715
+   },
+   "geometry": {
+    "x": -85.547050070000012,
+    "y": 44.900635389999991
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311716
+   },
+   "geometry": {
+    "x": -85.574842450000006,
+    "y": 45.187841380000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311717
+   },
+   "geometry": {
+    "x": -85.575680299999988,
+    "y": 45.187734680000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311718
+   },
+   "geometry": {
+    "x": -85.576455880000026,
+    "y": 45.18675442
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311719
+   },
+   "geometry": {
+    "x": -85.576585969999996,
+    "y": 45.186546630000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311720
+   },
+   "geometry": {
+    "x": -85.577073380000002,
+    "y": 45.186085380000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311721
+   },
+   "geometry": {
+    "x": -85.576602400000013,
+    "y": 45.186984170000017
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311722
+   },
+   "geometry": {
+    "x": -85.576353289999986,
+    "y": 45.187336119999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311723
+   },
+   "geometry": {
+    "x": -85.574711779999973,
+    "y": 45.188056800000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311724
+   },
+   "geometry": {
+    "x": -85.630274240000006,
+    "y": 45.174718089999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311725
+   },
+   "geometry": {
+    "x": -85.629736620000017,
+    "y": 45.175056550000022
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311726
+   },
+   "geometry": {
+    "x": -85.6296155,
+    "y": 45.175149669999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311727
+   },
+   "geometry": {
+    "x": -85.67580700000002,
+    "y": 45.115091660000019
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311728
+   },
+   "geometry": {
+    "x": -85.675745479999989,
+    "y": 45.11569264000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311729
+   },
+   "geometry": {
+    "x": -85.675679510000009,
+    "y": 45.116196559999992
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311730
+   },
+   "geometry": {
+    "x": -85.675538360000019,
+    "y": 45.1163813
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311731
+   },
+   "geometry": {
+    "x": -85.561831470000016,
+    "y": 45.200966349999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311732
+   },
+   "geometry": {
+    "x": -85.562019389999989,
+    "y": 45.201189559999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311733
+   },
+   "geometry": {
+    "x": -85.614516849999973,
+    "y": 45.185575079999978
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311734
+   },
+   "geometry": {
+    "x": -85.615164100000015,
+    "y": 45.185692850000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311735
+   },
+   "geometry": {
+    "x": -85.617132589999983,
+    "y": 45.186920129999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311736
+   },
+   "geometry": {
+    "x": -85.617528049999976,
+    "y": 45.187233699999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311737
+   },
+   "geometry": {
+    "x": -85.614416930000004,
+    "y": 45.185381710000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311738
+   },
+   "geometry": {
+    "x": -85.614237899999978,
+    "y": 45.185201419999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311739
+   },
+   "geometry": {
+    "x": -85.563375000000008,
+    "y": 44.833932119999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311740
+   },
+   "geometry": {
+    "x": -85.454631790000008,
+    "y": 44.843211970000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311741
+   },
+   "geometry": {
+    "x": -85.454285120000009,
+    "y": 44.843748329999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311742
+   },
+   "geometry": {
+    "x": -85.472541320000005,
+    "y": 44.988068859999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311743
+   },
+   "geometry": {
+    "x": -85.479426799999999,
+    "y": 44.812658429999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311744
+   },
+   "geometry": {
+    "x": -85.471403559999999,
+    "y": 44.816696239999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311745
+   },
+   "geometry": {
+    "x": -85.478322989999981,
+    "y": 44.991787499999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311746
+   },
+   "geometry": {
+    "x": -85.568977969999992,
+    "y": 44.825105300000018
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311747
+   },
+   "geometry": {
+    "x": -85.470452130000012,
+    "y": 44.817334270000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311748
+   },
+   "geometry": {
+    "x": -85.559686790000001,
+    "y": 44.841152039999997
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311749
+   },
+   "geometry": {
+    "x": -85.477110299999993,
+    "y": 44.991936940000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311750
+   },
+   "geometry": {
+    "x": -85.563905659999989,
+    "y": 44.83355886999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311751
+   },
+   "geometry": {
+    "x": -85.550078450000001,
+    "y": 44.861625259999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311752
+   },
+   "geometry": {
+    "x": -85.472484829999985,
+    "y": 44.816180760000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311753
+   },
+   "geometry": {
+    "x": -85.470144010000013,
+    "y": 44.981431489999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311754
+   },
+   "geometry": {
+    "x": -85.559709929999997,
+    "y": 44.841060679999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311755
+   },
+   "geometry": {
+    "x": -85.530381060000025,
+    "y": 44.88609421000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311756
+   },
+   "geometry": {
+    "x": -85.559621579999998,
+    "y": 44.786078410000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311757
+   },
+   "geometry": {
+    "x": -85.541144099999997,
+    "y": 44.916351120000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311758
+   },
+   "geometry": {
+    "x": -85.478205899999978,
+    "y": 44.992194600000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311759
+   },
+   "geometry": {
+    "x": -85.546398380000028,
+    "y": 44.912548839999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311760
+   },
+   "geometry": {
+    "x": -85.516337940000028,
+    "y": 44.975186549999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "3/22/2012 12:00:00 AM",
+    "OBJECTID": 311761
+   },
+   "geometry": {
+    "x": -85.503157999999985,
+    "y": 44.64488399999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311762
+   },
+   "geometry": {
+    "x": -85.613144560000023,
+    "y": 45.183421689999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311763
+   },
+   "geometry": {
+    "x": -85.612129760000016,
+    "y": 45.182043369999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311764
+   },
+   "geometry": {
+    "x": -85.574797349999983,
+    "y": 44.821130190000019
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311765
+   },
+   "geometry": {
+    "x": -85.542955679999977,
+    "y": 44.865826599999991
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311766
+   },
+   "geometry": {
+    "x": -85.762999330000014,
+    "y": 45.968627570000024
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311767
+   },
+   "geometry": {
+    "x": -85.763649429999987,
+    "y": 45.968470149999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311768
+   },
+   "geometry": {
+    "x": -85.765649429999996,
+    "y": 45.968208220000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311769
+   },
+   "geometry": {
+    "x": -85.76774365,
+    "y": 45.969021940000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311770
+   },
+   "geometry": {
+    "x": -85.768238940000003,
+    "y": 45.969293839999978
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311771
+   },
+   "geometry": {
+    "x": -85.768923570000027,
+    "y": 45.97000128000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311772
+   },
+   "geometry": {
+    "x": -85.772930210000027,
+    "y": 45.971882429999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311773
+   },
+   "geometry": {
+    "x": -85.774215819999995,
+    "y": 45.972270589999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311774
+   },
+   "geometry": {
+    "x": -85.774556630000006,
+    "y": 45.972264390000021
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311775
+   },
+   "geometry": {
+    "x": -85.77533145000001,
+    "y": 45.972683650000022
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311776
+   },
+   "geometry": {
+    "x": -85.776239050000015,
+    "y": 45.972969219999982
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311777
+   },
+   "geometry": {
+    "x": -85.777129960000025,
+    "y": 45.97330316
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311778
+   },
+   "geometry": {
+    "x": -85.77884272,
+    "y": 45.973985529999993
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311779
+   },
+   "geometry": {
+    "x": -85.780741550000016,
+    "y": 45.974731940000026
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311780
+   },
+   "geometry": {
+    "x": -85.781731789999981,
+    "y": 45.975072829999988
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311781
+   },
+   "geometry": {
+    "x": -85.791567199999974,
+    "y": 45.977657140000019
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311782
+   },
+   "geometry": {
+    "x": -85.792643349999992,
+    "y": 45.977752269999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311783
+   },
+   "geometry": {
+    "x": -85.796869679999986,
+    "y": 45.978209090000007
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311784
+   },
+   "geometry": {
+    "x": -85.797696379999991,
+    "y": 45.978291479999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311785
+   },
+   "geometry": {
+    "x": -85.803136160000008,
+    "y": 45.979098159999978
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311786
+   },
+   "geometry": {
+    "x": -85.805430870000009,
+    "y": 45.979405020000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311787
+   },
+   "geometry": {
+    "x": -85.80785775999999,
+    "y": 45.979556390000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311788
+   },
+   "geometry": {
+    "x": -85.812809039999991,
+    "y": 45.979737109999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311789
+   },
+   "geometry": {
+    "x": -85.813916039999981,
+    "y": 45.979702990000021
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311790
+   },
+   "geometry": {
+    "x": -85.815394190000006,
+    "y": 45.979591679999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "3/22/2012 12:00:00 AM",
+    "OBJECTID": 311791
+   },
+   "geometry": {
+    "x": -85.493415000000027,
+    "y": 44.649445000000014
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "3/22/2012 12:00:00 AM",
+    "OBJECTID": 311792
+   },
+   "geometry": {
+    "x": -85.493850629999997,
+    "y": 44.645707990000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311793
+   },
+   "geometry": {
+    "x": -85.524608699999987,
+    "y": 44.895052200000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311794
+   },
+   "geometry": {
+    "x": -85.489905609999994,
+    "y": 44.898288449999995
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311795
+   },
+   "geometry": {
+    "x": -85.534022499999992,
+    "y": 44.747335159999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311796
+   },
+   "geometry": {
+    "x": -85.532289540000022,
+    "y": 44.747372289999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311797
+   },
+   "geometry": {
+    "x": -85.53019415,
+    "y": 44.747475469999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311798
+   },
+   "geometry": {
+    "x": -85.480643600000008,
+    "y": 44.991678700000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311799
+   },
+   "geometry": {
+    "x": -85.478838730000007,
+    "y": 44.992255039999975
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311800
+   },
+   "geometry": {
+    "x": -85.571151139999984,
+    "y": 44.871319430000028
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311801
+   },
+   "geometry": {
+    "x": -85.571136060000015,
+    "y": 44.868173449999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311802
+   },
+   "geometry": {
+    "x": -85.527793569999972,
+    "y": 44.948117949999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311803
+   },
+   "geometry": {
+    "x": -85.532143689999998,
+    "y": 44.929686479999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311804
+   },
+   "geometry": {
+    "x": -85.527930000000026,
+    "y": 44.748159999999984
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311805
+   },
+   "geometry": {
+    "x": -85.493209999999976,
+    "y": 44.884070000000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311806
+   },
+   "geometry": {
+    "x": -85.490859999999998,
+    "y": 44.912530000000004
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311807
+   },
+   "geometry": {
+    "x": -85.505172819999984,
+    "y": 44.777207250000004
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311808
+   },
+   "geometry": {
+    "x": -85.488301980000017,
+    "y": 44.808826140000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311809
+   },
+   "geometry": {
+    "x": -85.47802342,
+    "y": 44.992021599999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311810
+   },
+   "geometry": {
+    "x": -85.477942700000028,
+    "y": 44.992183880000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311811
+   },
+   "geometry": {
+    "x": -85.474068079999995,
+    "y": 44.989794780000011
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311812
+   },
+   "geometry": {
+    "x": -85.473933639999984,
+    "y": 44.989578859999995
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311813
+   },
+   "geometry": {
+    "x": -85.468222550000007,
+    "y": 44.971576130000017
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311814
+   },
+   "geometry": {
+    "x": -85.558497320000015,
+    "y": 44.812503619999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311815
+   },
+   "geometry": {
+    "x": -85.541051229999994,
+    "y": 44.901105359999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311816
+   },
+   "geometry": {
+    "x": -85.555803630000014,
+    "y": 44.849919839999984
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311817
+   },
+   "geometry": {
+    "x": -85.530571580000014,
+    "y": 44.747332889999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311818
+   },
+   "geometry": {
+    "x": -85.600625349999973,
+    "y": 45.171163990000025
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311819
+   },
+   "geometry": {
+    "x": -85.59992010000002,
+    "y": 45.17039152000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Daria Hyde",
+    "ADD_DATE": "3/23/2012 12:00:00 AM",
+    "OBJECTID": 311820
+   },
+   "geometry": {
+    "x": -85.817006950000007,
+    "y": 45.979262189999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311821
+   },
+   "geometry": {
+    "x": -85.556025239999997,
+    "y": 45.205946209999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311822
+   },
+   "geometry": {
+    "x": -85.555740089999972,
+    "y": 45.206129770000018
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311823
+   },
+   "geometry": {
+    "x": -85.55563976000002,
+    "y": 45.206218200000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "3/22/2012 12:00:00 AM",
+    "OBJECTID": 311824
+   },
+   "geometry": {
+    "x": -85.625509000000022,
+    "y": 44.694569000000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311825
+   },
+   "geometry": {
+    "x": -85.492981180000015,
+    "y": 44.989813719999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311826
+   },
+   "geometry": {
+    "x": -85.555665659999988,
+    "y": 45.206314179999993
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311827
+   },
+   "geometry": {
+    "x": -85.555765489999999,
+    "y": 45.206442750000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311828
+   },
+   "geometry": {
+    "x": -85.556054829999994,
+    "y": 45.206766800000025
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311829
+   },
+   "geometry": {
+    "x": -85.553172549999999,
+    "y": 45.207433750000007
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311830
+   },
+   "geometry": {
+    "x": -85.552730399999973,
+    "y": 45.207472390000021
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311831
+   },
+   "geometry": {
+    "x": -85.551392399999997,
+    "y": 45.208826820000013
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311832
+   },
+   "geometry": {
+    "x": -85.551630190000026,
+    "y": 45.208853309999995
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311833
+   },
+   "geometry": {
+    "x": -85.55682932000002,
+    "y": 45.205705729999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311834
+   },
+   "geometry": {
+    "x": -85.557508589999998,
+    "y": 45.205830880000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311835
+   },
+   "geometry": {
+    "x": -85.557469029999993,
+    "y": 45.205466510000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311836
+   },
+   "geometry": {
+    "x": -85.557939079999983,
+    "y": 45.204612820000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311837
+   },
+   "geometry": {
+    "x": -85.557852249999996,
+    "y": 45.204608210000004
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311838
+   },
+   "geometry": {
+    "x": -85.557558630000017,
+    "y": 45.204331599999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311839
+   },
+   "geometry": {
+    "x": -85.557306919999974,
+    "y": 45.203659459999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311840
+   },
+   "geometry": {
+    "x": -85.558411239999998,
+    "y": 45.202152560000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311841
+   },
+   "geometry": {
+    "x": -85.558787750000022,
+    "y": 45.201652579999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311842
+   },
+   "geometry": {
+    "x": -85.542889290000005,
+    "y": 44.90099170000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311843
+   },
+   "geometry": {
+    "x": -85.499814019999974,
+    "y": 44.873298900000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311844
+   },
+   "geometry": {
+    "x": -85.539259510000022,
+    "y": 44.917673369999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311845
+   },
+   "geometry": {
+    "x": -85.541198749999978,
+    "y": 44.916205950000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311846
+   },
+   "geometry": {
+    "x": -85.548919399999988,
+    "y": 44.910610019999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311847
+   },
+   "geometry": {
+    "x": -85.508161560000019,
+    "y": 44.849360769999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311848
+   },
+   "geometry": {
+    "x": -85.499701790000017,
+    "y": 44.873425300000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311849
+   },
+   "geometry": {
+    "x": -85.59014947999998,
+    "y": 44.784896220000007
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311850
+   },
+   "geometry": {
+    "x": -85.573876349999978,
+    "y": 44.821493540000006
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311851
+   },
+   "geometry": {
+    "x": -85.533794170000021,
+    "y": 44.872348390000013
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311852
+   },
+   "geometry": {
+    "x": -85.557111459999987,
+    "y": 44.847860239999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311853
+   },
+   "geometry": {
+    "x": -85.529723839999974,
+    "y": 44.884169470000018
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311854
+   },
+   "geometry": {
+    "x": -85.492443809999997,
+    "y": 44.989874159999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311855
+   },
+   "geometry": {
+    "x": -85.538752820000013,
+    "y": 44.868294569999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311856
+   },
+   "geometry": {
+    "x": -85.534218629999998,
+    "y": 44.87201177999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311857
+   },
+   "geometry": {
+    "x": -85.53892540999999,
+    "y": 44.920810539999991
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311858
+   },
+   "geometry": {
+    "x": -85.552666779999981,
+    "y": 44.905383649999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311859
+   },
+   "geometry": {
+    "x": -85.555046909999987,
+    "y": 44.851249629999984
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311860
+   },
+   "geometry": {
+    "x": -85.567735599999992,
+    "y": 44.775201299999992
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311861
+   },
+   "geometry": {
+    "x": -85.527659379999989,
+    "y": 44.748033200000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311862
+   },
+   "geometry": {
+    "x": -85.481432340000026,
+    "y": 44.991719009999997
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311863
+   },
+   "geometry": {
+    "x": -85.531433330000027,
+    "y": 44.747723489999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311864
+   },
+   "geometry": {
+    "x": -85.640505689999998,
+    "y": 44.777491820000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311865
+   },
+   "geometry": {
+    "x": -85.582684889999996,
+    "y": 44.865575060000026
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311866
+   },
+   "geometry": {
+    "x": -85.57541083000001,
+    "y": 44.871826450000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311867
+   },
+   "geometry": {
+    "x": -85.469629999999995,
+    "y": 44.817870000000028
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311868
+   },
+   "geometry": {
+    "x": -85.530059999999992,
+    "y": 44.8904
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "3/22/2012 12:00:00 AM",
+    "OBJECTID": 311869
+   },
+   "geometry": {
+    "x": -85.624122999999997,
+    "y": 44.692453999999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311870
+   },
+   "geometry": {
+    "x": -85.466090000000008,
+    "y": 44.966029999999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311871
+   },
+   "geometry": {
+    "x": -85.493339999999989,
+    "y": 44.887690000000021
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311872
+   },
+   "geometry": {
+    "x": -85.493359999999996,
+    "y": 44.887740000000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311873
+   },
+   "geometry": {
+    "x": -85.48502000000002,
+    "y": 44.950179999999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311874
+   },
+   "geometry": {
+    "x": -85.506256350000001,
+    "y": 44.775133989999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311875
+   },
+   "geometry": {
+    "x": -85.505164359999981,
+    "y": 44.777155289999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311876
+   },
+   "geometry": {
+    "x": -85.503269129999978,
+    "y": 44.799012860000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311877
+   },
+   "geometry": {
+    "x": -85.507392100000004,
+    "y": 44.794021849999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311878
+   },
+   "geometry": {
+    "x": -85.48254621000001,
+    "y": 44.811743540000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311879
+   },
+   "geometry": {
+    "x": -85.475019350000025,
+    "y": 44.815365199999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311880
+   },
+   "geometry": {
+    "x": -85.465173129999982,
+    "y": 44.822710509999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311881
+   },
+   "geometry": {
+    "x": -85.477787219999982,
+    "y": 44.992819730000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311882
+   },
+   "geometry": {
+    "x": -85.477717649999988,
+    "y": 44.992824419999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311883
+   },
+   "geometry": {
+    "x": -85.47776073,
+    "y": 44.992751999999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311884
+   },
+   "geometry": {
+    "x": -85.477276010000026,
+    "y": 44.991790260000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311885
+   },
+   "geometry": {
+    "x": -85.476529930000027,
+    "y": 44.991666539999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311886
+   },
+   "geometry": {
+    "x": -85.468365119999987,
+    "y": 44.970907000000011
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311887
+   },
+   "geometry": {
+    "x": -85.584129510000025,
+    "y": 44.799312680000014
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311888
+   },
+   "geometry": {
+    "x": -85.563907589999985,
+    "y": 44.832184159999997
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311889
+   },
+   "geometry": {
+    "x": -85.550220190000005,
+    "y": 44.860842549999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311890
+   },
+   "geometry": {
+    "x": -85.677148939999995,
+    "y": 45.108196290000024
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311891
+   },
+   "geometry": {
+    "x": -85.677309369999989,
+    "y": 45.108164190000025
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311892
+   },
+   "geometry": {
+    "x": -85.676499850000027,
+    "y": 45.108346659999995
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311893
+   },
+   "geometry": {
+    "x": -85.673737759999995,
+    "y": 45.118467559999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311894
+   },
+   "geometry": {
+    "x": -85.673793079999996,
+    "y": 45.119333740000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311895
+   },
+   "geometry": {
+    "x": -85.673622089999981,
+    "y": 45.119550000000004
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "3/22/2012 12:00:00 AM",
+    "OBJECTID": 311896
+   },
+   "geometry": {
+    "x": -85.626160000000027,
+    "y": 44.694222000000025
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "3/22/2012 12:00:00 AM",
+    "OBJECTID": 311897
+   },
+   "geometry": {
+    "x": -85.624716999999976,
+    "y": 44.69367299999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311898
+   },
+   "geometry": {
+    "x": -85.531184049999979,
+    "y": 45.196286069999985
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311899
+   },
+   "geometry": {
+    "x": -85.531869519999987,
+    "y": 45.19786621999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311900
+   },
+   "geometry": {
+    "x": -85.530436300000019,
+    "y": 45.195226849999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311901
+   },
+   "geometry": {
+    "x": -85.529871189999994,
+    "y": 45.194218169999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311902
+   },
+   "geometry": {
+    "x": -85.529993320000017,
+    "y": 45.193828909999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311903
+   },
+   "geometry": {
+    "x": -85.528086350000024,
+    "y": 45.18616148000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311904
+   },
+   "geometry": {
+    "x": -85.778375929999982,
+    "y": 44.986010019999981
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311905
+   },
+   "geometry": {
+    "x": -85.480927749999978,
+    "y": 44.991765950000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311906
+   },
+   "geometry": {
+    "x": -85.504751800000008,
+    "y": 44.768744630000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311907
+   },
+   "geometry": {
+    "x": -85.571964610000009,
+    "y": 44.870146299999988
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311908
+   },
+   "geometry": {
+    "x": -85.529185719999987,
+    "y": 44.942458069999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311909
+   },
+   "geometry": {
+    "x": -85.483162110000023,
+    "y": 44.991270579999991
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311910
+   },
+   "geometry": {
+    "x": -85.581301629999984,
+    "y": 44.868814999999984
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311911
+   },
+   "geometry": {
+    "x": -85.577680900000018,
+    "y": 44.870559609999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311912
+   },
+   "geometry": {
+    "x": -85.576420429999985,
+    "y": 44.860061949999988
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "3/22/2012 12:00:00 AM",
+    "OBJECTID": 311913
+   },
+   "geometry": {
+    "x": -85.627138000000002,
+    "y": 44.682056999999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311914
+   },
+   "geometry": {
+    "x": -85.531389999999988,
+    "y": 44.888250000000028
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311915
+   },
+   "geometry": {
+    "x": -85.528984219999984,
+    "y": 44.947068279999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311916
+   },
+   "geometry": {
+    "x": -85.533609599999977,
+    "y": 44.747011869999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311917
+   },
+   "geometry": {
+    "x": -85.483199500000012,
+    "y": 44.991317770000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311918
+   },
+   "geometry": {
+    "x": -85.479085489999989,
+    "y": 44.991922859999988
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311919
+   },
+   "geometry": {
+    "x": -85.571775590000016,
+    "y": 44.872524999999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311920
+   },
+   "geometry": {
+    "x": -85.530546189999995,
+    "y": 44.747209180000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311921
+   },
+   "geometry": {
+    "x": -85.522558319999973,
+    "y": 44.752334710000014
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311922
+   },
+   "geometry": {
+    "x": -85.479001419999975,
+    "y": 44.992221089999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311923
+   },
+   "geometry": {
+    "x": -85.528238900000019,
+    "y": 44.947751320000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311924
+   },
+   "geometry": {
+    "x": -85.531570620000025,
+    "y": 44.747809150000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311925
+   },
+   "geometry": {
+    "x": -85.480639499999995,
+    "y": 44.991667129999996
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311926
+   },
+   "geometry": {
+    "x": -85.57621850999999,
+    "y": 44.871539869999992
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311927
+   },
+   "geometry": {
+    "x": -85.512830000000008,
+    "y": 44.761430000000018
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311928
+   },
+   "geometry": {
+    "x": -85.473770000000002,
+    "y": 44.815069999999992
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311929
+   },
+   "geometry": {
+    "x": -85.490079999999978,
+    "y": 44.807770000000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311930
+   },
+   "geometry": {
+    "x": -85.675730050000027,
+    "y": 45.115330040000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311931
+   },
+   "geometry": {
+    "x": -85.531128060000015,
+    "y": 45.196395119999977
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311932
+   },
+   "geometry": {
+    "x": -85.597924449999994,
+    "y": 45.172076279999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311933
+   },
+   "geometry": {
+    "x": -85.493449999999996,
+    "y": 44.88472999999999
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311934
+   },
+   "geometry": {
+    "x": -85.491359999999986,
+    "y": 44.923659999999984
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311935
+   },
+   "geometry": {
+    "x": -85.500655649999999,
+    "y": 44.80241817000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311936
+   },
+   "geometry": {
+    "x": -85.507579770000007,
+    "y": 44.794705899999997
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311937
+   },
+   "geometry": {
+    "x": -85.484804970000027,
+    "y": 44.810415350000028
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311938
+   },
+   "geometry": {
+    "x": -85.48818270999999,
+    "y": 44.808819099999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311939
+   },
+   "geometry": {
+    "x": -85.490479999999991,
+    "y": 44.921119999999974
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311940
+   },
+   "geometry": {
+    "x": -85.483662009999989,
+    "y": 44.811253290000025
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311941
+   },
+   "geometry": {
+    "x": -85.530959999999993,
+    "y": 44.888160000000028
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311942
+   },
+   "geometry": {
+    "x": -85.493280000000027,
+    "y": 44.887620000000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311943
+   },
+   "geometry": {
+    "x": -85.491969999999981,
+    "y": 44.891930000000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311944
+   },
+   "geometry": {
+    "x": -85.491199999999992,
+    "y": 44.89391999999998
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311945
+   },
+   "geometry": {
+    "x": -85.506252829999994,
+    "y": 44.775659200000007
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311946
+   },
+   "geometry": {
+    "x": -85.506223079999984,
+    "y": 44.775735639999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311947
+   },
+   "geometry": {
+    "x": -85.486799940000026,
+    "y": 44.809213129999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311948
+   },
+   "geometry": {
+    "x": -85.530644670000015,
+    "y": 44.882759050000004
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311949
+   },
+   "geometry": {
+    "x": -85.498901320000016,
+    "y": 44.864394549999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311950
+   },
+   "geometry": {
+    "x": -85.559176170000001,
+    "y": 44.811204340000018
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311951
+   },
+   "geometry": {
+    "x": -85.559469369999988,
+    "y": 44.810819439999989
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311952
+   },
+   "geometry": {
+    "x": -85.494950589999974,
+    "y": 44.987381459999995
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311953
+   },
+   "geometry": {
+    "x": -85.557229220000011,
+    "y": 44.887392900000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311954
+   },
+   "geometry": {
+    "x": -85.548208030000012,
+    "y": 44.899918570000011
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311955
+   },
+   "geometry": {
+    "x": -85.575545099999999,
+    "y": 44.820297030000006
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311956
+   },
+   "geometry": {
+    "x": -85.500896290000014,
+    "y": 44.859919040000023
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311957
+   },
+   "geometry": {
+    "x": -85.507365030000017,
+    "y": 44.851004209999985
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311958
+   },
+   "geometry": {
+    "x": -85.552328740000007,
+    "y": 44.822106759999997
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311959
+   },
+   "geometry": {
+    "x": -85.530609719999973,
+    "y": 44.747687699999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "3/22/2012 12:00:00 AM",
+    "OBJECTID": 311960
+   },
+   "geometry": {
+    "x": -85.50314400000002,
+    "y": 44.644967000000008
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "3/22/2012 12:00:00 AM",
+    "OBJECTID": 311961
+   },
+   "geometry": {
+    "x": -85.499938999999983,
+    "y": 44.647261000000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "3/22/2012 12:00:00 AM",
+    "OBJECTID": 311962
+   },
+   "geometry": {
+    "x": -85.624466999999981,
+    "y": 44.691755000000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "3/22/2012 12:00:00 AM",
+    "OBJECTID": 311963
+   },
+   "geometry": {
+    "x": -85.624075000000005,
+    "y": 44.692138999999997
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311964
+   },
+   "geometry": {
+    "x": -85.504582239999991,
+    "y": 44.768912689999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311965
+   },
+   "geometry": {
+    "x": -85.511220949999995,
+    "y": 44.762104319999992
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311966
+   },
+   "geometry": {
+    "x": -85.482082779999985,
+    "y": 44.991467049999983
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311967
+   },
+   "geometry": {
+    "x": -85.48024915000002,
+    "y": 44.992176579999978
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311968
+   },
+   "geometry": {
+    "x": -85.479168640000012,
+    "y": 44.992665919999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311969
+   },
+   "geometry": {
+    "x": -85.581129040000008,
+    "y": 44.868683320000002
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311970
+   },
+   "geometry": {
+    "x": -85.57689769000001,
+    "y": 44.870917099999986
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311971
+   },
+   "geometry": {
+    "x": -85.575003209999977,
+    "y": 44.872322740000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311972
+   },
+   "geometry": {
+    "x": -85.571909029999972,
+    "y": 44.869994589999976
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311973
+   },
+   "geometry": {
+    "x": -85.571210240000028,
+    "y": 44.869896849999975
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311974
+   },
+   "geometry": {
+    "x": -85.529666920000011,
+    "y": 44.941809809999995
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311975
+   },
+   "geometry": {
+    "x": -85.532886000000019,
+    "y": 44.747308999999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Maureen McManus",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311976
+   },
+   "geometry": {
+    "x": -85.530750000000012,
+    "y": 44.747770000000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311977
+   },
+   "geometry": {
+    "x": -85.527574049999998,
+    "y": 45.186922139999979
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311978
+   },
+   "geometry": {
+    "x": -85.527329459999976,
+    "y": 45.186683589999973
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311979
+   },
+   "geometry": {
+    "x": -85.527456110000003,
+    "y": 45.186750140000015
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311980
+   },
+   "geometry": {
+    "x": -85.527380339999979,
+    "y": 45.188656100000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311981
+   },
+   "geometry": {
+    "x": -85.527084290000005,
+    "y": 45.18879432
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311982
+   },
+   "geometry": {
+    "x": -85.527013880000027,
+    "y": 45.189036810000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311983
+   },
+   "geometry": {
+    "x": -85.526996619999977,
+    "y": 45.189087859999972
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311984
+   },
+   "geometry": {
+    "x": -85.527545719999978,
+    "y": 45.191137990000016
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311985
+   },
+   "geometry": {
+    "x": -85.527681669999993,
+    "y": 45.191408050000007
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311986
+   },
+   "geometry": {
+    "x": -85.528096409999989,
+    "y": 45.19156756000001
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311987
+   },
+   "geometry": {
+    "x": -85.529757780000011,
+    "y": 45.192980999999975
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311988
+   },
+   "geometry": {
+    "x": -85.530036150000001,
+    "y": 45.193432700000017
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "3/22/2012 12:00:00 AM",
+    "OBJECTID": 311989
+   },
+   "geometry": {
+    "x": -85.499363000000017,
+    "y": 44.647406999999987
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Jessica Beachy",
+    "ADD_DATE": "3/22/2012 12:00:00 AM",
+    "OBJECTID": 311990
+   },
+   "geometry": {
+    "x": -85.627454,
+    "y": 44.689100999999994
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311991
+   },
+   "geometry": {
+    "x": -85.529939759999991,
+    "y": 45.193864539999993
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311992
+   },
+   "geometry": {
+    "x": -85.784858830000019,
+    "y": 44.972263610000027
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311993
+   },
+   "geometry": {
+    "x": -85.784469320000028,
+    "y": 44.972737440000003
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311994
+   },
+   "geometry": {
+    "x": -85.784137310000006,
+    "y": 44.973151760000007
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311995
+   },
+   "geometry": {
+    "x": -85.783058900000015,
+    "y": 44.974637120000011
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311996
+   },
+   "geometry": {
+    "x": -85.784018290000006,
+    "y": 44.973309760000006
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311997
+   },
+   "geometry": {
+    "x": -85.782926050000015,
+    "y": 44.974759070000005
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311998
+   },
+   "geometry": {
+    "x": -85.783162919999995,
+    "y": 44.974407030000009
+   }
+  },
+  {
+   "attributes": {
+    "OBSERVER": "Fields Ratliff",
+    "ADD_DATE": "2/28/2012 12:00:00 AM",
+    "OBJECTID": 311999
+   },
+   "geometry": {
+    "x": -85.79812050999999,
+    "y": 44.958933450000018
+   }
+  }
+ ]
+}

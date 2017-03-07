@@ -7,16 +7,24 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.3/dc.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.3/dc.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.3/dc.min.js.map"></script>
-    <script src="http://colorbrewer2.org/export/colorbrewer.js"></script>
+    <script src="http://colorbrewer2.org/export/colorbrewer.js"></script>-->
     
-    
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.1/dc.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.1/dc.min.js"></script>    
 
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/dc/2.0.0/dc.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.16/js/perfect-scrollbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.16/js/perfect-scrollbar.jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.16/css/perfect-scrollbar.min.css" />
+
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/dc/2.0.0/dc.min.css">
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -27,221 +35,220 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <style>
-
+    
+    <style> 
+        #container {
+        position: relative;
+        height: 100%; /* Or whatever you want (eg. 400px) */
+    }
+        .dc-chart g.row text {
+            fill: black;
+        }
     </style>
+  
+    <script type="text/javascript">
+        //var Ps = require('perfect-scrollbar');
+        //var container = document.getElementById('container');
+        //Ps.initialize(container);
+        //locationBubbleChart = dc.bubbleChart("#location-bubble-chart");
 
-    <script>
-        'use strict';
+        //datatable = dc.dataTable("#dc-data-table");
+
         //var yearlyBubbleChart = dc.bubbleChart('#yearly-bubble-chart');
-        var locationBubbleChart = dc.bubbleChart("#location-bubble-chart");
+        //var observerPieChart = dc.pieChart("#observer-pie-chart");
+        //var data;
 
-        d3.json('data/GDX.json', function (data) {
-            var dateFormat = d3.timeFormat('%m/%d/%Y');
-            var numberFormat = d3.format('.2f');
+        //d3.json('data/GDX_partial.json', function (data) {
 
-            var features = data.features;
-            var avg_x = 0,
-                avg_y = 0,
-                avg_attr = "";
+        d3.json('https://gdx.asets.msu.edu/arcgis/rest/services/GDX_Transforms/GDX_Data/MapServer/0/query?where=OBJECTID%3C312000&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=OBSERVER%2C+ADD_DATE%2C+OBJECTID&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&f=pjson',
+            function (data) {
+                var dateFormat = d3.time.format('%m/%d/%Y %I:%M:%S %p').parse;
+                var numberFormat = d3.format('.2f');
 
-            features.forEach(function (d) {
-                avg_x += d.geometry.x;
-                avg_y += d.geometry.y;
-                avg_attr += d.attributes.COMMON;
+                var features = data.features;
+                features.forEach(function (d) {
+                    d.date = dateFormat(d.attributes.ADD_DATE);
+                    d.newX = Math.round(d.geometry.x);
+                    d.newY = Math.round(d.geometry.y);
+                    d.xy = d.newX + ":" + d.newY;
+                });
+                var gdx = crossfilter(features);
+
+                //Create pie chart
+                var observerDim = gdx.dimension(function (d) {
+                    return d.attributes.OBSERVER;
+                });
+                var obsvCount = observerDim.group().reduceCount();
+                //var obsvCount = observerDim.group().reduce(
+                //    function (p, v) {
+                //        return p + 1;
+                //    },
+                //    function (p, v) {
+                //        return p - 1;
+                //    },
+                //    function (p, v) {
+                //        return 0;
+                //    });
+
+                var observerDim2 = gdx.dimension(function (d) {
+                    return d.attributes.OBSERVER;
+                });
+                var obsvCount2 = observerDim2.group().reduceCount();
+                observerPieChart = dc.pieChart("#observer-pie-chart");
+                observerPieChart
+                        .width(400)
+                        .height(400)
+                        .dimension(observerDim)
+                        .group(obsvCount);
+
+                observerRowChart = dc.rowChart("#observer-row-chart");
+                observerRowChart
+                    .width(500)
+                    .height(500)
+                    .dimension(observerDim2)
+                    .group(obsvCount2)
+                    .label(function (d) {
+                        return d.key;
+                    })
+                    .title(function (d) {
+                        return d.value;
+                    })
+                    .elasticX(true);
+                    //.x(d3.time.scale().domain([minYear, maxYear]))
+                    //.yAxisLabel("Hits per day");
+
+                //Create line chart
+                var addDateDim = gdx.dimension(function (d) {
+                    return d.date.getFullYear();
+                });
+                //Both reduce methods work
+                var addDateCount = addDateDim.group().reduceCount();
+                //var addDateCount = addDateDim.group().reduce(
+                //    function (p, v) {
+                //        return p + 1;
+                //    },
+                //    function (p, v) {
+                //        return p - 1;
+                //    },
+                //    function (p, v) {
+                //        return 0;
+                //    });
+                //var test = addDateDim.bottom(1);
+                var minYear = addDateDim.bottom(6)[5].date;
+                var maxYear = addDateDim.top(1)[0].date;
+
+                addDateLineChart = dc.lineChart("#add-date-line-chart");
+                addDateLineChart
+                    .width(500)
+                    .height(150)
+                    .dimension(addDateDim)
+                    .group(addDateCount)
+                    .x(d3.time.scale().domain([minYear, maxYear]))
+                    .yAxisLabel("Hits per day");
+                //.y(d3.scale.log().domain([0, addDateDim.group().top(1)[0].value]));
+
+                //Create data table
+                datatable = dc.dataTable("#dc-data-table");
+                datatable
+                    .dimension(observerDim)
+                    .group(function (d) {
+                        return d.attributes.OBSERVER;
+                    })
+                    .columns([
+                        function (d) { return d.date.getFullYear() + "-" + (d.date.getMonth() + 1) + "-" + d.date.getDate(); },
+                        //function (d) { return d.attributes.OBSERVER; },
+                        function (d) { return d.newX; },
+                        function (d) { return d.newY; }
+                    ])
+                    .size(900);
+
+                //Create bubble chart
+                xyDim = gdx.dimension(function (d) {
+                    return d.xy;
+                })
+                xyCount = xyDim.group().reduceCount();
+                xyBubbleChart = dc.bubbleChart("#xy-bubble-chart");
+                xyBubbleChart
+                    .width(800)
+                    .height(300)
+                    .dimension(xyDim)
+                    .group(xyCount)
+                    .keyAccessor(function (d) {
+                        return d.key.split(":")[0];
+                    })
+                    .valueAccessor(function (d) {
+                        return d.key.split(":")[1];
+                    })
+                    .radiusValueAccessor(function (d) {
+                        return d.value;
+                    })
+                    .title(function (d) {
+                        return d.value;
+                    })
+                    .label(function (d) {
+                        var xy = d.key.split(":");
+                        return xy[0] + ", " + xy[1];
+                    })
+                    .maxBubbleRelativeSize(0.03)
+                    .x(d3.scale.linear().domain([-91, -82]))
+                    .y(d3.scale.linear().domain([41, 50]))
+                    ;
+                //dc.redrawAll();
+                dc.renderAll();
             });
 
-
-            var gdx = crossfilter(data);
-            var all = gdx.groupAll();
-
-            var attriDimension = gdx.dimension(function (d) {
-                return d.attributes.COMMON;
-            });
-
-
-
-            var xDimension = gdx.dimension(function (d) {
-                return d.newX = Math.round(d.geometry.x);
-            });
-
-            var yDimension = gdx.dimension(function (d) {
-                return d.newY = Math.round(d.geometry.y);
-            })
-
-            var yDimensionGroup = yDimension.group().reduce(
-                function (p, v) {
-                    ++p.count;
-                    return p;
-                },
-                function (p, v) {
-                    --p.count;
-                    return p;
-                },
-                function (p, v) {
-                    return {
-                        count: 0
-                    };
-                }
-                );
-
-            locationBubbleChart
-            .width(1000)
-            .height(250)
-            .transitionDuration(1500)
-            .dimension()
-            .group(attriDimensionGroup)
-            .colors(colorbrewer.RdYlGn[9])
-            .colorDomain([-500, 500])
-            .colorAccessor(function (d) {
-                return d.newX;
-            })
-            .keyAccessor(function (p){
-                return p.newX;
-            })
-            .valueAccessor(function (p) {
-                return p.newY;
-            })
-            .radiusValueAccessor(function (p) {
-                return p.count;
-            })
-            .maxBubbleRelativeSize(0.3)
-            .x(d3.scale.linear().domain([-2500, 2500]))
-            .y(d3.scale.linear().domain([-100, 100]))
-            .r(d3.scale.linear().domain([0, 4000]))
-            .elasticY(true)
-            .elasticX(true)
-            .yAxisPadding(100)
-            .xAxisPadding(500)
-            .renderHorizontalGridLines(true)
-            .renderVerticalGridLines(true)
-            .xAxisLabel('New X')
-            .yAxisLabel('New Y')
-            .renderLabel(true)
-            .label(function (p) {
-             return p.key;
-            })
-            .renderTitle(true)
-            .title(function (p) {
-                return [
-                    p.key,
-                    'Index Gain: ' + numberFormat(p.newX),
-                    'Index Gain in Percentage: ' + numberFormat(p.newY) + '%',
-                    'Fluctuation / Index Ratio: ' + numberFormat(p.count) + '%'
-                ].join('\n');
-            })
-            .yAxis().tickFormat(function (v) {
-                return v + '%';
-            });
-
-            //fields = [];
-            //function yReduceFieldsAdd(fields) {
-            //    return function (p, v) {
-            //        fields.forEach(function (f) {
-            //            p[f] += 1;
-            //        });
-            //    };
-            //};
-
-            //var fields = ["newX", "newY"];
-            //function reduceFieldsAdd(fields) {
-            //    return function (p, v) {
-            //        fields.forEach(function (f) {
-            //            p[f] += 1;
-            //        });
-            //        return p;
-            //    };
-            //};
-            //function reduceFieldsRemove(fields) {
-            //    return function (p, v) {
-            //        fields.forEach(function (f) {
-            //            p[f] -= 1;
-            //        });
-            //        return p;
-            //    };
-            //};
-            //function reduceFieldsInitial(fields) {
-            //    return function (p, v) {
-            //        var ret = {};
-            //        fields.forEach(function (f) {
-            //            p[f] = 0;
-            //        });
-            //        return ret;
-            //    };
-            //};
-            //var attriDimensionGroup = attriDimension.group().reduce(
-            //    reduceFieldsAdd,
-            //    reduceFieldsRemove,
-            //    reduceFieldsInitial);
-
-            //locationBubbleChart
-            //.width(1000)
-            //.height(250)
-            //.transitionDuration(1500)
-            //.dimension()
-            //.group(attriDimensionGroup)
-            //.colors(colorbrewer.RdYlGn[9])
-            //.colorDomain([-500, 500])
-            //.colorAccessor(function (d) {
-            //    return d.value.absGain;
-            //})
-            //.keyAccessor(function (p){
-            //    return p.value.absGain;
-            //})
-            //.valueAccessor(function (p) {
-            //    return p.value.percentageGain;
-            //})
-            //.radiusValueAccessor(function (p) {
-            //    return p.value.fluctuationPercentage;
-            //})
-            //.maxBubbleRelativeSize(0.3)
-            //.x(d3.scale.linear().domain([-2500, 2500]))
-            //.y(d3.scale.linear().domain([-100, 100]))
-            //.r(d3.scale.linear().domain([0, 4000]))
-            //.elasticY(true)
-            //.elasticX(true)
-            //.yAxisPadding(100)
-            //.xAxisPadding(500)
-            //.renderHorizontalGridLines(true)
-            //.renderVerticalGridLines(true)
-            //.xAxisLabel('Index Gain')
-            //.yAxisLabel('Index Gain %')
-            //.renderLabel(true)
-            //.label(function (p) {
-            // return p.key;
-            //})
-            //.renderTitle(true)
-            //.title(function (p) {
-            //    return [
-            //        p.key,
-            //        'Index Gain: ' + numberFormat(p.value.absGain),
-            //        'Index Gain in Percentage: ' + numberFormat(p.value.percentageGain) + '%',
-            //        'Fluctuation / Index Ratio: ' + numberFormat(p.value.fluctuationPercentage) + '%'
-            //    ].join('\n');
-            //})
-            //.yAxis().tickFormat(function (v) {
-            //    return v + '%';
-            //});
-
-        });
-
-
+        function resetallcharts() {
+            addDateLineChart.filterAll()
+            observerPieChart.filterAll();
+            observerRowChart.filterAll()
+            dc.renderAll();
+        }
     </script>
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-6 col-md-4" id="location-bubble-chart">chart1</div>
+        <div>
+            <!--<a href="javascript:">Reset</a>-->
+            <button type="button" onclick="resetallcharts();">Reset All</button>
         </div>
         <div class="row">
+            <div class="col-xs-6 col-md-4" id="xy-bubble-chart">chart1</div>
+        </div>
+        <div class="row">
+            <div id="add-date-line-chart"></div>
             <div class="col-xs-6 col-md-4">chart1</div>
             <div class="col-xs-6 col-md-4">chart2</div>
             <div class="col-xs-6 col-md-4">chart3</div>
         </div>
         <div class="row">
-            <div class="col-xs-6 col-md-6">chart4</div>
-            <div class="col-xs-6 col-md-6">chart5</div>
+            <div id="observers">
+                <div id="pie-chart" class="col-xs-6">
+                    <div>
+                        <p><b>Proportion from Observers</b></p>
+                    </div>
+                    <div id="observer-pie-chart"></div>
+                </div>
+                <div id="row-chart" class="col-xs-6">
+                    <div><p><b>Observations Comparison</b></p></div>
+                    <div id="observer-row-chart"></div>
+                </div>
+            </div>
+        </div>                
+        <div class="col-md-8" id="container">
+            <div id="dc-data-table" class="nav table table-striped">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <!--<td>Observer</td>-->
+                            <th>X</th>
+                            <th>Y</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
+        
     </div>
 
 </body>
