@@ -58,16 +58,21 @@
         //var observerPieChart = dc.pieChart("#observer-pie-chart");
         //var data;
 
-        //d3.json('data/GDX_partial.json', function (data) {
+        d3.json('data/GDX_partial.json', function (data) {
 
-        d3.json('https://gdx.asets.msu.edu/arcgis/rest/services/GDX_Transforms/GDX_Data/MapServer/0/query?where=OBJECTID%3C312000&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=OBSERVER%2C+ADD_DATE%2C+OBJECTID&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&f=pjson',
-            function (data) {
+       // d3.json('https://gdx.asets.msu.edu/arcgis/rest/services/GDX_Transforms/GDX_Data/MapServer/0/query?where=OBJECTID%3C346000&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=OBSERVER%2C+ADD_DATE%2C+OBJECTID&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&f=pjson',
+         //   function (data) {
+                //var dateFormat = d3.time.format('%m/%d/%Y').parse;
                 var dateFormat = d3.time.format('%m/%d/%Y %I:%M:%S %p').parse;
                 var numberFormat = d3.format('.2f');
 
                 var features = data.features;
                 features.forEach(function (d) {
-                    d.date = dateFormat(d.attributes.ADD_DATE);
+                    if (d.attributes.ADD_DATE != null) {
+                        d.date = dateFormat(d.attributes.ADD_DATE);
+                    } else {
+                        d.date = dateFormat("01/01/01");
+                    }
                     d.newX = Math.round(d.geometry.x);
                     d.newY = Math.round(d.geometry.y);
                     d.xy = d.newX + ":" + d.newY;
@@ -79,6 +84,7 @@
                     return d.attributes.OBSERVER;
                 });
                 var obsvCount = observerDim.group().reduceCount();
+                
                 //var obsvCount = observerDim.group().reduce(
                 //    function (p, v) {
                 //        return p + 1;
@@ -134,7 +140,8 @@
                 //        return 0;
                 //    });
                 //var test = addDateDim.bottom(1);
-                var minYear = addDateDim.bottom(6)[5].date;
+                //var minYear = addDateDim.bottom(6)[5].date;
+                var minYear = dateFormat("01/01/2010");
                 var maxYear = addDateDim.top(1)[0].date;
 
                 addDateLineChart = dc.lineChart("#add-date-line-chart");
@@ -163,11 +170,21 @@
                     .size(900);
 
                 //Create bubble chart
-                xyDim = gdx.dimension(function (d) {
+                var xyDim = gdx.dimension(function (d) {
                     return d.xy;
                 })
-                xyCount = xyDim.group().reduceCount();
+                var xyCount = xyDim.group().reduceCount();
                 xyBubbleChart = dc.bubbleChart("#xy-bubble-chart");
+                var xDim = gdx.dimension(function (d) {
+                    return d.geometry.x;
+                });
+                var yDim = gdx.dimension(function (d) {
+                    return d.geometry.y;
+                });
+                var minX = xDim.bottom(1)[0].newX;
+                var maxX = xDim.top(1)[0].newX;
+                var minY = yDim.bottom(1)[0].newY
+                var maxY = yDim.top(1)[0].newY;
                 xyBubbleChart
                     .width(800)
                     .height(300)
@@ -190,8 +207,8 @@
                         return xy[0] + ", " + xy[1];
                     })
                     .maxBubbleRelativeSize(0.03)
-                    .x(d3.scale.linear().domain([-91, -82]))
-                    .y(d3.scale.linear().domain([41, 50]))
+                    .x(d3.scale.linear().domain([minX-3, maxX+3]))
+                    .y(d3.scale.linear().domain([minY-3, maxY+3]))
                     ;
                 //dc.redrawAll();
                 dc.renderAll();
@@ -200,7 +217,7 @@
         function resetallcharts() {
             addDateLineChart.filterAll()
             observerPieChart.filterAll();
-            observerRowChart.filterAll()
+            //observerRowChart.filterAll()
             dc.renderAll();
         }
     </script>

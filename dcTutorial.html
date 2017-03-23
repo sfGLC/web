@@ -152,14 +152,18 @@
             .height(200)
             .dimension(dateDim)
             .group(status_200, "200")
-            .stack(status_302, "302")
-            .stack(status_404, "404")
+            //.stack(status_302, "302")
+            //.stack(status_404, "404")
             .renderArea(true)
             //.brushOn(false)
             .x(d3.time.scale().domain([minDate, maxDate]))
             .legend(dc.legend().x(50).y(10).itemHeight(13).gap(5))
             .yAxisLabel("Hits per day");
-
+        var alist = [status_302, status_404];
+        for (var i = 1; i < alist.length; i++) {
+            hitslinechart.stack(alist[i]);
+        }
+        hitslinechart.stack(status_302, "302");
         yearRingChart = dc.pieChart("#chart-ring-year");
         yearRingChart
         		.width(150)

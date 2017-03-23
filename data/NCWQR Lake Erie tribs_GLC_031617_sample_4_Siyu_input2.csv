@@ -1,0 +1,289 @@
+River,Year,NOS,FIELD_SET,Measure,Value
+Raisin,2008,525,Loads,TP,2880
+Raisin,2009,518,Loads,TP,2930
+Raisin,2010,449,Loads,TP,1270
+Raisin,2011,467,Loads,TP,1190
+Raisin,2012,418,Loads,TP,940
+Raisin,2013,487,Loads,TP,2100
+Raisin,2014,482,Loads,TP,2240
+Raisin,2015,420,Loads,TP,1810
+Maumee,2008,570,Loads,TP,3560
+Maumee,2009,523,Loads,TP,2160
+Maumee,2010,542,Loads,TP,1530
+Maumee,2011,486,Loads,TP,2780
+Maumee,2012,506,Loads,TP,2230
+Maumee,2013,567,Loads,TP,2130
+Maumee,2014,499,Loads,TP,1960
+Maumee,2015,523,Loads,TP,2200
+Portage,2008,418,Loads,TP,940
+Portage,2009,487,Loads,TP,2100
+Portage,2010,482,Loads,TP,2240
+Portage,2011,420,Loads,TP,1810
+Portage,2012,570,Loads,TP,3560
+Portage,2013,523,Loads,TP,2160
+Portage,2014,542,Loads,TP,1530
+Portage,2015,486,Loads,TP,2780
+Raisin,2008,525,Loads,DRP,6886.44
+Raisin,2009,518,Loads,DRP,6531.34
+Raisin,2010,449,Loads,DRP,4080.14
+Raisin,2011,467,Loads,DRP,3351.87
+Raisin,2012,418,Loads,DRP,3770.37
+Raisin,2013,487,Loads,DRP,5957.07
+Raisin,2014,482,Loads,DRP,5764.22
+Raisin,2015,420,Loads,DRP,5439.44
+Maumee,2008,570,Loads,DRP,8026
+Maumee,2009,523,Loads,DRP,5075
+Maumee,2010,542,Loads,DRP,4648
+Maumee,2011,486,Loads,DRP,6230
+Maumee,2012,506,Loads,DRP,5960
+Maumee,2013,567,Loads,DRP,5030
+Maumee,2014,499,Loads,DRP,5850
+Maumee,2015,523,Loads,DRP,6650
+Portage,2008,418,Loads,DRP,3770.37
+Portage,2009,487,Loads,DRP,5957.07
+Portage,2010,482,Loads,DRP,5764.22
+Portage,2011,420,Loads,DRP,5439.44
+Portage,2012,570,Loads,DRP,8026
+Portage,2013,523,Loads,DRP,5075
+Portage,2014,542,Loads,DRP,4648
+Portage,2015,486,Loads,DRP,6230
+Raisin,2008,,Unit Area Loads,TP,1.75663312
+Raisin,2009,,Unit Area Loads,TP,1.787130223
+Raisin,2010,,Unit Area Loads,TP,0.77462641
+Raisin,2011,,Unit Area Loads,TP,0.725831046
+Raisin,2012,,Unit Area Loads,TP,0.573345532
+Raisin,2013,,Unit Area Loads,TP,1.280878317
+Raisin,2014,,Unit Area Loads,TP,1.366270204
+Raisin,2015,,Unit Area Loads,TP,1.10399512
+Maumee,2008,,Unit Area Loads,TP,2.171393718
+Maumee,2009,,Unit Area Loads,TP,1.31747484
+Maumee,2010,,Unit Area Loads,TP,0.933211345
+Maumee,2011,,Unit Area Loads,TP,1.695638914
+Maumee,2012,,Unit Area Loads,TP,1.360170784
+Maumee,2013,,Unit Area Loads,TP,1.299176578
+Maumee,2014,,Unit Area Loads,TP,1.195486429
+Maumee,2015,,Unit Area Loads,TP,1.341872522
+Portage,2008,,Unit Area Loads,TP,0.573345532
+Portage,2009,,Unit Area Loads,TP,1.280878317
+Portage,2010,,Unit Area Loads,TP,1.366270204
+Portage,2011,,Unit Area Loads,TP,1.10399512
+Portage,2012,,Unit Area Loads,TP,2.171393718
+Portage,2013,,Unit Area Loads,TP,1.31747484
+Portage,2014,,Unit Area Loads,TP,0.933211345
+Portage,2015,,Unit Area Loads,TP,1.695638914
+Raisin,2008,,Unit Area Loads,DRP,0.2610552
+Raisin,2009,,Unit Area Loads,DRP,0.309850564
+Raisin,2010,,Unit Area Loads,DRP,0.131137542
+Raisin,2011,,Unit Area Loads,DRP,0.123208295
+Raisin,2012,,Unit Area Loads,DRP,0.158584934
+Raisin,2013,,Unit Area Loads,DRP,0.269594389
+Raisin,2014,,Unit Area Loads,DRP,0.351326624
+Raisin,2015,,Unit Area Loads,DRP,0.301311375
+Maumee,2008,,Unit Area Loads,DRP,0.509301616
+Maumee,2009,,Unit Area Loads,DRP,0.211039951
+Maumee,2010,,Unit Area Loads,DRP,0.24641659
+Maumee,2011,,Unit Area Loads,DRP,0.347666972
+Maumee,2012,,Unit Area Loads,DRP,0.374504422
+Maumee,2013,,Unit Area Loads,DRP,0.285452882
+Maumee,2014,,Unit Area Loads,DRP,0.351936566
+Maumee,2015,,Unit Area Loads,DRP,0.458676426
+Portage,2008,,Unit Area Loads,DRP,0.158584934
+Portage,2009,,Unit Area Loads,DRP,0.269594389
+Portage,2010,,Unit Area Loads,DRP,0.351326624
+Portage,2011,,Unit Area Loads,DRP,0.301311375
+Portage,2012,,Unit Area Loads,DRP,0.509301616
+Portage,2013,,Unit Area Loads,DRP,0.211039951
+Portage,2014,,Unit Area Loads,DRP,0.24641659
+Portage,2015,,Unit Area Loads,DRP,0.347666972
+Raisin,2008,,Flow-weighted mean concentrations,TP,0.418213184
+Raisin,2009,,Flow-weighted mean concentrations,TP,0.448606258
+Raisin,2010,,Flow-weighted mean concentrations,TP,0.311263829
+Raisin,2011,,Flow-weighted mean concentrations,TP,0.355025702
+Raisin,2012,,Flow-weighted mean concentrations,TP,0.249312402
+Raisin,2013,,Flow-weighted mean concentrations,TP,0.352522297
+Raisin,2014,,Flow-weighted mean concentrations,TP,0.388604182
+Raisin,2015,,Flow-weighted mean concentrations,TP,0.332754842
+Maumee,2008,,Flow-weighted mean concentrations,TP,0.443558435
+Maumee,2009,,Flow-weighted mean concentrations,TP,0.425615764
+Maumee,2010,,Flow-weighted mean concentrations,TP,0.329173838
+Maumee,2011,,Flow-weighted mean concentrations,TP,0.446227929
+Maumee,2012,,Flow-weighted mean concentrations,TP,0.374161074
+Maumee,2013,,Flow-weighted mean concentrations,TP,0.423459245
+Maumee,2014,,Flow-weighted mean concentrations,TP,0.335042735
+Maumee,2015,,Flow-weighted mean concentrations,TP,0.330827068
+Portage,2008,,Flow-weighted mean concentrations,TP,0.249312402
+Portage,2009,,Flow-weighted mean concentrations,TP,0.352522297
+Portage,2010,,Flow-weighted mean concentrations,TP,0.388604182
+Portage,2011,,Flow-weighted mean concentrations,TP,0.332754842
+Portage,2012,,Flow-weighted mean concentrations,TP,0.443558435
+Portage,2013,,Flow-weighted mean concentrations,TP,0.425615764
+Portage,2014,,Flow-weighted mean concentrations,TP,0.329173838
+Portage,2015,,Flow-weighted mean concentrations,TP,0.446227929
+Raisin,2008,,Flow-weighted mean concentrations,DRP,0.062151126
+Raisin,2009,,Flow-weighted mean concentrations,DRP,0.077778833
+Raisin,2010,,Flow-weighted mean concentrations,DRP,0.05269427
+Raisin,2011,,Flow-weighted mean concentrations,DRP,0.060264867
+Raisin,2012,,Flow-weighted mean concentrations,DRP,0.068958749
+Raisin,2013,,Flow-weighted mean concentrations,DRP,0.07419755
+Raisin,2014,,Flow-weighted mean concentrations,DRP,0.09992679
+Raisin,2015,,Flow-weighted mean concentrations,DRP,0.090818172
+Maumee,2008,,Flow-weighted mean concentrations,DRP,0.10403688
+Maumee,2009,,Flow-weighted mean concentrations,DRP,0.06817734
+Maumee,2010,,Flow-weighted mean concentrations,DRP,0.086919105
+Maumee,2011,,Flow-weighted mean concentrations,DRP,0.091492777
+Maumee,2012,,Flow-weighted mean concentrations,DRP,0.103020134
+Maumee,2013,,Flow-weighted mean concentrations,DRP,0.09304175
+Maumee,2014,,Flow-weighted mean concentrations,DRP,0.098632479
+Maumee,2015,,Flow-weighted mean concentrations,DRP,0.113082707
+Portage,2008,,Flow-weighted mean concentrations,DRP,0.068958749
+Portage,2009,,Flow-weighted mean concentrations,DRP,0.07419755
+Portage,2010,,Flow-weighted mean concentrations,DRP,0.09992679
+Portage,2011,,Flow-weighted mean concentrations,DRP,0.090818172
+Portage,2012,,Flow-weighted mean concentrations,DRP,0.10403688
+Portage,2013,,Flow-weighted mean concentrations,DRP,0.06817734
+Portage,2014,,Flow-weighted mean concentrations,DRP,0.086919105
+Portage,2015,,Flow-weighted mean concentrations,DRP,0.091492777
+Raisin,2008,,Time-weighted mean concentrations,TP,0.272936
+Raisin,2009,,Time-weighted mean concentrations,TP,0.257153
+Raisin,2010,,Time-weighted mean concentrations,TP,0.15866
+Raisin,2011,,Time-weighted mean concentrations,TP,0.19053
+Raisin,2012,,Time-weighted mean concentrations,TP,0.174484
+Raisin,2013,,Time-weighted mean concentrations,TP,0.210684
+Raisin,2014,,Time-weighted mean concentrations,TP,0.21962
+Raisin,2015,,Time-weighted mean concentrations,TP,0.223
+Maumee,2008,,Time-weighted mean concentrations,TP,0.261
+Maumee,2009,,Time-weighted mean concentrations,TP,0.204
+Maumee,2010,,Time-weighted mean concentrations,TP,0.216
+Maumee,2011,,Time-weighted mean concentrations,TP,0.212
+Maumee,2012,,Time-weighted mean concentrations,TP,0.211
+Maumee,2013,,Time-weighted mean concentrations,TP,0.225
+Maumee,2014,,Time-weighted mean concentrations,TP,0.207
+Maumee,2015,,Time-weighted mean concentrations,TP,0.221
+Portage,2008,,Time-weighted mean concentrations,TP,0.174484
+Portage,2009,,Time-weighted mean concentrations,TP,0.210684
+Portage,2010,,Time-weighted mean concentrations,TP,0.21962
+Portage,2011,,Time-weighted mean concentrations,TP,0.223
+Portage,2012,,Time-weighted mean concentrations,TP,0.261
+Portage,2013,,Time-weighted mean concentrations,TP,0.204
+Portage,2014,,Time-weighted mean concentrations,TP,0.216
+Portage,2015,,Time-weighted mean concentrations,TP,0.212
+Raisin,2008,,Time-weighted mean concentrations,DRP,0.05060624
+Raisin,2009,,Time-weighted mean concentrations,DRP,0.05467129
+Raisin,2010,,Time-weighted mean concentrations,DRP,0.02276456
+Raisin,2011,,Time-weighted mean concentrations,DRP,0.03665267
+Raisin,2012,,Time-weighted mean concentrations,DRP,0.04941086
+Raisin,2013,,Time-weighted mean concentrations,DRP,0.05065615
+Raisin,2014,,Time-weighted mean concentrations,DRP,0.07481157
+Raisin,2015,,Time-weighted mean concentrations,DRP,0.07446594
+Maumee,2008,,Time-weighted mean concentrations,DRP,0.068
+Maumee,2009,,Time-weighted mean concentrations,DRP,0.045
+Maumee,2010,,Time-weighted mean concentrations,DRP,0.07
+Maumee,2011,,Time-weighted mean concentrations,DRP,0.065
+Maumee,2012,,Time-weighted mean concentrations,DRP,0.058
+Maumee,2013,,Time-weighted mean concentrations,DRP,0.0657
+Maumee,2014,,Time-weighted mean concentrations,DRP,0.0716
+Maumee,2015,,Time-weighted mean concentrations,DRP,0.0879
+Portage,2008,,Time-weighted mean concentrations,DRP,0.04941086
+Portage,2009,,Time-weighted mean concentrations,DRP,0.05065615
+Portage,2010,,Time-weighted mean concentrations,DRP,0.07481157
+Portage,2011,,Time-weighted mean concentrations,DRP,0.07446594
+Portage,2012,,Time-weighted mean concentrations,DRP,0.068
+Portage,2013,,Time-weighted mean concentrations,DRP,0.045
+Portage,2014,,Time-weighted mean concentrations,DRP,0.07
+Portage,2015,,Time-weighted mean concentrations,DRP,0.065
+Raisin,2008,,Spring Loads,TP,1511.86
+Raisin,2009,,Spring Loads,TP,1385.463
+Raisin,2010,,Spring Loads,TP,834.898
+Raisin,2011,,Spring Loads,TP,1013.686
+Raisin,2012,,Spring Loads,TP,520.422
+Raisin,2013,,Spring Loads,TP,1051.684
+Raisin,2014,,Spring Loads,TP,1739.016
+Raisin,2015,,Spring Loads,TP,1011.166
+Maumee,2008,,Spring Loads,TP,1414.108691
+Maumee,2009,,Spring Loads,TP,1369.735622
+Maumee,2010,,Spring Loads,TP,1307.353515
+Maumee,2011,,Spring Loads,TP,2317.990945
+Maumee,2012,,Spring Loads,TP,393.0608261
+Maumee,2013,,Spring Loads,TP,1249.498235
+Maumee,2014,,Spring Loads,TP,1155.229064
+Maumee,2015,,Spring Loads,TP,2060
+Portage,2008,,Spring Loads,TP,520.422
+Portage,2009,,Spring Loads,TP,1051.684
+Portage,2010,,Spring Loads,TP,1739.016
+Portage,2011,,Spring Loads,TP,1011.166
+Portage,2012,,Spring Loads,TP,1414.108691
+Portage,2013,,Spring Loads,TP,1369.735622
+Portage,2014,,Spring Loads,TP,1307.353515
+Portage,2015,,Spring Loads,TP,2317.990945
+Raisin,2008,,Spring Loads,DRP,240.009
+Raisin,2009,,Spring Loads,DRP,200.303
+Raisin,2010,,Spring Loads,DRP,106.771
+Raisin,2011,,Spring Loads,DRP,168.623
+Raisin,2012,,Spring Loads,DRP,109.367
+Raisin,2013,,Spring Loads,DRP,174.66
+Raisin,2014,,Spring Loads,DRP,412.039
+Raisin,2015,,Spring Loads,DRP,202.817
+Maumee,2008,,Spring Loads,DRP,302.2003622
+Maumee,2009,,Spring Loads,DRP,211.1603443
+Maumee,2010,,Spring Loads,DRP,323.7799729
+Maumee,2011,,Spring Loads,DRP,429.9906951
+Maumee,2012,,Spring Loads,DRP,63.751285
+Maumee,2013,,Spring Loads,DRP,288.907489
+Maumee,2014,,Spring Loads,DRP,306.4723705
+Maumee,2015,,Spring Loads,DRP,609
+Portage,2008,,Spring Loads,DRP,109.367
+Portage,2009,,Spring Loads,DRP,174.66
+Portage,2010,,Spring Loads,DRP,412.039
+Portage,2011,,Spring Loads,DRP,202.817
+Portage,2012,,Spring Loads,DRP,302.2003622
+Portage,2013,,Spring Loads,DRP,211.1603443
+Portage,2014,,Spring Loads,DRP,323.7799729
+Portage,2015,,Spring Loads,DRP,429.9906951
+Raisin,2008,,Spring Flow-weighted mean concentrations,TP,5791.342
+Raisin,2009,,Spring Flow-weighted mean concentrations,TP,4471.391
+Raisin,2010,,Spring Flow-weighted mean concentrations,TP,6366.583
+Raisin,2011,,Spring Flow-weighted mean concentrations,TP,8227.417
+Raisin,2012,,Spring Flow-weighted mean concentrations,TP,3281.661
+Raisin,2013,,Spring Flow-weighted mean concentrations,TP,3900.986
+Raisin,2014,,Spring Flow-weighted mean concentrations,TP,4949.855
+Raisin,2015,,Spring Flow-weighted mean concentrations,TP,3355.884
+Maumee,2008,,Spring Flow-weighted mean concentrations,TP,2776.564
+Maumee,2009,,Spring Flow-weighted mean concentrations,TP,6490.409
+Maumee,2010,,Spring Flow-weighted mean concentrations,TP,5305.461
+Maumee,2011,,Spring Flow-weighted mean concentrations,TP,6667.274
+Maumee,2012,,Spring Flow-weighted mean concentrations,TP,1049.549
+Maumee,2013,,Spring Flow-weighted mean concentrations,TP,4377.249
+Maumee,2014,,Spring Flow-weighted mean concentrations,TP,3282.492
+Maumee,2015,,Spring Flow-weighted mean concentrations,TP,4491.184
+Portage,2008,,Spring Flow-weighted mean concentrations,TP,3281.661
+Portage,2009,,Spring Flow-weighted mean concentrations,TP,3900.986
+Portage,2010,,Spring Flow-weighted mean concentrations,TP,4949.855
+Portage,2011,,Spring Flow-weighted mean concentrations,TP,3355.884
+Portage,2012,,Spring Flow-weighted mean concentrations,TP,2776.564
+Portage,2013,,Spring Flow-weighted mean concentrations,TP,6490.409
+Portage,2014,,Spring Flow-weighted mean concentrations,TP,5305.461
+Portage,2015,,Spring Flow-weighted mean concentrations,TP,6667.274
+Raisin,2008,,Spring Flow-weighted mean concentrations,DRP,919.38
+Raisin,2009,,Spring Flow-weighted mean concentrations,DRP,646.45
+Raisin,2010,,Spring Flow-weighted mean concentrations,DRP,814.191
+Raisin,2011,,Spring Flow-weighted mean concentrations,DRP,1368.601
+Raisin,2012,,Spring Flow-weighted mean concentrations,DRP,689.643
+Raisin,2013,,Spring Flow-weighted mean concentrations,DRP,647.862
+Raisin,2014,,Spring Flow-weighted mean concentrations,DRP,1172.809
+Raisin,2015,,Spring Flow-weighted mean concentrations,DRP,673.114
+Maumee,2008,,Spring Flow-weighted mean concentrations,DRP,593.362
+Maumee,2009,,Spring Flow-weighted mean concentrations,DRP,1000.57
+Maumee,2010,,Spring Flow-weighted mean concentrations,DRP,1313.954
+Maumee,2011,,Spring Flow-weighted mean concentrations,DRP,1236.789
+Maumee,2012,,Spring Flow-weighted mean concentrations,DRP,170.228
+Maumee,2013,,Spring Flow-weighted mean concentrations,DRP,1012.102
+Maumee,2014,,Spring Flow-weighted mean concentrations,DRP,870.817
+Maumee,2015,,Spring Flow-weighted mean concentrations,DRP,1327.733
+Portage,2008,,Spring Flow-weighted mean concentrations,DRP,689.643
+Portage,2009,,Spring Flow-weighted mean concentrations,DRP,647.862
+Portage,2010,,Spring Flow-weighted mean concentrations,DRP,1172.809
+Portage,2011,,Spring Flow-weighted mean concentrations,DRP,673.114
+Portage,2012,,Spring Flow-weighted mean concentrations,DRP,593.362
+Portage,2013,,Spring Flow-weighted mean concentrations,DRP,1000.57
+Portage,2014,,Spring Flow-weighted mean concentrations,DRP,1313.954
+Portage,2015,,Spring Flow-weighted mean concentrations,DRP,1236.789
