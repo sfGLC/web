@@ -1,0 +1,780 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="shortcut icon" href="">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.1/dc.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.1/dc.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.16/js/perfect-scrollbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.16/js/perfect-scrollbar.jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.16/css/perfect-scrollbar.min.css" />
+
+    <!--<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/dc/2.0.0/dc.min.css">-->
+
+    <script src="http://colorbrewer2.org/export/colorbrewer.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+
+        //var data = [
+        //    {
+        //        date: "12/27/2012",
+        //        http_404: 2,
+        //        http_200: 190,
+        //        http_302: 100
+        //    },
+        //    {
+        //        date: "12/28/2012",
+        //        http_404: 2,
+        //        http_200: 10,
+        //        http_302: 100
+        //    },
+        //    {
+        //        date: "12/29/2012",
+        //        http_404: 1,
+        //        http_200: 300,
+        //        http_302: 200
+        //    },
+        //    {
+        //        date: "12/30/2012",
+        //        http_404: 2,
+        //        http_200: 90,
+        //        http_302: 0
+        //    },
+        //    {
+        //        date: "12/31/2012",
+        //        http_404: 2,
+        //        http_200: 90,
+        //        http_302: 0
+        //    },
+        //    {
+        //        date: "01/01/2013",
+        //        http_404: 2,
+        //        http_200: 90,
+        //        http_302: 0
+        //    },
+        //    {
+        //        date: "01/02/2013",
+        //        http_404: 1,
+        //        http_200: 10,
+        //        http_302: 1
+        //    },
+        //    {
+        //        date: "01/03/2013",
+        //        http_404: 2,
+        //        http_200: 90,
+        //        http_302: 0
+        //    },
+        //    {
+        //        date: "01/04/2013",
+        //        http_404: 2,
+        //        http_200: 90,
+        //        http_302: 0
+        //    },
+        //    {
+        //        date: "01/05/2013",
+        //        http_404: 2,
+        //        http_200: 90,
+        //        http_302: 0
+        //    },
+        //    {
+        //        date: "01/06/2013",
+        //        http_404: 2,
+        //        http_200: 200,
+        //        http_302: 1
+        //    },
+        //    {
+        //        date: "01/07/2013",
+        //        http_404: 1,
+        //        http_200: 200,
+        //        http_302: 100
+        //    }
+        //];
+        //var parseDate = d3.time.format("%m/%d/%Y").parse;
+        //data.forEach(function (d) {
+        //    d.date = parseDate(d.date);
+        //    d.total = d.http_404 + d.http_200 + d.http_302;
+        //    d.Year = d.date.getFullYear();
+        //});
+        //var yearDim;
+        //$(document).ready(function () {
+        //    var cx = crossfilter(data);
+
+        //     yearDim = cx.dimension(function (d) { return d.Year; });
+        //    //var yearGroup = yearDim.group().reduceCount();
+        //    var yearGroup = yearDim.group().reduce(
+        //                function (p, v) {
+        //                    ++p.count;
+
+        //                    return p;
+        //                },
+        //                function (p, v) {
+        //                    --p.count;
+
+        //                    return p;
+        //                },
+        //                function () {
+        //                    return {
+        //                        count: 0
+
+        //                    };
+        //                }
+        //                );
+
+        //    mypie = dc.pieChart('#pie-chart');
+        //    mypie
+        //        .dimension(yearDim)
+        //        .group(yearGroup)
+        //        .valueAccessor(function (d) {
+        //            return d.value.count;
+        //        });
+
+        //    dc.renderAll();
+        //});
+
+
+
+        var dimSet = [];
+
+        function resetall() {
+            //yearPieChart.filterAll();
+            //focusAreaRowChart.filterAll();
+            //recpNameRowChart.filterAll();
+            //funderPieChart.filterAll();
+            //funderDim3.filterAll();
+            dimSet.forEach(function (d) {
+                d.filterAll();
+            });
+            //dc.filterAll();
+            dc.redrawAll();
+        }
+
+        d3.csv("data/2017_EPA_GLRI_ProjDB_v10_170228_Siyu_test.csv", function (input_data) {
+            var dateFormat = d3.time.format("%Y").parse;
+            var numberFormat = d3.format(".2f");
+            
+            input_data.forEach(function (d) {
+                d.year = dateFormat(d.Year_).getFullYear();
+                d.recpName = d.Recip_Nm_G;
+                d.areaCode = d.Focus_Area.split(" - ")[0];
+                d.funderFocus = d.Funder + ":" + d.Focus_Area;
+                d.amount = parseInt(d.GLRI_Amt) / 1000000;
+            });
+
+            var data = crossfilter(input_data);
+            //var all = data.groupAll();
+
+            yearDim = data.dimension(function (d) {
+                //return d.areaCode;
+                return d.year;
+            });
+            dimSet.push(yearDim);
+
+            var yearGroup = yearDim.group().reduce(
+                function (p, v) {
+                    ++p.count;
+                    p.total += v.amount;
+                    return p;
+                },
+                function (p, v) {
+                    --p.count;
+                    p.total -= v.amount;
+                    return p;
+                },
+                function () {
+                    return {
+                        count: 0,
+                        total: 0
+                    };
+                }
+                );
+
+            yearPieChart = dc.pieChart("#year-pie-chart");
+            yearPieChart
+                .width(500)
+                .height(500)
+                .dimension(yearDim)
+                .group(yearGroup)
+                .valueAccessor(function (d) {
+                    return d.value.total;
+                })
+                .title(function (d) {
+                    var val = numberFormat(d.value.total) + " Million";
+                    return "\nProject Count: " + d.value.count + "\nTotal Amount: " + val;
+                })
+                //.colors(colorbrewer.YlGnBu[7])
+                //.colorDomain([0, 800])
+                //.colorAccessor(function (d) {
+                //    return d.value.total;
+                //})
+            ;
+
+        var focusAreaDim = data.dimension(function (d) {
+            //return d.areaCode;
+            return d.Focus_Area;
+        });
+        dimSet.push(focusAreaDim);
+
+        var focusAreaGroup = focusAreaDim.group().reduce(
+            function (p, v) {
+                ++p.count;
+                p.total += v.amount;
+                return p;
+            },
+            function (p, v) {
+                --p.count;
+                p.total -= v.amount;
+                return p;
+            },
+            function () {
+                return {
+                    count: 0,
+                    total: 0
+                };
+            }
+            );
+        var minTotal = focusAreaDim.bottom(1)[0].total;
+        var maxTotal = focusAreaDim.top(1)[0].total;
+        focusAreaRowChart = dc.rowChart("#focus-area-row-chart");
+        focusAreaRowChart
+            .width(500)
+            .height(500)
+            .dimension(focusAreaDim)
+            .group(focusAreaGroup)
+            .valueAccessor(function (d) {
+                return d.value.total;
+            })
+            .label(function (d) {
+                return d.key;
+            })
+            .title(function (d) {
+                var val = numberFormat(d.value.total) + " Million";
+                return "Project Count: " + d.value.count + "\nTotal Amount: " + val;
+            })
+            .elasticX(true)
+            .x(d3.scale.linear().domain([minTotal, maxTotal]))
+            .xAxis().tickFormat(function (d) {
+                return d + "M";
+            });
+
+
+        recpNameDim = data.dimension(function (d) {
+            return d.recpName;
+        })
+        dimSet.push(recpNameDim);
+        recpNameGroup = recpNameDim.group().reduceCount();
+        recpNameRowChart = dc.rowChart("#recp-name-row-chart");
+        recpNameRowChart
+            .width(500)
+            .height(8000)
+            .dimension(recpNameDim)
+            .group(recpNameGroup)
+            .elasticX(true)
+        ;
+
+        var funderDim = data.dimension(function (d) {
+            return d.Funder;
+        });
+        dimSet.push(funderDim);
+        //var funderGroup = funderDim.group().reduceSum();
+        var funderGroup = funderDim.group().reduce(
+            function (p, v) {
+                ++p.count;
+                p.total += v.amount;
+                return p;
+            },
+            function (p, v) {
+                --p.count;
+                p.total -= v.amount;
+                return p;
+            },
+            function () {
+                return {
+                    count: 0,
+                    total: 0
+                };
+            }
+            );
+        funderPieChart = dc.pieChart("#funder-pie-chart");
+        funderPieChart
+            .width(500)
+            .height(500)
+            .dimension(funderDim)
+            .group(funderGroup)
+            .valueAccessor(function (d) {
+                return d.value.total;
+            })
+            .title(function (d) {
+                var val = numberFormat(d.value.total) + " Million";
+                return "\nProject Count: " + d.value.count + "\nTotal Amount: " + val;
+            })
+        ;
+
+        var funderFocusDim = data.dimension(function (d) {
+            return d.funderFocus;
+        });
+        dimSet.push(funderFocusDim);
+        var funderFocusGroup = funderFocusDim.group().reduce(
+            function (p, v) {
+                ++p.count;
+                p.total += v.amount;
+                return p;
+            },
+            function (p, v) {
+                --p.count;
+                p.total -= v.amount;
+                return p;
+            },
+            function () {
+                return {
+                    count: 0,
+                    total: 0
+                };
+            }
+            );
+        //var minFunder = funderDim.bottom(1)[0].Funder;
+        //var maxFunder = funderDim.top(1)[0].Funder;
+        //var minFocus = focusAreaDim.bottom(1)[0].Focus_Area;
+        //var maxFocus = focusAreaDim.top(1)[0].Focus_Area;
+        var funderDim2 = data.dimension(function (d) {
+            return d.Funder;
+        })
+        dimSet.push(funderDim2);
+        var funderGroup2 = funderDim2.group().reduce(
+            function (p, v) {
+                ++p.count;
+                p.total += v.amount;
+                return p;
+            },
+            function (p, v) {
+                --p.count;
+                p.total -= v.amount;
+                return p;
+            },
+            function () {
+                return {
+                    count: 0,
+                    total: 0
+                };
+            }
+            );
+        var funderList = [];
+        for (var i = 0; i < funderGroup2.all().length; i++) {
+            funderList[i] = funderGroup2.all()[i].key;
+        }
+        focusAreaList = [];
+        focusAreaGroup.all().forEach(function (d) {
+            focusAreaList.push(d.key);
+        });
+        //var focusList = [];
+        //for (var i = 0; i < focusAreaGroup.all().length; i++) {
+        //    focusList[i] = focusAreaGroup.all()[i].key;
+        //}
+
+        funderFocusBubbleChart = dc.bubbleChart("#funder-focus-bubble-chart");        
+        funderFocusBubbleChart
+            .width(800)
+            .height(500)
+            .dimension(funderFocusDim)
+            .group(funderFocusGroup)
+            .keyAccessor(function (d) {
+                return d.key.split(":")[0];
+            })
+            .valueAccessor(function (d) {
+                return d.key.split(":")[1].split(" - ")[0];
+            })
+            .radiusValueAccessor(function (d) {
+                if (d.value.total <= 0) {
+                    return 0;
+                }
+                return numberFormat(d.value.total);
+            })
+            .label(function (d) {
+                return d.key.split(":")[0];// + " of Category " + d.key.split(":")[1].split(" - ")[0];
+            })
+            .title(function (d) {
+                if (d.value.count == 0) {
+                    return "Funder: " + d.key.split(":")[0] + "\nProject Count: " + d.value.count;
+                }
+                return "Funder: " + d.key.split(":")[0] + "\nProject Count: " + d.value.count + "\nAmount: " + numberFormat(d.value.total) + "M";
+            })
+            .maxBubbleRelativeSize(0.1)
+            .x(d3.scale.ordinal().domain(funderList))
+            .y(d3.scale.linear().domain([0, 8]))
+            .xUnits(dc.units.ordinal)
+            .yAxisLabel(focusAreaList)
+        //.yUnits(dc.units.ordinal)
+            //.yAxis(focusList)
+        ;
+
+        funderFocusBubbleChart2 = dc.bubbleChart("#funder-focus-bubble-chart2");
+        funderFocusBubbleChart2
+            .width(800)
+            .height(500)
+            .dimension(funderFocusDim)
+            .group(funderFocusGroup)
+            .keyAccessor(function (d) {
+                return d.key.split(":")[0];
+            })
+            .valueAccessor(function (d) {
+                return d.key.split(":")[1];
+            })
+            .radiusValueAccessor(function (d) {
+                if (d.value.total <= 0) {
+                    return 0;
+                }
+                return numberFormat(d.value.total);
+            })
+            .label(function (d) {
+                return d.key.split(":")[0];// + " of Category " + d.key.split(":")[1].split(" - ")[0];
+            })
+            .title(function (d) {
+                if (d.value.count == 0) {
+                    return "Funder: " + d.key.split(":")[0] + "\nProject Count: " + d.value.count;
+                }
+                return "Funder: " + d.key.split(":")[0] + "\nProject Count: " + d.value.count + "\nAmount: " + numberFormat(d.value.total) + "M";
+            })
+            .maxBubbleRelativeSize(0.1)
+            .x(d3.scale.ordinal().domain(funderList))
+            .y(d3.scale.linear().domain([0, 8]))
+            .xUnits(dc.units.ordinal)
+            .yAxisLabel(focusAreaList)
+        //.yUnits(dc.units.ordinal)
+        //.yAxis(focusList)
+        ;
+
+
+        var yearDim2 = data.dimension(function (d) {
+            return d.year;
+        })
+        dimSet.push(yearDim2);
+        var yearGroup2 = yearDim2.group().reduce(
+            function (p, v) {
+                p.count++;
+                p.total += v.amount;
+                return p;
+            },
+            function (p, v) {
+                p.count--;
+                p.total -= v.amount;
+                return p;
+            },
+            function () {
+                return {
+                    count: 0,
+                    total:0
+                };
+            }
+            );
+
+        funderDim3 = data.dimension(function (d) {
+            return d.Funder;
+        });
+        dimSet.push(funderDim3);
+        //var funderGroup3 = funderDim3.group().reduceCount();
+        var funderGroup3 = funderDim3.group().reduce(
+            function (p, v) {
+                p.count++;
+                p.total += v.amount;
+                return p;
+            },
+            function (p, v) {
+                p.count--;
+                p.total -= v.amount;
+                return p;
+            },
+            function () {
+                return {
+                    count: 0,
+                    total: 0
+                };
+            });
+        var createPropertyGroup = function (dimension, property) {
+            return dimension.group().reduce(
+                function (p, v) {
+                    if (v.Funder == property) {
+                        p.funder = v.Funder;
+                        ++p.count;
+                        p.total += v.amount;
+                    }
+                    return p;
+                },
+            function (p, v) {
+                if (v.Funder == property) {
+                    --p.count;
+                    p.total -= v.amount;
+                }
+                return p;
+            },
+            function () {
+                return {
+                    count: 0,
+                    total: 0,
+                    funder: ""
+                };
+            }
+               );
+        }
+        var groups = [];
+        var groupsize = funderGroup3.size();
+        for (var i = 0; i < groupsize ; i++) {
+            var property = funderGroup3.top(groupsize)[i].key;
+            groups[i] = createPropertyGroup(yearDim2, property);
+        }
+
+        focusYearlyLineChart = dc.lineChart("#focus-year-line-chart");
+
+        focusYearlyLineChart
+            .width(800)
+            .height(500)
+            .dimension(yearDim2)
+            .x(d3.scale.ordinal().domain(["2010", "2011", "2012", "2013", "2014", "2015", "2016"]))
+            .xUnits(dc.units.ordinal)
+            .valueAccessor(function (d) {
+                return d.value.total;
+            })
+            .legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
+            //.yAxisLabel(function (d) {
+            //    return d.key + "M";
+            //})
+            .label(function (d) {
+                return d.layer;
+            })
+            .title(function (d) {
+                return d.value.funder + " funded "+ numberFormat(d.value.total) + "M in " + d.key;
+            })
+            .elasticY(true)
+            //.colors(function (){
+            //    return colorbrewer.Spectral[11];
+            //})
+        //.mouseZoomable(true)
+        ;
+        //.
+        var j = 0;
+        groups.forEach(function (d) {
+            if (j == 0) {
+                focusYearlyLineChart.group(d, funderGroup3.top(groupsize)[j].key)
+            } else {
+                focusYearlyLineChart.stack(d, funderGroup3.top(groupsize)[j].key);
+            }
+            j++;
+        });
+
+        dataCount = dc.dataCount("#data-count")
+            .dimension(data)
+            .group(data.groupAll())
+            .html({
+                some: '<strong>%filter-count</strong> selected out of <strong>%total-count</strong> records' +
+            ' | <a href=\'javascript:dc.filterAll(); dc.renderAll();\'>Reset All</a>',
+                all: 'All records selected. Please click on the graph to apply filters.'
+            })
+
+        var yearSeriesDim = data.dimension(function (d) {
+            return [+d.year, d.Funder];
+        });
+        var yearSeriesGroup = yearSeriesDim.group().reduce(
+            function (p, v) {
+            p.count++;
+            p.total += v.amount;
+            return p;
+        },
+            function (p, v) {
+                p.count--;
+                p.total -= v.amount;
+                return p;
+            },
+            function () {
+                return {
+                    count: 0,
+                    total: 0
+                };
+            });
+        yearSeriesChart = dc.seriesChart("#year-series-chart")
+            .width(800)
+            .height(500)
+            .chart(function (c) { return dc.lineChart(c); })
+            .dimension(yearSeriesDim)
+            .group(yearSeriesGroup)
+            .x(d3.scale.linear().domain([new Date(2010, 0,1), new Date(2016, 11, 31)]))//"2010", "2011", "2012", "2013", "2014", "2015", "2016"
+            //.xUnits(dc.units.ordinal)
+            .xAxisLabel(function (d) {
+            })
+            .seriesAccessor(function (d) {
+                return d.key[1];
+            })
+            .keyAccessor(function (d) {
+                return d.key[0];
+            })
+            .valueAccessor(function (d) {
+                return d.value.total;
+            })
+            .title(function (d) {
+                return d.key[1] + " funded " + numberFormat(d.value.total) + "M in " + d.key[0];
+            })
+            .renderHorizontalGridLines(true)
+                    .renderVerticalGridLines(true)
+
+            .brushOn(false)
+            .elasticX(true)
+            .elasticY(true)
+
+                //.clipPadding(50)
+
+             //   .mouseZoomable(true)
+
+            .legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
+
+        ;
+        yearSeriesChart.margins().left += 40;
+
+        yearSeriesChart2 = dc.seriesChart("#year-series-chart2")
+            .width(800)
+            .height(500)
+            .chart(function (c) { return dc.lineChart(c); })
+            .dimension(yearSeriesDim)
+            .group(yearSeriesGroup)
+            .x(d3.scale.ordinal())//.domain(["2010", "2011", "2012", "2013", "2014", "2015", "2016"]))
+            .xUnits(dc.units.ordinal)
+            .xAxisLabel(function (d) {
+            })
+            .seriesAccessor(function (d) {
+                return d.key[1];
+            })
+            .keyAccessor(function (d) {
+                return d.key[0];
+            })
+            .valueAccessor(function (d) {
+                return d.value.total;
+            })
+            .title(function (d) {
+                return d.key[1] + " funded " + numberFormat(d.value.total) + "M in " + d.key[0];
+            })
+            .renderHorizontalGridLines(true)
+                    .renderVerticalGridLines(true)
+
+            .brushOn(false)
+            .elasticX(true)
+            .elasticY(true)
+
+                //.clipPadding(50)
+
+             //   .mouseZoomable(true)
+
+            .legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
+            //.renderlet(function (chart) {
+            //    chart.selectAll("g.x text")
+            //    .attr('dx', '-30')
+            //    .attr('transform', "rotate(-90)");
+            //})
+        //.attr("transform", "translate(20, 0)")
+        ._rangeBandPadding(1)
+        ;
+        funderList.forEach(function (d) {
+            $("#mydropdown").append('<option value="' + d + '">' + d + '</option>');
+        });
+            dc.renderAll();
+
+        });
+
+        function getEPA() {
+            funderDim3.filterExact("EPA");
+            dc.redrawAll();
+        }
+
+        function resetYear() {
+            //yearDim.filterAll();
+            //dc.redrawAll();
+            mypie.filterAll();
+            //.filterAll();
+            //dc.renderAll();
+            //dc.redrawAll();
+            mypie.redrawGroup();
+
+        }
+
+        //function changeFunder() {
+        //    funderDim3.filterExact(this.Text);
+        //    dc.renderAll();
+        //}
+
+        //$("#mydropdown").change(function () {
+        //    funderDim3.filterExact(this.Text);
+        //    dc.renderAll();
+        //});
+
+        $(document).on('change', 'select', function () {            
+            var opt = $(this).find('option:selected')[0];
+            funderDim3.filterExact(opt.label);
+            dc.redrawAll();
+            //console.log($(this).val()); // the selected options’s value
+
+            //// if you want to do stuff based on the OPTION element:
+            //var opt = $(this).find('option:selected')[0];
+            //// use switch or if/else etc.
+        });
+            
+       
+    </script>
+
+
+    <style>
+        .dc-chart g.row text {
+            fill: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <button type="button" onclick="resetall();">Reset All</button>
+            <button type="button" onclick="getEPA();">EPA</button>
+            <button type="button" onclick="resetYear();">Year</button>
+            <div>
+                <div>
+                    <p>Select by Funder: </p>
+                </div>
+                <div>
+                    <select id="mydropdown"></select>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="data-count"></div>
+                <div>
+                    <div id="pie-chart"></div>
+                    <div id="year-series-chart"></div>
+                    <div id="year-series-chart2"></div>
+                    <div id="year-pie-chart"></div>
+                    <div id="focus-area-row-chart"></div>
+                    <div id="funder-pie-chart"></div>
+                    <div id="funder-focus-bubble-chart"></div>
+                    <div id="funder-focus-bubble-chart2"></div>
+                    <div id="focus-year-line-chart"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="recp-name-row-chart"></div>
+            </div>
+            <div class="col-md-3">
+                <div id="project-desc-datatable"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
