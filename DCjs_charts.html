@@ -22,6 +22,7 @@
 
     <script>
         var dateFormat = d3.time.format("%Y").parse;
+        var numberFormat = d3.format(".2f");
 
         function calculateFieldset(line) {
             switch (line.FIELD_SET) {
@@ -214,21 +215,21 @@
             
             loadsChart = dc.seriesChart("#loads-chart")
             .width(600)
-            .height(400)
-            //.chart(function (c) { return dc.lineChart(c); })
-                .chart(function (c){                    
-                        var child = dc.lineChart(c);
-                        dc.override(child, 'yAxisMin', function () {
-                            var min = d3.min(child.data(), function (layer) {
-                                return d3.min(layer.values, function (p) {
-                                    return p.y + p.y0;
-                                });
-                            });
-                            return dc.utils.subtract(min, child.yAxisPadding());
-                        });
-                        return child;
-                    }
-                )
+            .height(500)
+            .chart(function (c) { return dc.lineChart(c); })
+                //.chart(function (c){                    
+                //        var child = dc.lineChart(c);
+                //        dc.override(child, 'yAxisMin', function () {
+                //            var min = d3.min(child.data(), function (layer) {
+                //                return d3.min(layer.values, function (p) {
+                //                    return p.y + p.y0;
+                //                });
+                //            });
+                //            return dc.utils.subtract(min, child.yAxisPadding());
+                //        });
+                //        return child;
+                //    }
+                //)
             .dimension(allDim2)
                 .group(loadsGroup)
             .x(d3.scale.ordinal().domain(["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"]))
@@ -238,12 +239,7 @@
             //.xAxisLabel(function (d) {
             //})
             .seriesAccessor(function (d) {
-                return [d.key[0], d.key[3]];
-                //if (d.key[2] == "loads") {
-                //    return [d.key[0], d.key[3]];
-                //} else {
-                //    return 
-                //}
+                return [d.key[0], d.key[3]];                
             })
             .keyAccessor(function (d) {
                 return d.key[1];
@@ -265,7 +261,7 @@
 
              //   .mouseZoomable(true)
 
-            .legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
+            .legend(dc.legend().x(500).y(10).itemHeight(13).gap(5))
             //.renderlet(function (chart) {
             //    chart.selectAll("g.x text")
             //    .attr('dx', '-30')
@@ -284,7 +280,7 @@
 
             springFlowChart = dc.seriesChart("#springFlow-chart")
             .width(600)
-            .height(400)
+            .height(500)
             .chart(function (c) { return dc.lineChart(c); })
             .dimension(allDim2)
                 .group(springFlowGroup)
@@ -321,7 +317,7 @@
 
              //   .mouseZoomable(true)
 
-            .legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
+            .legend(dc.legend().x(500).y(10).itemHeight(13).gap(5))
             //.renderlet(function (chart) {
             //    chart.selectAll("g.x text")
             //    .attr('dx', '-30')
@@ -337,50 +333,74 @@
             //    var data = [];
 
             //}
-            //var timeGroupAll = filter_keys(allGroup2, function (k) {
-            //    return k[2] == "timeWeighted" && k[3] == "TP"; // k[0] is the same part used for seriesAccessor
-            //});
-            //var timeGroup1 = filter_keys(allGroup2, function (k) {
-            //    return k[2] == "timeWeighted" && k[3] == "TP" && k[0] != "Maumee"; // k[0] is the same part used for seriesAccessor
-            //});
-            //var timeGroup2 = filter_keys(allGroup2, function (k) {
-            //    return k[2] == "timeWeighted" && k[3] == "TP" && k[0] == "Maumee"; // k[0] is the same part used for seriesAccessor
-            //});
+            var timeGroupAllTP= filter_keys(allGroup2, function (k) {
+                return k[2] == "timeWeighted" && k[3] == "TP"; // k[0] is the same part used for seriesAccessor
+            });
+            var timeGroup1 = filter_keys(allGroup2, function (k) {
+                return k[2] == "timeWeighted" && k[3] == "TP" && k[0] == "Maumee"; // k[0] is the same part used for seriesAccessor
+            });
+            var timeGroup2 = filter_keys(allGroup2, function (k) {
+                return k[2] == "timeWeighted" && k[3] == "TP" && k[0] == "Portage"; // k[0] is the same part used for seriesAccessor
+            });
+            var timeGroup3 = filter_keys(allGroup2, function (k) {
+                return k[2] == "timeWeighted" && k[3] == "TP" && k[0] == "Raisin"; // k[0] is the same part used for seriesAccessor
+            });
+            var
 
-            ////timeChart = dc.compositeChart("#time-chart");
-            ////timeChart
-            ////    .width(800)
-            ////.height(500)
-            ////.x(d3.scale.ordinal().domain(["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"]))            
-            ////.xUnits(dc.units.ordinal)
-            ////.legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
-            ////.brushOn(false)
-            ////    .dimension(allDim2)
-            ////    .group(timeGroupAll)
-            ////    ._rangeBandPadding(1)
-            ////.compose([
-            ////    dc.lineChart(timeChart)
-            ////        .dimension(allDim2)
-            ////        .group(timeGroup1)
-            ////        .keyAccessor(function (d) {
-            ////            return d.key[1];
-            ////        })
-            ////.valueAccessor(function (d) {
-            ////    return d.value.Value;
-            ////})            
-            ////        ,
-            //////    dc.barChart(timeChart)
-            //////        .dimension(allDim2)
-            //////        .group(timeGroup2)
-            //////        .keyAccessor(function (d) {
-            //////            return d.key[1];
-            //////        })
-            //////.valueAccessor(function (d) {
-            //////    return d.value.Value;
-            //////})
-
-
-            ////]);
+            timeChart = dc.compositeChart("#time-chart");
+            timeChart
+                .width(800)
+                .height(500)
+                .x(d3.scale.ordinal().domain(["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"]))
+                .xUnits(dc.units.ordinal)
+                .legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
+                .brushOn(false)
+                //.elasticX(true)
+                .elasticY(true)
+                .dimension(allDim2)
+                .group(timeGroupAllTP)
+                ._rangeBandPadding(1)
+                .title(function (d) {
+                    return d.key[0] + " River contains " + d.value.Value + " Unit of " + d.key[3] + " in " + d.key[1];
+                })
+                .compose([
+                    dc.barChart(timeChart)
+                        .dimension(allDim2)
+                        .group(timeGroup2, "Portage")
+                        .keyAccessor(function (d) {
+                            return d.key[1];
+                        })
+                        .valueAccessor(function (d) {
+                            return d.value.Value;
+                        })
+                        .centerBar(true)
+                        //.barPadding(0.8)
+                        //.outerPadding(30)
+                        ,
+                    dc.lineChart(timeChart)
+                        .dimension(allDim2)
+                        .group(timeGroup1, "Maumee")
+                        .keyAccessor(function (d) {
+                            return d.key[1];
+                        })
+                        .valueAccessor(function (d) {
+                            return d.value.Value;
+                        })
+                        .colors('red')
+                        .dashStyle(2, 2)
+                        .renderArea(true)
+                        ,
+                    dc.lineChart(timeChart)
+                        .dimension(allDim2)
+                        .group(timeGroup3, "Raisin")
+                        .keyAccessor(function (d) {
+                            return d.key[1];
+                        })
+                        .valueAccessor(function (d) {
+                            return d.value.Value;
+                        })
+                        .colors('green')                        
+            ]);
 
             //testLineChart = dc.lineChart("#time-chart")
             //    .width(800)
@@ -391,14 +411,88 @@
             //     ._rangeBandPadding(1)
             //.brushOn(false)
             //        .dimension(allDim2)
-            //        .group(timeGroup1)
+            //        .group(timeGroup2, "Raisin")
             //        .keyAccessor(function (d) {
             //            return d.key[1];
             //        })
             //.valueAccessor(function (d) {
             //    return d.value.Value;
             //})
+            //.stack(timeGroup1, "Maumee", function (d) {
+            //    return d.value.Value;
+            //})
+            //;
 
+            var pieData = [
+            {
+                name: "Municipal Point Source",
+                y: 338.96
+            },
+            {
+                name: "Industrial Point Source",
+                y: 40.9872
+            },
+            {
+                name: "Non-Point Source",
+                y: 3946.8
+            }
+            ];
+
+            var piefilterdata = crossfilter(pieData);
+            //var all = piefilterdata.groupAll();
+            var pieDim = piefilterdata.dimension(function (d) {
+                return d.name;
+            });
+            var all = 0;
+            //pieData.forEach(function (d) {
+            //    all += d.y;
+            //})
+            //var pieGroup = pieDim.group();
+            var pieGroup = pieDim.group().reduce(
+                function (p, v) {
+                    p.value += v.y;
+                    all += v.y;
+                    return p;
+                },
+                function (p, v) {
+                    p.value -= v.y;
+                    all -= v.y;
+                    return p;
+                },
+                function () {
+                    return {
+                        value: 0
+                    }
+                }
+                );
+
+            var colorScale = d3.scale.ordinal()
+                .domain(["Municipal Point Source", "Industrial Point Source", "Non-Point Source"])
+                .range(["#434348", "#7cb5ec", "#a9ff96"]);
+
+            var pieChart = dc.pieChart("#pie-chart")
+                .width(600)
+                .height(600)
+                .dimension(pieDim)
+                .group(pieGroup)
+                .radius(250)
+            .valueAccessor(function (d) {
+                return d.value.value;
+            })
+            .colors(["#7cb5ec", "#434348", "#a9ff96"])
+                .colorDomain([0, 2])
+                .colorAccessor(function (d) {
+                    var index = colorScale.domain().indexOf(d.key);
+                    return index;
+                })
+            .label(function (d) {
+                return d.key + "\n(" + numberFormat(d.value.value / all * 100) + "%)";
+            })
+                .title(function (d) {
+                    return d.key + "\nUnit: " + d.value.value + "\n(" + numberFormat(d.value.value / all * 100) + "%)";
+                })
+            .legend(dc.legend().x(400).y(10).itemHeight(13).gap(5))
+            ;
 
             dc.renderAll();
         });
@@ -436,6 +530,14 @@
             }
             dc.redrawAll();
         });
+
+        
+
+        //d3.json(pieData, function (in_data) {
+        //    in_data.forEach(function (d) {
+        //        return d;
+        //    });
+        //});
     </script>
 </head>
 <body>
@@ -476,10 +578,14 @@
                 <div><p style="text-align:center"><b>Spring Flow-weighted Mean Concentrations</b></p></div>
                 <div id="springFlow-chart"></div>
             </div>
-            <!--<div>
-                <div><p style="text-align:center"><b>Time-weighted Mean Concentrations</b></p></div>
+            <div class="col-md-6">
+                <div><p style="text-align:center"><b>Time-weighted Mean Concentrations of TP</b></p></div>
                 <div id="time-chart"></div>
-            </div>-->
+            </div>
+            <div class="col-md-6">
+                <div><p style="text-align:center"><b>Proportion of Sources</b></p></div>
+                <div id="pie-chart"></div>
+            </div>
         </div>
     </div>   
 </body>
