@@ -349,7 +349,7 @@
 
             timeChart = dc.compositeChart("#time-chart");
             timeChart
-                .width(800)
+                .width(700)
                 .height(500)
                 .x(d3.scale.ordinal().domain(["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"]))
                 .xUnits(dc.units.ordinal)
@@ -471,11 +471,11 @@
                 .range(["#434348", "#7cb5ec", "#a9ff96"]);
 
             var pieChart = dc.pieChart("#pie-chart")
-                .width(600)
-                .height(600)
+                .width(500)
+                .height(500)
                 .dimension(pieDim)
                 .group(pieGroup)
-                .radius(250)
+                .radius(200)
             .valueAccessor(function (d) {
                 return d.value.value;
             })
@@ -491,7 +491,7 @@
                 .title(function (d) {
                     return d.key + "\nUnit: " + d.value.value + "\n(" + numberFormat(d.value.value / all * 100) + "%)";
                 })
-            .legend(dc.legend().x(400).y(10).itemHeight(13).gap(5))
+            .legend(dc.legend().x(330).y(10).itemHeight(13).gap(5))
             ;
 
             dc.renderAll();
