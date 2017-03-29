@@ -1,0 +1,592 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="shortcut icon" href="">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.1/dc.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.1/dc.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+        var dateFormat = d3.time.format("%Y").parse;
+        var numberFormat = d3.format(".2f");
+
+        function calculateFieldset(line) {
+            switch (line.FIELD_SET) {
+                case "Loads":
+                    return "loads";
+                case "Unit Area Loads":
+                    return "ual";
+                case "Flow-weighted mean concentrations":
+                    return "flowWeighted";
+                case "Time-weighted mean concentrations":
+                    return "timeWeighted";
+                case "Spring Loads":
+                    return "springLoads";
+                case "Spring Flow-weighted mean concentrations":
+                    return "springFlow";
+            }
+        }
+
+
+
+        d3.csv("data/NCWQR Lake Erie tribs_GLC_031617_sample_4_Siyu_input2.csv", function (in_file) {   
+            in_file.forEach(function (d) {
+                d.Year = dateFormat(d.Year).getFullYear();
+                d.Value = parseFloat(d.Value);
+                //d.TP = parseFloat(d.TP);
+                //d.DRP = parseFloat(d.DRP);
+                //d.id = d.River + ":" + d.Year + ":" + d.FIELD_SET;
+                //if (d.NOS == "") {
+                //    d.NOS = 0;
+                //}
+                //if (d.Discharge == "") {
+                //    d.Discharge = 0;
+                //}
+                //if (d.TN == "") {
+                //    d.TN = 0;
+                //}
+                //if (d.PTN == "") {
+                //    d.PTN = 0;
+                //}
+                //if (d.TPP == "") {
+                //    d.TPP = 0;
+                //}
+                //if (d.PP == "") {
+                //    d.PP = 0;
+                //}
+                d.fieldset = calculateFieldset(d);
+            });
+
+            function reduceFieldsAdd(fields) {
+                return function (p, v) {
+                    fields.forEach(function (f) {
+                        p[f] += v[f];
+                    });
+                    return p;
+                };
+            }
+            function reduceFieldsRemove(fields) {
+                return function (p, v) {
+                    fields.forEach(function (f) {
+                        p[f] -= v[f];
+                    });
+                    return p;
+                };
+            }
+            function reduceFieldsInitial(fields) {
+                return function () {
+                    var ret = {};
+                    fields.forEach(function (f) {
+                        ret[f] = 0;
+                    });
+                    return ret;
+                };
+            }
+
+            var data = crossfilter(in_file);
+            var fields = ["Value"];
+
+            //dataCount = dc.dataCount("#data-count")
+            //.dimension(data)
+            //.group(data.groupAll())
+            //.html({
+            //    some: '<strong>%filter-count</strong> selected out of <strong>%total-count</strong> records' +
+            //' | <a href=\'javascript:dc.filterAll(); dc.renderAll();\'>Reset All</a>',
+            //    all: 'All records selected. Please click on the graph to apply filters.'
+            //})
+
+
+            allDim = data.dimension(function (d) { return d.id; });
+            allDim2 = data.dimension(function (d) { return [d.River, d.Year, d.fieldset, d.Measure]; });
+            riverDim = data.dimension(function (d) { return d.River; });
+            yearDim = data.dimension(function (d) { return d.Year; });
+            fieldDim = data.dimension(function (d) { return d.FIELD_SET; });
+            riverDim2 = data.dimension(function (d) { return d.River; });
+            measureDim = data.dimension(function (d) { return d.Measure; });
+
+            var allGroup = allDim2.group().reduce(
+                function (p, v) {
+                    //p.count++;
+                    p.TP = v.TP;
+                    p.DRP = v.DRP;
+                    p.year = v.Year;
+                    return p;
+                },
+                function (p, v) {
+                    //p.count--;
+                    p.TP = v.TP;
+                    p.DRP = v.DRP;
+                    p.year = v.year;
+                    return p;
+                },
+                function () {
+                    return {
+                        ////count: 0,
+                        //TPtotal: 0,
+                        //DRPtotal: 0,
+                        //year: 0
+                        TP: 0,
+                        DRP: 0,
+                        year: 0
+                    };
+                }
+                );
+
+            var allGroup2 = allDim2.group().reduce(
+                reduceFieldsAdd(fields), reduceFieldsRemove(fields), reduceFieldsInitial(fields));
+                //function (p, v) {
+                //    //p.count++;
+                //    p.val = v.Value;                    
+                //    return p;
+                //},
+                //function (p, v) {
+                //    //p.count--;
+                //    p.val = v.Value;
+                //    return p;
+                //},
+                //function () {
+                //    return {
+                //        ////count: 0,
+                //        //TPtotal: 0,
+                //        //DRPtotal: 0,
+                //        //year: 0
+                //        val: 0
+                //    };
+                //}
+                //);
+
+            //var riverGroup = riverDim.group().reduce(
+            //    function (p, v) {
+            //        p.count++;
+            //        p.TPtotal += v.TP;
+            //        p.DRPtotal += v.DRP;
+            //        p.year = v.Year;
+            //        return p;
+            //    },
+            //    function (p, v) {
+            //        p.count--;
+            //        p.TPtotal -= v.TP;
+            //        p.DRPtotal -= v.DRP;
+            //        p.year = v.year;
+            //        return p;
+            //    },
+            //    function () {
+            //        return {
+            //            count: 0,
+            //            TPtotal: 0,
+            //            DRPtotal: 0,
+            //            year:0
+            //        };
+            //    }
+            //    );
+
+
+
+            //var loadChart = dc.seriesChart("loads-chart")
+            function filter_keys(source_group, f) {
+                return {
+                    all: function () {
+                        return source_group.all().filter(function (d) {
+                            return f(d.key);
+                        });
+                    }
+                };
+            }
+
+            // in particular, take experiments 1 and 2 from scatter-series.html:
+            var loadsGroup = filter_keys(allGroup2, function (k) {
+                return k[2] == "loads"; // k[0] is the same part used for seriesAccessor
+            });
+                
+            
+            loadsChart = dc.seriesChart("#loads-chart")
+            .width(600)
+            .height(500)
+            .chart(function (c) { return dc.lineChart(c); })
+                //.chart(function (c){                    
+                //        var child = dc.lineChart(c);
+                //        dc.override(child, 'yAxisMin', function () {
+                //            var min = d3.min(child.data(), function (layer) {
+                //                return d3.min(layer.values, function (p) {
+                //                    return p.y + p.y0;
+                //                });
+                //            });
+                //            return dc.utils.subtract(min, child.yAxisPadding());
+                //        });
+                //        return child;
+                //    }
+                //)
+            .dimension(allDim2)
+                .group(loadsGroup)
+            .x(d3.scale.ordinal().domain(["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"]))
+            //.x(d3.scale.ordinal())//.domain(["2010", "2011", "2012", "2013", "2014", "2015", "2016"]))
+            .xUnits(dc.units.ordinal)
+                //.y(d3.scale.linear().domain[0, 3500])
+            //.xAxisLabel(function (d) {
+            //})
+            .seriesAccessor(function (d) {
+                return [d.key[0], d.key[3]];                
+            })
+            .keyAccessor(function (d) {
+                return d.key[1];
+            })
+            .valueAccessor(function (d) {
+                return d.value.Value;
+            })
+            .title(function (d) {
+                return d.key[0] + " River contains " + d.value.Value + " Unit of " + d.key[3] + " in " + d.key[1];
+            })
+            .renderHorizontalGridLines(true)
+                    .renderVerticalGridLines(true)
+
+            .brushOn(false)
+            .elasticX(true)
+            .elasticY(true)
+
+                //.clipPadding(50)
+
+             //   .mouseZoomable(true)
+
+            .legend(dc.legend().x(500).y(10).itemHeight(13).gap(5))
+            //.renderlet(function (chart) {
+            //    chart.selectAll("g.x text")
+            //    .attr('dx', '-30')
+            //    .attr('transform', "rotate(-90)");
+            //})
+        //.attr("transform", "translate(20, 0)")
+        ._rangeBandPadding(1)
+            .yAxis().tickFormat(d3.format(",s"))
+            ;
+
+
+            var springFlowGroup = filter_keys(allGroup2, function (k) {
+                return k[2] == "springFlow"; // k[0] is the same part used for seriesAccessor
+            });
+
+
+            springFlowChart = dc.seriesChart("#springFlow-chart")
+            .width(900)
+            .height(500)
+            .chart(function (c) { return dc.lineChart(c); })
+            .dimension(allDim2)
+                .group(springFlowGroup)
+            .x(d3.scale.ordinal().domain(["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"]))
+            //.x(d3.scale.ordinal())//.domain(["2010", "2011", "2012", "2013", "2014", "2015", "2016"]))
+            .xUnits(dc.units.ordinal)
+            //.xAxisLabel(function (d) {
+            //})
+            .seriesAccessor(function (d) {
+                return [d.key[0], d.key[3]];
+                //if (d.key[2] == "loads") {
+                //    return [d.key[0], d.key[3]];
+                //} else {
+                //    return 
+                //}
+            })
+            .keyAccessor(function (d) {
+                return d.key[1];
+            })
+            .valueAccessor(function (d) {
+                return d.value.Value;
+            })
+            .title(function (d) {
+                return d.key[0] + " River contains " + d.value.Value + " Unit of " + d.key[3] + " in " + d.key[1];
+            })
+            .renderHorizontalGridLines(true)
+                    .renderVerticalGridLines(true)
+
+            .brushOn(false)
+            .elasticX(true)
+            .elasticY(true)            
+
+                //.clipPadding(50)
+
+             //   .mouseZoomable(true)
+
+            .legend(dc.legend().x(750).y(10).itemHeight(13).gap(5))
+            //.renderlet(function (chart) {
+            //    chart.selectAll("g.x text")
+            //    .attr('dx', '-30')
+            //    .attr('transform', "rotate(-90)");
+            //})
+        //.attr("transform", "translate(20, 0)")
+        ._rangeBandPadding(1)            
+            ;
+
+            springFlowChart.yAxis().tickFormat(d3.format(",s"));
+
+            //function getDataFromRiverGroup(rivergroup) {
+            //    var data = [];
+
+            //}
+            var timeGroupAllTP= filter_keys(allGroup2, function (k) {
+                return k[2] == "timeWeighted" && k[3] == "TP"; // k[0] is the same part used for seriesAccessor
+            });
+            var timeGroup1 = filter_keys(allGroup2, function (k) {
+                return k[2] == "timeWeighted" && k[3] == "TP" && k[0] == "Maumee"; // k[0] is the same part used for seriesAccessor
+            });
+            var timeGroup2 = filter_keys(allGroup2, function (k) {
+                return k[2] == "timeWeighted" && k[3] == "TP" && k[0] == "Portage"; // k[0] is the same part used for seriesAccessor
+            });
+            var timeGroup3 = filter_keys(allGroup2, function (k) {
+                return k[2] == "timeWeighted" && k[3] == "TP" && k[0] == "Raisin"; // k[0] is the same part used for seriesAccessor
+            });
+            var
+
+            timeChart = dc.compositeChart("#time-chart");
+            timeChart
+                .width(800)
+                .height(500)
+                .x(d3.scale.ordinal().domain(["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"]))
+                .xUnits(dc.units.ordinal)
+                .legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
+                .brushOn(false)
+                //.elasticX(true)
+                .elasticY(true)
+                .dimension(allDim2)
+                .group(timeGroupAllTP)
+                ._rangeBandPadding(1)
+                .title(function (d) {
+                    return d.key[0] + " River contains " + d.value.Value + " Unit of " + d.key[3] + " in " + d.key[1];
+                })
+                .compose([
+                    dc.barChart(timeChart)
+                        .dimension(allDim2)
+                        .group(timeGroup2, "Portage")
+                        .keyAccessor(function (d) {
+                            return d.key[1];
+                        })
+                        .valueAccessor(function (d) {
+                            return d.value.Value;
+                        })
+                        .centerBar(true)
+                        //.barPadding(0.8)
+                        //.outerPadding(30)
+                        ,
+                    dc.lineChart(timeChart)
+                        .dimension(allDim2)
+                        .group(timeGroup1, "Maumee")
+                        .keyAccessor(function (d) {
+                            return d.key[1];
+                        })
+                        .valueAccessor(function (d) {
+                            return d.value.Value;
+                        })
+                        .colors('red')
+                        .dashStyle(2, 2)
+                        .renderArea(true)
+                        ,
+                    dc.lineChart(timeChart)
+                        .dimension(allDim2)
+                        .group(timeGroup3, "Raisin")
+                        .keyAccessor(function (d) {
+                            return d.key[1];
+                        })
+                        .valueAccessor(function (d) {
+                            return d.value.Value;
+                        })
+                        .colors('green')                        
+            ]);
+
+            //testLineChart = dc.lineChart("#time-chart")
+            //    .width(800)
+            //.height(500)
+            //.x(d3.scale.ordinal().domain(["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"]))
+            //.xUnits(dc.units.ordinal)
+            //.legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
+            //     ._rangeBandPadding(1)
+            //.brushOn(false)
+            //        .dimension(allDim2)
+            //        .group(timeGroup2, "Raisin")
+            //        .keyAccessor(function (d) {
+            //            return d.key[1];
+            //        })
+            //.valueAccessor(function (d) {
+            //    return d.value.Value;
+            //})
+            //.stack(timeGroup1, "Maumee", function (d) {
+            //    return d.value.Value;
+            //})
+            //;
+
+            var pieData = [
+            {
+                name: "Municipal Point Source",
+                y: 338.96
+            },
+            {
+                name: "Industrial Point Source",
+                y: 40.9872
+            },
+            {
+                name: "Non-Point Source",
+                y: 3946.8
+            }
+            ];
+
+            var piefilterdata = crossfilter(pieData);
+            //var all = piefilterdata.groupAll();
+            var pieDim = piefilterdata.dimension(function (d) {
+                return d.name;
+            });
+            var all = 0;
+            //pieData.forEach(function (d) {
+            //    all += d.y;
+            //})
+            //var pieGroup = pieDim.group();
+            var pieGroup = pieDim.group().reduce(
+                function (p, v) {
+                    p.value += v.y;
+                    all += v.y;
+                    return p;
+                },
+                function (p, v) {
+                    p.value -= v.y;
+                    all -= v.y;
+                    return p;
+                },
+                function () {
+                    return {
+                        value: 0
+                    }
+                }
+                );
+
+            var colorScale = d3.scale.ordinal()
+                .domain(["Municipal Point Source", "Industrial Point Source", "Non-Point Source"])
+                .range(["#434348", "#7cb5ec", "#a9ff96"]);
+
+            var pieChart = dc.pieChart("#pie-chart")
+                .width(600)
+                .height(600)
+                .dimension(pieDim)
+                .group(pieGroup)
+                .radius(250)
+            .valueAccessor(function (d) {
+                return d.value.value;
+            })
+            .colors(["#7cb5ec", "#434348", "#a9ff96"])
+                .colorDomain([0, 2])
+                .colorAccessor(function (d) {
+                    var index = colorScale.domain().indexOf(d.key);
+                    return index;
+                })
+            .label(function (d) {
+                return d.key + "\n(" + numberFormat(d.value.value / all * 100) + "%)";
+            })
+                .title(function (d) {
+                    return d.key + "\nUnit: " + d.value.value + "\n(" + numberFormat(d.value.value / all * 100) + "%)";
+                })
+            .legend(dc.legend().x(400).y(10).itemHeight(13).gap(5))
+            ;
+
+            dc.renderAll();
+        });
+
+        function chooseTP() {
+            measureDim.filterExact("TP");
+            dc.redrawAll();
+        }
+        function clearMeasureFilter() {
+            measureDim.filterAll();
+            dc.redrawAll();
+        }
+
+        $(document).on('change', '#river-dropdown', function () {
+            var opt = $(this).find('option:selected')[0];
+            if (opt.label == "All") {
+                riverDim.filterAll();
+            } else {
+                riverDim.filterExact(opt.label);
+            }
+            dc.redrawAll();
+            //console.log($(this).val()); // the selected options’s value
+
+            //// if you want to do stuff based on the OPTION element:
+            //var opt = $(this).find('option:selected')[0];
+            //// use switch or if/else etc.
+        });
+
+        $(document).on('change', '#measure-dropdown', function () {
+            var opt = $(this).find('option:selected')[0];
+            if (opt.label == "All") {
+                measureDim.filterAll();
+            } else {
+                measureDim.filterExact(opt.label);
+            }
+            dc.redrawAll();
+        });
+
+        
+
+        //d3.json(pieData, function (in_data) {
+        //    in_data.forEach(function (d) {
+        //        return d;
+        //    });
+        //});
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class ="row">
+            <!--<div id="river-filter-div" class="col-md-6">-->
+                <!--<div>-->
+                    <!--<p>Filter by River Name</p>-->
+                    <!--<select id="river-dropdown">-->
+                        <!--<option value="All">All</option>-->
+                        <!--<option value="Raisin">Raisin</option>-->
+                        <!--<option value="Maumee">Maumee</option>-->
+                        <!--<option value="Portage">Portage</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div id="measure-filter-div">
+                <div>
+                    <p>Filter by Measure Name</p>
+                    <select id="measure-dropdown">
+                        <option value="All">All</option>
+                        <option value="TP">TP</option>
+                        <option value="DRP">DRP</option>
+                    </select>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+    <br />
+    <div class="container-fluid">
+        <div class="row">
+            <!--<div class="col-md-6">-->
+                <!--<div><p style="text-align:center"><b>Loads</b></p></div>-->
+                <!--<div id="loads-chart"></div>-->
+            <!--</div>-->
+            <div class="col-md-6">
+                <div><p style="text-align:center"><b>Spring Flow-weighted Mean Concentrations</b></p></div>
+                <div id="springFlow-chart"></div>
+            </div>
+            <!--<div class="col-md-6">-->
+                <!--<div><p style="text-align:center"><b>Time-weighted Mean Concentrations of TP</b></p></div>-->
+                <!--<div id="time-chart"></div>-->
+            <!--</div>-->
+            <!--<div class="col-md-6">-->
+                <!--<div><p style="text-align:center"><b>Proportion of Sources</b></p></div>-->
+                <!--<div id="pie-chart"></div>-->
+            <!--</div>-->
+        </div>
+    </div>   
+</body>
+</html>
