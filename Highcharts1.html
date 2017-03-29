@@ -166,7 +166,7 @@
                 { name: "DRP", data: RaisinSeries.loads.DRP },
                 {name: "Target", data: target, color: "#FF0000"}
             ];
-            var options = createOptions("raisinchart1", "Raisin Loads", xAxis, "Units (Millgram/Ton)", dataSeries);
+            var options = createOptions("raisinchart1", "Raisin Loads", xAxis, "Metric Tons", dataSeries);
             var chart = new Highcharts.Chart(options);
 
             //target = [];
@@ -229,7 +229,7 @@
                 { name: "DRP", data: PortageSeries.springLoads.DRP },
                 { name: "Target", data: target, color: "#FF0000" }
             ];
-            options = createOptions("portagechart1", "Portage Spring Loads", xAxis, "Units", dataSeries);
+            options = createOptions("portagechart1", "Portage Spring Loads", xAxis, "Metric Tons", dataSeries);
             options.plotOptions = {
                 series: {
                     allowPointSelect: true
@@ -248,7 +248,7 @@
                 {type: "column", name: "DRP", data: PortageSeries.springFlow.DRP, color: "#000099"},
                 { name: "Target", data: target, color: "#FF0000" }
             ];
-            options = createOptions("portagechart2", "Portage Spring Flow", xAxis, "Units", dataSeries);
+            options = createOptions("portagechart2", "Portage Spring Flow", xAxis, "Milligrams / Liter", dataSeries);
             options.plotOptions = {
                 series: {
                     allowPointSelect: true
@@ -264,7 +264,7 @@
                 { type: "area", name: "Maumee", data: MaumeeSeries.timeWeighted.TP, color: "#FF0000", fillOpacity: 0.3, dashStyle:"shortDash" },
                 //{ name: "Target", data: target, color: "#FF0000" }
             ];
-            options = createOptions("river-tp-chart", "Time Weighted Mean Concentrations of TP in Rivers", xAxis, "Units", dataSeries);
+            options = createOptions("river-tp-chart", "Time Weighted Mean Concentrations of TP in Rivers", xAxis, "Milligrams / Liter", dataSeries);
             options.plotOptions = {
                 series: {
                     allowPointSelect: true

@@ -269,7 +269,9 @@
             //})
         //.attr("transform", "translate(20, 0)")
         ._rangeBandPadding(1)
+                .yAxisLabel("Metric Tons")
             .yAxis().tickFormat(d3.format(",s"))
+
             ;
 
 
@@ -324,7 +326,8 @@
             //    .attr('transform', "rotate(-90)");
             //})
         //.attr("transform", "translate(20, 0)")
-        ._rangeBandPadding(1)            
+        ._rangeBandPadding(1)
+                .yAxisLabel("Milligrams / Liter")
             ;
 
             springFlowChart.yAxis().tickFormat(d3.format(",s"));
@@ -363,6 +366,7 @@
                 .title(function (d) {
                     return d.key[0] + " River contains " + d.value.Value + " Unit of " + d.key[3] + " in " + d.key[1];
                 })
+                .yAxisLabel("Milligrams / Liter")
                 .compose([
                     dc.barChart(timeChart)
                         .dimension(allDim2)
