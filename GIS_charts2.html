@@ -31,21 +31,25 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="./js/export-csv_glc.js"></script>
     <script>
-        var vals;
         require([
             "esri/Map",
             "esri/views/MapView",
             "esri/layers/FeatureLayer",
+            "dojo/query",
+            "dojo/dom",
             "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js",
             "https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js",
             "http://code.highcharts.com/highcharts.js",
             "https://code.highcharts.com/modules/exporting.js",
             "./js/export-csv_glc.js",
+
             "dojo/domReady!"
         ], function (
             Map,
             MapView,
-            FeatureLayer
+            FeatureLayer,
+            query,
+            dom
             ) {
             var layerUrl = "";
 
@@ -72,7 +76,54 @@
 
             };
 
+            function zoomtowatershed(el){
+                alert(el.text);
+            }
+
             function createCharts() {
+                function watershedObj(name) {
+                    this.name = name;
+                    this.loads = {
+                        TP: [],
+                        DRP: []
+                    };
+                    this.ual = {
+                        TP: [],
+                        DRP: []
+                    };
+                    this.flowWeighted = {
+                        TP: [],
+                        DRP: []
+                    };
+                    this.timeWeighted = {
+                        TP: [],
+                        DRP: []
+                    };
+                    this.springLoads = {
+                        TP: [],
+                        DRP: []
+                    };
+                    this.springFlow = {
+                        TP: [],
+                        DRP: []
+                    };
+                };
+                var watershedSet = [];
+                function getWatershed(name) {
+                    for(var i = 0; i < watershedSet.length;i++){
+                        if(watershedSet[i].name == name)
+                            return watershedSet[i];
+                    }
+                    return null;
+                };
+                function getWatershedNames(){
+                    var names = [];
+                    watershedSet.forEach(function (d){
+                        names.push(d.name);
+                    });
+                    return names;
+                }
+
                 function createOptions(container, title, xAxis, yAxisTitle, series) {
                     return {
                         chart: {
@@ -94,36 +145,6 @@
                     }
                 }
 
-                function createRiver(name) {
-                    var river = {
-                        River: name,
-                        loads: {
-                            TP: [],
-                            DRP: []
-                        },
-                        ual: {
-                            TP: [],
-                            DRP: []
-                        },
-                        flowWeighted: {
-                            TP: [],
-                            DRP: []
-                        },
-                        timeWeighted: {
-                            TP: [],
-                            DRP: []
-                        },
-                        springLoads: {
-                            TP: [],
-                            DRP: []
-                        },
-                        springFlow: {
-                            TP: [],
-                            DRP: []
-                        }
-                    };
-                    return river;
-                };
 
                 function addTP(river, fieldset, newVal) {
                     river[fieldset].TP.push(numberFormat(newVal));
@@ -131,27 +152,28 @@
                 function addDRP(river, fieldset, newVal) {
                     river[fieldset].DRP.push(numberFormat(newVal));
                 }
+                function calculateFieldset(line) {
+                    switch (line.FIELD_SET) {
+                        case "Loads":
+                            return "loads";
+                        case "Unit Area Loads":
+                            return "ual";
+                        case "Flow-weighted mean concentrations":
+                            return "flowWeighted";
+                        case "Time-weighted mean concentrations":
+                            return "timeWeighted";
+                        case "Spring Loads":
+                            return "springLoads";
+                        case "Spring Flow-weighted mean concentrations":
+                            return "springFlow";
+                    }
+                }
                 var dateFormat = d3.time.format("%Y").parse;
                 var numberFormat = d3.format(".4f");
 
                 d3.csv("data/NCWQR Lake Erie tribs_GLC_031617_sample_4_Siyu_input.csv", function (in_file) {
 
-                    function calculateFieldset(line) {
-                        switch (line.FIELD_SET) {
-                            case "Loads":
-                                return "loads";
-                            case "Unit Area Loads":
-                                return "ual";
-                            case "Flow-weighted mean concentrations":
-                                return "flowWeighted";
-                            case "Time-weighted mean concentrations":
-                                return "timeWeighted";
-                            case "Spring Loads":
-                                return "springLoads";
-                            case "Spring Flow-weighted mean concentrations":
-                                return "springFlow";
-                        }
-                    }
+
 
                     in_file.forEach(function (d) {
                         d.Year = dateFormat(d.Year).getFullYear();
@@ -177,11 +199,25 @@
                         d.fieldset = calculateFieldset(d);
                     });
 
-                    var RaisinSeries = createRiver("Raisin");
-                    var MaumeeSeries = createRiver("Maumee");
-                    var PortageSeries = createRiver("Portage");
+                    var RaisinSeries = new watershedObj("Raisin");
+                    var MaumeeSeries = new watershedObj("Maumee");
+                    var PortageSeries = new watershedObj("Portage");
 
-                    vals = in_file.map(function (obj) {
+
+                    in_file.map(function (obj) {
+                        var existednames = getWatershedNames();
+                        if (existednames.includes(obj.River)){
+                            var watershed = getWatershed(obj.River);
+                            watershed[obj.fieldset].TP.splice(obj.Year - 2008, 0, parseFloat(obj.TP));
+                            watershed[obj.fieldset].DRP.splice(obj.Year - 2008, 0, parseFloat(obj.DRP));
+                        }else{
+                            var newWatershed = new watershedObj(obj.River);
+                            newWatershed[obj.fieldset].TP.splice(obj.Year - 2008, 0, parseFloat(obj.TP));
+                            newWatershed[obj.fieldset].DRP.splice(obj.Year - 2008, 0, parseFloat(obj.DRP));
+                            watershedSet.push(newWatershed);
+                        }
+
+
                         if (obj.River == "Raisin") {
                             //RaisinSeries[obj.fieldset].TP.push(obj.TP);
                             //RaisinSeries[obj.fieldset].DRP.push(obj.DRP);
@@ -196,6 +232,13 @@
                             PortageSeries[obj.fieldset].DRP.splice(obj.Year - 2008, 0, parseFloat(obj.DRP));
                         }
                     });
+
+                    var innerHTML = "";
+                    for(var i = 0; i < watershedSet.length; i++){
+                        innerHTML += '<button type="button" class="watershed-buttons">' + watershedSet[i].name + '</button>';
+                    }
+                    $("#watershed-selection").html(innerHTML);
+
                     var xAxis = ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"];
                     var target = [];
                     for (var i = 0; i < RaisinSeries.loads.TP.length; i++) {
@@ -361,7 +404,27 @@
 
                 });
 
+//                var watershedBtns = $(".watershed-buttons")
+//
+//                on(watershedBtns, "click", function (){
+//                    alert(this.text);
+//                })
+//                $(".watershed-buttons").on("click", function (){
+//                    alert(this.text);
+//                })
+
+//                var watershedBtns = query(".watershed-buttons");
+//                watershedBtns.on("click", function (){
+//                    alert(this.text);
+//                });
+
+                query(".watershed-buttons").on("click", function (){
+                    alert(this.text);
+                });
+
             }
+
+
         });
 
         var test;
@@ -389,8 +452,8 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div id="river-selection">
-                    <div></div>
+                <div id="watershed-selection">
+
                 </div>
                 <div id="chart-section" class="row">
                     <div class="col-md-4">
