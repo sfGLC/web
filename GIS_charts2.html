@@ -28,7 +28,7 @@
     <script src="http://colorbrewer2.org/export/colorbrewer.js"></script>
 
     <script src="http://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <!--<script src="https://code.highcharts.com/modules/exporting.js"></script>-->
     <script src="./js/export-csv_glc.js"></script>
     <script>
         require([
@@ -39,7 +39,7 @@
             "dojo/dom",
             "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js",
             "https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js",
-            "http://code.highcharts.com/highcharts.js",
+////            "http://code.highcharts.com/highcharts.js",
             "https://code.highcharts.com/modules/exporting.js",
             "./js/export-csv_glc.js",
 
@@ -401,6 +401,13 @@
                     };
                     chart = new Highcharts.Chart("pie-demo-chart", pieOptions);
 
+                    /*
+                    This part binds click event to the buttons to call function to zoom to the corresponding feature.
+                     */
+                    query(".watershed-buttons").on("click", function (){
+                        alert(this.textContent);
+                    });
+
 
                 });
 
@@ -418,9 +425,7 @@
 //                    alert(this.text);
 //                });
 
-                query(".watershed-buttons").on("click", function (){
-                    alert(this.text);
-                });
+
 
             }
 
