@@ -52,6 +52,7 @@
             dom
         ) {
             var watersheds = [];
+            //var data = [];
             function watershedObj(name) {
                 this.name = name;
                 this.loads = {
@@ -134,22 +135,22 @@
                 };
             };
             function getWatershed(name) {
-                for(var i = 0; i < watershedSet.length;i++){
-                    if(watershedSet[i].name == name)
-                        return watershedSet[i];
+                for(var i = 0; i < watersheds.length;i++){
+                    if(watersheds[i].name == name)
+                        return watersheds[i];
                 }
                 return null;
             };
             function getWatershedNames(){
                 var names = [];
-                watershedSet.forEach(function (d){
+                watersheds.forEach(function (d){
                     names.push(d.name);
                 });
                 return names;
             };
 
-            function calculateFieldset(line) {
-                switch (line.FIELD_SET) {
+            function calculateFieldset(field) {
+                switch (field) {
                     case "Loads":
                         return "loads";
                     case "Unit Area Loads":
@@ -162,10 +163,41 @@
                         return "springLoads";
                     case "Spring Flow-weighted mean concentrations":
                         return "springFlow";
+                    default:
+                        return field;
                 }
             };
 
-            $.get("NCWQR Lake Erie Tribs GLC combined.csv", function (in_file){
+            $.get("data/NCWQR Lake Erie Tribs GLC combined.csv", function (in_file){
+                var lines = in_file.split('\n');
+                var fields = lines[0].split(',');
+
+                for(var i = 1; i < lines.length; i++){
+                    var line = lines[i].split(',')
+                    line[2] = parseInt(line[2]);
+                    if(line[2] < 2008)
+                        continue;
+                    var existnames = getWatershedNames();
+                    if(existnames.includes(line[0])){
+                        var w = getWatershed(line[0]);
+                        for(var j = 4; j < fields.length; j++){
+                            w[calculateFieldset(line[3])][fields[j]].splice(parseInt(line[1]) - 2008, 0, parseFloat(lines[j]));
+                        }
+                    }else{
+                        var newWatershed = new watershedObj(line[0]);
+                        for(var j = 4; j < fields.length; j++){
+                            //line = lines[i];
+                            var field = line[3];
+                            field =calculateFieldset(line[3]);
+                            var measure = fields[j];
+//                            newWatershed[calculateFieldset(lines[i][3])][fields[j]].splice(lines[i][2], 0, parseFloat(lines[i][j]));
+                            newWatershed[field][measure].splice(parseInt(line[1]) - 2008, 0, parseFloat(line[j]));
+                        }
+                        watersheds.push(newWatershed);
+                    }
+
+                }
+                var test;
 
             })
 
