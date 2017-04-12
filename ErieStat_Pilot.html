@@ -28,6 +28,7 @@
 
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <!--<script src="https://code.highcharts.com/modules/exporting.js"></script>-->
+    <!--<script src="https://code.highcharts.com/modules/exporting.js"></script>-->
     <script src="./js/export-csv_glc.js"></script>
 
     <script>
@@ -37,102 +38,208 @@
             "esri/layers/FeatureLayer",
             "dojo/query",
             "dojo/dom",
+            "dojo/on",
             "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js",
             "https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js",
 ////            "http://code.highcharts.com/highcharts.js",
             "https://code.highcharts.com/modules/exporting.js",
             "./js/export-csv_glc.js",
-
             "dojo/domReady!"
         ], function (
             Map,
             MapView,
             FeatureLayer,
             query,
-            dom
+            dom,
+            on
         ) {
             var watersheds = [];
             //var data = [];
             function watershedObj(name) {
-                this.name = name;
-                this.loads = {
-                    Discharge: [],
-                    SS: [],
-                    TP: [],
-                    DRP: [],
-                    NIT: [],
-                    TKN: [],
-                    CHL: [],
-                    TN: [],
-                    PTN: [],
-                    TPP: [],
-                    PP:[]
+                this["name"] = name;
+                //this["values"] = {};
+                this["Loads"] = {
+                    "Discharge": [],
+                    "SS": [],
+                    "TP": [],
+                    "DRP": [],
+                    "NIT": [ ],
+                    "TKN": [ ],
+                    "CHL": [ ],
+                    "TN": [ ],
+                    "PTN": [ ],
+                    "TPP": [ ],
+                    "PP": [ ]
                 };
-                this.ual = {
-                    Discharge: [],
-                    SS: [],
-                    TP: [],
-                    DRP: [],
-                    NIT: [],
-                    TKN: [],
-                    CHL: [],
-                    TN: [],
-                    PTN: [],
-                    TPP: [],
-                    PP:[]
+                this["Unit area loads"] = {
+                    "Discharge": [ ],
+                    "SS": [ ],
+                    "TP": [ ],
+                    "DRP": [ ],
+                    "NIT": [ ],
+                    "TKN": [ ],
+                    "CHL": [ ],
+                    "TN": [ ],
+                    "PTN": [ ],
+                    "TPP": [ ],
+                    "PP": [ ]
                 };
-                this.flowWeighted = {
-                    Discharge: [],
-                    SS: [],
-                    TP: [],
-                    DRP: [],
-                    NIT: [],
-                    TKN: [],
-                    CHL: [],
-                    TN: [],
-                    PTN: [],
-                    TPP: [],
-                    PP:[]
+                this["Flow weighted mean concentrations"] = {
+                    "Discharge": [ ],
+                    "SS": [ ],
+                    "TP": [ ],
+                    "DRP": [ ],
+                    "NIT": [ ],
+                    "TKN": [ ],
+                    "CHL": [ ],
+                    "TN": [ ],
+                    "PTN": [ ],
+                    "TPP": [ ],
+                    "PP": [ ]
                 };
-                this.timeWeighted = {
-                    Discharge: [],
-                    SS: [],
-                    TP: [],
-                    DRP: [],
-                    NIT: [],
-                    TKN: [],
-                    CHL: [],
-                    TN: [],
-                    PTN: [],
-                    TPP: [],
-                    PP:[]
+                this["Time weighted mean concentrations"] = {
+                    "Discharge": [ ],
+                    "SS": [ ],
+                    "TP": [ ],
+                    "DRP": [ ],
+                    "NIT": [ ],
+                    "TKN": [ ],
+                    "CHL": [ ],
+                    "TN": [ ],
+                    "PTN": [ ],
+                    "TPP": [ ],
+                    "PP": [ ]
                 };
-                this.springLoads = {
-                    Discharge: [],
-                    SS: [],
-                    TP: [],
-                    DRP: [],
-                    NIT: [],
-                    TKN: [],
-                    CHL: [],
-                    TN: [],
-                    PTN: [],
-                    TPP: [],
-                    PP:[]
+                this["Spring Loads"] = {
+                    "Discharge": [ ],
+                    "SS": [ ],
+                    "TP": [ ],
+                    "DRP": [ ],
+                    "NIT": [ ],
+                    "TKN": [ ],
+                    "CHL": [ ],
+                    "TN": [ ],
+                    "PTN": [ ],
+                    "TPP": [ ],
+                    "PP": [ ]
                 };
-                this.springFlow = {
-                    Discharge: [],
-                    SS: [],
-                    TP: [],
-                    DRP: [],
-                    NIT: [],
-                    TKN: [],
-                    CHL: [],
-                    TN: [],
-                    PTN: [],
-                    TPP: [],
-                    PP:[]
+                this["Spring Flow weighted mean"] = {
+                    "Discharge": [ ],
+                    "SS": [ ],
+                    "TP": [ ],
+                    "DRP": [ ],
+                    "NIT": [ ],
+                    "TKN": [ ],
+                    "CHL": [ ],
+                    "TN": [ ],
+                    "PTN": [ ],
+                    "TPP": [ ],
+                    "PP": [ ]
                 };
+                var fieldsetlist = ["Loads",
+                    "Unit area loads",
+                    "Flow weighted mean concentrations",
+                    "Time weighted mean concentrations",
+                    "Spring Loads",
+                    "Spring Flow weighted mean"
+                ];
+                var metriclist = ["Discharge",
+                    "SS",
+                    "TP",
+                    "DRP",
+                    "NIT",
+                    "TKN",
+                    "CHL",
+                    "TN",
+                    "PTN",
+                    "TPP",
+                    "PP"
+                ];
+                for(var i=0;i< fieldsetlist.length;i++){
+                    for(var j = 0; j < metriclist.length; j++){
+                        for(var k = 0;k< 9;k++) {
+                            this[fieldsetlist[i]][metriclist[j]].push(null);
+                        }
+                    }
+                }
+//                this["Loads"] = {
+//                    "Discharge": [,,,,,,,,],
+//                    "SS": [,,,,,,,,],
+//                    "TP": [,,,,,,,,],
+//                    "DRP": [,,,,,,,,],
+//                    "NIT": [,,,,,,,,],
+//                    "TKN": [,,,,,,,,],
+//                    "CHL": [,,,,,,,,],
+//                    "TN": [,,,,,,,,],
+//                    "PTN": [,,,,,,,,],
+//                    "TPP": [,,,,,,,,],
+//                    "PP": [,,,,,,,,]
+//                };
+//                this["Unit area loads"] = {
+//                    "Discharge": [,,,,,,,,],
+//                    "SS": [,,,,,,,,],
+//                    "TP": [,,,,,,,,],
+//                    "DRP": [,,,,,,,,],
+//                    "NIT": [,,,,,,,,],
+//                    "TKN": [,,,,,,,,],
+//                    "CHL": [,,,,,,,,],
+//                    "TN": [,,,,,,,,],
+//                    "PTN": [,,,,,,,,],
+//                    "TPP": [,,,,,,,,],
+//                    "PP": [,,,,,,,,]
+//                };
+//                this["Flow weighted mean concentrations"] = {
+//                    "Discharge": [,,,,,,,,],
+//                    "SS": [,,,,,,,,],
+//                    "TP": [,,,,,,,,],
+//                    "DRP": [,,,,,,,,],
+//                    "NIT": [,,,,,,,,],
+//                    "TKN": [,,,,,,,,],
+//                    "CHL": [,,,,,,,,],
+//                    "TN": [,,,,,,,,],
+//                    "PTN": [,,,,,,,,],
+//                    "TPP": [,,,,,,,,],
+//                    "PP": [,,,,,,,,]
+//                };
+//                this["Time weighted mean concentrations"] = {
+//                    "Discharge": [,,,,,,,,],
+//                    "SS": [,,,,,,,,],
+//                    "TP": [,,,,,,,,],
+//                    "DRP": [,,,,,,,,],
+//                    "NIT": [,,,,,,,,],
+//                    "TKN": [,,,,,,,,],
+//                    "CHL": [,,,,,,,,],
+//                    "TN": [,,,,,,,,],
+//                    "PTN": [,,,,,,,,],
+//                    "TPP": [,,,,,,,,],
+//                    "PP": [,,,,,,,,]
+//                };
+//                this["Spring Loads"] = {
+//                    "Discharge": [,,,,,,,,],
+//                    "SS": [,,,,,,,,],
+//                    "TP": [,,,,,,,,],
+//                    "DRP": [,,,,,,,,],
+//                    "NIT": [,,,,,,,,],
+//                    "TKN": [,,,,,,,,],
+//                    "CHL": [,,,,,,,,],
+//                    "TN": [,,,,,,,,],
+//                    "PTN": [,,,,,,,,],
+//                    "TPP": [,,,,,,,,],
+//                    "PP": [,,,,,,,,]
+//                };
+//                this["Spring Flow weighted mean"] = {
+//                    "Discharge": [,,,,,,,,],
+//                    "SS": [,,,,,,,,],
+//                    "TP": [,,,,,,,,],
+//                    "DRP": [,,,,,,,,],
+//                    "NIT": [,,,,,,,,],
+//                    "TKN": [,,,,,,,,],
+//                    "CHL": [,,,,,,,,],
+//                    "TN": [,,,,,,,,],
+//                    "PTN": [,,,,,,,,],
+//                    "TPP": [,,,,,,,,],
+//                    "PP": [,,,,,,,,]
+//                };
             };
             function getWatershed(name) {
                 for(var i = 0; i < watersheds.length;i++){
@@ -149,54 +256,244 @@
                 return names;
             };
 
-            function calculateFieldset(field) {
-                switch (field) {
-                    case "Loads":
-                        return "loads";
-                    case "Unit Area Loads":
-                        return "ual";
-                    case "Flow-weighted mean concentrations":
-                        return "flowWeighted";
-                    case "Time-weighted mean concentrations":
-                        return "timeWeighted";
-                    case "Spring Loads":
-                        return "springLoads";
-                    case "Spring Flow-weighted mean concentrations":
-                        return "springFlow";
-                    default:
-                        return field;
+//            function calculateFieldset(field) {
+//                switch (field) {
+//                    case "Loads":
+//                        return "loads";
+//                    case "Unit area loads":
+//                        return "ual";
+//                    case "Flow weighted mean concentrations":
+//                        return "flowWeighted";
+//                    case "Time weighted mean concentrations":
+//                        return "timeWeighted";
+//                    case "Spring Loads":
+//                        return "springLoads";
+//                    case "Spring Flow weighted mean":
+//                        return "springFlow";
+////                    default:
+////                        return field;
+//                }
+//            };
+//
+//            function reverseCalculateFieldset(field) {
+//                switch (field) {
+//                    case "loads":
+//                        return "Loads";
+//                    case "ual":
+//                        return "Unit area loads";
+//                    case "flowWeighted":
+//                        return "Flow weighted mean concentrations";
+//                    case "timeWeighted":
+//                        return "Time weighted mean concentrations";
+//                    case "springLoads":
+//                        return "Spring Loads";
+//                    case "Spring Flow weighted mean":
+//                        return "springFlow";
+////                    default:
+////                        return field;
+//                }
+//            };
+
+            function createLineOptions(container, title, xAxis, yAxisTitle, series) {
+                return {
+                    chart: {
+                        renderTo: container,
+                        defaultSeriesType: 'line'
+                    },
+                    title: {
+                        text: title
+                    },
+                    xAxis: {
+                        categories: xAxis
+                    },
+                    yAxis: {
+                        title: {
+                            text: yAxisTitle
+                        }
+                    },
+                    series: series
                 }
-            };
+            }
+
+            var metrics;
+            var xAxis = ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016"];
 
             $.get("data/NCWQR Lake Erie Tribs GLC combined.csv", function (in_file){
                 var lines = in_file.split('\n');
                 var fields = lines[0].split(',');
+                metrics = fields.slice(4, 15);
 
                 for(var i = 1; i < lines.length; i++){
-                    var line = lines[i].split(',')
-                    line[2] = parseInt(line[2]);
-                    if(line[2] < 2008)
-                        continue;
-                    var existnames = getWatershedNames();
-                    if(existnames.includes(line[0])){
-                        var w = getWatershed(line[0]);
-                        for(var j = 4; j < fields.length; j++){
-                            w[calculateFieldset(line[3])][fields[j]].splice(parseInt(line[1]) - 2008, 0, parseFloat(lines[j]));
-                        }
-                    }else{
-                        var newWatershed = new watershedObj(line[0]);
-                        for(var j = 4; j < fields.length; j++){
-                            //line = lines[i];
-                            var field = line[3];
-                            field =calculateFieldset(line[3]);
-                            var measure = fields[j];
-//                            newWatershed[calculateFieldset(lines[i][3])][fields[j]].splice(lines[i][2], 0, parseFloat(lines[i][j]));
-                            newWatershed[field][measure].splice(parseInt(line[1]) - 2008, 0, parseFloat(line[j]));
-                        }
-                        watersheds.push(newWatershed);
-                    }
 
+                        var line = lines[i].split(',')
+                        var field = line[3];//calculateFieldset(line[3]);
+                        var year = parseInt(line[1]);
+                        if (year < 2008)
+                            continue;
+                    try {
+                        var existnames = getWatershedNames();
+                        if (existnames.includes(line[0])) {
+                            var w = getWatershed(line[0]);
+                            for (var j = 4; j < fields.length; j++) {
+                                if (j == 14) {
+//                                    if(line[j] != ""){
+//                                        w[field]["PP"][year - 2008]  = parseFloat(line[j]);
+//                                    }
+                                    w[field]["PP"][year - 2008] = line[j] == "" ? null : parseFloat(line[j]);
+//                                    w[field][fields[j]].splice(year - 2008, 0, line[j] == "" ? "" : parseFloat(line[j]));
+                                    break;
+                                }
+//                                if(line[j] != ""){
+//                                    w[field][fields[j]][year - 2008] = parseFloat(line[j]);
+//                                }
+                                w[field][fields[j]][year - 2008] = line[j] == "" ? null : parseFloat(line[j]);
+//                                w[field][fields[j]].splice(year - 2008, 0, line[j] == "" ? "" : parseFloat(line[j]));
+                            }
+                        } else {
+                            var newWatershed = new watershedObj(line[0]);
+                            for (var j = 4; j < fields.length; j++) {
+                                //line = lines[i];
+                                //var field = line[3];
+                                //field =calculateFieldset(line[3]);
+                                var measure = fields[j];
+//                            newWatershed[calculateFieldset(lines[i][3])][fields[j]].splice(lines[i][2], 0, parseFloat(lines[i][j]));
+
+                                var val = line[j] == "" ? null : parseFloat(line[j]);
+                                if (j == 14) {
+//                                    if(line[j] != ""){
+//                                        newWatershed[field]["PP"][year - 2008] = parseFloat(line[j]);
+//                                    }
+                                    newWatershed[field]["PP"][year - 2008] = val;
+//                                    newWatershed[field]["PP"].splice(year - 2008, 0, val);
+                                    break;
+                                }
+//                                if(line[j] != ""){
+//                                    newWatershed[field][measure][year - 2008] = parseFloat(line[j]);
+//                                }
+                                newWatershed[field][measure][year - 2008] = val;
+//                                newWatershed[field][measure].splice(year - 2008, 0, val);
+                            }
+                            watersheds.push(newWatershed);
+                        }
+                    }
+                    catch (err){
+                        console.log(i + " " + field)
+                    }
                 }
+
+
+                //loadCheckbox();
+
+                //var el = dom.byId("river-group");
+                var innerHtml = "";
+                watersheds.forEach(function (d){
+                    innerHtml += '<input type="checkbox" name="river-checks[]" ' +
+                        'id="' + d.name + '-chk"' +
+                        'value="' + d.name + '">' +
+                        '<label for="' + d.name + '-chk">' + d.name + '</label><br>';
+                })
+                $("#river-group").html(innerHtml);
+
+                var fieldset_names = ["Loads", "Unit area loads", "Flow weighted mean concentrations",
+                    "Time weighted mean concentrations", "Spring Loads", "Spring Flow weighted mean"];
+                innerHtml = '';
+                fieldset_names.forEach(function (d){
+                    innerHtml += '<input type="checkbox" name="fieldset-checks[]" ' +
+                        'id="' + d + '-chk"' +
+                            'value="' + d + '">' +
+                        '<label for="' + d + '-chk">' + d + '</label><br>';
+                })
+                $("#fieldset-group").html(innerHtml);
+
+                innerHtml = '';
+                metrics.forEach(function (d){
+                    innerHtml += '<input type="checkbox" name="metric-checks[]" ' +
+                        'id="' + d + '-chk"' +
+                        'value="' + d + '">' +
+                        '<label for="' + d + '-chk">' + d + '</label><br>';
+                })
+                $("#metric-group").html(innerHtml);
+
+//                function loadCheckbox(){
+//
+//                }
+
+
+
+                var temp = watersheds[0]["Loads"]["TP"];
+                var displaySeries = [
+                    { name: "TP", data: temp}
+                ];
+                var lineChartOption = createLineOptions("line-chart", "Demo Line", xAxis, "Units", displaySeries);
+                var chart = new Highcharts.Chart(lineChartOption);
+                chart.credits.update({
+                    enabled: false
+                });
+
+//                on(dom.byId("updateBtn"), "click", function (){
+//                    var displaySeries = { name: "DRP", data: watersheds[0]["Loads"]["DRP"]};
+//                    chart.addSeries(displaySeries, true);
+//                });
+
+                on(dom.byId("removeBtn"), "click", function (){
+                    if(chart.series.length) {
+                        chart.series[0].remove();
+                    }
+                });
+
+                on(dom.byId("updateChartBtn"), "click", function (){
+                    // get checked rivers
+                    var rs = [];
+                    $.each($("input[name='river-checks[]']:checked"), function() {
+                        rs.push($(this).val());
+                    });
+
+                    // get checked fields
+                    var fs = [];
+                    $.each($("input[name='fieldset-checks[]']:checked"), function() {
+                        fs.push($(this).val());
+                    });
+
+                    // get checked metrics
+                    var ms = [];
+                    $.each($("input[name='metric-checks[]']:checked"), function() {
+                        ms.push($(this).val());
+                    });
+
+                    // build data series
+                    var ds = [];
+                    while(chart.series.length){
+                        chart.series[0].remove();
+                    }
+                    chart.title.update({
+                        text: "Selected Variables"
+                    })
+
+                    watersheds.forEach(function (d){
+                        if(rs.includes(d.name)){
+                            for(var i = 0; i < fs.length;i++) {
+                                for(var j = 0; j < ms.length; j++) {
+//                                    ds.push({
+//                                        name: d.name + "_" + fs[i] + "_" + ms[j],
+//                                        data: d[fs[i]][ms[j]]
+//                                    })
+                                    chart.addSeries({
+                                        name: d.name + "-" + fs[i] + "-" + ms[j],
+                                        data: d[fs[i]][ms[j]]
+                                    }, true);
+                                }
+                            }
+
+                        }
+                    });
+
+                })
+
+
+
+
+
+
                 var test;
 
             })
@@ -205,6 +502,39 @@
     </script>
 </head>
 <body>
+<div class="container-fluid">
+    <div>
+        <div class="row">
+            <div class="col-md-4">
+                <div><h1>Select Rivers</h1></div>
+                <div id="river-group"></div>
+            </div>
+            <div class="col-md-4">
+                <div><h1>Select Field Sets</h1></div>
+                <div id="fieldset-group" ></div>
+            </div>
+            <div class="col-md-4">
+                <div><h1>Select Metrics</h1></div>
+                <div id="metric-group"></div>
+            </div>
+        </div>
+        <div>
+            <button type="button" id="updateChartBtn">Update Chart</button>
+        </div>
+        <div>
+            <div id="line-chart"></div>
+            <pre id="preview" style="visibility:hidden"></pre>
+            <div id="data-preview"></div>
+            <!--<div>-->
+                <!--<button type="button" id="updateBtn">Add DRP</button>-->
+            <!--</div>-->
+            <div>
+                <button type="button" id="removeBtn">Remove First Series</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 </body>
 </html>
