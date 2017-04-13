@@ -479,6 +479,19 @@
                         ms.push($(this).val());
                     });
 
+                    if(!rs.length){
+                        alert("Please select at least one River");
+                        return;
+                    }
+                    if(!fs.length){
+                        alert("Please select at least one Field Set");
+                        return;
+                    }
+                    if(!ms.length){
+                        alert("Please select at least one Metrics");
+                        return;
+                    }
+
                     // build data series
                     var ds = [];
                     while(chart.series.length){
