@@ -15,6 +15,10 @@
         var t = Date.parse(d);
         var t2 = Date.parse(d2);
         var test = t-t2;
+        var groupingUnits = [
+            ['week', [1]],
+            ['month', [1, 2, 3, 4, 6]]
+        ];
 
         var flowdata = [];
         var tpdata = [];
@@ -52,6 +56,72 @@
 //                    max_flow = Date.parse(line[0]);
 //                }
             }
+
+            var combined = new Highcharts.stockChart('combine-container',{
+                rangeSelector: {
+                    selected: 5
+                },
+
+                title: {
+                    text: 'Flow & SRP'
+                },
+
+                yAxis: [{
+                    labels: {
+                        align: 'right',
+                        //x: -3
+                    },
+                    title: {
+                        text: 'Flow'
+                    },
+                    height: '60%',
+                    lineWidth: 2,
+                    plotLines: [{
+                        value: max_flow*0.3,
+                        color: '#FF0000',
+                        dashStyle: 'shortdash',
+                        width: 2,
+                        label: {
+                            text: 'Target'
+                        }
+                    }]
+                }, {
+                    labels: {
+                        align: 'right',
+                        x: -3
+                    },
+                    title: {
+                        text: 'SRP'
+                    },
+                    top: '65%',
+                    height: '35%',
+                    offset: 0,
+                    lineWidth: 2,
+                    plotLines: [{
+                        value: tpdata[0][1] * 0.6,
+                        color: '#FF0000',
+                        dashStyle: 'shortdash',
+                        width: 2,
+                        label: {
+                            text: 'Target'
+                        }
+                    }]
+                }],
+                series:[{
+                    name: "Flow",
+                    data: flowdata,
+                    dataGrouping: {
+                        units: groupingUnits
+                    }
+                    }, {
+                        name: "SRP",
+                        data: srpdata,
+                        yAxis: 1,
+                        dataGrouping: {
+                            units: groupingUnits
+                        }
+                    }]
+            });
             //flow.fillColor.createLinearGradient(0,0,0,1);
             var flow={
                 name: "Flow",
@@ -216,6 +286,7 @@
 </head>
 <body>
 <div>
+    <div id="combine-container"></div>
     <div id="flow-container"></div>
     <div id="tp-container"></div>
     <div id="srp-container"></div>
