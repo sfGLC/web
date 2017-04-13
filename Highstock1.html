@@ -58,26 +58,32 @@
             }
 
             var combined = new Highcharts.stockChart('combine-container',{
+                chart:{
+                    height: 800
+                },
                 rangeSelector: {
                     selected: 5
                 },
 
                 title: {
-                    text: 'Flow & SRP'
+                    text: 'Flow, TP, & SRP'
+                },
+                tooltip:{
+                    valueDecimals:4
                 },
 
                 yAxis: [{
                     labels: {
                         align: 'right',
-                        //x: -3
+                        x: -3
                     },
                     title: {
-                        text: 'Flow'
+                        text: 'Flow (CFS)'
                     },
-                    height: '60%',
+                    height: '30%',
                     lineWidth: 2,
                     plotLines: [{
-                        value: max_flow*0.3,
+                        value: flowdata[0][1]*0.6,
                         color: '#FF0000',
                         dashStyle: 'shortdash',
                         width: 2,
@@ -91,10 +97,10 @@
                         x: -3
                     },
                     title: {
-                        text: 'SRP'
+                        text: 'TP (mg/L)'
                     },
-                    top: '65%',
-                    height: '35%',
+                    top: '35%',
+                    height: '30%',
                     offset: 0,
                     lineWidth: 2,
                     plotLines: [{
@@ -106,21 +112,51 @@
                             text: 'Target'
                         }
                     }]
+                }, {
+                    labels: {
+                        align: 'right',
+                        x: -3
+                    },
+                    title: {
+                        text: 'SRP (mg/L)'
+                    },
+                    top: '70%',
+                    height: '30%',
+                    offset: 0,
+                    lineWidth: 2,
+                    plotLines: [{
+                        value: srpdata[0][1] * 0.6,
+                        color: '#FF0000',
+                        dashStyle: 'shortdash',
+                        width: 2,
+                        label: {
+                            text: 'Target'
+                        }
+                    }]
                 }],
-                series:[{
-                    name: "Flow",
-                    data: flowdata,
-                    dataGrouping: {
-                        units: groupingUnits
-                    }
+                series:[
+                    {
+                        name: "Flow",
+                        data: flowdata,
+                        dataGrouping: {
+                            units: groupingUnits
+                        }
                     }, {
-                        name: "SRP",
-                        data: srpdata,
+                        name: "TP",
+                        data: tpdata,
                         yAxis: 1,
                         dataGrouping: {
                             units: groupingUnits
                         }
-                    }]
+                    }, {
+                        name: "TP",
+                        data: srpdata,
+                        yAxis: 2,
+                        dataGrouping: {
+                            units: groupingUnits
+                        }
+                    }
+                ]
             });
             //flow.fillColor.createLinearGradient(0,0,0,1);
             var flow={
