@@ -316,6 +316,19 @@
             }
 
             var metrics;
+            var metricsfull = [
+                "Discharge",
+                "Suspended Solids",
+                "Total Phosphorus",
+                "Dissolved Reactive Phosphorus",
+                "Nitrate",
+                "Total Kjeldahl Nitrogen",
+                "Chloride",
+                "Total Nitrogen",
+                "Percent of Total Nitrogen as Nitrate",
+                "Total Particulate Phosphorus (TP-DRP)",
+                "Particulate Phosphorus (TP-DRP)"
+            ];
             var xAxis = ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016"];
 
             $.get("data/NCWQR Lake Erie Tribs GLC combined.csv", function (in_file){
@@ -406,12 +419,18 @@
                 $("#fieldset-group").html(innerHtml);
 
                 innerHtml = '';
-                metrics.forEach(function (d){
+                for(var i = 0; i < metrics.length;i++){
                     innerHtml += '<input type="checkbox" name="metric-checks[]" ' +
-                        'id="' + d + '-chk"' +
-                        'value="' + d + '">' +
-                        '<label for="' + d + '-chk">' + d + '</label><br>';
-                })
+                        'id="' + metrics[i] + '-chk"' +
+                        'value="' + metrics[i] + '">' +
+                        '<label for="' + metrics[i] + '-chk">' + metricsfull[i] + '</label><br>';
+                }
+//                metrics.forEach(function (d){
+//                    innerHtml += '<input type="checkbox" name="metric-checks[]" ' +
+//                        'id="' + d + '-chk"' +
+//                        'value="' + d + '">' +
+//                        '<label for="' + d + '-chk">' + d + '</label><br>';
+//                })
                 $("#metric-group").html(innerHtml);
 
 //                function loadCheckbox(){
