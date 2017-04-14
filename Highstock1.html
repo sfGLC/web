@@ -71,6 +71,18 @@
                 tooltip:{
                     valueDecimals:4
                 },
+                xAxis: {
+                    type: 'datetime',
+                    dateTimeLabelFormats: {
+                        second: '%Y-%m-%d<br/>%H:%M:%S',
+                        minute: '%Y-%m-%d<br/>%H:%M',
+                        hour: '%Y-%m-%d<br/>%H:%M',
+                        day: '%Y<br/>%m-%d',
+                        week: '%Y<br/>%m-%d',
+                        month: '%Y-%m',
+                        year: '%Y'
+                    }
+                },
 
                 yAxis: [{
                     labels: {
@@ -82,15 +94,15 @@
                     },
                     height: '30%',
                     lineWidth: 2,
-                    plotLines: [{
-                        value: flowdata[0][1]*0.6,
-                        color: '#FF0000',
-                        dashStyle: 'shortdash',
-                        width: 2,
-                        label: {
-                            text: 'Target'
-                        }
-                    }]
+//                    plotLines: [{
+//                        value: flowdata[0][1]*0.6,
+//                        color: '#FF0000',
+//                        dashStyle: 'shortdash',
+//                        width: 2,
+//                        label: {
+//                            text: 'Target'
+//                        }
+//                    }]
                 }, {
                     labels: {
                         align: 'right',
@@ -103,15 +115,15 @@
                     height: '30%',
                     offset: 0,
                     lineWidth: 2,
-                    plotLines: [{
-                        value: tpdata[0][1] * 0.6,
-                        color: '#FF0000',
-                        dashStyle: 'shortdash',
-                        width: 2,
-                        label: {
-                            text: 'Target'
-                        }
-                    }]
+//                    plotLines: [{
+//                        value: tpdata[0][1] * 0.6,
+//                        color: '#FF0000',
+//                        dashStyle: 'shortdash',
+//                        width: 2,
+//                        label: {
+//                            text: 'Target'
+//                        }
+//                    }]
                 }, {
                     labels: {
                         align: 'right',
@@ -124,15 +136,15 @@
                     height: '30%',
                     offset: 0,
                     lineWidth: 2,
-                    plotLines: [{
-                        value: srpdata[0][1] * 0.6,
-                        color: '#FF0000',
-                        dashStyle: 'shortdash',
-                        width: 2,
-                        label: {
-                            text: 'Target'
-                        }
-                    }]
+//                    plotLines: [{
+//                        value: srpdata[0][1] * 0.6,
+//                        color: '#FF0000',
+//                        dashStyle: 'shortdash',
+//                        width: 2,
+//                        label: {
+//                            text: 'Target'
+//                        }
+//                    }]
                 }],
                 series:[
                     {
@@ -149,7 +161,7 @@
                             units: groupingUnits
                         }
                     }, {
-                        name: "TP",
+                        name: "SRP",
                         data: srpdata,
                         yAxis: 2,
                         dataGrouping: {
