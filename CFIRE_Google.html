@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
     <style>
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
@@ -23,7 +25,7 @@
         var userlocation;
         var icons = {
             icon1: "./img/marker-blue.png",
-            icon2: ".img/marker-gold.png"
+            icon2: "./img/marker-gold.png"
         }
 
         function initMap() {
@@ -34,7 +36,67 @@
             geocoder = new google.maps.Geocoder();
 
             //Load KML layers
+//            $.get('http://projects.glc.org/rsm/map2.php', function (raw_cdf){
+            $.get('./data/map2.php', function (raw_cdf){
+                    var lines = raw_cdf.split('\n');
+                    for(var i = 1;i< lines.length;i++){
+                        var line = lines[i].split('\t');
+                        var coords = line[0].split(',');
 
+                        var marker = new google.maps.Marker({
+                            position: {lat: parseFloat(coords[0]), lng: parseFloat(coords[1])},
+                            icon: icons['icon1'],
+                            map: map
+                        })
+
+                        var infowindow = new google.maps.InfoWindow({
+//                            content: line[2]
+                        });
+
+                        var content = line[1] + line[2];
+
+                        google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
+                            return function() {
+                                infowindow.setContent(content);
+                                infowindow.open(map,marker);
+                            };
+                        })(marker,content,infowindow));
+
+//                        marker.addListener('click', function() {
+//                            infowindow.open(map, marker);
+//                        });
+                    }
+
+                });
+
+            $.get('./data/map1.php', function (raw_harbor){
+                var lines = raw_harbor.split('\n');
+                for(var i = 1;i< lines.length;i++){
+                    var line = lines[i].split('\t');
+                    var coords = line[0].split(',');
+
+                    var marker = new google.maps.Marker({
+                        position: {lat: parseFloat(coords[0]), lng: parseFloat(coords[1])},
+                        icon: icons['icon2'],
+                        map: map
+                    });
+
+                    var infowindow = new google.maps.InfoWindow({
+//                            content: line[2]
+                    });
+
+                    var content = line[1] + line[2];
+
+                    google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
+                        return function() {
+                            infowindow.setContent(content);
+                            infowindow.open(map,marker);
+                        };
+                    })(marker,content,infowindow));
+
+                }
+
+            });
         }
 
         function codeAddress() {
