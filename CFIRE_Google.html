@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
     <style>
         /* Always set the map height explicitly to define the size of the div
@@ -26,6 +36,26 @@
         var icons = {
             icon1: "./img/marker-blue.png",
             icon2: "./img/marker-gold.png"
+        };
+        var harbors = [];
+        var cdfs = [];
+        var directionsService ;
+        var directionsDisplay ;
+
+        function createPoint(lat, lng, title, desc){
+            return {
+                latlng: new google.maps.LatLng({lat: lat, lng:lng}),
+                title: title,
+                desc: desc,
+                distance: 0
+            }
+        }
+
+        function sortByKey(array, key) {
+            return array.sort(function(a, b) {
+                var x = a[key]; var y = b[key];
+                return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+            });
         }
 
         function initMap() {
@@ -34,20 +64,28 @@
                 zoom: 6
             });
             geocoder = new google.maps.Geocoder();
+            directionsService = new google.maps.DirectionsService;
+            directionsDisplay = new google.maps.DirectionsRenderer;
+            directionsDisplay.setMap(map);
+            directionsDisplay.setPanel(document.getElementById('right-panel'));
 
-            //Load KML layers
+            //Load data layers
 //            $.get('http://projects.glc.org/rsm/map2.php', function (raw_cdf){
             $.get('./data/map2.php', function (raw_cdf){
                     var lines = raw_cdf.split('\n');
                     for(var i = 1;i< lines.length;i++){
                         var line = lines[i].split('\t');
+                        if(line.length <2)
+                            continue;
                         var coords = line[0].split(',');
 
                         var marker = new google.maps.Marker({
                             position: {lat: parseFloat(coords[0]), lng: parseFloat(coords[1])},
                             icon: icons['icon1'],
                             map: map
-                        })
+                        });
+
+                        cdfs.push(createPoint(parseFloat(coords[0]), parseFloat(coords[1]), line[1], line[2]));
 
                         var infowindow = new google.maps.InfoWindow({
 //                            content: line[2]
@@ -73,6 +111,8 @@
                 var lines = raw_harbor.split('\n');
                 for(var i = 1;i< lines.length;i++){
                     var line = lines[i].split('\t');
+                    if(line.length <2)
+                        continue;
                     var coords = line[0].split(',');
 
                     var marker = new google.maps.Marker({
@@ -80,6 +120,8 @@
                         icon: icons['icon2'],
                         map: map
                     });
+
+                    harbors.push(createPoint(parseFloat(coords[0]), parseFloat(coords[1]), line[1], line[2]));
 
                     var infowindow = new google.maps.InfoWindow({
 //                            content: line[2]
@@ -117,31 +159,94 @@
         }
 
         function findHarbor(){
+            if(userlocation == null){
+                alert("Please locate yourself first.");
+                return;
+            }
+            var l = userlocation.getPosition();
+//            var lat = userlocation.position.lat;
+//            var lng = userlocation.position.lng;
+            harbors.forEach(function (d){
+                d.distance = google.maps.geometry.spherical.computeDistanceBetween(l, d.latlng);
+            })
+            harbors = sortByKey(harbors, 'distance');
+
+            document.getElementById('data-table').innerHTML = "";
+            var str = "<tr><th>Rank</th><th>Name</th><th>Description</th><th>Distance</th><th>Options</th></tr>";
+            for(var i = 0; i < 3; i ++){
+                str+= '<tr><td>' + (i+1) +'</td><td>'+ harbors[i].title+ '</td><td>'+ harbors[i].desc+'</td><td>'+ (harbors[i].distance/1609.34).toFixed(2)+' Miles</td><td><button type="button" onclick="getDirection('+i+')">Get Directions</button> </td></tr>';
+            }
+            document.getElementById('data-table').innerHTML = str;
 
         }
 
         function findCDF(){
+            if(userlocation == null){
+                alert("Please locate yourself first.");
+                return;
+            }
+            var l = userlocation.getPosition();
+//            var lat = userlocation.position.lat;
+//            var lng = userlocation.position.lng;
+            cdfs.forEach(function (d){
+                d.distance = google.maps.geometry.spherical.computeDistanceBetween(l, d.latlng);
+            })
+            cdfs = sortByKey(cdfs, 'distance');
 
+            var str = "<tr><th>Rank</th><th>Name</th><th>Description</th><th>Distance</th><th>Options</th></tr>";
+            for(var i = 0; i < 3; i ++){
+                str+= '<tr><td>' + (i+1) +'</td><td>'+ cdfs[i].title+ '</td><td>'+ cdfs[i].desc+'</td><td>'+ (cdfs[i].distance/1609.34).toFixed(2)+' Miles</td><td><button type="button" onclick="getDirection('+i+')">Get Directions</button> </td></tr>';
+            }
+            document.getElementById('data-table').innerHTML = str;
+        }
+
+        function getDirection(index) {
+            calculateAndDisplayRoute(directionsService, directionsDisplay, index);
+        }
+
+        function calculateAndDisplayRoute(directionsService, directionsDisplay, index) {
+            directionsService.route({
+                origin: userlocation.getPosition(),
+                destination: harbors[index].latlng,
+                travelMode: 'DRIVING'
+            }, function(response, status) {
+                if (status === 'OK') {
+                    directionsDisplay.setDirections(response);
+                } else {
+                    window.alert('Directions request failed due to ' + status);
+                }
+            });
         }
 
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSj85a54PyFg9uaKAg-EvuqhcP8QJW2Rw&libraries=geometry,places&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYD5ct8oIXSnDPAGOHeOvb7GxPrzxNkUg&libraries=geometry,places&callback=initMap"
             async defer></script>
 </head>
 <body>
-<div>
-    <div id="map"></div>
-</div>
-<div>
-    <div>
-        <label for="address-input">Your Address: </label>
-        <input type="text" id="address-input">
-        <input type="button" id="address-btn" onclick="codeAddress()" value="Locate">
-        <input type="button" id="find-harbor-btn" onclick="findHarbor()" value="Find Near Harbors" disabled>
-        <input type="button" id="find-cdf-btn" onclick="findCDF()" value="Find Near CDFs" disabled>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div id="map"></div>
+        </div>
+        <div class="col-md-8">
+            <div class="col-md-6">
+                <label for="address-input">Your Address: </label>
+                <input type="text" id="address-input">
+                <input type="button" id="address-btn" onclick="codeAddress()" value="Locate">
+                <br>
+                <input type="button" id="find-harbor-btn" onclick="findHarbor()" value="Find Near Harbors" disabled>
+                <input type="button" id="find-cdf-btn" onclick="findCDF()" value="Find Near CDFs" disabled>
+                <table id="data-table" class="table table-striped table-bordered"></table>
+            </div>
+            <div class="col-md-6">
+                <div id="right-panel" ></div>
+            </div>
+        </div>
     </div>
+
 </div>
+
 
 
 </body>
