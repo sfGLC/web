@@ -38,8 +38,8 @@
         var geocoder;
         var userlocation;
         var icons = {
-            icon1: "./img/marker-blue.png",
-            icon2: "./img/marker-gold.png"
+            icon_blue: "./img/marker-blue.png",
+            icon_gold: "./img/marker-gold.png"
         };
         var harbors = [];
         var cdfs = [];
@@ -85,7 +85,7 @@
 
                         var marker = new google.maps.Marker({
                             position: {lat: parseFloat(coords[0]), lng: parseFloat(coords[1])},
-                            icon: icons['icon1'],
+                            icon: icons['icon_blue'],
                             map: map
                         });
 
@@ -121,7 +121,7 @@
 
                     var marker = new google.maps.Marker({
                         position: {lat: parseFloat(coords[0]), lng: parseFloat(coords[1])},
-                        icon: icons['icon2'],
+                        icon: icons['icon_gold'],
                         map: map
                     });
 

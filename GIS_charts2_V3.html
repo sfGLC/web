@@ -50,10 +50,14 @@
     <script>
         var map;
         require([
+            "esri/config",
             "esri/map",
 //            "esri/views/MapView",
 //            "esri/layers/FeatureLayer",
             "esri/layers/WMSLayer",
+            'esri/layers/WMSLayerInfo',
+            "esri/geometry/Extent",
+            "esri/SpatialReference",
             "esri/config",
             "dojo/query",
             "dojo/dom",
@@ -65,48 +69,129 @@
 
             "dojo/domReady!"
         ], function (
+            esriConfig,
             Map,
 //            MapView,
 //            FeatureLayer,
             WMSLayer,
+            WMSLayerInfo,
+            Extent,
+            SpatialReference,
             esriConfig,
             query,
             dom
             ) {
 
-            //esriConfig.defaults.io.proxyUrl = "/proxy/";
+            layerList = [];
+
+            dojo.declare("glc.HABsLayer", esri.layers.DynamicMapServiceLayer, {
+                constructor: function() {
+                    this.initialExtent = this.fullExtent = new esri.geometry.Extent({"xmin":-9040360.209344367,"ymin":5048512.844179319,"xmax":-9001224.450862354,"ymax":5087648.602661332,"spatialReference":{"wkid":3857}});
+                    this.spatialReference = new esri.SpatialReference({wkid:3857});
+
+                    this.loaded = true;
+                    this.onLoad(this);
+                    this.params = null;
+                },
+                //params: null,
+
+                getImageUrl: function(extent, width, height, callback) {
+                    var params = {
+                        request: "GetMap",
+                        transparent: true,
+                        format: "image/png",
+                        bgcolor: "ffffff",
+                        map:'watersensing_map',
+                        version: "1.1.1",
+                        layers: "habs_erie",
+                        styles: "default,default",
+                        exceptions: "application/vnd.ogc.se_xml",
+
+                        //changing values
+                        bbox:extent.xmin + "," + extent.ymin + "," + extent.xmax + "," + extent.ymax,
+                        srs: "EPSG:" + extent.spatialReference.latestWkid,
+                        width: width,
+                        height: height
+                    };
+                    this.params = params;
+
+                    callback("http://spatial.mtri.org/cgi-bin/mapserv?" + dojo.objectToQuery(params));
+                },
+
+//                setLayer: function(layer, callback){
+//                    this.params.layers = layer;
+//                    callback("http://spatial.mtri.org/cgi-bin/mapserv?" + dojo.objectToQuery(this.params));
+//                }
+
+
+            });
+
+            dojo.declare("glc.ChlLayer", esri.layers.DynamicMapServiceLayer, {
+                constructor: function() {
+                    this.initialExtent = this.fullExtent = new esri.geometry.Extent({"xmin":-9040360.209344367,"ymin":5048512.844179319,"xmax":-9001224.450862354,"ymax":5087648.602661332,"spatialReference":{"wkid":3857}});
+                    this.spatialReference = new esri.SpatialReference({wkid:3857});
+
+                    this.loaded = true;
+                    this.onLoad(this);
+                    this.params = null;
+                },
+                //params: null,
+
+                getImageUrl: function(extent, width, height, callback) {
+                    var params = {
+                        request: "GetMap",
+                        transparent: true,
+                        format: "image/png",
+                        bgcolor: "ffffff",
+                        map:'watersensing_map',
+                        version: "1.1.1",
+                        layers: "chl_erie",
+                        styles: "default,default",
+                        exceptions: "application/vnd.ogc.se_xml",
+
+                        //changing values
+                        bbox:extent.xmin + "," + extent.ymin + "," + extent.xmax + "," + extent.ymax,
+                        srs: "EPSG:" + extent.spatialReference.latestWkid,
+                        width: width,
+                        height: height
+                    };
+                    this.params = params;
+
+                    callback("http://spatial.mtri.org/cgi-bin/mapserv?" + dojo.objectToQuery(params));
+                }
+            });
 
             map = new Map("map", {
                 basemap: "topo",
-                center: [-82.836, 42.346],
-                zoom: 5
+                center: [-84., 43],
+                zoom: 7
             });
 
-            var wmsLayer = new WMSLayer("http://spatial.mtri.org/cgi-bin/mapserv", {
-                format: "png",
-                version: "1.1.1",
-                visibleLayers: ['watersensing_map:habs_erie']
-            });
+            var habsLayer = new glc.HABsLayer();
+            habsLayer.id = 'HABs';
+            layerList.push(habsLayer);
 
-            map.addLayer(wmsLayer);
+            var chlLayer = new glc.ChlLayer();
+            chlLayer.id = 'Chl';
+            layerList.push(chlLayer);
 
-//            createCharts();
+            map.addLayer(habsLayer);
 
-//            var layerUrl = "";
-//            var view = new MapView({
-//                container: "viewDiv", // Reference to the DOM node that will contain the view
-//                map: map, // References the map object created in step 3
-//                zoom: 6,
-//                center: [-84, 44]
-//            });
+            function setWMSLayer(){
+                mylayer.setLayer("chl_erie");
+//                mylayer.params.layers = "chl_erie";
+//                mylayer.callback("http://spatial.mtri.org/cgi-bin/mapserv?" + dojo.objectToQuery(mylayer.params));
+            }
 
-//            var featureLayer = new FeatureLayer({
-//                url: layerUrl
-//            });
-//            map.addLayer(featureLayer);
+            function GLCGetLayer(layerId){
+                for(var i=0;i<layerList.length;i++){
+                    if(layerList[i].id == layerId)
+                        return layerList[i];
+                }
+                return null;
+            }
 
-//            view.then(getValues)
-//                .then(createCharts);
+            createCharts();
 
             function getValues() {
 
@@ -114,6 +199,7 @@
 
             function zoomtowatershed(el){
                 alert(el.text);
+
             }
 
             function createCharts() {
@@ -442,6 +528,7 @@
                      */
                     query(".watershed-buttons").on("click", function (){
                         alert(this.textContent);
+                        setWMSLayer();
                     });
 
 
@@ -465,6 +552,19 @@
 
             }
 
+            query(".layer-chk").on("click", function(){
+                //mylayer.inherited('setVisible',this.checked);
+
+                var layer = GLCGetLayer(this.value);
+
+//                    map.getLayer(this.value);
+//                layer.inherited('setVisible',this.checked);
+                if(this.checked){
+                    map.addLayer(layer);
+                }else{
+                    map.removeLayer(layer);
+                }
+            })
 
         });
 
@@ -494,6 +594,10 @@
                 </div>
             </div>
             <div class="col-md-4">
+                <div id="layer-control">
+                    <div><input type="checkbox" id="habs-layer-chk" class="layer-chk" value="HABs" onchange="'javascript:if(this.checked){map.addLayer(mylayer);}else{map.removeLayer(mylayer);}'" checked><label for="habs-layer-chk">HABs</label></div>
+                    <div><input type="checkbox" id="chl-layer-chk" class="layer-chk" value="Chl"><label for="chl-layer-chk">Chlorophyll</label></div>
+                </div>
                 <div id="watershed-selection">
 
                 </div>
