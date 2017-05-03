@@ -53,18 +53,23 @@
             "esri/config",
             "esri/map",
 //            "esri/views/MapView",
-//            "esri/layers/FeatureLayer",
+            "esri/layers/FeatureLayer",
             "esri/layers/WMSLayer",
             'esri/layers/WMSLayerInfo',
             "esri/geometry/Extent",
             "esri/SpatialReference",
             "esri/config",
+            "esri/dijit/Popup", "esri/dijit/PopupTemplate",
+            "esri/symbols/SimpleFillSymbol", "esri/Color",
+            "dojo/dom-class", "dojo/dom-construct", "dojo/on",
+            "dojox/charting/Chart", "dojox/charting/themes/Dollar",
             "dojo/query",
             "dojo/dom",
+            "dojo/Deferred",
             "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js",
             "https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js",
 ////            "http://code.highcharts.com/highcharts.js",
-//            "https://code.highcharts.com/modules/exporting.js",
+            "https://code.highcharts.com/modules/exporting.js",
 //            "./js/export-csv_glc.js",
 
             "dojo/domReady!"
@@ -72,15 +77,31 @@
             esriConfig,
             Map,
 //            MapView,
-//            FeatureLayer,
+            FeatureLayer,
             WMSLayer,
             WMSLayerInfo,
             Extent,
             SpatialReference,
             esriConfig,
+            Popup, PopupTemplate,
+            SimpleFillSymbol, Color,
+            domClass, domConstruct, on,
+            Chart, theme,
             query,
+            Deferred,
             dom
             ) {
+
+            var fill = new SimpleFillSymbol("solid", null, new Color("#A4CE67"));
+            var popup = new Popup({
+                fillSymbol: fill,
+                titleInBody: false
+            }, domConstruct.create("div"));
+//            popup.deferreds.push(new Deferred(function (){
+//                alert('test');
+//            }));
+            //Add the dark theme which is customized further in the <style> tag at the top of this page
+            domClass.add(popup.domNode, "dark");
 
             layerList = [];
 
@@ -167,6 +188,55 @@
                 zoom: 7
             });
 
+            var template = new PopupTemplate({
+                title: "Proof of Concept for ErieStat",
+                description: "{STATE_NAME}:  State FIPS {STATE_FIPS}",
+                fieldInfos: [{ //define field infos so we can specify an alias
+                    fieldName: "AREA",
+                    label: "Area"
+                },{
+                    fieldName: "STATE_ABBR",
+                    label: "State Abbreviation"
+                },{
+                    fieldName: "POP1990",
+                    label: "1990 Population"
+                },{
+                    fieldName: "POP2000",
+                    label: "2000 Population"
+                }],
+                mediaInfos:[{ //define the bar chart
+                    caption: "",
+                    type:"barchart",
+                    value:{
+                        theme: "Dollar",
+                        fields:["AREA","POP1990","POP2000"]
+                    }
+                },
+                    { //define the bar chart
+                        caption: "",
+                        type:"barchart",
+                        value:{
+                            theme: "Dollar",
+                            fields:["AREA","POP1990","POP2000"]
+                        }
+                    },
+                    { //define the bar chart
+                        caption: "",
+                        type:"barchart",
+                        value:{
+                            theme: "Dollar",
+                            fields:["AREA","POP1990","POP2000"]
+                        }
+                    }]
+            });
+
+//            var watershedLayer = new FeatureLayer("https://arcgis-dev.glc.local/arcgis/rest/services/ErieStat/ErieStat_Test/MapServer/0", {
+//                mode: FeatureLayer.MODE_ONDEMAND,
+//                outFields: ["*"],
+//                infoTemplate: template
+//            });
+//            map.addLayer(watershedLayer);
+
             var habsLayer = new glc.HABsLayer();
             habsLayer.id = 'HABs';
             layerList.push(habsLayer);
@@ -176,6 +246,8 @@
             layerList.push(chlLayer);
 
             map.addLayer(habsLayer);
+
+
 
             function setWMSLayer(){
                 mylayer.setLayer("chl_erie");
@@ -197,6 +269,7 @@
 
             };
 
+            // When the button for a watershed is clicked, zoom to the extent
             function zoomtowatershed(el){
                 alert(el.text);
 
@@ -372,7 +445,13 @@
                         { name: "Target", data: target, color: "#FF0000" }
                     ];
                     var options = createOptions("raisinchart1", "Raisin Loads", xAxis, "Units (Millgram/Ton)", dataSeries);
+
                     var chart = new Highcharts.Chart(options);
+                    svg = chart.getSVG();
+
+                    //var svg = chart1.getSVG();
+
+                    //var svg = chart.getSVG();
 
                     //target = [];
                     //for (var i = 0; i < RaisinSeries.loads.TP.length; i++) {
