@@ -363,7 +363,8 @@
         } else {
             this.dataTableDiv.style.display = "";
         }
-        var inner = this.getTable() + '<a onClick="hideTable(this);">Hide Data Table</a>';
+
+        var inner = this.getTable();// + '<a onClick="hideTable(this);">Hide Data Table</a>';
         this.dataTableDiv.innerHTML = inner;//this.getTable();
     };
 
