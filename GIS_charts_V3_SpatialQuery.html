@@ -34,7 +34,9 @@
     <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css">
     <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
     <style>
-        html, body{}
+        html, body{
+
+        }
 
         #map {
             height: 100%;
@@ -55,6 +57,8 @@
             "esri/map",
 //            "esri/views/MapView",
             "esri/layers/FeatureLayer",
+            "esri/layers/ArcGISDynamicMapServiceLayer",
+            "esri/layers/ImageParameters",
             "esri/layers/WMSLayer",
             'esri/layers/WMSLayerInfo',
             "esri/geometry/Extent",
@@ -81,6 +85,8 @@
             Map,
 //            MapView,
             FeatureLayer,
+            ArcGISDynamicMapServiceLayer,
+            ImageParameters,
             WMSLayer,
             WMSLayerInfo,
             Extent,
@@ -121,7 +127,7 @@
                 zoom: 7
             });
 
-            queryTask = new QueryTask("https://arcgis-dev.glc.local/arcgis/rest/services/ErieStat/ErieStat_Test/MapServer/0");
+            queryTask = new QueryTask("http://geo.glc.org/arcgis/rest/services/ErieStat/ErieStat_WatershedsDemo/MapServer/0");
 
             dojo.connect(queryTask, "onComplete", getChart);
             dojo.connect(map, "onClick", doQuery);
@@ -131,7 +137,8 @@
 
             var query = new esriQuery();
             query.spatialRelationship = esriQuery.SPAITAL_REL_INTERSECTS;
-            query.outFields = ["WATERSHED", "LOADS_TP", "LOADS_DRP", "LOADS_DISC", "UAL_TP", "UAL_DRP"];
+            query.outFields = ['*'];
+//                query.outFields = ["TestData.txt.WATERSHED", "TestData.txt.LOADS_TP", "TestData.txt.LOADS_DRP", "TestData.txt.LOADS_DISC", "TestData.txt.UAL_TP", "TestData.txt.UAL_DRP"];
             query.returnGeometry = true;
             query.outSpatialReference = {"wkid":3857 };
 
@@ -185,10 +192,17 @@
                     ]
             });
 
-            var watershedLayer = new FeatureLayer("https://arcgis-dev.glc.local/arcgis/rest/services/ErieStat/ErieStat_Test/MapServer/0", {
-                mode: FeatureLayer.MODE_ONDEMAND,
-                outFields: ["*"],
-                infoTemplate: template
+//            var watershedLayer = new FeatureLayer("http://geo.glc.org/arcgis/rest/services/ErieStat/ErieStat_WatershedsDemo/MapServer/", {
+//                mode: FeatureLayer.MODE_ONDEMAND,
+//                outFields: ["*"],
+//                infoTemplate: template
+//            });
+
+            var imageParameters = new ImageParameters();
+            imageParameters.format = "jpeg";
+            var watershedLayer = new ArcGISDynamicMapServiceLayer("http://geo.glc.org/arcgis/rest/services/ErieStat/ErieStat_WatershedsDemo/MapServer", {
+//                "opacity" : 0.5,
+                "imageParameters" : imageParameters
             });
             map.addLayer(watershedLayer);
 
@@ -280,37 +294,29 @@
 
             map.addLayer(habsLayer);
 
-
-            function getChart(featureSet){
-                var features = featureSet.features;
-                var feature, attributes, loads_tp=[], loads_drp, loads_discharge, loads_tp_vals;
-                for(var i = 0; i < features.length;i++){
-                    var targetVal = 0;
-                    feature = features[i];
-                    attributes = feature.attributes;
-                    attributes.LOADS_TP.split(',').forEach(function (d){
-                        loads_tp.push(parseFloat(d));
-                        if(d!=null){
+            function updateChart(chart, title, name, data){
+                if(data != null) {
+                    var targetVal;
+                    data.forEach(function (d) {
+                        if (d != null) {
                             targetVal = parseFloat(d);
                         }
                     });
-                    var keys = Object.keys(attributes);
                     var target = [];
-                    xAxis.forEach(function (){
+                    xAxis.forEach(function () {
                         target.push(targetVal * 0.6);
-                    })
-
-
+                    });
+                }
                     var options = {
                         chart: {
-                            renderTo: "portagechart1",
+                            renderTo: chart,
                             defaultSeriesType: 'line'
                         },
-                        credits:{
+                        credits: {
                             enabled: false
                         },
                         title: {
-                            text: attributes.WATERSHED + " Loads"
+                            text: title
                         },
                         xAxis: {
                             categories: xAxis
@@ -321,18 +327,112 @@
                             }
                         },
                         series: [
-                            {name: "TP",
-                            data: loads_tp
+                            {
+                                name: name,
+                                data: data
                             },
                             {
                                 name: "Target",
                                 data: target,
                                 color: "#FF0000"
                             }
-                            ]
+                        ]
                     };
 
                     var chart1 = new Highcharts.Chart(options);
+
+            }
+
+
+            function getChart(featureSet){
+                var features = featureSet.features;
+                var feature, attributes, loads_tp=[], loads_drp=[], loads_discharge=[], ual_tp=[], ual_drp=[];
+                for(var i = 0; i < features.length;i++){
+                    //var targetVal = 0;
+                    feature = features[i];
+                    attributes = feature.attributes;
+                    if(attributes['TestData.txt.LOADS_TP']) {
+                        attributes['TestData.txt.LOADS_TP'].split(',').forEach(function (d) {
+                            loads_tp.push(parseFloat(d));
+                        });
+                    }
+                    else{
+                        loads_tp = null;
+                    }
+                    updateChart('loads-tp-chart', attributes['PilotWatersheds_Merge.Name'] + ' Loads - TP', 'TP', loads_tp);
+
+                    if(attributes['TestData.txt.LOADS_DRP']) {
+                        attributes['TestData.txt.LOADS_DRP'].split(',').forEach(function (d) {
+                            loads_drp.push(parseFloat(d));
+                        });
+                    }
+                    else{
+                        loads_drp = null;
+                    }
+                    updateChart('loads-drp-chart', attributes['PilotWatersheds_Merge.Name'] + ' Loads - DRP', 'DRP', loads_drp);
+
+                    if(attributes['TestData.txt.LOADS_DISCHARGE']) {
+                        attributes['TestData.txt.LOADS_DISCHARGE'].split(',').forEach(function (d) {
+                            loads_discharge.push(parseFloat(d));
+                        });
+                    }
+                    else{
+                        loads_discharge = null;
+                    }
+                    updateChart('loads-discharge-chart', attributes['PilotWatersheds_Merge.Name'] + ' Loads - Discharge', 'Discharge', loads_discharge);
+
+                    if(attributes['TestData.txt.UAL_TP']) {
+                        attributes['TestData.txt.UAL_TP'].split(',').forEach(function (d) {
+                            ual_tp.push(parseFloat(d));
+                        });
+                    }
+                    else{
+                        ual_tp = null;
+                    }
+                    updateChart('ual-tp-chart', attributes['PilotWatersheds_Merge.Name'] + ' UAL - TP', 'TP', ual_tp);
+
+                    if(attributes['TestData.txt.UAL_DRP']) {
+                        attributes['TestData.txt.UAL_DRP'].split(',').forEach(function (d) {
+                            ual_drp.push(parseFloat(d));
+                        });
+                    }
+                    else{
+                        ual_drp = null;
+                    }
+                    updateChart('ual-drp-chart', attributes['PilotWatersheds_Merge.Name'] + ' UAL - DRP', 'DRP', ual_drp);
+
+//                    var options = {
+//                        chart: {
+//                            renderTo: "portagechart1",
+//                            defaultSeriesType: 'line'
+//                        },
+//                        credits:{
+//                            enabled: false
+//                        },
+//                        title: {
+//                            text: attributes.WATERSHED + " Loads"
+//                        },
+//                        xAxis: {
+//                            categories: xAxis
+//                        },
+//                        yAxis: {
+//                            title: {
+//                                text: "y-axis"
+//                            }
+//                        },
+//                        series: [
+//                            {name: "TP",
+//                            data: loads_tp
+//                            },
+//                            {
+//                                name: "Target",
+//                                data: target,
+//                                color: "#FF0000"
+//                            }
+//                            ]
+//                    };
+//
+//                    var chart1 = new Highcharts.Chart(options);
 //                    var extent = graphicsUtils.graphicsExtent(feature);
 //                    map.setExtent(extent);
                 }
@@ -527,19 +627,20 @@
                     $("#watershed-selection").html(innerHTML);
 
                     var xAxis = ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"];
-                    var target = [];
-                    for (var i = 0; i < RaisinSeries.loads.TP.length; i++) {
-                        target.push(1000);
-                    }
-                    var dataSeries = [
-                        { name: "TP", data: RaisinSeries.loads.TP },
-                        { name: "DRP", data: RaisinSeries.loads.DRP },
-                        { name: "Target", data: target, color: "#FF0000" }
-                    ];
-                    var options = createOptions("raisinchart1", "Raisin Loads", xAxis, "Units (Millgram/Ton)", dataSeries);
-
-                    var chart = new Highcharts.Chart(options);
-                    svg = chart.getSVG();
+                    var dataSeries = [];
+//                    var target = [];
+//                    for (var i = 0; i < RaisinSeries.loads.TP.length; i++) {
+//                        target.push(1000);
+//                    }
+//                    var dataSeries = [
+//                        { name: "TP", data: RaisinSeries.loads.TP },
+//                        { name: "DRP", data: RaisinSeries.loads.DRP },
+//                        { name: "Target", data: target, color: "#FF0000" }
+//                    ];
+//                    var options = createOptions("raisinchart1", "Raisin Loads", xAxis, "Units (Millgram/Ton)", dataSeries);
+//
+//                    var chart = new Highcharts.Chart(options);
+//                    svg = chart.getSVG();
 
                     //var svg = chart1.getSVG();
 
@@ -596,43 +697,43 @@
                     //};
                     //chart = new Highcharts.Chart(options);
 
-                    target = [];
-                    for (var i = 0; i < PortageSeries.loads.TP.length; i++) {
-                        target.push(300);
-                    }
-                    dataSeries = [
-                        { name: "TP", data: PortageSeries.springLoads.TP, dashStyle: "shortDash" },
-                        { name: "DRP", data: PortageSeries.springLoads.DRP },
-                        { name: "Target", data: target, color: "#FF0000" }
-                    ];
-                    options = createOptions("portagechart1", "Portage Spring Loads", xAxis, "Units", dataSeries);
-                    options.plotOptions = {
-                        series: {
-                            allowPointSelect: true
-                        }
-                    };
-                    chart = new Highcharts.Chart(options);
-
-                    target = [];
-                    var val = 500;
-                    for (var i = 0; i < PortageSeries.loads.TP.length; i++) {
-                        target.push(500 + 0.00001 * i);
-                    }
-                    dataSeries = [
-                        { type: "area", name: "TP", data: PortageSeries.springFlow.TP },
-                        //{ name: "DRP", data: PortageSeries.springFlow.DRP, color: "#000099" },
-                        { type: "column", name: "DRP", data: PortageSeries.springFlow.DRP, color: "#000099" },
-                        { name: "Target", data: target, color: "#FF0000" }
-                    ];
-                    options = createOptions("portagechart2", "Portage Spring Flow", xAxis, "Units", dataSeries);
-                    options.plotOptions = {
-                        series: {
-                            allowPointSelect: true
-                        }
-                    };
-                    chart = new Highcharts.Chart(options);
-
-
+//                    target = [];
+//                    for (var i = 0; i < PortageSeries.loads.TP.length; i++) {
+//                        target.push(300);
+//                    }
+//                    dataSeries = [
+//                        { name: "TP", data: PortageSeries.springLoads.TP, dashStyle: "shortDash" },
+//                        { name: "DRP", data: PortageSeries.springLoads.DRP },
+//                        { name: "Target", data: target, color: "#FF0000" }
+//                    ];
+//                    options = createOptions("portagechart1", "Portage Spring Loads", xAxis, "Units", dataSeries);
+//                    options.plotOptions = {
+//                        series: {
+//                            allowPointSelect: true
+//                        }
+//                    };
+//                    chart = new Highcharts.Chart(options);
+//
+//                    target = [];
+//                    var val = 500;
+//                    for (var i = 0; i < PortageSeries.loads.TP.length; i++) {
+//                        target.push(500 + 0.00001 * i);
+//                    }
+//                    dataSeries = [
+//                        { type: "area", name: "TP", data: PortageSeries.springFlow.TP },
+//                        //{ name: "DRP", data: PortageSeries.springFlow.DRP, color: "#000099" },
+//                        { type: "column", name: "DRP", data: PortageSeries.springFlow.DRP, color: "#000099" },
+//                        { name: "Target", data: target, color: "#FF0000" }
+//                    ];
+//                    options = createOptions("portagechart2", "Portage Spring Flow", xAxis, "Units", dataSeries);
+//                    options.plotOptions = {
+//                        series: {
+//                            allowPointSelect: true
+//                        }
+//                    };
+//                    chart = new Highcharts.Chart(options);
+//
+//
                     dataSeries = [
 
                         { type: "column", name: "Portage", data: PortageSeries.timeWeighted.TP, color: "#1f77b4" },
@@ -742,22 +843,13 @@
         var test;
     </script>
 
-    <style>
-        html,
-        body,
-        #viewDiv {
-            padding: 0;
-            margin: 0;
-            height: 95%;
-            width: 100%;
-        }
-    </style>
+
 </head>
 
 <body>    
     <div class="container-fluid">
         <!--::before-->
-        <div class="row">            
+        <div class="row">
             <div class="col-md-8">
                 <div class="row">
                     <!--<div id="viewDiv"></div>-->
@@ -772,39 +864,50 @@
                 <div id="watershed-selection">
 
                 </div>
-                <div id="chart-section" class="row">
-                    <div class="col-md-4">
-                        <div id="raisinchart1"></div>
-                        <!--<div id="raisinchart2"></div>-->
+                <div style="overflow-y:auto; height:800px;">
+                    <div id="chart-section" class="row">
+                        <div class="col-md-4">
+                            <div id="loads-tp-chart"></div>
+                            <!--<div id="raisinchart2"></div>-->
+                        </div>
+                        <!--<div class="col-md-4">
+                        <div id="maumeechart1"></div>
+                        <div id="maumeechart2"></div>
+                    </div>-->
+                        <div class="col-md-4">
+                            <div id="loads-drp-chart"></div>
+                            <!--<div id="portagechart2"></div>-->
+                        </div>
+                        <div class="col-md-4">
+                            <!--<div id="portagechart1"></div>-->
+                            <div id="loads-discharge-chart"></div>
+                        </div>
                     </div>
-                    <!--<div class="col-md-4">
-                    <div id="maumeechart1"></div>
-                    <div id="maumeechart2"></div>
-                </div>-->
-                    <div class="col-md-4">
-                        <div id="portagechart1"></div>
-                        <!--<div id="portagechart2"></div>-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div id="ual-tp-chart"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="ual-drp-chart"></div>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <!--<div id="portagechart1"></div>-->
-                        <div id="portagechart2"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div id="river-tp-chart"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="pie-demo-chart"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div id="river-tp-chart"></div>
-                    </div>
-                    <div class="col-md-6">
-                        <div id="pie-demo-chart"></div>
-                    </div>
-                </div>
-                <div>
                     <div>
-                        <div id="new-chart"></div>
+                        <div>
+                            <div id="new-chart"></div>
+                        </div>
                     </div>
+                    <pre id="preview" style="visibility:hidden"></pre>
+                    <div id="data-preview"></div>
                 </div>
-                <pre id="preview" style="visibility:hidden"></pre>
-                <div id="data-preview"></div>
+
             </div>
         </div>
     </div>
