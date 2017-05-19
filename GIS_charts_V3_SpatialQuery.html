@@ -201,9 +201,11 @@
             var imageParameters = new ImageParameters();
             imageParameters.format = "jpeg";
             var watershedLayer = new ArcGISDynamicMapServiceLayer("http://geo.glc.org/arcgis/rest/services/ErieStat/ErieStat_WatershedsDemo/MapServer", {
-//                "opacity" : 0.5,
+                "opacity" : 0.4,
                 "imageParameters" : imageParameters
             });
+            watershedLayer.id = 'Watersheds';
+            layerList.push(watershedLayer);
             map.addLayer(watershedLayer);
 
 
@@ -859,6 +861,7 @@
             </div>
             <div class="col-md-4">
                 <div id="layer-control">
+                    <div><input type="checkbox" id="watershed-layer-chk" class="layer-chk" value="Watersheds" checked><label for="habs-layer-chk">Watersheds</label></div>
                     <div><input type="checkbox" id="habs-layer-chk" class="layer-chk" value="HABs" checked><label for="habs-layer-chk">HABs</label></div>
                     <div><input type="checkbox" id="chl-layer-chk" class="layer-chk" value="Chl"><label for="chl-layer-chk">Chlorophyll</label></div>
                 </div>
