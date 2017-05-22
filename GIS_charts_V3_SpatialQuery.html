@@ -132,7 +132,9 @@
             dojo.connect(queryTask, "onComplete", getChart);
             dojo.connect(map, "onClick", doQuery);
             dojo.connect(queryTask,'onExecuteForExtentComplete',function(d){
-                map.setExtent(d. extent);
+                if(d.extent.xmax != 'NaN'){
+                    map.setExtent(d.extent);
+                }
             });
 
             var query = new esriQuery();
@@ -201,7 +203,7 @@
             var imageParameters = new ImageParameters();
             imageParameters.format = "jpeg";
             var watershedLayer = new ArcGISDynamicMapServiceLayer("http://geo.glc.org/arcgis/rest/services/ErieStat/ErieStat_WatershedsDemo/MapServer", {
-                "opacity" : 0.4,
+                "opacity" : 0.6,
                 "imageParameters" : imageParameters
             });
             watershedLayer.id = 'Watersheds';
@@ -361,7 +363,7 @@
                     else{
                         loads_tp = null;
                     }
-                    updateChart('loads-tp-chart', attributes['PilotWatersheds_Merge.Name'] + ' Loads - TP', 'TP', loads_tp);
+                    updateChart('loads-tp-chart', attributes['Pilot.Name'] + ' Loads - TP', 'TP', loads_tp);
 
                     if(attributes['TestData.txt.LOADS_DRP']) {
                         attributes['TestData.txt.LOADS_DRP'].split(',').forEach(function (d) {
@@ -371,7 +373,7 @@
                     else{
                         loads_drp = null;
                     }
-                    updateChart('loads-drp-chart', attributes['PilotWatersheds_Merge.Name'] + ' Loads - DRP', 'DRP', loads_drp);
+                    updateChart('loads-drp-chart', attributes['Pilot.Name'] + ' Loads - DRP', 'DRP', loads_drp);
 
                     if(attributes['TestData.txt.LOADS_DISCHARGE']) {
                         attributes['TestData.txt.LOADS_DISCHARGE'].split(',').forEach(function (d) {
@@ -381,7 +383,7 @@
                     else{
                         loads_discharge = null;
                     }
-                    updateChart('loads-discharge-chart', attributes['PilotWatersheds_Merge.Name'] + ' Loads - Discharge', 'Discharge', loads_discharge);
+                    updateChart('loads-discharge-chart', attributes['Pilot.Name'] + ' Loads - Discharge', 'Discharge', loads_discharge);
 
                     if(attributes['TestData.txt.UAL_TP']) {
                         attributes['TestData.txt.UAL_TP'].split(',').forEach(function (d) {
@@ -391,7 +393,7 @@
                     else{
                         ual_tp = null;
                     }
-                    updateChart('ual-tp-chart', attributes['PilotWatersheds_Merge.Name'] + ' UAL - TP', 'TP', ual_tp);
+                    updateChart('ual-tp-chart', attributes['Pilot.Name'] + ' UAL - TP', 'TP', ual_tp);
 
                     if(attributes['TestData.txt.UAL_DRP']) {
                         attributes['TestData.txt.UAL_DRP'].split(',').forEach(function (d) {
@@ -401,7 +403,7 @@
                     else{
                         ual_drp = null;
                     }
-                    updateChart('ual-drp-chart', attributes['PilotWatersheds_Merge.Name'] + ' UAL - DRP', 'DRP', ual_drp);
+                    updateChart('ual-drp-chart', attributes['Pilot.Name'] + ' UAL - DRP', 'DRP', ual_drp);
 
 //                    var options = {
 //                        chart: {
@@ -859,24 +861,18 @@
                     <div id="map"></div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div id="layer-control">
-                    <div><input type="checkbox" id="watershed-layer-chk" class="layer-chk" value="Watersheds" checked><label for="habs-layer-chk">Watersheds</label></div>
-                    <div><input type="checkbox" id="habs-layer-chk" class="layer-chk" value="HABs" checked><label for="habs-layer-chk">HABs</label></div>
-                    <div><input type="checkbox" id="chl-layer-chk" class="layer-chk" value="Chl"><label for="chl-layer-chk">Chlorophyll</label></div>
-                </div>
-                <div id="watershed-selection">
-
-                </div>
-                <div style="overflow-y:auto; height:800px;">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div id="river-tp-chart"></div>
-                        </div>
-                        <div class="col-md-6">
-                            <div id="pie-demo-chart"></div>
-                        </div>
+            <div class="col-md-4"  style="overflow-y:auto; height:800px;">
+                <div class="row">
+                    <div id="layer-control">
+                        <div><input type="checkbox" id="watershed-layer-chk" class="layer-chk" value="Watersheds" checked><label for="habs-layer-chk">Watersheds</label></div>
+                        <div><input type="checkbox" id="habs-layer-chk" class="layer-chk" value="HABs" checked><label for="habs-layer-chk">HABs</label></div>
+                        <div><input type="checkbox" id="chl-layer-chk" class="layer-chk" value="Chl"><label for="chl-layer-chk">Chlorophyll</label></div>
                     </div>
+                    <div id="watershed-selection">
+
+                    </div>
+                </div>
+                <div>
                     <div id="chart-section" class="row">
                         <div class="col-md-4">
                             <div id="loads-tp-chart"></div>
@@ -911,6 +907,14 @@
                     </div>
                     <pre id="preview" style="visibility:hidden"></pre>
                     <div id="data-preview"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="river-tp-chart"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="pie-demo-chart"></div>
+                    </div>
                 </div>
 
             </div>
