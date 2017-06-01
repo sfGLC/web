@@ -14,30 +14,14 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <!--<link href="css/dashboard.css" rel="stylesheet">-->
-
-    <!--<link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">-->
-    <!--<script src="https://js.arcgis.com/4.3/"></script>-->
-
-    <!--<link rel="shortcut icon" href="">-->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>-->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>-->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.1/dc.min.js"></script>-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.1/dc.min.css">
 
     <script src="http://colorbrewer2.org/export/colorbrewer.js"></script>
 
-    <script src="//code.highcharts.com/highcharts.js"></script>
-    <!--<script src="https://code.highcharts.com/modules/exporting.js"></script>-->
-    <!--<script src="./js/export-csv_glc.js"></script>-->
-
+    <script src="http://code.highcharts.com/highcharts.js"></script>
     <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css">
     <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
     <style>
-        html, body{
-
-        }
-
         #map {
             height: 100%;
             width: 100%;
@@ -46,7 +30,7 @@
         }
         body {
             background-color: #FFF;
-            overflow: hidden;
+            /*overflow: hidden;*/
             font-family: "Trebuchet MS";
         }
     </style>
@@ -131,7 +115,7 @@
             map = new Map("map", {
                 basemap: "topo",
                 center: [-83.1, 42.1],
-                zoom: 8
+                zoom: 7
             });
 
             queryTask = new QueryTask("http://geo.glc.org/arcgis/rest/services/ErieStat/ErieStat_WatershedsDemo/MapServer/1");
@@ -308,58 +292,6 @@
 
             map.addLayer(habsLayer);
 
-            createPieChart();
-
-            function createPieChart(){
-                var pieData = [
-                    {
-                        name: "Municipal Point Source",
-                        y: 338.96
-                    },
-                    {
-                        name: "Industrial Point Source",
-                        y: 40.9872
-                    },
-                    {
-                        name: "Non-Point Source",
-                        y: 3946.8
-                    }
-                ];
-               var pieOptions = {
-                   chart: {
-                       //renderTo: "pie-demo-chart",
-                       plotBackgroundColor: null,
-                       plotBorderWidth: null,
-                       plotShadow: false,
-                       type: 'pie'
-                   },
-                   title: {
-                       text: "Proportion from Sources"
-                   },
-                   credits:{
-                       enabled: false
-                   },
-                   plotOptions: {
-                       pie: {
-                           allowPointSelect: true,
-                           cursor: 'pointer',
-                           dataLabels: {
-                               formatter: function (){
-                                   return Math.round(this.percentage * 100)/100 + ' %';
-                               }
-                           },
-                           showInLegend: true
-                       }
-                   },
-                   series: [{
-                       name: "Sources",
-                       colorByPoint: true,
-                       data: pieData
-                   }]
-
-               };
-               chart = new Highcharts.Chart("pie-demo-chart", pieOptions);
-            }
 
             function createOptions(chartDiv, style, title, yAxisText, dataSeries){
                 return {
@@ -868,83 +800,77 @@
         var test;
     </script>
 
-
 </head>
+<body>
+<div class="container-fluid">
+    <!--::before-->
+    <div>
+        <div class="col-md-5">
+            <div class="row">
+                <div id="map"></div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div id="layer-control" class="col-md-4">
+                <div>
+                    <h2>Layer Management</h2>
+                </div>
+                <div class="input-group">
+                            <span class="input-group-addon">
+                                <div>
 
-<body>    
-    <div class="container-fluid">
-        <!--::before-->
-        <div class="row">
-            <div class="col-md-5">
-                <div class="row">
-                    <!--<div id="viewDiv"></div>-->
-                    <div id="map"></div>
+                                    <label for="habs-layer-chk"><input type="checkbox" id="watershed-layer-chk" class="layer-chk" value="Watersheds" checked>Watersheds</label>
+                                </div>
+                            </span>
+                </div>
+                <div class="input-group">
+                            <span class="input-group-addon">
+                                <div>
+
+                                    <label for="habs-layer-chk"><input type="checkbox" id="habs-layer-chk" class="layer-chk" value="HABs" checked>HABs (10-07-2016, GLOS)</label>
+                                </div>
+                            </span>
+                </div>
+                <div class="input-group">
+                            <span class="input-group-addon">
+                                <div>
+
+                                    <label for="chl-layer-chk"><input type="checkbox" id="chl-layer-chk" class="layer-chk" value="Chl">Chlorophyll (05-16-2017, GLOS)</label>
+                                </div>
+                            </span>
                 </div>
             </div>
-            <div class="col-md-7">
-                <div class="row">
-                    <div id="layer-control" class="col-md-4">
-                        <div><input type="checkbox" id="watershed-layer-chk" class="layer-chk" value="Watersheds" checked><label for="habs-layer-chk">Watersheds</label></div>
-                        <div><input type="checkbox" id="habs-layer-chk" class="layer-chk" value="HABs" checked><label for="habs-layer-chk">HABs (10-07-2016)</label></div>
-                        <div><input type="checkbox" id="chl-layer-chk" class="layer-chk" value="Chl"><label for="chl-layer-chk">Chlorophyll (05-16-2017)</label></div>
-                    </div>
-
-                    <div class="col-md-8">
-                        <div id="pie-demo-chart"></div>
-                    </div>
-                    <div id="watershed-selection">
-
-                    </div>
+            <div class="col-md-12">
+                <div>
+                    <h2 id="watershed-name"></h2>
                 </div>
-                <div   style="overflow-y:auto; height:600px;">
-                    <div>
-                        <h2 id="watershed-name"></h2>
+                <div id="chart-section" class="row">
+                    <div class="col-md-6">
+                        <div id="tp-fwmc-chart"></div>
                     </div>
-                    <div id="chart-section" class="row">
-                        <div class="col-md-6">
-                            <div id="tp-fwmc-chart"></div>
-                            <!--<div id="raisinchart2"></div>-->
-                        </div>
-                        <!--<div class="col-md-4">
-                        <div id="maumeechart1"></div>
-                        <div id="maumeechart2"></div>
-                    </div>-->
-                        <div class="col-md-6">
-                            <div id="drp-fwmc-chart"></div>
-                            <!--<div id="portagechart2"></div>-->
-                        </div>
-                        <!--<div class="col-md-4">-->
-                            <!--&lt;!&ndash;<div id="portagechart1"></div>&ndash;&gt;-->
-                            <!--<div id="loads-discharge-chart"></div>-->
-                        <!--</div>-->
+                    <div class="col-md-6">
+                        <div id="drp-fwmc-chart"></div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div id="tp-sload-chart"></div>
-                        </div>
-                        <div class="col-md-6">
-                            <div id="drp-sload-chart"></div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <div id="new-chart"></div>
-                        </div>
-                    </div>
-                    <pre id="preview" style="visibility:hidden"></pre>
-                    <div id="data-preview"></div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <div id="river-tp-chart"></div>
+                        <div id="tp-sload-chart"></div>
                     </div>
-
+                    <div class="col-md-6">
+                        <div id="drp-sload-chart"></div>
+                    </div>
                 </div>
 
+                <div>
+                    <div>
+                        <div id="new-chart"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
+</div>
 </body>
 
 </html>
