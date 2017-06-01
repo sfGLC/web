@@ -242,7 +242,7 @@
                     };
                     this.params = params;
 
-                    callback("http://spatial.mtri.org/cgi-bin/mapserv?" + dojo.objectToQuery(params));
+                    callback("http://spatial.mtri.org/cgi-bin/mapserv.fcgi?" + dojo.objectToQuery(params));
                 },
 
 //                setLayer: function(layer, callback){
@@ -252,6 +252,42 @@
 
 
             });
+
+//            dojo.declare("glc.ChlLayer", esri.layers.DynamicMapServiceLayer, {
+//                constructor: function() {
+//                    this.initialExtent = this.fullExtent = new esri.geometry.Extent({"xmin":-9040360.209344367,"ymin":5048512.844179319,"xmax":-9001224.450862354,"ymax":5087648.602661332,"spatialReference":{"wkid":3857}});
+//                    this.spatialReference = new esri.SpatialReference({wkid:3857});
+//
+//                    this.loaded = true;
+//                    this.onLoad(this);
+//                    this.params = null;
+//                },
+//                //params: null,
+//
+//                getImageUrl: function(extent, width, height, callback) {
+//                    var params = {
+//                        request: "GetMap",
+//                        transparent: true,
+//                        format: "image/png",
+//                        bgcolor: "ffffff",
+//                        map:'watersensing_map',
+//                        version: "1.1.1",
+//                        layers: "chl_erie",
+//                        styles: "default,default",
+//                        exceptions: "application/vnd.ogc.se_xml",
+//                        TIME: '2017-05-16',
+//
+//                        //changing values
+//                        bbox:extent.xmin + "," + extent.ymin + "," + extent.xmax + "," + extent.ymax,
+//                        srs: "EPSG:" + extent.spatialReference.latestWkid,
+//                        width: width,
+//                        height: height
+//                    };
+//                    this.params = params;
+//
+//                    callback("http://spatial.mtri.org/cgi-bin/mapserv?" + dojo.objectToQuery(params));
+//                }
+//            });
 
             dojo.declare("glc.ChlLayer", esri.layers.DynamicMapServiceLayer, {
                 constructor: function() {
@@ -275,6 +311,8 @@
                         layers: "chl_erie",
                         styles: "default,default",
                         exceptions: "application/vnd.ogc.se_xml",
+                        //TIME: '2017-05-16',
+                        SLD:'http://spatial.mtri.org/waterremotesensing/SLDs/chl_erie.xml',
 
                         //changing values
                         bbox:extent.xmin + "," + extent.ymin + "," + extent.xmax + "," + extent.ymax,
@@ -284,9 +322,28 @@
                     };
                     this.params = params;
 
-                    callback("http://spatial.mtri.org/cgi-bin/mapserv?" + dojo.objectToQuery(params));
+                    callback("http://spatial.mtri.org/cgi-bin/mapserv.fcgi?" + dojo.objectToQuery(params));
                 }
             });
+
+//            var layer20 = new WMSLayerInfo(
+//                {
+//                    name:"watersensing_map",
+//                    //title:"GBR BGS 1:625k Bedrock Lithology"
+//                });
+//
+//            var resourceInfo20 = {
+//                extent: new esri.geometry.Extent({"xmin":-9040360.209344367,"ymin":5048512.844179319,"xmax":-9001224.450862354,"ymax":5087648.602661332,"spatialReference":{"wkid":3857}}),
+//                layerInfos: []
+//            };
+//            var wmsLayer20 = new WMSLayer("http://spatial.mtri.org/cgi-bin/mapserv.fcgi",
+//                {
+//                    resourceInfo: resourceInfo20,
+//                    visibleLayers: ["chl_erie"]
+//                }
+//            );
+//            map.addLayers([wmsLayer20]);
+//            wmsLayer20.setVisibility(true);
 
             var habsLayer = new glc.HABsLayer();
             habsLayer.id = 'HABs';
@@ -297,6 +354,22 @@
             layerList.push(chlLayer);
 
             map.addLayer(habsLayer);
+
+            function createOptions(chartDiv, title, yAxisText, dataSeries){
+                return {
+                    chart: {
+                        renderTo: chartDiv,
+                        defaultSeriesType: 'line'
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    title: {
+                        text: title
+                    },
+                    series: dataSeries
+                }
+            }
 
             function updateChart(chart, title, name, data){
                 if(data != null) {
