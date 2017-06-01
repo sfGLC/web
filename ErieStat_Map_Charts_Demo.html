@@ -36,7 +36,6 @@
     </style>
     <script src="https://js.arcgis.com/3.20/"></script>
     <script>
-        var map;
         require([
             "esri/map",
 //            "esri/views/MapView",
@@ -66,29 +65,27 @@
             "js/export-csv_glc.js",
 
             "dojo/domReady!"
-        ], function (
-            Map,
-//            MapView,
-            FeatureLayer,
-            ArcGISDynamicMapServiceLayer,
-            ImageParameters,
-            WMSLayer,
-            WMSLayerInfo,
-            SimpleLineSymbol,
-            Extent,
-            SpatialReference,
-            esriConfig,
-            esriQuery,
-            QueryTask,
-            Popup, PopupTemplate,
-            SimpleFillSymbol, Color,
-            graphicsUtils,
-            domClass, domConstruct, on,
-            Chart, theme,
-            Query,
-            Deferred,
-            dom
-            ) {
+        ], function (Map,
+                     //            MapView,
+                     FeatureLayer,
+                     ArcGISDynamicMapServiceLayer,
+                     ImageParameters,
+                     WMSLayer,
+                     WMSLayerInfo,
+                     SimpleLineSymbol,
+                     Extent,
+                     SpatialReference,
+                     esriConfig,
+                     esriQuery,
+                     QueryTask,
+                     Popup, PopupTemplate,
+                     SimpleFillSymbol, Color,
+                     graphicsUtils,
+                     domClass, domConstruct, on,
+                     Chart, theme,
+                     Query,
+                     Deferred,
+                     dom) {
 
             var map, queryTask;
 
@@ -122,8 +119,8 @@
 
             dojo.connect(queryTask, "onComplete", getChart);
             dojo.connect(map, "onClick", doQuery);
-            dojo.connect(queryTask,'onExecuteForExtentComplete',function(d){
-                if(d.extent.xmax != 'NaN'){
+            dojo.connect(queryTask, 'onExecuteForExtentComplete', function (d) {
+                if (d.extent.xmax != 'NaN') {
                     map.setExtent(d.extent);
                 }
             });
@@ -133,7 +130,7 @@
             query.outFields = ['*'];
 //                query.outFields = ["TestData.txt.WATERSHED", "TestData.txt.LOADS_TP", "TestData.txt.LOADS_DRP", "TestData.txt.LOADS_DISC", "TestData.txt.UAL_TP", "TestData.txt.UAL_DRP"];
             query.returnGeometry = true;
-            query.outSpatialReference = {"wkid":3857 };
+            query.outSpatialReference = {"wkid": 3857};
 
             function doQuery(evt) {
                 click = query.geometry = evt.mapPoint;
@@ -148,22 +145,22 @@
                 fieldInfos: [{ //define field infos so we can specify an alias
                     fieldName: "AREA",
                     label: "Area"
-                },{
+                }, {
                     fieldName: "STATE_ABBR",
                     label: "State Abbreviation"
-                },{
+                }, {
                     fieldName: "POP1990",
                     label: "1990 Population"
-                },{
+                }, {
                     fieldName: "POP2000",
                     label: "2000 Population"
                 }],
-                mediaInfos:[{ //define the bar chart
+                mediaInfos: [{ //define the bar chart
                     caption: "",
-                    type:"barchart",
-                    value:{
+                    type: "barchart",
+                    value: {
                         theme: "Dollar",
-                        fields:["AREA","POP1990","POP2000"]
+                        fields: ["AREA", "POP1990", "POP2000"]
                     }
                 },
 //                    { //define the bar chart
@@ -182,7 +179,7 @@
 //                            fields:["AREA","POP1990","POP2000"]
 //                        }
 //                    }
-                    ]
+                ]
             });
 
             var watershedLayer = new FeatureLayer("http://geo.glc.org/arcgis/rest/services/ErieStat/ErieStat_WatershedsDemo/MapServer/", {
@@ -194,8 +191,8 @@
             var imageParameters = new ImageParameters();
             imageParameters.format = "jpeg";
             var watershedLayer = new ArcGISDynamicMapServiceLayer("http://geo.glc.org/arcgis/rest/services/ErieStat/ErieStat_WatershedsDemo/MapServer", {
-                "opacity" : 0.6,
-                "imageParameters" : imageParameters
+                "opacity": 0.6,
+                "imageParameters": imageParameters
             });
             watershedLayer.id = 'Watersheds';
             layerList.push(watershedLayer);
@@ -203,9 +200,15 @@
 
 
             dojo.declare("glc.HABsLayer", esri.layers.DynamicMapServiceLayer, {
-                constructor: function() {
-                    this.initialExtent = this.fullExtent = new esri.geometry.Extent({"xmin":-9040360.209344367,"ymin":5048512.844179319,"xmax":-9001224.450862354,"ymax":5087648.602661332,"spatialReference":{"wkid":3857}});
-                    this.spatialReference = new esri.SpatialReference({wkid:3857});
+                constructor: function () {
+                    this.initialExtent = this.fullExtent = new esri.geometry.Extent({
+                        "xmin": -9040360.209344367,
+                        "ymin": 5048512.844179319,
+                        "xmax": -9001224.450862354,
+                        "ymax": 5087648.602661332,
+                        "spatialReference": {"wkid": 3857}
+                    });
+                    this.spatialReference = new esri.SpatialReference({wkid: 3857});
 
                     this.loaded = true;
                     this.onLoad(this);
@@ -213,20 +216,20 @@
                 },
                 //params: null,
 
-                getImageUrl: function(extent, width, height, callback) {
+                getImageUrl: function (extent, width, height, callback) {
                     var params = {
                         request: "GetMap",
                         transparent: true,
                         format: "image/png",
                         bgcolor: "ffffff",
-                        map:'watersensing_map',
+                        map: 'watersensing_map',
                         version: "1.1.1",
                         layers: "habs_erie",
                         styles: "default,default",
                         exceptions: "application/vnd.ogc.se_xml",
 
                         //changing values
-                        bbox:extent.xmin + "," + extent.ymin + "," + extent.xmax + "," + extent.ymax,
+                        bbox: extent.xmin + "," + extent.ymin + "," + extent.xmax + "," + extent.ymax,
                         srs: "EPSG:" + extent.spatialReference.latestWkid,
                         width: width,
                         height: height
@@ -246,9 +249,15 @@
 
 
             dojo.declare("glc.ChlLayer", esri.layers.DynamicMapServiceLayer, {
-                constructor: function() {
-                    this.initialExtent = this.fullExtent = new esri.geometry.Extent({"xmin":-9040360.209344367,"ymin":5048512.844179319,"xmax":-9001224.450862354,"ymax":5087648.602661332,"spatialReference":{"wkid":3857}});
-                    this.spatialReference = new esri.SpatialReference({wkid:3857});
+                constructor: function () {
+                    this.initialExtent = this.fullExtent = new esri.geometry.Extent({
+                        "xmin": -9040360.209344367,
+                        "ymin": 5048512.844179319,
+                        "xmax": -9001224.450862354,
+                        "ymax": 5087648.602661332,
+                        "spatialReference": {"wkid": 3857}
+                    });
+                    this.spatialReference = new esri.SpatialReference({wkid: 3857});
 
                     this.loaded = true;
                     this.onLoad(this);
@@ -256,22 +265,22 @@
                 },
                 //params: null,
 
-                getImageUrl: function(extent, width, height, callback) {
+                getImageUrl: function (extent, width, height, callback) {
                     var params = {
                         request: "GetMap",
                         transparent: true,
                         format: "image/png",
                         bgcolor: "ffffff",
-                        map:'watersensing_map',
+                        map: 'watersensing_map',
                         version: "1.1.1",
                         layers: "chl_erie",
                         styles: "default,default",
                         exceptions: "application/vnd.ogc.se_xml",
                         //TIME: '2017-05-16',
-                        SLD:'http://spatial.mtri.org/waterremotesensing/SLDs/chl_erie.xml',
+                        SLD: 'http://spatial.mtri.org/waterremotesensing/SLDs/chl_erie.xml',
 
                         //changing values
-                        bbox:extent.xmin + "," + extent.ymin + "," + extent.xmax + "," + extent.ymax,
+                        bbox: extent.xmin + "," + extent.ymin + "," + extent.xmax + "," + extent.ymax,
                         srs: "EPSG:" + extent.spatialReference.latestWkid,
                         width: width,
                         height: height
@@ -293,7 +302,7 @@
             map.addLayer(habsLayer);
 
 
-            function createOptions(chartDiv, style, title, yAxisText, dataSeries){
+            function createOptions(chartDiv, style, title, yAxisText, dataSeries) {
                 return {
                     chart: {
                         renderTo: chartDiv,
@@ -318,8 +327,8 @@
             }
 
 
-            function updateChart(chart, title, name, data){
-                if(data != null) {
+            function updateChart(chart, title, name, data) {
+                if (data != null) {
                     var targetVal;
                     data.forEach(function (d) {
                         if (d != null) {
@@ -331,48 +340,48 @@
                         target.push(targetVal * 0.6);
                     });
                 }
-                    var options = {
-                        chart: {
-                            renderTo: chart,
-                            defaultSeriesType: 'line'
-                        },
-                        credits: {
-                            enabled: false
-                        },
+                var options = {
+                    chart: {
+                        renderTo: chart,
+                        defaultSeriesType: 'line'
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    title: {
+                        text: title
+                    },
+                    xAxis: {
+                        categories: xAxis
+                    },
+                    yAxis: {
                         title: {
-                            text: title
+                            text: "y-axis"
+                        }
+                    },
+                    series: [
+                        {
+                            name: name,
+                            data: data
                         },
-                        xAxis: {
-                            categories: xAxis
-                        },
-                        yAxis: {
-                            title: {
-                                text: "y-axis"
-                            }
-                        },
-                        series: [
-                            {
-                                name: name,
-                                data: data
-                            },
-                            {
-                                name: "Target",
-                                data: target,
-                                color: "#FF0000"
-                            }
-                        ]
-                    };
+                        {
+                            name: "Target",
+                            data: target,
+                            color: "#FF0000"
+                        }
+                    ]
+                };
 
-                    var chart1 = new Highcharts.Chart(options);
+                var chart1 = new Highcharts.Chart(options);
 
             }
 
-            function createChart(attributes, fieldName, targetName, chartDiv, style, targetType, title, displayName, yAxisText, dataColor, targetColor){
+            function createChart(attributes, fieldName, targetName, chartDiv, style, targetType, title, displayName, yAxisText, dataColor, targetColor) {
                 var data = [];
                 var dataSeries = [];
                 var options;
-                if(attributes[fieldName]){
-                    attributes[fieldName].split(',').forEach(function (d){
+                if (attributes[fieldName]) {
+                    attributes[fieldName].split(',').forEach(function (d) {
                         data.push(parseFloat(d));
                     })
                     dataSeries.push({
@@ -380,7 +389,7 @@
                         data: data,
                         color: dataColor
                     });
-                    if(attributes[targetName]){
+                    if (attributes[targetName]) {
                         var target = [];
                         xAxis.forEach(function () {
                             target.push(parseFloat(attributes[targetName]));
@@ -396,7 +405,7 @@
                     }
                     options = createOptions(chartDiv, style, title, yAxisText, dataSeries)
                 }
-                else{
+                else {
                     data = null;
                     options = createOptions(chartDiv, style, title + " (Not Available)", yAxisText, null)
                 }
@@ -404,10 +413,10 @@
             }
 
 
-            function getChart(featureSet){
+            function getChart(featureSet) {
                 var features = featureSet.features;
                 var feature, attributes;
-                for(var i = 0; i < features.length;i++) {
+                for (var i = 0; i < features.length; i++) {
                     //var targetVal = 0;
                     feature = features[i];
                     attributes = feature.attributes;
@@ -425,15 +434,15 @@
                 }
             }
 
-            function setWMSLayer(){
+            function setWMSLayer() {
                 mylayer.setLayer("chl_erie");
 //                mylayer.params.layers = "chl_erie";
 //                mylayer.callback("http://spatial.mtri.org/cgi-bin/mapserv?" + dojo.objectToQuery(mylayer.params));
             }
 
-            function GLCGetLayer(layerId){
-                for(var i=0;i<layerList.length;i++){
-                    if(layerList[i].id == layerId)
+            function GLCGetLayer(layerId) {
+                for (var i = 0; i < layerList.length; i++) {
+                    if (layerList[i].id == layerId)
                         return layerList[i];
                 }
                 return null;
@@ -469,16 +478,17 @@
                     };
                 };
                 var watershedSet = [];
+
                 function getWatershed(name) {
-                    for(var i = 0; i < watershedSet.length;i++){
-                        if(watershedSet[i].name == name)
+                    for (var i = 0; i < watershedSet.length; i++) {
+                        if (watershedSet[i].name == name)
                             return watershedSet[i];
                     }
                     return null;
                 };
-                function getWatershedNames(){
+                function getWatershedNames() {
                     var names = [];
-                    watershedSet.forEach(function (d){
+                    watershedSet.forEach(function (d) {
                         names.push(d.name);
                     });
                     return names;
@@ -512,6 +522,7 @@
                 function addDRP(river, fieldset, newVal) {
                     river[fieldset].DRP.push(numberFormat(newVal));
                 }
+
                 function calculateFieldset(line) {
                     switch (line.FIELD_SET) {
                         case "Loads":
@@ -528,11 +539,11 @@
                             return "springFlow";
                     }
                 }
+
                 var dateFormat = d3.time.format("%Y").parse;
                 var numberFormat = d3.format(".4f");
 
                 d3.csv("data/NCWQR Lake Erie tribs_GLC_031617_sample_4_Siyu_input.csv", function (in_file) {
-
 
 
                     in_file.forEach(function (d) {
@@ -566,11 +577,11 @@
 
                     in_file.map(function (obj) {
                         var existednames = getWatershedNames();
-                        if (existednames.includes(obj.River)){
+                        if (existednames.includes(obj.River)) {
                             var watershed = getWatershed(obj.River);
                             watershed[obj.fieldset].TP.splice(obj.Year - 2008, 0, parseFloat(obj.TP));
                             watershed[obj.fieldset].DRP.splice(obj.Year - 2008, 0, parseFloat(obj.DRP));
-                        }else{
+                        } else {
                             var newWatershed = new watershedObj(obj.River);
                             newWatershed[obj.fieldset].TP.splice(obj.Year - 2008, 0, parseFloat(obj.TP));
                             newWatershed[obj.fieldset].DRP.splice(obj.Year - 2008, 0, parseFloat(obj.DRP));
@@ -594,7 +605,7 @@
                     });
 
                     var innerHTML = "";
-                    for(var i = 0; i < watershedSet.length; i++){
+                    for (var i = 0; i < watershedSet.length; i++) {
                         innerHTML += '<button type="button" class="watershed-buttons">' + watershedSet[i].name + '</button>';
                     }
                     $("#watershed-selection").html(innerHTML);
@@ -710,9 +721,16 @@
 //
                     dataSeries = [
 
-                        { type: "column", name: "Portage", data: PortageSeries.timeWeighted.TP, color: "#1f77b4" },
-                        { name: "Raisin", data: RaisinSeries.timeWeighted.TP, color: "#008000" },
-                        { type: "area", name: "Maumee", data: MaumeeSeries.timeWeighted.TP, color: "#FF0000", fillOpacity: 0.3, dashStyle: "shortDash" },
+                        {type: "column", name: "Portage", data: PortageSeries.timeWeighted.TP, color: "#1f77b4"},
+                        {name: "Raisin", data: RaisinSeries.timeWeighted.TP, color: "#008000"},
+                        {
+                            type: "area",
+                            name: "Maumee",
+                            data: MaumeeSeries.timeWeighted.TP,
+                            color: "#FF0000",
+                            fillOpacity: 0.3,
+                            dashStyle: "shortDash"
+                        },
                         //{ name: "Target", data: target, color: "#FF0000" }
                     ];
                     options = createOptions("river-tp-chart", "Time Weighted Mean Concentrations of TP in Rivers", xAxis, "Units", dataSeries);
@@ -773,31 +791,11 @@
                 });
             }
 
-                /*
-                 This part binds click event to the buttons to call function to zoom to the corresponding feature.
-                 */
-                Query(".watershed-buttons").on("click", function (){
-                    alert(this.textContent);
-                    setWMSLayer();
-                });
-
-            Query(".layer-chk").on("click", function(){
-                //mylayer.inherited('setVisible',this.checked);
-
-                var layer = GLCGetLayer(this.value);
-
-//                    map.getLayer(this.value);
-//                layer.inherited('setVisible',this.checked);
-                if(this.checked){
-                    map.addLayer(layer);
-                }else{
-                    map.removeLayer(layer);
-                }
-            });
+            /*
+             This part binds click event to the buttons to call function to zoom to the corresponding feature.
+             */
 
         });
-
-        var test;
     </script>
 
 </head>
