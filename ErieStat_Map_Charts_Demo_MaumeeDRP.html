@@ -35,6 +35,7 @@
             font-family: 'Lato', sans-serif;
 
         }
+
     </style>
     <script src="https://js.arcgis.com/3.20/"></script>
     <script>
@@ -117,15 +118,19 @@
                 zoom: 7
             });
 
-            queryTask = new QueryTask("http://geo.glc.org/arcgis/rest/services/ErieStat/ErieStat_WatershedsDemo/MapServer/1");
 
-            dojo.connect(queryTask, "onComplete", getChart);
-            dojo.connect(map, "onClick", doQuery);
-            dojo.connect(queryTask, 'onExecuteForExtentComplete', function (d) {
-                if (d.extent.xmax != 'NaN') {
-                    map.setExtent(d.extent);
-                }
-            });
+//            queryTask = new QueryTask("http://geo.glc.org/arcgis/rest/services/ErieStat/ErieStat_WatershedsDemo/MapServer/1");
+
+            //dojo.connect(queryTask, "onComplete", getChart);
+//            dojo.connect(map, "onClick", doQuery);
+//            dojo.connect(queryTask, 'onExecuteForExtentComplete', function (d) {
+//                if (d.extent.xmax != 'NaN') {
+//                    map.setExtent(d.extent);
+//                }
+//            });
+
+            createAllCharts();
+
 
             var query = new esriQuery();
             query.spatialRelationship = esriQuery.SPAITAL_REL_INTERSECTS;
@@ -422,14 +427,14 @@
                     //var targetVal = 0;
                     feature = features[i];
                     attributes = feature.attributes;
-                    $('#watershed-name').html("Watershed: " + attributes['Pilot.Name']);
+                    $('#watershed-name').html("Watershed: Maumee");
 
-                    createChart(attributes, 'TestData.txt.TP_FWMC', 'TestData.txt.TPFWMC_T', 'tp-fwmc-chart', 'line', 'line',
-                        'TP', 'FWMC', 'Milligram/Liter', '#0000ff', '#ff0000');
-                    createChart(attributes, 'TestData.txt.DRP_FWMC', 'TestData.txt.DRPFWMC_T', 'drp-fwmc-chart', 'line', 'line',
-                        'DRP', 'FWMC', 'Milligram/Liter', '#0000ff', '#ff0000');
-                    createChart(attributes, 'TestData.txt.TP_S_LOAD', 'TestData.txt.TP_S_T', 'tp-sload-chart', 'column', 'line',
-                        'TP', 'Spring Loading', 'Metric Tons', '#0000ff', '#ff0000');
+//                    createChart(attributes, 'TestData.txt.TP_FWMC', 'TestData.txt.TPFWMC_T', 'tp-fwmc-chart', 'line', 'line',
+//                        'TP', 'FWMC', 'Milligram/Liter', '#0000ff', '#ff0000');
+//                    createChart(attributes, 'TestData.txt.DRP_FWMC', 'TestData.txt.DRPFWMC_T', 'drp-fwmc-chart', 'line', 'line',
+//                        'DRP', 'FWMC', 'Milligram/Liter', '#0000ff', '#ff0000');
+//                    createChart(attributes, 'TestData.txt.TP_S_LOAD', 'TestData.txt.TP_S_T', 'tp-sload-chart', 'column', 'line',
+//                        'TP', 'Spring Loading', 'Metric Tons', '#0000ff', '#ff0000');
                     createChart(attributes, 'TestData.txt.DRP_S_LOAD', 'TestData.txt.DRP_S_T', 'drp-sload-chart', 'column', 'line',
                         'DRP', 'Spring Loading', 'Metric Tons', '#0000ff', '#ff0000');
 
@@ -667,6 +672,22 @@
                     //};
                     //chart = new Highcharts.Chart(options);
 
+                    target = [];
+                    for (var i = 0; i < MaumeeSeries.springLoads.DRP.length; i++) {
+                        target.push(186);
+                    }
+                    dataSeries = [
+                        { name: "DRP", data: MaumeeSeries.springLoads.DRP },
+                        { name: "Target", data: target, color: "#FF0000" }
+                    ];
+                    options = createOptions("maumeechart1", "Maumee Spring Loading", xAxis, "Metric Tons", dataSeries);
+                    options.plotOptions = {
+                        series: {
+                            allowPointSelect: true
+                        }
+                    };
+                    chart = new Highcharts.Chart(options);
+
                     //target = [];
                     //for (var i = 0; i < MaumeeSeries.loads.TP.length; i++) {
                     //    target.push(0.05);
@@ -721,73 +742,73 @@
 //                    chart = new Highcharts.Chart(options);
 //
 //
-                    dataSeries = [
-
-                        {type: "column", name: "Portage", data: PortageSeries.timeWeighted.TP, color: "#1f77b4"},
-                        {name: "Raisin", data: RaisinSeries.timeWeighted.TP, color: "#008000"},
-                        {
-                            type: "area",
-                            name: "Maumee",
-                            data: MaumeeSeries.timeWeighted.TP,
-                            color: "#FF0000",
-                            fillOpacity: 0.3,
-                            dashStyle: "shortDash"
-                        },
-                        //{ name: "Target", data: target, color: "#FF0000" }
-                    ];
-                    options = createOptions("river-tp-chart", "Time Weighted Mean Concentrations of TP in Rivers", xAxis, "Units", dataSeries);
-                    options.plotOptions = {
-                        series: {
-                            allowPointSelect: true
-                        }
-                    };
-                    chart = new Highcharts.Chart(options);
-
-
-                    var pieData = [
-                        {
-                            name: "Municipal Point Source",
-                            y: 338.96
-                        },
-                        {
-                            name: "Industrial Point Source",
-                            y: 40.9872
-                        },
-                        {
-                            name: "Non-Point Source",
-                            y: 3946.8
-                        }
-                    ];
-
-                    var pieOptions = {
-                        chart: {
-                            //renderTo: "pie-demo-chart",
-                            plotBackgroundColor: null,
-                            plotBorderWidth: null,
-                            plotShadow: false,
-                            type: 'pie'
-                        },
-                        title: {
-                            text: "Proportion from Sources"
-                        },
-                        plotOptions: {
-                            pie: {
-                                allowPointSelect: true,
-                                cursor: 'pointer',
-                                dataLabels: {
-                                    enabled: false
-                                },
-                                showInLegend: true
-                            }
-                        },
-                        series: [{
-                            name: "Sources",
-                            colorByPoint: true,
-                            data: pieData
-                        }]
-
-                    };
-                    chart = new Highcharts.Chart("pie-demo-chart", pieOptions);
+//                    dataSeries = [
+//
+//                        {type: "column", name: "Portage", data: PortageSeries.timeWeighted.TP, color: "#1f77b4"},
+//                        {name: "Raisin", data: RaisinSeries.timeWeighted.TP, color: "#008000"},
+//                        {
+//                            type: "area",
+//                            name: "Maumee",
+//                            data: MaumeeSeries.timeWeighted.TP,
+//                            color: "#FF0000",
+//                            fillOpacity: 0.3,
+//                            dashStyle: "shortDash"
+//                        },
+//                        //{ name: "Target", data: target, color: "#FF0000" }
+//                    ];
+//                    options = createOptions("river-tp-chart", "Time Weighted Mean Concentrations of TP in Rivers", xAxis, "Units", dataSeries);
+//                    options.plotOptions = {
+//                        series: {
+//                            allowPointSelect: true
+//                        }
+//                    };
+//                    chart = new Highcharts.Chart(options);
+//
+//
+//                    var pieData = [
+//                        {
+//                            name: "Municipal Point Source",
+//                            y: 338.96
+//                        },
+//                        {
+//                            name: "Industrial Point Source",
+//                            y: 40.9872
+//                        },
+//                        {
+//                            name: "Non-Point Source",
+//                            y: 3946.8
+//                        }
+//                    ];
+//
+//                    var pieOptions = {
+//                        chart: {
+//                            //renderTo: "pie-demo-chart",
+//                            plotBackgroundColor: null,
+//                            plotBorderWidth: null,
+//                            plotShadow: false,
+//                            type: 'pie'
+//                        },
+//                        title: {
+//                            text: "Proportion from Sources"
+//                        },
+//                        plotOptions: {
+//                            pie: {
+//                                allowPointSelect: true,
+//                                cursor: 'pointer',
+//                                dataLabels: {
+//                                    enabled: false
+//                                },
+//                                showInLegend: true
+//                            }
+//                        },
+//                        series: [{
+//                            name: "Sources",
+//                            colorByPoint: true,
+//                            data: pieData
+//                        }]
+//
+//                    };
+//                    chart = new Highcharts.Chart("pie-demo-chart", pieOptions);
 
 
                 });
@@ -876,7 +897,7 @@
 
                 <div>
                     <div>
-                        <div id="new-chart"></div>
+                        <div id="maumeechart1"></div>
                     </div>
                 </div>
             </div>
