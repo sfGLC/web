@@ -17,9 +17,24 @@
         body {
             font-family: 'Lato', sans-serif;
         }
+        .highcharts-root {
+            font-family: 'Lato', sans-serif;
+        }
+        .svg.highcharts-root{
+            font-family: 'Lato', sans-serif;
+        }
     </style>
     <script>
         $(document).ready(function (d){
+            Highcharts.setOptions(
+                {
+                    chart: {
+                        style: {
+                            fontFamily: 'Lato, sans-serif'
+                        }
+                    }
+                }
+            );
             var pieData = [
                 {
                     name: "Municipal Point Source",
