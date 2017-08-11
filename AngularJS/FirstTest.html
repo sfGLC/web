@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="demoApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.4/angular-route.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var demoApp = angular.module('demoApp', ['ngRoute']);
+
+        demoApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider){
+            $locationProvider.hashPrefix('');
+            $routeProvider
+                .when('/view1', {
+                    controller: 'SimpleController',
+                    templateUrl: 'Partials/View1.html'
+                })
+                .when("/view2", {
+                    controller: 'SimpleController',
+                    templateUrl: 'Partials/View2.html'
+                })
+                .otherwise({redirectTo: '/view1'});
+
+            }]
+        );
+
+        demoApp.factory('simpleFactory', function (){
+           var customers =  [
+               {name:'Dave', city:'Phoenix'},
+               {name:'Napur', city:'NYC'},
+               {name:'Heedy', city:'DTW'}
+               ];
+
+           var factory = {};
+           factory.getCustomers = function (){
+               return customers;
+           };
+
+           return factory;
+        });
+
+        var controllers = {};
+        controllers.SimpleController = function ($scope, simpleFactory){
+            $scope.customers = [];
+            init();
+
+            function init(){
+                $scope.customers = simpleFactory.getCustomers();
+            }
+
+            $scope.addCustomer =function () {
+                $scope.customers.push(
+                    {
+                        name: $scope.newCustomer.name,
+                        city: $scope.newCustomer.city
+                    });
+            }
+        };
+        demoApp.controller(controllers);
+
+//        demoApp.controller('SimpleController', SimpleController);
+//
+//        function SimpleController($scope){
+//            $scope.customers = [
+//                {name:'Dave', city:'Phoenix'},
+//                {name:'Napur', city:'NYC'},
+//                {name:'Heedy', city:'DTW'}
+//            ];
+//        }
+    </script>
+</head>
+<body>
+<!--<div>-->
+    <!--Name:-->
+    <!--<br/>-->
+    <!--<input type="text" data-ng-model="name"> {{name}}-->
+<!--</div>-->
+<!--<div class="container" data-ng-init="names=[{name:'Dave', city:'Phoenix'}, {name:'Napur', city:'NYC'}, {name:'Heedy', city:'DTW'}]">-->
+    <!--<h3>Looping</h3>-->
+    <!--<ul>-->
+        <!--<li data-ng-repeat="person in names | filter: name | orderBy: 'city'">{{person.name | uppercase}} from {{person.city}}</li>-->
+    <!--</ul>-->
+
+<!--</div>-->
+<!--<div data-ng-controller="SimpleController">-->
+    <!--<h3>Looping</h3>-->
+    <!--<ul>-->
+        <!--<li data-ng-repeat="person in customers | filter: name | orderBy: 'city'">{{person.name | uppercase}} from {{person.city}}</li>-->
+    <!--</ul>-->
+<!--</div>-->
+<div>
+    <div data-ng-view></div>
+</div>
+<style>
+    /*.embed-container {*/
+        /*position: relative;*/
+        /*padding-bottom: 80%;*/
+        /*height: 0;*/
+        /*!*max-width: 100%;*!*/
+    /*}*/
+
+    /*.embed-container iframe,*/
+    /*.embed-container object,*/
+    /*!*.embed-container iframe {*!*/
+        /*!*position: absolute;*!*/
+        /*!*top: 0;*!*/
+        /*!*left: 0;*!*/
+        /*!*width: 100%;*!*/
+        /*!*height: 100%;*!*/
+    /*!*}*!*/
+
+    /*small {*/
+        /*position: absolute;*/
+        /*z-index: 40;*/
+        /*bottom: 0;*/
+        /*margin-bottom: -15px;*/
+    /*}*/
+</style>
+<!--<div>-->
+    <!--<iframe width="600" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="GLRI projects by Focus Area" src="https://glcommission.maps.arcgis.com/apps/webappviewer/index.html?id=fcf57c925baa434fb7fade0a017d8df7"></iframe>-->
+<!--</div>-->
+
+</body>
+</html>

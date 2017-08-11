@@ -13,5 +13,7 @@
     <orderEntry type="library" name="cedar" level="application" />
     <orderEntry type="library" name="crossfilter" level="application" />
     <orderEntry type="library" name="highstock" level="application" />
+    <orderEntry type="library" name="angular" level="application" />
+    <orderEntry type="library" name="angular-route" level="application" />
   </component>
 </module>

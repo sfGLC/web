@@ -1,0 +1,905 @@
+﻿<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>ErieStat Chart Demo</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.1/dc.min.css">
+
+    <script src="http://colorbrewer2.org/export/colorbrewer.js"></script>
+
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
+    <style>
+        #map {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #FFF;
+            /*overflow: hidden;*/
+            /*font-family: "Trebuchet MS";*/
+            font-family: 'Lato', sans-serif;
+
+        }
+        .highcharts-root {
+            font-family: 'Lato', sans-serif;
+        }
+        .svg.highcharts-root{
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
+    <script src="https://js.arcgis.com/3.20/"></script>
+    <script>
+        require([
+            "esri/map",
+//            "esri/views/MapView",
+            "esri/layers/FeatureLayer",
+            "esri/layers/ArcGISDynamicMapServiceLayer",
+            "esri/layers/ImageParameters",
+            "esri/layers/WMSLayer",
+            'esri/layers/WMSLayerInfo',
+            "esri/symbols/SimpleLineSymbol",
+            "esri/geometry/Extent",
+            "esri/SpatialReference",
+            "esri/config",
+            "esri/tasks/query",
+            "esri/tasks/QueryTask",
+            "esri/dijit/Popup", "esri/dijit/PopupTemplate",
+            "esri/symbols/SimpleFillSymbol", "esri/Color",
+            "esri/graphicsUtils",
+            "dojo/dom-class", "dojo/dom-construct", "dojo/on",
+            "dojox/charting/Chart", "dojox/charting/themes/Dollar",
+            "dojo/query",
+            "dojo/dom",
+            "dojo/Deferred",
+            "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js",
+            "https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js",
+////            "http://code.highcharts.com/highcharts.js",
+            "https://code.highcharts.com/modules/exporting.js",
+            "js/export-csv_glc.js",
+
+            "dojo/domReady!"
+        ], function (Map,
+                     //            MapView,
+                     FeatureLayer,
+                     ArcGISDynamicMapServiceLayer,
+                     ImageParameters,
+                     WMSLayer,
+                     WMSLayerInfo,
+                     SimpleLineSymbol,
+                     Extent,
+                     SpatialReference,
+                     esriConfig,
+                     esriQuery,
+                     QueryTask,
+                     Popup, PopupTemplate,
+                     SimpleFillSymbol, Color,
+                     graphicsUtils,
+                     domClass, domConstruct, on,
+                     Chart, theme,
+                     Query,
+                     Deferred,
+                     dom) {
+
+            var map, queryTask;
+
+            Highcharts.setOptions(
+                {
+                    chart: {
+                        style: {
+                            fontFamily: 'Lato, sans-serif'
+                        }
+                    }
+                }
+            );
+
+            var xAxis = ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"];
+
+            var fill = new SimpleFillSymbol("solid", null, new Color("#A4CE67"));
+            var popup = new Popup({
+                fillSymbol: fill,
+                titleInBody: false
+            }, domConstruct.create("div"));
+//            popup.deferreds.push(new Deferred(function (){
+//                alert('test');
+//            }));
+            //Add the dark theme which is customized further in the <style> tag at the top of this page
+            domClass.add(popup.domNode, "dark");
+
+            var fieldsSelectionSymbol =
+                new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID,
+                    new SimpleLineSymbol(SimpleLineSymbol.STYLE_DASHDOT,
+                        new Color([255, 0, 0]), 2), new Color([255, 255, 0, 0.5]));
+
+            layerList = [];
+
+            map = new Map("map", {
+                basemap: "topo",
+                center: [-83.1, 42.1],
+                zoom: 7
+            });
+
+            queryTask = new QueryTask("http://geo.glc.org/arcgis/rest/services/ErieStat/ErieStat_WatershedsDemo/MapServer/1");
+
+            dojo.connect(queryTask, "onComplete", getChart);
+            dojo.connect(map, "onClick", doQuery);
+            dojo.connect(queryTask, 'onExecuteForExtentComplete', function (d) {
+                if (d.extent.xmax != 'NaN') {
+                    map.setExtent(d.extent);
+                }
+            });
+
+            var query = new esriQuery();
+            query.spatialRelationship = esriQuery.SPAITAL_REL_INTERSECTS;
+            query.outFields = ['*'];
+//                query.outFields = ["TestData.txt.WATERSHED", "TestData.txt.LOADS_TP", "TestData.txt.LOADS_DRP", "TestData.txt.LOADS_DISC", "TestData.txt.UAL_TP", "TestData.txt.UAL_DRP"];
+            query.returnGeometry = true;
+            query.outSpatialReference = {"wkid": 3857};
+
+            function doQuery(evt) {
+                click = query.geometry = evt.mapPoint;
+                queryTask.execute(query);
+                queryTask.executeForExtent(query);
+            }
+
+
+            var template = new PopupTemplate({
+                title: "Proof of Concept for ErieStat",
+                description: "{STATE_NAME}:  State FIPS {STATE_FIPS}",
+                fieldInfos: [{ //define field infos so we can specify an alias
+                    fieldName: "AREA",
+                    label: "Area"
+                }, {
+                    fieldName: "STATE_ABBR",
+                    label: "State Abbreviation"
+                }, {
+                    fieldName: "POP1990",
+                    label: "1990 Population"
+                }, {
+                    fieldName: "POP2000",
+                    label: "2000 Population"
+                }],
+                mediaInfos: [{ //define the bar chart
+                    caption: "",
+                    type: "barchart",
+                    value: {
+                        theme: "Dollar",
+                        fields: ["AREA", "POP1990", "POP2000"]
+                    }
+                },
+//                    { //define the bar chart
+//                        caption: "",
+//                        type:"barchart",
+//                        value:{
+//                            theme: "Dollar",
+//                            fields:["AREA","POP1990","POP2000"]
+//                        }
+//                    },
+//                    { //define the bar chart
+//                        caption: "",
+//                        type:"barchart",
+//                        value:{
+//                            theme: "Dollar",
+//                            fields:["AREA","POP1990","POP2000"]
+//                        }
+//                    }
+                ]
+            });
+
+            var watershedLayer = new FeatureLayer("http://geo.glc.org/arcgis/rest/services/ErieStat/ErieStat_WatershedsDemo/MapServer/", {
+                mode: FeatureLayer.MODE_ONDEMAND,
+                outFields: ["*"],
+                infoTemplate: template
+            });
+
+            var imageParameters = new ImageParameters();
+            imageParameters.format = "jpeg";
+            var watershedLayer = new ArcGISDynamicMapServiceLayer("http://geo.glc.org/arcgis/rest/services/ErieStat/ErieStat_WatershedsDemo/MapServer", {
+                "opacity": 0.6,
+                "imageParameters": imageParameters
+            });
+            watershedLayer.id = 'Watersheds';
+            layerList.push(watershedLayer);
+            map.addLayer(watershedLayer);
+
+
+            dojo.declare("glc.HABsLayer", esri.layers.DynamicMapServiceLayer, {
+                constructor: function () {
+                    this.initialExtent = this.fullExtent = new esri.geometry.Extent({
+                        "xmin": -9040360.209344367,
+                        "ymin": 5048512.844179319,
+                        "xmax": -9001224.450862354,
+                        "ymax": 5087648.602661332,
+                        "spatialReference": {"wkid": 3857}
+                    });
+                    this.spatialReference = new esri.SpatialReference({wkid: 3857});
+
+                    this.loaded = true;
+                    this.onLoad(this);
+                    this.params = null;
+                },
+                //params: null,
+
+                getImageUrl: function (extent, width, height, callback) {
+                    var params = {
+                        request: "GetMap",
+                        transparent: true,
+                        format: "image/png",
+                        bgcolor: "ffffff",
+                        map: 'watersensing_map',
+                        version: "1.1.1",
+                        layers: "habs_erie",
+                        styles: "default,default",
+                        exceptions: "application/vnd.ogc.se_xml",
+
+                        //changing values
+                        bbox: extent.xmin + "," + extent.ymin + "," + extent.xmax + "," + extent.ymax,
+                        srs: "EPSG:" + extent.spatialReference.latestWkid,
+                        width: width,
+                        height: height
+                    };
+                    this.params = params;
+
+                    callback("http://spatial.mtri.org/cgi-bin/mapserv.fcgi?" + dojo.objectToQuery(params));
+                },
+
+//                setLayer: function(layer, callback){
+//                    this.params.layers = layer;
+//                    callback("http://spatial.mtri.org/cgi-bin/mapserv?" + dojo.objectToQuery(this.params));
+//                }
+
+
+            });
+
+
+            dojo.declare("glc.ChlLayer", esri.layers.DynamicMapServiceLayer, {
+                constructor: function () {
+                    this.initialExtent = this.fullExtent = new esri.geometry.Extent({
+                        "xmin": -9040360.209344367,
+                        "ymin": 5048512.844179319,
+                        "xmax": -9001224.450862354,
+                        "ymax": 5087648.602661332,
+                        "spatialReference": {"wkid": 3857}
+                    });
+                    this.spatialReference = new esri.SpatialReference({wkid: 3857});
+
+                    this.loaded = true;
+                    this.onLoad(this);
+                    this.params = null;
+                },
+                //params: null,
+
+                getImageUrl: function (extent, width, height, callback) {
+                    var params = {
+                        request: "GetMap",
+                        transparent: true,
+                        format: "image/png",
+                        bgcolor: "ffffff",
+                        map: 'watersensing_map',
+                        version: "1.1.1",
+                        layers: "chl_erie",
+                        styles: "default,default",
+                        exceptions: "application/vnd.ogc.se_xml",
+                        //TIME: '2017-05-16',
+                        SLD: 'http://spatial.mtri.org/waterremotesensing/SLDs/chl_erie.xml',
+
+                        //changing values
+                        bbox: extent.xmin + "," + extent.ymin + "," + extent.xmax + "," + extent.ymax,
+                        srs: "EPSG:" + extent.spatialReference.latestWkid,
+                        width: width,
+                        height: height
+                    };
+                    this.params = params;
+
+                    callback("http://spatial.mtri.org/cgi-bin/mapserv.fcgi?" + dojo.objectToQuery(params));
+                }
+            });
+
+            var habsLayer = new glc.HABsLayer();
+            habsLayer.id = 'HABs';
+            layerList.push(habsLayer);
+
+            var chlLayer = new glc.ChlLayer();
+            chlLayer.id = 'Chl';
+            layerList.push(chlLayer);
+
+            map.addLayer(habsLayer);
+
+
+            function createOptions(chartDiv, style, title, yAxisText, dataSeries) {
+                return {
+                    chart: {
+                        renderTo: chartDiv,
+                        defaultSeriesType: style
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    title: {
+                        text: title
+                    },
+                    xAxis: {
+                        categories: xAxis
+                    },
+                    yAxis: {
+                        title: {
+                            text: yAxisText
+                        }
+                    },
+                    series: dataSeries
+                }
+            }
+
+
+            function updateChart(chart, title, name, data) {
+                if (data != null) {
+                    var targetVal;
+                    data.forEach(function (d) {
+                        if (d != null) {
+                            targetVal = parseFloat(d);
+                        }
+                    });
+                    var target = [];
+                    xAxis.forEach(function () {
+                        target.push(targetVal * 0.6);
+                    });
+                }
+                var options = {
+                    chart: {
+                        renderTo: chart,
+                        defaultSeriesType: 'line'
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    title: {
+                        text: title
+                    },
+                    xAxis: {
+                        categories: xAxis
+                    },
+                    yAxis: {
+                        title: {
+                            text: "y-axis"
+                        }
+                    },
+                    series: [
+                        {
+                            name: name,
+                            data: data
+                        },
+                        {
+                            name: "Target",
+                            data: target,
+                            color: "#FF0000"
+                        }
+                    ]
+                };
+
+                var chart1 = new Highcharts.Chart(options);
+
+            }
+
+            function createChart(attributes, fieldName, targetName, chartDiv, style, targetType, title, displayName, yAxisText, dataColor, targetColor) {
+                var data = [];
+                var dataSeries = [];
+                var options;
+                if (attributes[fieldName]) {
+                    attributes[fieldName].split(',').forEach(function (d) {
+                        data.push(parseFloat(d));
+                    })
+                    dataSeries.push({
+                        name: displayName,
+                        data: data,
+                        color: dataColor
+                    });
+                    if (attributes[targetName]) {
+                        var target = [];
+                        xAxis.forEach(function () {
+                            target.push(parseFloat(attributes[targetName]));
+                        });
+                        dataSeries.push(
+                            {
+                                type: targetType,
+                                name: 'Target',
+                                data: target,
+                                color: targetColor
+
+                            });
+                    }
+                    options = createOptions(chartDiv, style, title, yAxisText, dataSeries)
+                }
+                else {
+                    data = null;
+                    options = createOptions(chartDiv, style, title + " (Not Available)", yAxisText, null)
+                }
+                new Highcharts.Chart(options);
+            }
+
+
+            function getChart(featureSet) {
+                var features = featureSet.features;
+                var feature, attributes;
+                for (var i = 0; i < features.length; i++) {
+                    //var targetVal = 0;
+                    feature = features[i];
+                    attributes = feature.attributes;
+                    $('#watershed-name').html("Watershed: " + attributes['Pilot.Name']);
+
+                    createChart(attributes, 'TestData.txt.TP_FWMC', 'TestData.txt.TPFWMC_T', 'tp-fwmc-chart', 'line', 'line',
+                        'TP', 'FWMC', 'Milligram/Liter', '#0000ff', '#ff0000');
+                    createChart(attributes, 'TestData.txt.DRP_FWMC', 'TestData.txt.DRPFWMC_T', 'drp-fwmc-chart', 'line', 'line',
+                        'DRP', 'FWMC', 'Milligram/Liter', '#0000ff', '#ff0000');
+                    createChart(attributes, 'TestData.txt.TP_S_LOAD', 'TestData.txt.TP_S_T', 'tp-sload-chart', 'column', 'line',
+                        'TP', 'Spring Loading', 'Metric Tons', '#0000ff', '#ff0000');
+                    createChart(attributes, 'TestData.txt.DRP_S_LOAD', 'TestData.txt.DRP_S_T', 'drp-sload-chart', 'column', 'line',
+                        'DRP', 'Spring Loading', 'Metric Tons', '#0000ff', '#ff0000');
+
+                }
+            }
+
+            function setWMSLayer() {
+                mylayer.setLayer("chl_erie");
+//                mylayer.params.layers = "chl_erie";
+//                mylayer.callback("http://spatial.mtri.org/cgi-bin/mapserv?" + dojo.objectToQuery(mylayer.params));
+            }
+
+            function GLCGetLayer(layerId) {
+                for (var i = 0; i < layerList.length; i++) {
+                    if (layerList[i].id == layerId)
+                        return layerList[i];
+                }
+                return null;
+            }
+
+
+            function createAllCharts() {
+                function watershedObj(name) {
+                    this.name = name;
+                    this.loads = {
+                        TP: [],
+                        DRP: []
+                    };
+                    this.ual = {
+                        TP: [],
+                        DRP: []
+                    };
+                    this.flowWeighted = {
+                        TP: [],
+                        DRP: []
+                    };
+                    this.timeWeighted = {
+                        TP: [],
+                        DRP: []
+                    };
+                    this.springLoads = {
+                        TP: [],
+                        DRP: []
+                    };
+                    this.springFlow = {
+                        TP: [],
+                        DRP: []
+                    };
+                };
+                var watershedSet = [];
+
+                function getWatershed(name) {
+                    for (var i = 0; i < watershedSet.length; i++) {
+                        if (watershedSet[i].name == name)
+                            return watershedSet[i];
+                    }
+                    return null;
+                };
+                function getWatershedNames() {
+                    var names = [];
+                    watershedSet.forEach(function (d) {
+                        names.push(d.name);
+                    });
+                    return names;
+                }
+
+                function createOptions(container, title, xAxis, yAxisTitle, series) {
+                    return {
+                        chart: {
+                            renderTo: container,
+                            defaultSeriesType: 'line'
+                        },
+                        title: {
+                            text: title
+                        },
+                        xAxis: {
+                            categories: xAxis
+                        },
+                        yAxis: {
+                            title: {
+                                text: yAxisTitle
+                            }
+                        },
+                        series: series
+                    }
+                }
+
+
+                function addTP(river, fieldset, newVal) {
+                    river[fieldset].TP.push(numberFormat(newVal));
+                };
+                function addDRP(river, fieldset, newVal) {
+                    river[fieldset].DRP.push(numberFormat(newVal));
+                }
+
+                function calculateFieldset(line) {
+                    switch (line.FIELD_SET) {
+                        case "Loads":
+                            return "loads";
+                        case "Unit Area Loads":
+                            return "ual";
+                        case "Flow-weighted mean concentrations":
+                            return "flowWeighted";
+                        case "Time-weighted mean concentrations":
+                            return "timeWeighted";
+                        case "Spring Loads":
+                            return "springLoads";
+                        case "Spring Flow-weighted mean concentrations":
+                            return "springFlow";
+                    }
+                }
+
+                var dateFormat = d3.time.format("%Y").parse;
+                var numberFormat = d3.format(".4f");
+
+                d3.csv("data/NCWQR Lake Erie tribs_GLC_031617_sample_4_Siyu_input.csv", function (in_file) {
+
+
+                    in_file.forEach(function (d) {
+                        d.Year = dateFormat(d.Year).getFullYear();
+                        d.riverField = d.River + ":" + d.FIELD_SET;
+                        if (d.NOS == "") {
+                            d.NOS = 0;
+                        }
+                        if (d.Discharge == "") {
+                            d.Discharge = 0;
+                        }
+                        if (d.TN == "") {
+                            d.TN = 0;
+                        }
+                        if (d.PTN == "") {
+                            d.PTN = 0;
+                        }
+                        if (d.TPP == "") {
+                            d.TPP = 0;
+                        }
+                        if (d.PP == "") {
+                            d.PP = 0;
+                        }
+                        d.fieldset = calculateFieldset(d);
+                    });
+
+                    var RaisinSeries = new watershedObj("Raisin");
+                    var MaumeeSeries = new watershedObj("Maumee");
+                    var PortageSeries = new watershedObj("Portage");
+
+
+                    in_file.map(function (obj) {
+                        var existednames = getWatershedNames();
+                        if (existednames.includes(obj.River)) {
+                            var watershed = getWatershed(obj.River);
+                            watershed[obj.fieldset].TP.splice(obj.Year - 2008, 0, parseFloat(obj.TP));
+                            watershed[obj.fieldset].DRP.splice(obj.Year - 2008, 0, parseFloat(obj.DRP));
+                        } else {
+                            var newWatershed = new watershedObj(obj.River);
+                            newWatershed[obj.fieldset].TP.splice(obj.Year - 2008, 0, parseFloat(obj.TP));
+                            newWatershed[obj.fieldset].DRP.splice(obj.Year - 2008, 0, parseFloat(obj.DRP));
+                            watershedSet.push(newWatershed);
+                        }
+
+
+                        if (obj.River == "Raisin") {
+                            //RaisinSeries[obj.fieldset].TP.push(obj.TP);
+                            //RaisinSeries[obj.fieldset].DRP.push(obj.DRP);
+
+                            RaisinSeries[obj.fieldset].TP.splice(obj.Year - 2008, 0, parseFloat(obj.TP));
+                            RaisinSeries[obj.fieldset].DRP.splice(obj.Year - 2008, 0, parseFloat(obj.DRP));
+                        } else if (obj.River == "Maumee") {
+                            MaumeeSeries[obj.fieldset].TP.splice(obj.Year - 2008, 0, parseFloat(obj.TP));
+                            MaumeeSeries[obj.fieldset].DRP.splice(obj.Year - 2008, 0, parseFloat(obj.DRP));
+                        } else {
+                            PortageSeries[obj.fieldset].TP.splice(obj.Year - 2008, 0, parseFloat(obj.TP));
+                            PortageSeries[obj.fieldset].DRP.splice(obj.Year - 2008, 0, parseFloat(obj.DRP));
+                        }
+                    });
+
+                    var innerHTML = "";
+                    for (var i = 0; i < watershedSet.length; i++) {
+                        innerHTML += '<button type="button" class="watershed-buttons">' + watershedSet[i].name + '</button>';
+                    }
+                    $("#watershed-selection").html(innerHTML);
+                    var dataSeries = [];
+
+//                    var xAxis = ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"];
+
+//                    var target = [];
+//                    for (var i = 0; i < RaisinSeries.loads.TP.length; i++) {
+//                        target.push(1000);
+//                    }
+//                    var dataSeries = [
+//                        { name: "TP", data: RaisinSeries.loads.TP },
+//                        { name: "DRP", data: RaisinSeries.loads.DRP },
+//                        { name: "Target", data: target, color: "#FF0000" }
+//                    ];
+//                    var options = createOptions("raisinchart1", "Raisin Loads", xAxis, "Units (Millgram/Ton)", dataSeries);
+//
+//                    var chart = new Highcharts.Chart(options);
+//                    svg = chart.getSVG();
+
+                    //var svg = chart1.getSVG();
+
+                    //var svg = chart.getSVG();
+
+                    //target = [];
+                    //for (var i = 0; i < RaisinSeries.loads.TP.length; i++) {
+                    //    target.push(0.05);
+                    //}
+                    //dataSeries = [
+                    //    { name: "TP", data: RaisinSeries.flowWeighted.TP },
+                    //    { name: "DRP", data: RaisinSeries.flowWeighted.DRP },
+                    //    { name: "Target", data: target, color: "#FF0000" }
+                    //];
+                    //options = createOptions("raisinchart2", "Raisin Flow Weighted", xAxis, "Units (Gram/Cubic Meter)", dataSeries);
+                    //options.plotOptions = {
+                    //    series: {
+                    //        allowPointSelect: true
+                    //    }
+                    //};
+                    //chart = new Highcharts.Chart(options);
+
+                    //target = [];
+                    //for (var i = 0; i < MaumeeSeries.loads.TP.length; i++) {
+                    //    target.push(0.05);
+                    //}
+                    //dataSeries = [
+                    //    { name: "TP", data: MaumeeSeries.ual.TP },
+                    //    { name: "DRP", data: MaumeeSeries.ual.DRP },
+                    //    { name: "Target", data: target, color: "#FF0000" }
+                    //];
+                    //options = createOptions("maumeechart1", "Maumee Unit Area Loads", xAxis, "Units", dataSeries);
+                    //options.plotOptions = {
+                    //    series: {
+                    //        allowPointSelect: true
+                    //    }
+                    //};
+                    //chart = new Highcharts.Chart(options);
+
+                    //target = [];
+                    //for (var i = 0; i < MaumeeSeries.loads.TP.length; i++) {
+                    //    target.push(0.05);
+                    //}
+                    //dataSeries = [
+                    //    { name: "TP", data: MaumeeSeries.timeWeighted.TP },
+                    //    { name: "DRP", data: MaumeeSeries.timeWeighted.DRP },
+                    //    { name: "Target", data: target, color: "#FF0000" }
+                    //];
+                    //options = createOptions("maumeechart2", "Maumee Time-Weighted Mean Concentrations", xAxis, "Units", dataSeries);
+                    //options.plotOptions = {
+                    //    series: {
+                    //        allowPointSelect: true
+                    //    }
+                    //};
+                    //chart = new Highcharts.Chart(options);
+
+//                    target = [];
+//                    for (var i = 0; i < PortageSeries.loads.TP.length; i++) {
+//                        target.push(300);
+//                    }
+//                    dataSeries = [
+//                        { name: "TP", data: PortageSeries.springLoads.TP, dashStyle: "shortDash" },
+//                        { name: "DRP", data: PortageSeries.springLoads.DRP },
+//                        { name: "Target", data: target, color: "#FF0000" }
+//                    ];
+//                    options = createOptions("portagechart1", "Portage Spring Loads", xAxis, "Units", dataSeries);
+//                    options.plotOptions = {
+//                        series: {
+//                            allowPointSelect: true
+//                        }
+//                    };
+//                    chart = new Highcharts.Chart(options);
+//
+//                    target = [];
+//                    var val = 500;
+//                    for (var i = 0; i < PortageSeries.loads.TP.length; i++) {
+//                        target.push(500 + 0.00001 * i);
+//                    }
+//                    dataSeries = [
+//                        { type: "area", name: "TP", data: PortageSeries.springFlow.TP },
+//                        //{ name: "DRP", data: PortageSeries.springFlow.DRP, color: "#000099" },
+//                        { type: "column", name: "DRP", data: PortageSeries.springFlow.DRP, color: "#000099" },
+//                        { name: "Target", data: target, color: "#FF0000" }
+//                    ];
+//                    options = createOptions("portagechart2", "Portage Spring Flow", xAxis, "Units", dataSeries);
+//                    options.plotOptions = {
+//                        series: {
+//                            allowPointSelect: true
+//                        }
+//                    };
+//                    chart = new Highcharts.Chart(options);
+//
+//
+                    dataSeries = [
+
+                        {type: "column", name: "Portage", data: PortageSeries.timeWeighted.TP, color: "#1f77b4"},
+                        {name: "Raisin", data: RaisinSeries.timeWeighted.TP, color: "#008000"},
+                        {
+                            type: "area",
+                            name: "Maumee",
+                            data: MaumeeSeries.timeWeighted.TP,
+                            color: "#FF0000",
+                            fillOpacity: 0.3,
+                            dashStyle: "shortDash"
+                        },
+                        //{ name: "Target", data: target, color: "#FF0000" }
+                    ];
+                    options = createOptions("river-tp-chart", "Time Weighted Mean Concentrations of TP in Rivers", xAxis, "Units", dataSeries);
+                    options.plotOptions = {
+                        series: {
+                            allowPointSelect: true
+                        }
+                    };
+                    chart = new Highcharts.Chart(options);
+
+
+                    var pieData = [
+                        {
+                            name: "Municipal Point Source",
+                            y: 338.96
+                        },
+                        {
+                            name: "Industrial Point Source",
+                            y: 40.9872
+                        },
+                        {
+                            name: "Non-Point Source",
+                            y: 3946.8
+                        }
+                    ];
+
+                    var pieOptions = {
+                        chart: {
+                            //renderTo: "pie-demo-chart",
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false,
+                            type: 'pie'
+                        },
+                        title: {
+                            text: "Proportion from Sources"
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: false
+                                },
+                                showInLegend: true
+                            }
+                        },
+                        series: [{
+                            name: "Sources",
+                            colorByPoint: true,
+                            data: pieData
+                        }]
+
+                    };
+                    chart = new Highcharts.Chart("pie-demo-chart", pieOptions);
+
+
+                });
+            }
+
+            /*
+             This part binds click event to the buttons to call function to zoom to the corresponding feature.
+             */
+            Query(".layer-chk").on("click", function(){
+                //mylayer.inherited('setVisible',this.checked);
+
+                var layer = GLCGetLayer(this.value);
+
+//                    map.getLayer(this.value);
+//                layer.inherited('setVisible',this.checked);
+                if(this.checked){
+                    map.addLayer(layer);
+                }else{
+                    map.removeLayer(layer);
+                }
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+<div class="container-fluid">
+    <!--::before-->
+    <div>
+        <div class="col-md-5">
+            <div class="row">
+                <div id="map"></div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div id="layer-control" class="col-md-4">
+                <div>
+                    <h2>Layer Management</h2>
+                </div>
+                <div class="input-group">
+                            <span class="input-group-addon">
+                                <div>
+
+                                    <label for="habs-layer-chk"><input type="checkbox" id="watershed-layer-chk" class="layer-chk" value="Watersheds" checked>Watersheds</label>
+                                </div>
+                            </span>
+                </div>
+                <div class="input-group">
+                            <span class="input-group-addon">
+                                <div>
+
+                                    <label for="habs-layer-chk"><input type="checkbox" id="habs-layer-chk" class="layer-chk" value="HABs" checked>HABs (10-07-2016, GLOS)</label>
+                                </div>
+                            </span>
+                </div>
+                <div class="input-group">
+                            <span class="input-group-addon">
+                                <div>
+
+                                    <label for="chl-layer-chk"><input type="checkbox" id="chl-layer-chk" class="layer-chk" value="Chl">Chlorophyll (05-16-2017, GLOS)</label>
+                                </div>
+                            </span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div>
+                    <h2 id="watershed-name"></h2>
+                </div>
+                <div id="chart-section" class="row">
+                    <div class="col-md-6">
+                        <div id="tp-fwmc-chart"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="drp-fwmc-chart"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="tp-sload-chart"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="drp-sload-chart"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <div id="new-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+</html>
