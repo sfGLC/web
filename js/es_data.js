@@ -17,7 +17,7 @@ function calculateFieldset(line) {
 
 var watershedSet = [];
 
-function Loader(){
+function Loader(d){
     // this.watershedSet = [];
     // var dateFormat = d3.time.format("%Y").parse;
     // var numberFormat = d3.format(".4f");
@@ -29,7 +29,7 @@ function Loader(){
     //         dat2 = $.csv.toArrays(data);}
     // });
 
-    d3.csv("data/NCWQR Lake Erie tribs_GLC_031617_sample_4_Siyu_input.csv", function (in_file) {
+    d3.csv(d, function (in_file) {
         in_file.forEach(function (d) {
             d.Year = parseInt(d.Year);
             d.riverField = d.River + ":" + d.FIELD_SET;
