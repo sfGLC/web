@@ -1,3 +1,83 @@
+.highcharts-root {
+    font-family: 'Lato', sans-serif;
+}
+svg.highcharts-root{
+    font-family: 'Lato', sans-serif;
+}
 .highcharts-background {
     fill: #d8e2eb;
+}
+.highcharts-point.highcharts-color-0,
+.highcharts-legend-item.highcharts-color-0 .highcharts-point,
+.highcharts-tooltip .highcharts-color-0 {
+    fill: #1c2d5a;
+}
+.highcharts-tooltip.highcharts-color-0,
+.highcharts-data-label-connector.highcharts-color-0 {
+    stroke: #1c2d5a;
+}
+
+.highcharts-point.highcharts-color-1,
+.highcharts-legend-item.highcharts-color-1 .highcharts-point,
+.highcharts-tooltip .highcharts-color-1 {
+    fill: #afdfe4;
+}
+.highcharts-tooltip.highcharts-color-1,
+.highcharts-data-label-connector.highcharts-color-1 {
+    stroke: #afdfe4;
+}
+
+.highcharts-point.highcharts-color-2,
+.highcharts-legend-item.highcharts-color-2 .highcharts-point,
+.highcharts-tooltip .highcharts-color-2 {
+    fill: #7eb4d2;
+}
+.highcharts-tooltip.highcharts-color-2,
+.highcharts-data-label-connector.highcharts-color-2 {
+    stroke: #7eb4d2;
+}
+
+.highcharts-point.highcharts-color-3,
+.highcharts-legend-item.highcharts-color-3 .highcharts-point,
+.highcharts-tooltip .highcharts-color-3 {
+    fill: #7ed3f7;
+}
+.highcharts-tooltip.highcharts-color-3,
+.highcharts-data-label-connector.highcharts-color-3 {
+    stroke: #7ed3f7;
+}
+.highcharts-point.highcharts-color-4,
+.highcharts-legend-item.highcharts-color-4 .highcharts-point,
+.highcharts-tooltip .highcharts-color-4 {
+    fill: #188ccc;
+}
+.highcharts-tooltip.highcharts-color-4,
+.highcharts-data-label-connector.highcharts-color-4 {
+    stroke: #188ccc;
+}
+
+.highcharts-point.highcharts-color-5,
+.highcharts-legend-item.highcharts-color-5 .highcharts-point,
+.highcharts-tooltip .highcharts-color-5 {
+    fill: #00b0e6;
+}
+.highcharts-tooltip.highcharts-color-5,
+.highcharts-data-label-connector.highcharts-color-5 {
+    stroke: #00b0e6;
+}
+
+.highcharts-point.highcharts-color-6,
+.highcharts-legend-item.highcharts-color-6 .highcharts-point,
+.highcharts-tooltip .highcharts-color-6 {
+    fill: #1b75ba;
+}
+.highcharts-tooltip.highcharts-color-6,
+.highcharts-data-label-connector.highcharts-color-6 {
+    stroke: #1b75ba;
+}
+
+.highcharts-series .highcharts-point-select {
+    fill: #f7b141;
+    stroke: #f00;
+    stroke-dasharray: 10
 }

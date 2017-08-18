@@ -19,9 +19,10 @@
     <script src="http://colorbrewer2.org/export/colorbrewer.js"></script>
 
     <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="js/BA_colors.js"></script>
     <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css">
     <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
-    <link rel="stylesheet" href="css/BA_Style.css">
+    <!--<link rel="stylesheet" href="css/BA_Style.css">-->
     <style>
         #map {
             height: 100%;
@@ -65,8 +66,10 @@
             "dojo/dom-class", "dojo/dom-construct", "dojo/on",
             "dojox/charting/Chart", "dojox/charting/themes/Dollar",
             "dojo/query",
-            "dojo/dom",
+//            "js/BA_colors.js",
             "dojo/Deferred",
+            "dojo/dom",
+
             "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js",
             "https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js",
 ////            "http://code.highcharts.com/highcharts.js",
@@ -93,20 +96,23 @@
                      domClass, domConstruct, on,
                      Chart, theme,
                      Query,
+//                     ColorPicker,
                      Deferred,
                      dom) {
 
             var map, queryTask;
 
-            Highcharts.setOptions(
-                {
-                    chart: {
-                        style: {
-                            fontFamily: 'Lato, sans-serif'
-                        }
-                    }
-                }
-            );
+//            Highcharts.setOptions(
+//                {
+//                    chart: {
+//                        style: {
+//                            fontFamily: 'Lato, sans-serif'
+//                        }
+//                    }
+//                }
+//            );
+//            window.colorPicker = new Colors();
+//            var colorPicker = colorPicker.ColorPicker;
 
             var xAxis = ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"];
 
@@ -321,6 +327,8 @@
             map.addLayer(habsLayer);
 
 
+
+
             function createOptions(chartDiv, style, title, yAxisText, dataSeries) {
                 return {
                     chart: {
@@ -442,7 +450,7 @@
                     $('#watershed-name').html("Watershed: " + attributes['Pilot.Name']);
 
                     createChart(attributes, 'TestData.txt.TP_FWMC', 'TestData.txt.TPFWMC_T', 'tp-fwmc-chart', 'line', 'line',
-                        'TP', 'FWMC', 'Milligram/Liter', '#0000ff', '#ff0000');
+                        'TP', 'FWMC', 'Milligram/Liter', ColorPicker.blue2, ColorPicker.red1);//'#0000ff', '#ff0000');
                     createChart(attributes, 'TestData.txt.DRP_FWMC', 'TestData.txt.DRPFWMC_T', 'drp-fwmc-chart', 'line', 'line',
                         'DRP', 'FWMC', 'Milligram/Liter', '#0000ff', '#ff0000');
                     createChart(attributes, 'TestData.txt.TP_S_LOAD', 'TestData.txt.TP_S_T', 'tp-sload-chart', 'column', 'line',
@@ -869,6 +877,66 @@
                                 </div>
                             </span>
                 </div>
+            </div>
+            <div>
+                <script>
+                    window.onload = function (){
+                        var mps = 338.96, ips = 40.9872, nps = 3946.8;
+                        var total = mps + ips + nps;
+                        var pieData = [
+                            {
+                                name: "Municipal Point Source",
+                                y: mps / total * 100,
+                                color: "#FFC000"
+                            },
+                            {
+                                name: "Industrial Point Source",
+                                y: ips / total * 100,
+                                color: "#409BB6"
+                            },
+                            {
+                                name: "Non-Point Source",
+                                y: nps / total * 100,
+                                color: "#A6A6A6"
+                            }
+                        ];
+
+                        Highcharts.chart('pie-chart-demo', {
+                            chart: {
+                                plotBackgroundColor: null,
+                                plotBorderWidth: null,
+                                plotShadow: false,
+                                type: 'pie'
+                            },
+                            credits:{
+                                enabled: false
+                            },
+                            title: {
+                                text: "TP Loading Priority Tributaries"
+                            },
+                            tooltip: {
+                                pointFormat: '{series.name}: <b>{point.y:.1f}%</b>'
+                            },
+                            plotOptions: {
+                                pie: {
+                                    allowPointSelect: true,
+                                    cursor: 'pointer',
+                                    dataLabels: {
+                                        enabled: true,
+                                        format: '<b>{point.name}</b>: {point.y:.1f} %',
+                                    },
+                                    showInLegend: true
+                                }
+                            },
+                            series: [{
+                                name: 'Sources',
+                                colorByPoint: true,
+                                data: pieData
+                            }]
+                        });
+                    };
+                </script>
+                <div id="pie-chart-demo"></div>
             </div>
             <div class="col-md-12">
                 <div>
