@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script rel="script" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script rel="script" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script rel="script" src="js/es_data.js"></script>
+    <script rel="script" src="js/es_charts.js"></script>
+    <script rel="script" src="js/BA_colors.js"></script>
+    <!--<script rel="script" src="js/jquery-csv.js"></script>-->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script rel="script" src="js/export-csv_glc.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+
+        //        var maumee = getWatershedData('Maumee', 'data/Maumee.csv');
+        //
+        //        var test = undefined;
+
+        window.onload = function () {
+            var maumee = {
+                name: 'Maumee',
+                TPloading: {
+                    name: 'Annual TP Loading',
+                    unit: 'Metric Tons',
+                    series: [3560, 2160, 1530, 2780, 2230, 2130, 1960, 2200, 1240]
+                },
+                DRPloading: {
+                    name: 'Annual DRP Loading',
+                    unit: 'Metric Tons',
+                    series: []
+                },
+                TPFWMC: {
+                    name: 'Annual TP FWMC',
+                    unit: 'mg/L',
+                    series: []
+                },
+                DRPFWMC: {
+                    name: 'Annual DRP FWMC',
+                    unit: 'mg/L',
+                    series: []
+                },
+                discharge: {
+                    name: 'Annual Discharge',
+                    unit: 'Million Cubic Meters',
+                    series: []
+                },
+            };
+//        var options = createLineChartOption(maumee.TPloading.series, maumee.TPloading.name, 'tploading', maumee.TPloading.name, maumee.TPloading.unit, ColorPicker.blue1);
+//        var chart = new Highcharts.Chart(options);
+
+            var linechart = createLineChart('tploading', maumee.TPloading.series, maumee.TPloading.name, maumee.TPloading.unit, maumee.TPloading.name, maumee.TPloading.unit, ColorPicker.blue1);
+            addTargetLine(linechart, 2288, 'line');
+
+            var barchart = createBarChart('bar-chart', maumee.TPloading.series, maumee.TPloading.name, maumee.TPloading.unit, maumee.TPloading.name, maumee.TPloading.unit, ColorPicker.blue2);
+            addTargetLine(barchart, 2288, 'line');
+
+        };
+
+    </script>
+</head>
+<body>
+<div id="tploading"></div>
+<div id="bar-chart"></div>
+
+</body>
+</html>

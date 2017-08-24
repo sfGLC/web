@@ -1,3 +1,5 @@
+var xAxis = ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016"];
+
 function createOptions(chartDiv, style, title, yAxisText, dataSeries){
     return {
         chart: {
@@ -71,9 +73,111 @@ function createChart(attributes, fieldName, targetName, chartDiv, style, targetT
     new Highcharts.Chart(options);
 }
 
-function createLineChart(){
-
+function createLineChartOption(data, dataName, eleId, title, yAxisText, color) {
+    var options = {
+        chart: {
+            renderTo: eleId,
+            type: 'line'
+        },
+        credits: {
+            enabled: false
+        },
+        title: {
+            text: title
+        },
+        xAxis: {
+            categories: xAxis
+        },
+        yAxis: {
+            title: {
+                text: yAxisText
+            }
+        },
+        series: {
+            data: data,
+            name: dataName,
+            color: color
+        }
+    };
+    return options;
 };
+
+function createLineChart(eleId, data, dataName, unit, title, yAxisText, color) {
+    return Highcharts.chart(eleId, {
+        chart: {
+            type: 'line',
+        },
+        title: {
+            text: title
+        },
+        credits: {
+            enabled: false
+        },
+        xAxis: {
+            categories: xAxis
+        },
+        yAxis: {
+            title: {
+                text: yAxisText
+            }
+        },
+        series: [{
+            name: dataName,
+            unit: unit,
+            data: data,
+            color: color
+        }]
+    });
+};
+
+function createBarChart(eleId, data, dataName, unit, title, yAxisText, color) {
+    return Highcharts.chart(eleId, {
+        chart: {
+            type: 'column',
+        },
+        title: {
+            text: title
+        },
+        credits: {
+            enabled: false
+        },
+        xAxis: {
+            categories: xAxis
+        },
+        yAxis: {
+            title: {
+                text: yAxisText
+            }
+        },
+        series: [{
+            name: dataName,
+            unit: unit,
+            data: data,
+            color: color
+        }]
+    });
+};
+
+function createTargetSeries(val){
+    s = [];
+    xAxis.map(function(){
+        s.push(val)
+    });
+    return s;
+};
+
+function addTargetLine(chart, target){
+    chart.addSeries({
+        data: createTargetSeries(target),
+        name: 'Target',
+        color: ColorPicker.red1,
+        lineWidth: 1,
+        marker:{
+            radius: 2
+        },
+        type: 'line'
+    })
+}
 
 function createCompositeChart(){
 
@@ -115,4 +219,6 @@ function setChartTheme(){
     // Apply the theme
     Highcharts.setOptions(Highcharts.theme);
 }
+
+
 
