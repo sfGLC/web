@@ -306,7 +306,7 @@
 
 
 
-function getWatershedData(name, filename, eleID, fraction, chartType, target){
+function createWatershedChart(eleID, name, filename, fraction, chartType, target){
     var watershed = {
         name: name,
         TPloading: {
@@ -334,11 +334,31 @@ function getWatershedData(name, filename, eleID, fraction, chartType, target){
             unit: 'Million Cubic Meters',
             series: []
         },
-        // fractions: [{
-        //     name: '',
-        //     unit: '',
-        //     series: []
-        // }],
+        TPloading_S: {
+            name: 'Spring TP Loading',
+            unit: 'Metric Tons',
+            series: []
+        },
+        DRPloading_S: {
+            name: 'Spring DRP Loading',
+            unit: 'Metric Tons',
+            series: []
+        },
+        TPFWMC_S: {
+            name: 'Spring TP FWMC',
+            unit: 'mg/L',
+            series: []
+        },
+        DRPFWMC_S: {
+            name: 'Spring DRP FWMC',
+            unit: 'mg/L',
+            series: []
+        },
+        discharge_S:{
+            name: 'Spring Discharge',
+            unit: 'Million Cubic Meters',
+            series: []
+        },
         addToFraction: function(name, year, val){
             switch (name){
                 case this.TPloading.name:
@@ -360,45 +380,26 @@ function getWatershedData(name, filename, eleID, fraction, chartType, target){
         }
     };
 
-    function updateWatershed(w, name, year, val) {
-        w.addToFraction(name, year, val);
-    }
-
-    // var csvfile = jQuery.get(filename);
-    //
-    // var array = jQuery.csv.toObjects(csvfile);
-    // var array = jQuery.csv.toArrays(csvfile);
-
-
-    // function updateWatershed(w, obj){
-    //     w.addToFraction(obj.Fraction, parseInt(obj.Year), obj.Value);
-    //     return w;
-    // }
-
     d3.csv(filename, function (in_file){
         in_file.forEach(function (obj){
             watershed.addToFraction(obj.Fraction, parseInt(obj.Year), obj.Value);
-            // updateWatershed(watershed, obj.Fraction, parseInt(obj.Year), obj.Value);
         });
-        watershed;
-        var chart = undefined;
+        var chart;
         switch (chartType) {
             case 'line':
-                chart = createLineChart(eleID, watershed[fraction].series, watershed[fraction].name, watershed[fraction].unit, watershed[fraction].name, watershed[fraction].unit, ColorPicker.blue1);
+                // chart = createLineChart(eleID, watershed[fraction].series, watershed[fraction].name, watershed[fraction].unit, watershed[fraction].name, watershed[fraction].unit, ColorPicker.blue1);
+                chart = createLineChart2(eleID, watershed.name, watershed[fraction], ColorPicker.blue1);
                 break;
             case 'column':
-                chart = createColumnChart(eleID, watershed[fraction].series, watershed[fraction].name, watershed[fraction].unit, watershed[fraction].name, watershed[fraction].unit, ColorPicker.blue1);
+                // chart = createColumnChart(eleID, watershed[fraction].series, watershed[fraction].name, watershed[fraction].unit, watershed[fraction].name, watershed[fraction].unit, ColorPicker.blue2);
+                chart = createColumnChart2(eleID, watershed.name, watershed[fraction], ColorPicker.blue2);
                 break;
             case 'column2':
-                chart = createColumnChart2(eleID, watershed.TPloading, ColorPicker.blue1);
+                chart = createColumnChart2(eleID, watershed.name, watershed[fraction], ColorPicker.blue3);
                 break;
         };
         if(target){
             addTargetLine(chart, target, 'line');
         }
-
-
-
     });
-    //return watershed;
 }

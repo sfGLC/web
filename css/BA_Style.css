@@ -1,9 +1,18 @@
-.highcharts-root {
+.highcharts-root text{
     font-family: 'Lato', sans-serif;
 }
-svg.highcharts-root{
-    font-family: 'Lato', sans-serif;
-}
+/*.svg.highcharts-root text{*/
+    /*font-family: 'Lato', sans-serif;*/
+/*}*/
+/*.highcharts-axis text{*/
+    /*font-family: 'Lato', sans-serif;*/
+/*}*/
+/*.highcharts-legend text{*/
+    /*font-family: 'Lato', sans-serif;*/
+/*}*/
+/*.highcharts-axis-labels text{*/
+    /*font-family: 'Lato', sans-serif;*/
+/*}*/
 .highcharts-background {
     fill: #d8e2eb;
 }

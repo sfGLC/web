@@ -19,12 +19,13 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+<link rel="stylesheet" href="css/BA_Style.css">
     <script>
 
 
 
         window.onload = function () {
+            //setChartTheme();
 //            var maumee = {
 //                name: 'Maumee',
 //                TPloading: {
@@ -62,15 +63,76 @@
 //            var barchart = createBarChart('bar-chart', maumee.TPloading.series, maumee.TPloading.name, maumee.TPloading.unit, maumee.TPloading.name, maumee.TPloading.unit, ColorPicker.blue2);
 //            addTargetLine(barchart, 2288, 'line');
 
-            var datainfo=[
+            var chart_info=[
                 {
-                    fileName:"",
-                    eleID:"",
+                    watershedName: 'Maumee',
+                    fileName: 'Maumee.csv',
+                    fraction: 'TPloading',
+                    eleID: 'tploading',
+                    target: 0,
                 },
+                {
+                    watershedName: 'Maumee',
+                    fileName: 'Maumee.csv',
+                    fraction: 'DRPloading',
+                    eleID: 'bar-chart',
+                },
+                {
+                    watershedName: 'Maumee',
+                    fileName: 'Maumee.csv',
+                    fraction: 'TPFWMC',
+                    eleID: 'bar-chart2',
+                },
+//                {
+//                    watershedName: 'Maumee',
+//                    fileName: 'Maumee.csv',
+//                    fraction: 'DRPFWMC',
+//                    eleID: '',
+//                },
+//                {
+//                    watershedName: 'Maumee',
+//                    fileName: 'Maumee.csv',
+//                    fraction: 'discharge',
+//                    eleID: '',
+//                },
+//                {
+//                    watershedName: 'Maumee',
+//                    fileName: 'Maumee.csv',
+//                    fraction: 'TPloading_S',
+//                    eleID: '',
+//                },
+//                {
+//                    watershedName: 'Maumee',
+//                    fileName: 'Maumee.csv',
+//                    fraction: 'DRPloading_S',
+//                    eleID: '',
+//                },
+//                {
+//                    watershedName: 'Maumee',
+//                    fileName: 'Maumee.csv',
+//                    fraction: 'TPFWMC_S',
+//                    eleID: '',
+//                },
+//                {
+//                    watershedName: 'Maumee',
+//                    fileName: 'Maumee.csv',
+//                    fraction: 'DRPFWMC_S',
+//                    eleID: '',
+//                },
+//                {
+//                    watershedName: 'Maumee',
+//                    fileName: 'Maumee.csv',
+//                    fraction: 'discharge_S',
+//                    eleID: '',
+//                },
             ];
-            getWatershedData('Maumee', 'data/Maumee.csv', 'tploading', 'TPloading', 'line', 2288);
-            getWatershedData('Maumee', 'data/Maumee.csv', 'bar-chart', 'TPloading', 'column', 2288);
-            getWatershedData('Maumee', 'data/Maumee.csv', 'bar-chart2', 'TPloading', 'column2', 2288);
+
+//            chart_info.forEach(function (d){
+//                createLineChart(d.eleID, d.watershedName, 'data/'+d.fileName, d.fraction, 'line');
+//            })
+            createWatershedChart('tploading', 'Maumee', 'data/Maumee.csv', 'TPloading', 'line', 2288);
+            createWatershedChart('bar-chart', 'Maumee', 'data/Maumee.csv', 'TPloading', 'column', 2288);
+            createWatershedChart('bar-chart2', 'Maumee', 'data/Maumee.csv', 'DRPloading', 'column2', 0);
         };
 
 
