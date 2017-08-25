@@ -16,6 +16,10 @@
 .highcharts-background {
     fill: #d8e2eb;
 }
+/*.highcharts-legend text {*/
+    /*text-shadow: 0 0 2px black, 0 0 2px black;*/
+    /*font-size: small*/
+/*}*/
 .highcharts-point.highcharts-color-0,
 .highcharts-legend-item.highcharts-color-0 .highcharts-point,
 .highcharts-tooltip .highcharts-color-0 {
