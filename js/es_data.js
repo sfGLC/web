@@ -306,7 +306,7 @@
 
 
 
-function getWatershedData(name, filename){
+function getWatershedData(name, filename, eleID, fraction, chartType, target){
     var watershed = {
         name: name,
         TPloading: {
@@ -380,12 +380,25 @@ function getWatershedData(name, filename){
             watershed.addToFraction(obj.Fraction, parseInt(obj.Year), obj.Value);
             // updateWatershed(watershed, obj.Fraction, parseInt(obj.Year), obj.Value);
         });
-        // return watershed
-        // return w;
-        // in_file.map(function (obj){
-        //     watershed = (watershed, obj);
-        //     // watershed.addToFraction(obj.Fraction, parseInt(obj.Year), obj.Value);
-        // })
+        watershed;
+        var chart = undefined;
+        switch (chartType) {
+            case 'line':
+                chart = createLineChart(eleID, watershed[fraction].series, watershed[fraction].name, watershed[fraction].unit, watershed[fraction].name, watershed[fraction].unit, ColorPicker.blue1);
+                break;
+            case 'column':
+                chart = createColumnChart(eleID, watershed[fraction].series, watershed[fraction].name, watershed[fraction].unit, watershed[fraction].name, watershed[fraction].unit, ColorPicker.blue1);
+                break;
+            case 'column2':
+                chart = createColumnChart2(eleID, watershed.TPloading, ColorPicker.blue1);
+                break;
+        };
+        if(target){
+            addTargetLine(chart, target, 'line');
+        }
+
+
+
     });
-    return watershed;
+    //return watershed;
 }

@@ -130,7 +130,7 @@ function createLineChart(eleId, data, dataName, unit, title, yAxisText, color) {
     });
 };
 
-function createBarChart(eleId, data, dataName, unit, title, yAxisText, color) {
+function createColumnChart(eleId, data, dataName, unit, title, yAxisText, color) {
     return Highcharts.chart(eleId, {
         chart: {
             type: 'column',
@@ -153,6 +153,34 @@ function createBarChart(eleId, data, dataName, unit, title, yAxisText, color) {
             name: dataName,
             unit: unit,
             data: data,
+            color: color
+        }]
+    });
+};
+
+function createColumnChart2(eleId, data, color) {
+    return Highcharts.chart(eleId, {
+        chart: {
+            type: 'column',
+        },
+        title: {
+            text: data.name
+        },
+        credits: {
+            enabled: false
+        },
+        xAxis: {
+            categories: xAxis
+        },
+        yAxis: {
+            title: {
+                text: data.name
+            }
+        },
+        series: [{
+            name: data.name,
+            unit: data.unit,
+            data: data.series,
             color: color
         }]
     });

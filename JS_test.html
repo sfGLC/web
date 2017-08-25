@@ -22,55 +22,68 @@
 
     <script>
 
-        //        var maumee = getWatershedData('Maumee', 'data/Maumee.csv');
-        //
-        //        var test = undefined;
+
 
         window.onload = function () {
-            var maumee = {
-                name: 'Maumee',
-                TPloading: {
-                    name: 'Annual TP Loading',
-                    unit: 'Metric Tons',
-                    series: [3560, 2160, 1530, 2780, 2230, 2130, 1960, 2200, 1240]
-                },
-                DRPloading: {
-                    name: 'Annual DRP Loading',
-                    unit: 'Metric Tons',
-                    series: []
-                },
-                TPFWMC: {
-                    name: 'Annual TP FWMC',
-                    unit: 'mg/L',
-                    series: []
-                },
-                DRPFWMC: {
-                    name: 'Annual DRP FWMC',
-                    unit: 'mg/L',
-                    series: []
-                },
-                discharge: {
-                    name: 'Annual Discharge',
-                    unit: 'Million Cubic Meters',
-                    series: []
-                },
-            };
+//            var maumee = {
+//                name: 'Maumee',
+//                TPloading: {
+//                    name: 'Annual TP Loading',
+//                    unit: 'Metric Tons',
+//                    series: [3560, 2160, 1530, 2780, 2230, 2130, 1960, 2200, 1240]
+//                },
+//                DRPloading: {
+//                    name: 'Annual DRP Loading',
+//                    unit: 'Metric Tons',
+//                    series: []
+//                },
+//                TPFWMC: {
+//                    name: 'Annual TP FWMC',
+//                    unit: 'mg/L',
+//                    series: []
+//                },
+//                DRPFWMC: {
+//                    name: 'Annual DRP FWMC',
+//                    unit: 'mg/L',
+//                    series: []
+//                },
+//                discharge: {
+//                    name: 'Annual Discharge',
+//                    unit: 'Million Cubic Meters',
+//                    series: []
+//                },
+//            };
 //        var options = createLineChartOption(maumee.TPloading.series, maumee.TPloading.name, 'tploading', maumee.TPloading.name, maumee.TPloading.unit, ColorPicker.blue1);
 //        var chart = new Highcharts.Chart(options);
 
-            var linechart = createLineChart('tploading', maumee.TPloading.series, maumee.TPloading.name, maumee.TPloading.unit, maumee.TPloading.name, maumee.TPloading.unit, ColorPicker.blue1);
-            addTargetLine(linechart, 2288, 'line');
+//            var linechart = createLineChart('tploading', maumee.TPloading.series, maumee.TPloading.name, maumee.TPloading.unit, maumee.TPloading.name, maumee.TPloading.unit, ColorPicker.blue1);
+//            addTargetLine(linechart, 2288, 'line');
+//
+//            var barchart = createBarChart('bar-chart', maumee.TPloading.series, maumee.TPloading.name, maumee.TPloading.unit, maumee.TPloading.name, maumee.TPloading.unit, ColorPicker.blue2);
+//            addTargetLine(barchart, 2288, 'line');
 
-            var barchart = createBarChart('bar-chart', maumee.TPloading.series, maumee.TPloading.name, maumee.TPloading.unit, maumee.TPloading.name, maumee.TPloading.unit, ColorPicker.blue2);
-            addTargetLine(barchart, 2288, 'line');
-
+            var datainfo=[
+                {
+                    fileName:"",
+                    eleID:"",
+                },
+            ];
+            getWatershedData('Maumee', 'data/Maumee.csv', 'tploading', 'TPloading', 'line', 2288);
+            getWatershedData('Maumee', 'data/Maumee.csv', 'bar-chart', 'TPloading', 'column', 2288);
+            getWatershedData('Maumee', 'data/Maumee.csv', 'bar-chart2', 'TPloading', 'column2', 2288);
         };
+
+
+// var maumee =
+
+        //
+                var test = undefined;
 
     </script>
 </head>
 <body>
 <div id="tploading"></div>
 <div id="bar-chart"></div>
-
+<div id="bar-chart2"></div>
 </body>
 </html>
