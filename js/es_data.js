@@ -376,6 +376,7 @@ function createWatershedChart(eleID, name, filename, fraction, chartType, target
                 case this.discharge.name:
                     this.discharge.series.splice(year - 2008, 0, val);
                     break;
+
                 case this.TPloading_S.name:
                     this.TPloading_S.series.splice(year - 2008, 0, val);
                     break;
@@ -391,6 +392,8 @@ function createWatershedChart(eleID, name, filename, fraction, chartType, target
                 case this.discharge_S.name:
                     this.discharge.series.splice(year - 2008, 0, val);
                     break;
+                default:
+                    alert(name + ' ' + year + ' ' + val);
             }
         }
     };
