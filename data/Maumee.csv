@@ -1,86 +1,91 @@
-River,Year,Fraction,Unit,Value
-Maumee,2008,Annual TP Loading,Metric Tons,3560
-Maumee,2009,Annual TP Loading,Metric Tons,2160
-Maumee,2010,Annual TP Loading,Metric Tons,1530
-Maumee,2011,Annual TP Loading,Metric Tons,2780
-Maumee,2012,Annual TP Loading,Metric Tons,2230
-Maumee,2013,Annual TP Loading,Metric Tons,2130
-Maumee,2014,Annual TP Loading,Metric Tons,1960
-Maumee,2015,Annual TP Loading,Metric Tons,2200
-Maumee,2016,Annual TP Loading,Metric Tons,1240
-Maumee,2008,Annual DRP Loading,Metric Tons,835
-Maumee,2009,Annual DRP Loading,Metric Tons,346
-Maumee,2010,Annual DRP Loading,Metric Tons,404
-Maumee,2011,Annual DRP Loading,Metric Tons,570
-Maumee,2012,Annual DRP Loading,Metric Tons,614
-Maumee,2013,Annual DRP Loading,Metric Tons,468
-Maumee,2014,Annual DRP Loading,Metric Tons,577
-Maumee,2015,Annual DRP Loading,Metric Tons,752
-Maumee,2016,Annual DRP Loading,Metric Tons,253
-Maumee,2008,Annual TP FWMC,milligrams / liter,0.444
-Maumee,2009,Annual TP FWMC,milligrams / liter,0.426
-Maumee,2010,Annual TP FWMC,milligrams / liter,0.329
-Maumee,2011,Annual TP FWMC,milligrams / liter,0.446
-Maumee,2012,Annual TP FWMC,milligrams / liter,0.374
-Maumee,2013,Annual TP FWMC,milligrams / liter,0.423
-Maumee,2014,Annual TP FWMC,milligrams / liter,0.335
-Maumee,2015,Annual TP FWMC,milligrams / liter,0.331
-Maumee,2008,Annual DRP FWMC,milligrams / liter,0.104
-Maumee,2009,Annual DRP FWMC,milligrams / liter,0.068
-Maumee,2010,Annual DRP FWMC,milligrams / liter,0.087
-Maumee,2011,Annual DRP FWMC,milligrams / liter,0.091
-Maumee,2012,Annual DRP FWMC,milligrams / liter,0.103
-Maumee,2013,Annual DRP FWMC,milligrams / liter,0.093
-Maumee,2014,Annual DRP FWMC,milligrams / liter,0.099
-Maumee,2015,Annual DRP FWMC,milligrams / liter,0.113
-Maumee,2008,Annual Discharge,million cubic liters,8026
-Maumee,2009,Annual Discharge,million cubic liters,5075
-Maumee,2010,Annual Discharge,million cubic liters,4648
-Maumee,2011,Annual Discharge,million cubic liters,6230
-Maumee,2012,Annual Discharge,million cubic liters,5960
-Maumee,2013,Annual Discharge,million cubic liters,5030
-Maumee,2014,Annual Discharge,million cubic liters,5850
-Maumee,2015,Annual Discharge,million cubic liters,6650
-Maumee,2016,Annual Discharge,million cubic liters,3970
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-Maumee,2008,Spring TP Loads,Metric Tons,
-Maumee,2009,Spring TP Loads,Metric Tons,
-Maumee,2010,Spring TP Loads,Metric Tons,
-Maumee,2011,Spring TP Loads,Metric Tons,
-Maumee,2012,Spring TP Loads,Metric Tons,
-Maumee,2013,Spring TP Loads,Metric Tons,
-Maumee,2014,Spring TP Loads,Metric Tons,
-Maumee,2015,Spring TP Loads,Metric Tons,
-Maumee,2008,Spring DRP Loads,Metric Tons,
-Maumee,2009,Spring DRP Loads,Metric Tons,
-Maumee,2010,Spring DRP Loads,Metric Tons,
-Maumee,2011,Spring DRP Loads,Metric Tons,
-Maumee,2012,Spring DRP Loads,Metric Tons,
-Maumee,2013,Spring DRP Loads,Metric Tons,
-Maumee,2014,Spring DRP Loads,Metric Tons,
-Maumee,2015,Spring DRP Loads,Metric Tons,
-Maumee,2008,Spring TP FWMC,milligrams / liter,
-Maumee,2009,Spring TP FWMC,milligrams / liter,
-Maumee,2010,Spring TP FWMC,milligrams / liter,
-Maumee,2011,Spring TP FWMC,milligrams / liter,
-Maumee,2012,Spring TP FWMC,milligrams / liter,
-Maumee,2013,Spring TP FWMC,milligrams / liter,
-Maumee,2014,Spring TP FWMC,milligrams / liter,
-Maumee,2015,Spring TP FWMC,milligrams / liter,
-Maumee,2008,Spring DRP FWMC,milligrams / liter,
-Maumee,2009,Spring DRP FWMC,milligrams / liter,
-Maumee,2010,Spring DRP FWMC,milligrams / liter,
-Maumee,2011,Spring DRP FWMC,milligrams / liter,
-Maumee,2012,Spring DRP FWMC,milligrams / liter,
-Maumee,2013,Spring DRP FWMC,milligrams / liter,
-Maumee,2014,Spring DRP FWMC,milligrams / liter,
-Maumee,2015,Spring DRP FWMC,milligrams / liter,
+River,Year,Fraction,Unit,Value,,,,,,,,,,,,,
+Maumee,2008,Annual TP Loading,Metric Tons,3560,,2008,2288,,,,,,,,,,
+Maumee,2009,Annual TP Loading,Metric Tons,2160,,2009,2288,,,,,,,,,,
+Maumee,2010,Annual TP Loading,Metric Tons,1530,,2010,2288,,,,,,,,,,
+Maumee,2011,Annual TP Loading,Metric Tons,2780,,2011,2288,,,,,,,,,,
+Maumee,2012,Annual TP Loading,Metric Tons,2230,,2012,2288,,,,,,,,,,
+Maumee,2013,Annual TP Loading,Metric Tons,2130,,2013,2288,,,,,,,,,,
+Maumee,2014,Annual TP Loading,Metric Tons,1960,,2014,2288,,,,,,,,,,
+Maumee,2015,Annual TP Loading,Metric Tons,2200,,2015,2288,,,,,,,,,,
+Maumee,2016,Annual TP Loading,Metric Tons,1240,,2016,2288,,,,,,,,,,
+Maumee,2008,Annual DRP Loading,Metric Tons,835,,,,,,,,,,,,,
+Maumee,2009,Annual DRP Loading,Metric Tons,346,,,,,,,,,,,,,
+Maumee,2010,Annual DRP Loading,Metric Tons,404,,,,,,,,,,,,,
+Maumee,2011,Annual DRP Loading,Metric Tons,570,,,,,,,,,,,,,
+Maumee,2012,Annual DRP Loading,Metric Tons,614,,,,,,,,,,,,,
+Maumee,2013,Annual DRP Loading,Metric Tons,468,,,,,,,,,,,,,
+Maumee,2014,Annual DRP Loading,Metric Tons,577,,,,,,,,,,,,,
+Maumee,2015,Annual DRP Loading,Metric Tons,752,,,,,,,,,,,,,
+Maumee,2016,Annual DRP Loading,Metric Tons,253,,,,,,,,,,,,,
+Maumee,2008,Annual TP FWMC,milligrams / liter,0.444,,,,,,,,,,,,,
+Maumee,2009,Annual TP FWMC,milligrams / liter,0.426,,,,,,,,,,,,,
+Maumee,2010,Annual TP FWMC,milligrams / liter,0.329,,,,,,,,,,,,,
+Maumee,2011,Annual TP FWMC,milligrams / liter,0.446,,,,,,,,,,,,,
+Maumee,2012,Annual TP FWMC,milligrams / liter,0.374,,,,,,,,,,,,,
+Maumee,2013,Annual TP FWMC,milligrams / liter,0.423,,,,,,,,,,,,,
+Maumee,2014,Annual TP FWMC,milligrams / liter,0.335,,,,,,,,,,,,,
+Maumee,2015,Annual TP FWMC,milligrams / liter,0.331,,,,,,,,,,,,,
+Maumee,2016,Annual TP FWMC,milligrams / liter,0.292,,,,,,,,,,,,,
+Maumee,2008,Annual DRP FWMC,milligrams / liter,0.104,,,,,,,,,,,,,
+Maumee,2009,Annual DRP FWMC,milligrams / liter,0.068,,,,,,,,,,,,,
+Maumee,2010,Annual DRP FWMC,milligrams / liter,0.087,,,,,,,,,,,,,
+Maumee,2011,Annual DRP FWMC,milligrams / liter,0.091,,,,,,,,,,,,,
+Maumee,2012,Annual DRP FWMC,milligrams / liter,0.103,,,,,,,,,,,,,
+Maumee,2013,Annual DRP FWMC,milligrams / liter,0.093,,,,,,,,,,,,,
+Maumee,2014,Annual DRP FWMC,milligrams / liter,0.099,,,,,,,,,,,,,
+Maumee,2015,Annual DRP FWMC,milligrams / liter,0.113,,,,,,,,,,,,,
+Maumee,2016,Annual DRP FWMC,milligrams / liter,0.060,,,,,,,,,,,,,
+Maumee,2008,Annual Discharge,million cubic liters,8026,,,,,,,,,,,,,
+Maumee,2009,Annual Discharge,million cubic liters,5075,,,,,,,,,,,,,
+Maumee,2010,Annual Discharge,million cubic liters,4648,,,,,,,,,,,,,
+Maumee,2011,Annual Discharge,million cubic liters,6230,,,,,,,,,,,,,
+Maumee,2012,Annual Discharge,million cubic liters,5960,,,,,,,,,,,,,
+Maumee,2013,Annual Discharge,million cubic liters,5030,,,,,,,,,,,,,
+Maumee,2014,Annual Discharge,million cubic liters,5850,,,,,,,,,,,,,
+Maumee,2015,Annual Discharge,million cubic liters,6650,,,,,,,,,,,,,
+Maumee,2016,Annual Discharge,million cubic liters,3970,,,,,,,,,,,,,
+Maumee,2008,Spring TP Loads,Metric Tons," 1,414 ",,,,,,,,,,,,,
+Maumee,2009,Spring TP Loads,Metric Tons," 1,370 ",,,,,,,,,,,,,
+Maumee,2010,Spring TP Loads,Metric Tons," 1,307 ",,,,,,,,,,,,,
+Maumee,2011,Spring TP Loads,Metric Tons," 2,318 ",,,,,,,,,,,,2008,186
+Maumee,2012,Spring TP Loads,Metric Tons, 393 ,,2008,860,,,,,,,,,2009,186
+Maumee,2013,Spring TP Loads,Metric Tons," 1,249 ",,2009,860,,,,,,,,,2010,186
+Maumee,2014,Spring TP Loads,Metric Tons," 1,155 ",,2010,860,,,,,,,,,2011,186
+Maumee,2015,Spring TP Loads,Metric Tons," 1,863 ",,2011,860,,,,,,,,,2012,186
+Maumee,2016,Spring TP Loads,Metric Tons,755.3,,2012,860,,,,,,,,,2013,186
+Maumee,2008,Spring DRP Loads,Metric Tons, 302 ,,2013,860,,,,,,,,,2014,186
+Maumee,2009,Spring DRP Loads,Metric Tons, 211 ,,2014,860,,,,,,,,,2015,186
+Maumee,2010,Spring DRP Loads,Metric Tons, 324 ,,2015,860,,,,,,,,,2016,186
+Maumee,2011,Spring DRP Loads,Metric Tons, 430 ,,2016,860,,,,,,,,,,
+Maumee,2012,Spring DRP Loads,Metric Tons, 64 ,,,,,,,,,,,,,
+Maumee,2013,Spring DRP Loads,Metric Tons, 289 ,,,,,,,,,,,,,
+Maumee,2014,Spring DRP Loads,Metric Tons, 306 ,,,,,,,,,,,,,
+Maumee,2015,Spring DRP Loads,Metric Tons, 422 ,,,,,,,,,,,,,
+Maumee,2016,Spring DRP Loads,Metric Tons,144.0,,,,,,,,,,,,,
+Maumee,2008,Spring TP FWMC,milligrams / liter,0.376,,2008,0.23,,,,,,,,,,
+Maumee,2009,Spring TP FWMC,milligrams / liter,0.411,,2009,0.23,,,,,,,,,,
+Maumee,2010,Spring TP FWMC,milligrams / liter,0.362,,2010,0.23,,,,,,,,,,
+Maumee,2011,Spring TP FWMC,milligrams / liter,0.455,,2011,0.23,,,,,,,,,,
+Maumee,2012,Spring TP FWMC,milligrams / liter,0.378,,2012,0.23,,,,,,,,,,
+Maumee,2013,Spring TP FWMC,milligrams / liter,0.374,,2013,0.23,,,,,,,,,,
+Maumee,2014,Spring TP FWMC,milligrams / liter,0.332,,2014,0.23,,,,,,,,,,
+Maumee,2015,Spring TP FWMC,milligrams / liter,0.454,,2015,0.23,,,,,,,,,,
+Maumee,2016,Spring TP FWMC,milligrams / liter,0.303,,2016,0.23,,,,,,,,,,
+Maumee,2008,Spring DRP FWMC,milligrams / liter,0.08,,,,,,,,,,,,,
+Maumee,2009,Spring DRP FWMC,milligrams / liter,0.063,,,,,,,,,,,,,
+Maumee,2010,Spring DRP FWMC,milligrams / liter,0.09,,,,,,,,,,,,,
+Maumee,2011,Spring DRP FWMC,milligrams / liter,0.084,,,,,,,,,,,,,
+Maumee,2012,Spring DRP FWMC,milligrams / liter,0.061,,,,,,,,,,,,,
+Maumee,2013,Spring DRP FWMC,milligrams / liter,0.086,,2008,0.05,,,,,,,,,,
+Maumee,2014,Spring DRP FWMC,milligrams / liter,0.088,,2009,0.05,,,,,,,,,,
+Maumee,2015,Spring DRP FWMC,milligrams / liter,0.103,,2010,0.05,,,,,,,,,,
+Maumee,2016,Spring DRP FWMC,milligrams / liter,0.058,,2011,0.05,,,,,,,,,,
+Maumee,2008,Spring Discharge,million cubic liters,3756,,2012,0.05,,,,,,,,,,
+Maumee,2009,Spring Discharge,million cubic liters,3335,,2013,0.05,,,,,,,,,,
+Maumee,2010,Spring Discharge,million cubic liters,3613,,2014,0.05,,,,,,,,,,
+Maumee,2011,Spring Discharge,million cubic liters,5097,,2015,0.05,,,,,,,,,,
+Maumee,2012,Spring Discharge,million cubic liters,1039,,2016,0.05,,,,,,,,,,
+Maumee,2013,Spring Discharge,million cubic liters,3342,,,,,,,,,,,,,
+Maumee,2014,Spring Discharge,million cubic liters,3475,,,,,,,,,,,,,
+Maumee,2015,Spring Discharge,million cubic liters,4099,,,,,,,,,,,,,
+Maumee,2016,Spring Discharge,million cubic liters,2490,,,,,,,,,,,,,

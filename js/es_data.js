@@ -335,12 +335,12 @@ function createWatershedChart(eleID, name, filename, fraction, chartType, target
             series: []
         },
         TPloading_S: {
-            name: 'Spring TP Loading',
+            name: 'Spring TP Loads',
             unit: 'Metric Tons',
             series: []
         },
         DRPloading_S: {
-            name: 'Spring DRP Loading',
+            name: 'Spring DRP Loads',
             unit: 'Metric Tons',
             series: []
         },
@@ -362,19 +362,34 @@ function createWatershedChart(eleID, name, filename, fraction, chartType, target
         addToFraction: function(name, year, val){
             switch (name){
                 case this.TPloading.name:
-                    this.TPloading.series.splice(year - 2008, 0, parseFloat(val));
+                    this.TPloading.series.splice(year - 2008, 0, val);
                     break;
                 case this.DRPloading.name:
-                    this.DRPloading.series.splice(year - 2008, 0, parseFloat(val));
+                    this.DRPloading.series.splice(year - 2008, 0, val);
                     break;
                 case this.TPFWMC.name:
-                    this.TPFWMC.series.splice(year - 2008, 0, parseFloat(val));
+                    this.TPFWMC.series.splice(year - 2008, 0, val);
                     break;
                 case this.DRPFWMC.name:
-                    this.DRPFWMC.series.splice(year - 2008, 0, parseFloat(val));
+                    this.DRPFWMC.series.splice(year - 2008, 0, val);
                     break;
                 case this.discharge.name:
-                    this.discharge.series.splice(year - 2008, 0, parseFloat(val));
+                    this.discharge.series.splice(year - 2008, 0, val);
+                    break;
+                case this.TPloading_S.name:
+                    this.TPloading_S.series.splice(year - 2008, 0, val);
+                    break;
+                case this.DRPloading_S.name:
+                    this.DRPloading_S.series.splice(year - 2008, 0, val);
+                    break;
+                case this.TPFWMC_S.name:
+                    this.TPFWMC_S.series.splice(year - 2008, 0, val);
+                    break;
+                case this.DRPFWMC_S.name:
+                    this.DRPFWMC.series.splice(year - 2008, 0, val);
+                    break;
+                case this.discharge_S.name:
+                    this.discharge.series.splice(year - 2008, 0, val);
                     break;
             }
         }
@@ -382,7 +397,7 @@ function createWatershedChart(eleID, name, filename, fraction, chartType, target
 
     d3.csv(filename, function (in_file){
         in_file.forEach(function (obj){
-            watershed.addToFraction(obj.Fraction, parseInt(obj.Year), obj.Value);
+            watershed.addToFraction(obj.Fraction, parseInt(obj.Year), parseFloat(obj.Value));
         });
         var chart;
         switch (chartType) {

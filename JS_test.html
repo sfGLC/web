@@ -130,9 +130,17 @@
 //            chart_info.forEach(function (d){
 //                createLineChart(d.eleID, d.watershedName, 'data/'+d.fileName, d.fraction, 'line');
 //            })
-            createWatershedChart('tploading', 'Maumee', 'data/Maumee.csv', 'TPloading', 'line', 2288);
-            createWatershedChart('bar-chart', 'Maumee', 'data/Maumee.csv', 'TPloading', 'column', 2288);
-            createWatershedChart('bar-chart2', 'Maumee', 'data/Maumee.csv', 'DRPloading', 'column2', 0);
+            createWatershedChart('chart-1', 'Maumee', 'data/Maumee.csv', 'TPloading', 'column', 0);
+            createWatershedChart('chart-2', 'Maumee', 'data/Maumee.csv', 'DRPloading', 'column', 0);
+            createWatershedChart('chart-3', 'Maumee', 'data/Maumee.csv', 'TPFWMC', 'line', 0);
+            createWatershedChart('chart-4', 'Maumee', 'data/Maumee.csv', 'DRPFWMC', 'line', 0);
+            createWatershedChart('chart-5', 'Maumee', 'data/Maumee.csv', 'discharge', 'column', 0);
+            createWatershedChart('chart-6', 'Maumee', 'data/Maumee.csv', 'TPloading_S', 'column', 860);
+            createWatershedChart('chart-7', 'Maumee', 'data/Maumee.csv', 'DRPloading_S', 'column', 186);
+            createWatershedChart('chart-8', 'Maumee', 'data/Maumee.csv', 'TPFWMC_S', 'line', 0.23);
+            createWatershedChart('chart-9', 'Maumee', 'data/Maumee.csv', 'DRPFWMC', 'line', 0.05);
+            createWatershedChart('chart-10', 'Maumee', 'data/Maumee.csv', 'discharge_S', 'column', 0);
+
         };
 
 
@@ -144,8 +152,15 @@
     </script>
 </head>
 <body>
-<div id="tploading"></div>
-<div id="bar-chart"></div>
-<div id="bar-chart2"></div>
+<div id="chart-1"></div>
+<div id="chart-2"></div>
+<div id="chart-3"></div>
+<div id="chart-4"></div>
+<div id="chart-5"></div>
+<div id="chart-6"></div>
+<div id="chart-7"></div>
+<div id="chart-8"></div>
+<div id="chart-9"></div>
+<div id="chart-10"></div>
 </body>
 </html>
