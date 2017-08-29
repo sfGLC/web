@@ -179,6 +179,14 @@ function createWatershedChart(eleID, name, filename, fraction, chartType, target
         if(target){
             addTargetLine(chart, target, 'line');
         }
+        // chart.exportChart({
+        //     type: 'image/png',
+        //     filename: watershed.name + '_' + watershed[fraction].name
+        // });
+        // chart.exportChart({
+        //     type: 'image/svg+xml',
+        //     filename: watershed.name + '_' + watershed[fraction].name
+        // })
     });
 }
 
@@ -255,7 +263,10 @@ function createLineChart2(eleId, w_name, data, color) {
             enabled: false
         },
         xAxis: {
-            categories: xAxis
+            categories: xAxis,
+            title: {
+                text: 'Year'
+            }
         },
         yAxis: {
             title: {
@@ -313,7 +324,10 @@ function createColumnChart2(eleId, w_name, data, color) {
             enabled: false
         },
         xAxis: {
-            categories: xAxis
+            categories: xAxis,
+            title: {
+                text: 'Year'
+            }
         },
         yAxis: {
             title: {
