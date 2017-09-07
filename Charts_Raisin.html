@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script rel="script" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script rel="script" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <!--<script rel="script" src="js/es_data.js"></script>-->
+    <script rel="script" src="js/es_charts.js"></script>
+    <script rel="script" src="js/BA_colors.js"></script>
+    <!--<script rel="script" src="js/jquery-csv.js"></script>-->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script rel="script" src="js/export-csv_glc.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/BA_Style.css">
+    <script>
+
+
+
+        window.onload = function () {
+            setChartTheme();
+
+            var chart_info=[
+                {
+                    watershedName: 'Maumee',
+                    fileName: 'Maumee.csv',
+                    fraction: 'TPloading',
+                    eleID: 'tploading',
+                    target: 0,
+                },
+                {
+                    watershedName: 'Maumee',
+                    fileName: 'Maumee.csv',
+                    fraction: 'DRPloading',
+                    eleID: 'bar-chart',
+                },
+                {
+                    watershedName: 'Maumee',
+                    fileName: 'Maumee.csv',
+                    fraction: 'TPFWMC',
+                    eleID: 'bar-chart2',
+                },
+//                {
+//                    watershedName: 'Maumee',
+//                    fileName: 'Maumee.csv',
+//                    fraction: 'DRPFWMC',
+//                    eleID: '',
+//                },
+//                {
+//                    watershedName: 'Maumee',
+//                    fileName: 'Maumee.csv',
+//                    fraction: 'discharge',
+//                    eleID: '',
+//                },
+//                {
+//                    watershedName: 'Maumee',
+//                    fileName: 'Maumee.csv',
+//                    fraction: 'TPloading_S',
+//                    eleID: '',
+//                },
+//                {
+//                    watershedName: 'Maumee',
+//                    fileName: 'Maumee.csv',
+//                    fraction: 'DRPloading_S',
+//                    eleID: '',
+//                },
+//                {
+//                    watershedName: 'Maumee',
+//                    fileName: 'Maumee.csv',
+//                    fraction: 'TPFWMC_S',
+//                    eleID: '',
+//                },
+//                {
+//                    watershedName: 'Maumee',
+//                    fileName: 'Maumee.csv',
+//                    fraction: 'DRPFWMC_S',
+//                    eleID: '',
+//                },
+//                {
+//                    watershedName: 'Maumee',
+//                    fileName: 'Maumee.csv',
+//                    fraction: 'discharge_S',
+//                    eleID: '',
+//                },
+            ];
+
+
+            /**
+             * Raisin
+             */
+            createWatershedChart('chart-1', 'Raisin', 'data/Raisin.csv', 'TPloading', 'column', 0);
+            createWatershedChart('chart-2', 'Raisin', 'data/Raisin.csv', 'DRPloading', 'column', 0);
+            createWatershedChart('chart-3', 'Raisin', 'data/Raisin.csv', 'TPFWMC', 'line', 0, 0);
+            createWatershedChart('chart-4', 'Raisin', 'data/Raisin.csv', 'DRPFWMC', 'line', 0, 0);
+            createWatershedChart('chart-5', 'Raisin', 'data/Raisin.csv', 'discharge', 'column', 0);
+            createWatershedChart('chart-6', 'Raisin', 'data/Raisin.csv', 'TPloading_S', 'column', 0);
+            createWatershedChart('chart-7', 'Raisin', 'data/Raisin.csv', 'DRPloading_S', 'column', 0);
+            createWatershedChart('chart-8', 'Raisin', 'data/Raisin.csv', 'TPFWMC_S', 'line', 0, 0);
+            createWatershedChart('chart-9', 'Raisin', 'data/Raisin.csv', 'DRPFWMC', 'line', 0, 0);
+            createWatershedChart('chart-10', 'Raisin', 'data/Raisin.csv', 'discharge_S', 'column', 0);
+
+            /**
+             * Sandusky
+             */
+
+        };
+
+    </script>
+</head>
+<body>
+<div id="chart-1"></div>
+<div id="chart-2"></div>
+<div id="chart-3"></div>
+<div id="chart-4"></div>
+<div id="chart-5"></div>
+<div id="chart-6"></div>
+<div id="chart-7"></div>
+<div id="chart-8"></div>
+<div id="chart-9"></div>
+<div id="chart-10"></div>
+</body>
+</html>
