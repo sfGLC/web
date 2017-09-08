@@ -34,34 +34,34 @@ Maumee,2012,Annual DRP FWMC,milligrams / liter,0.103,,,,,,,,,,,,,
 Maumee,2013,Annual DRP FWMC,milligrams / liter,0.093,,,,,,,,,,,,,
 Maumee,2014,Annual DRP FWMC,milligrams / liter,0.099,,,,,,,,,,,,,
 Maumee,2015,Annual DRP FWMC,milligrams / liter,0.113,,,,,,,,,,,,,
-Maumee,2016,Annual DRP FWMC,milligrams / liter,0.060,,,,,,,,,,,,,
-Maumee,2008,Annual Discharge,million cubic liters,8026,,,,,,,,,,,,,
-Maumee,2009,Annual Discharge,million cubic liters,5075,,,,,,,,,,,,,
-Maumee,2010,Annual Discharge,million cubic liters,4648,,,,,,,,,,,,,
-Maumee,2011,Annual Discharge,million cubic liters,6230,,,,,,,,,,,,,
-Maumee,2012,Annual Discharge,million cubic liters,5960,,,,,,,,,,,,,
-Maumee,2013,Annual Discharge,million cubic liters,5030,,,,,,,,,,,,,
-Maumee,2014,Annual Discharge,million cubic liters,5850,,,,,,,,,,,,,
-Maumee,2015,Annual Discharge,million cubic liters,6650,,,,,,,,,,,,,
-Maumee,2016,Annual Discharge,million cubic liters,3970,,,,,,,,,,,,,
-Maumee,2008,Spring TP Loads,Metric Tons," 1,414 ",,,,,,,,,,,,,
-Maumee,2009,Spring TP Loads,Metric Tons," 1,370 ",,,,,,,,,,,,,
-Maumee,2010,Spring TP Loads,Metric Tons," 1,307 ",,,,,,,,,,,,,
-Maumee,2011,Spring TP Loads,Metric Tons," 2,318 ",,,,,,,,,,,,2008,186
-Maumee,2012,Spring TP Loads,Metric Tons, 393 ,,2008,860,,,,,,,,,2009,186
-Maumee,2013,Spring TP Loads,Metric Tons," 1,249 ",,2009,860,,,,,,,,,2010,186
-Maumee,2014,Spring TP Loads,Metric Tons," 1,155 ",,2010,860,,,,,,,,,2011,186
-Maumee,2015,Spring TP Loads,Metric Tons," 1,863 ",,2011,860,,,,,,,,,2012,186
-Maumee,2016,Spring TP Loads,Metric Tons,755.3,,2012,860,,,,,,,,,2013,186
-Maumee,2008,Spring DRP Loads,Metric Tons, 302 ,,2013,860,,,,,,,,,2014,186
-Maumee,2009,Spring DRP Loads,Metric Tons, 211 ,,2014,860,,,,,,,,,2015,186
-Maumee,2010,Spring DRP Loads,Metric Tons, 324 ,,2015,860,,,,,,,,,2016,186
-Maumee,2011,Spring DRP Loads,Metric Tons, 430 ,,2016,860,,,,,,,,,,
-Maumee,2012,Spring DRP Loads,Metric Tons, 64 ,,,,,,,,,,,,,
-Maumee,2013,Spring DRP Loads,Metric Tons, 289 ,,,,,,,,,,,,,
-Maumee,2014,Spring DRP Loads,Metric Tons, 306 ,,,,,,,,,,,,,
-Maumee,2015,Spring DRP Loads,Metric Tons, 422 ,,,,,,,,,,,,,
-Maumee,2016,Spring DRP Loads,Metric Tons,144.0,,,,,,,,,,,,,
+Maumee,2016,Annual DRP FWMC,milligrams / liter,0.06,,,,,,,,,,,,,
+Maumee,2008,Annual Discharge,million cubic meters,8026,,,,,,,,,,,,,
+Maumee,2009,Annual Discharge,million cubic meters,5075,,,,,,,,,,,,,
+Maumee,2010,Annual Discharge,million cubic meters,4648,,,,,,,,,,,,,
+Maumee,2011,Annual Discharge,million cubic meters,6230,,,,,,,,,,,,,
+Maumee,2012,Annual Discharge,million cubic meters,5960,,,,,,,,,,,,,
+Maumee,2013,Annual Discharge,million cubic meters,5030,,,,,,,,,,,,,
+Maumee,2014,Annual Discharge,million cubic meters,5850,,,,,,,,,,,,,
+Maumee,2015,Annual Discharge,million cubic meters,6650,,,,,,,,,,,,,
+Maumee,2016,Annual Discharge,million cubic meters,3970,,,,,,,,,,,,,
+Maumee,2008,Spring TP Loading,Metric Tons,1414,,,,,,,,,,,,,
+Maumee,2009,Spring TP Loading,Metric Tons,1370,,,,,,,,,,,,,
+Maumee,2010,Spring TP Loading,Metric Tons,1307,,,,,,,,,,,,,
+Maumee,2011,Spring TP Loading,Metric Tons,2318,,,,,,,,,,,,2008,186
+Maumee,2012,Spring TP Loading,Metric Tons,393,,2008,860,,,,,,,,,2009,186
+Maumee,2013,Spring TP Loading,Metric Tons,1249,,2009,860,,,,,,,,,2010,186
+Maumee,2014,Spring TP Loading,Metric Tons,1155,,2010,860,,,,,,,,,2011,186
+Maumee,2015,Spring TP Loading,Metric Tons,1863,,2011,860,,,,,,,,,2012,186
+Maumee,2016,Spring TP Loading,Metric Tons,755.3,,2012,860,,,,,,,,,2013,186
+Maumee,2008,Spring DRP Loading,Metric Tons,302,,2013,860,,,,,,,,,2014,186
+Maumee,2009,Spring DRP Loading,Metric Tons,211,,2014,860,,,,,,,,,2015,186
+Maumee,2010,Spring DRP Loading,Metric Tons,324,,2015,860,,,,,,,,,2016,186
+Maumee,2011,Spring DRP Loading,Metric Tons,430,,2016,860,,,,,,,,,,
+Maumee,2012,Spring DRP Loading,Metric Tons,64,,,,,,,,,,,,,
+Maumee,2013,Spring DRP Loading,Metric Tons,289,,,,,,,,,,,,,
+Maumee,2014,Spring DRP Loading,Metric Tons,306,,,,,,,,,,,,,
+Maumee,2015,Spring DRP Loading,Metric Tons,422,,,,,,,,,,,,,
+Maumee,2016,Spring DRP Loading,Metric Tons,144,,,,,,,,,,,,,
 Maumee,2008,Spring TP FWMC,milligrams / liter,0.376,,2008,0.23,,,,,,,,,,
 Maumee,2009,Spring TP FWMC,milligrams / liter,0.411,,2009,0.23,,,,,,,,,,
 Maumee,2010,Spring TP FWMC,milligrams / liter,0.362,,2010,0.23,,,,,,,,,,
@@ -81,11 +81,11 @@ Maumee,2014,Spring DRP FWMC,milligrams / liter,0.088,,2009,0.05,,,,,,,,,,
 Maumee,2015,Spring DRP FWMC,milligrams / liter,0.103,,2010,0.05,,,,,,,,,,
 Maumee,2016,Spring DRP FWMC,milligrams / liter,0.058,,2011,0.05,,,,,,,,,,
 Maumee,2008,Spring Discharge,million cubic liters,3756,,2012,0.05,,,,,,,,,,
-Maumee,2009,Spring Discharge,million cubic liters,3335,,2013,0.05,,,,,,,,,,
-Maumee,2010,Spring Discharge,million cubic liters,3613,,2014,0.05,,,,,,,,,,
-Maumee,2011,Spring Discharge,million cubic liters,5097,,2015,0.05,,,,,,,,,,
-Maumee,2012,Spring Discharge,million cubic liters,1039,,2016,0.05,,,,,,,,,,
-Maumee,2013,Spring Discharge,million cubic liters,3342,,,,,,,,,,,,,
-Maumee,2014,Spring Discharge,million cubic liters,3475,,,,,,,,,,,,,
-Maumee,2015,Spring Discharge,million cubic liters,4099,,,,,,,,,,,,,
-Maumee,2016,Spring Discharge,million cubic liters,2490,,,,,,,,,,,,,
+Maumee,2009,Spring Discharge,million cubic meters,3335,,2013,0.05,,,,,,,,,,
+Maumee,2010,Spring Discharge,million cubic meters,3613,,2014,0.05,,,,,,,,,,
+Maumee,2011,Spring Discharge,million cubic meters,5097,,2015,0.05,,,,,,,,,,
+Maumee,2012,Spring Discharge,million cubic meters,1039,,2016,0.05,,,,,,,,,,
+Maumee,2013,Spring Discharge,million cubic meters,3342,,,,,,,,,,,,,
+Maumee,2014,Spring Discharge,million cubic meters,3475,,,,,,,,,,,,,
+Maumee,2015,Spring Discharge,million cubic meters,4099,,,,,,,,,,,,,
+Maumee,2016,Spring Discharge,million cubic meters,2490,,,,,,,,,,,,,

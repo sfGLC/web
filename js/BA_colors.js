@@ -28,5 +28,5 @@ var ColorPicker = {
     blue6: '#00b0e6',//getColor(0, 176, 230),
     blue7: '#1b75ba',//getColor(30, 117, 186),
 
-    red1: '#ff0000',//getColor(206, 0, 0),
+    target_red: '#ff0000',//getColor(206, 0, 0),
 };

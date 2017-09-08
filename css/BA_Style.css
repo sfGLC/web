@@ -1,13 +1,17 @@
 .highcharts-root text{
-    font-family: 'Lato', sans-serif;
+    /*font-family: 'Montserrat', sans-serif;*/
+}
+.highcharts-axis-line{
+    fill: '#1c2d5a';
+    stroke: '#1c2d5a';
 }
 /*.svg.highcharts-root text{*/
     /*font-family: 'Lato', sans-serif;*/
 /*}*/
-.highcharts-axis text{
+/*.highcharts-axis text{*/
     /*font-family: 'Lato', sans-serif;*/
     /*font-size: large;*/
-}
+/*}*/
 /*.highcharts-legend text{*/
     /*font-family: 'Lato', sans-serif;*/
 /*}*/
@@ -15,31 +19,31 @@
     /*font-family: 'Lato', sans-serif;*/
 /*}*/
 .highcharts-background {
-    fill: #d8e2eb;
+    /*fill: #d8e2eb;*/
 }
 /*.highcharts-legend text {*/
     /*text-shadow: 0 0 2px black, 0 0 2px black;*/
     /*font-size: small*/
 /*}*/
-.highcharts-point.highcharts-color-0,
-.highcharts-legend-item.highcharts-color-0 .highcharts-point,
-.highcharts-tooltip .highcharts-color-0 {
-    fill: #1c2d5a;
-}
-.highcharts-tooltip.highcharts-color-0,
-.highcharts-data-label-connector.highcharts-color-0 {
-    stroke: #1c2d5a;
-}
+/*.highcharts-point.highcharts-color-0,*/
+/*.highcharts-legend-item.highcharts-color-0 .highcharts-point,*/
+/*.highcharts-tooltip .highcharts-color-0 {*/
+    /*fill: #1c2d5a;*/
+/*}*/
+/*.highcharts-tooltip.highcharts-color-0,*/
+/*.highcharts-data-label-connector.highcharts-color-0 {*/
+    /*stroke: #1c2d5a;*/
+/*}*/
 
-.highcharts-point.highcharts-color-1,
-.highcharts-legend-item.highcharts-color-1 .highcharts-point,
-.highcharts-tooltip .highcharts-color-1 {
-    fill: #afdfe4;
-}
-.highcharts-tooltip.highcharts-color-1,
-.highcharts-data-label-connector.highcharts-color-1 {
-    stroke: #afdfe4;
-}
+/*.highcharts-point.highcharts-color-1,*/
+/*.highcharts-legend-item.highcharts-color-1 .highcharts-point,*/
+/*.highcharts-tooltip .highcharts-color-1 {*/
+    /*fill: #afdfe4;*/
+/*}*/
+/*.highcharts-tooltip.highcharts-color-1,*/
+/*.highcharts-data-label-connector.highcharts-color-1 {*/
+    /*stroke: #afdfe4;*/
+/*}*/
 
 .highcharts-point.highcharts-color-2,
 .highcharts-legend-item.highcharts-color-2 .highcharts-point,
